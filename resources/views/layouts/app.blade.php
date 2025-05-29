@@ -14,7 +14,6 @@
         <x-site.navbar />
         <x-site.header-banner />
         <div class="container">
-            <x-site.companies />
             @yield('content')
             <x-site.footer />
         </div>

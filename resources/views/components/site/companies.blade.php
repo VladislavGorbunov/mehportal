@@ -1,5 +1,5 @@
 <div class="mb-5">
-<h2 class="text-center">У нас размещают заказы крупные компании</h2>
+<h2 class="text-center">У нас вы найдёте заказы от крупных компаний</h2>
 <p class="text-center">Станьте исполнителем заказа на металлообработку для крупных компаний</p>
 <div class="row gx-4 gy-4">
     <div class="col-4 col-md-2">

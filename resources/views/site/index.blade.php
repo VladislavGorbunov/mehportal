@@ -4,5 +4,7 @@
 @section('description', $description)
 
 @section('content')
-    <h2 class="text-center">Открытые заказы на сегодня</h2>
+    <x-site.companies />
+    <x-site.for-created />
+    <h2 class="text-center mt-5">Открытые заказы на сегодня</h2>
 @endsection
