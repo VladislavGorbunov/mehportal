@@ -6,5 +6,5 @@
 @section('content')
     <x-site.companies />
     <x-site.for-created />
-    <h2 class="text-center mt-5">Открытые заказы на сегодня</h2>
+    <h2 class="text-center mt-4">Открытые заказы на сегодня</h2>
 @endsection
