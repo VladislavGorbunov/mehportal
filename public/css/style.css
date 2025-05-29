@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --btn-blue-color: rgb(19, 88, 200);
+    --btn-dark-color: rgba(20, 27, 33, 1);
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+h2, h3, h4, h5, h6 {
+    font-size: 28px;
+}
+
+.blue-text {
+    color: var(--btn-blue-color) !important;
+}
+
+.bi {
+    position: relative;
+    top: 1px;
+    font-size: 18px;
+}
+
+.navbar {
+    font-size: 15px;
+    border-bottom: 1px solid #ebf1f4;
+    background: #fff !important;
+}
+
+.navbar .navbar-brand {
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.navbar .logo-blue-color {
+    color: var(--btn-blue-color);
+}
+
+.navbar .nav-link {
+    color: #000;
+}
+
+.navbar .nav-link:hover {
+    color: var(--btn-blue-color);
+}
+
+.navbar .btn-dark {
+    position: relative;
+    color: #fff;
+    z-index: 2;
+    background: var(--btn-dark-color);
+    padding: 11px 24px;
+    border: 1px solid var(--btn-dark-color);
+    font-size: 14px;
+    border-radius: 10px;
+}
+
+.navbar .btn-dark .bi {
+    font-size: 14px !important;
+    margin-right: 3px;
+}
+
+.navbar .btn-none-bg {
+    position: relative;
+    color: var(--btn-blue-color);
+    border: 1px solid rgba(19, 88, 200, 0.2);
+    z-index: 2;
+    background: none;
+    padding: 11px 24px;
+    font-size: 14px;
+    border-radius: 10px;
+}
+
+.navbar .btn-modal-city {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.navbar .btn-modal-city .bi {
+    font-size: 14px;
+    position: relative;
+    top: -1px;
+    color: var(--btn-blue-color);
+}
+
+
+.header-banner {
+    position: relative;
+    width: 100%;
+    min-height: 500px;
+    background: rgba(20, 27, 33, 1) url("https://avatars.mds.yandex.net/get-altay/15352901/2a00000193f2e1482729dc65678cea321639/orig") center ;
+    background-size: cover;
+    border-radius: 25px;
+    overflow: hidden;
+    padding: 80px 0px;
+}
+
+.header-banner h1 {
+    position: relative;
+    color: #fff;
+    z-index: 2;
+}
+
+.header-banner p {
+    position: relative;
+    color: #fff;
+    z-index: 2;
+}
+
+.header-banner .btn-blue {
+    position: relative;
+    color: #fff;
+    z-index: 2;
+    background: var(--btn-blue-color);
+    padding: 13px 10px;
+    border: none;
+    border-radius: 10px;
+    width: 220px;
+}
+
+.header-banner .btn-white {
+    position: relative;
+    color: #111;
+    z-index: 2;
+    background: #fff;
+    padding: 13px 10px;
+    border: none;
+    border-radius: 10px;
+    width: 220px;
+}
+
+.header-banner-layout {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(20, 27, 33, 0.8);
+    backdrop-filter: blur(1px);
+    z-index: 1;
+}
+
+.block-company {
+    border-radius: 15px;
+    border: 1px solid rgb(224, 229, 234);
+    padding: 10px 25px;
+}
