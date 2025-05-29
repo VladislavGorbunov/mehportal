@@ -74,5 +74,6 @@
             <img src="https://perm.metalloobrabotchiki.ru/images/template/partners/40.jpg" class="img-fluid">
         </div>
     </div>
+
 </div>
 </div>

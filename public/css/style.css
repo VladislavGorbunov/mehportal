@@ -13,6 +13,11 @@ body {
     font-style: normal;
 }
 
+a {
+    text-decoration: none;
+    color: var(--btn-blue-color);
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: "Rubik", sans-serif;
     font-optical-sizing: auto;
