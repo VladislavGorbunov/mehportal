@@ -164,3 +164,27 @@ h2, h3, h4, h5, h6 {
     border: 1px solid rgb(224, 229, 234);
     padding: 10px 25px;
 }
+
+footer {
+    font-size: 15px;
+}
+
+footer .link-secondary {
+    color: #2b2d2e !important;
+}
+
+footer h5 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+footer .navbar-brand {
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 21px;
+    font-weight: 700;
+}
+
+footer .logo-blue-color {
+    color: var(--btn-blue-color);
+}
