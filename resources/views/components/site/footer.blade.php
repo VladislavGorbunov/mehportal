@@ -1,7 +1,7 @@
 <footer class="pt-4 my-md-5 pt-md-5 border-top">
     <div class="row">
       <div class="col-6 col-md-3 text-center">
-        <a class="navbar-brand" href="#"><span class="logo-blue-color">МЕХ</span>ПОРТАЛ</a>
+        <x-site.logo />
         <p>Наш сервис создан для быстрого и удобного поиска заказчиков и исполнителей 
             на различные услуги по металлообработке во всех регионах России.
         </p>
@@ -34,6 +34,8 @@
           <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Политика конфиденциальности</a></li>
         </ul>
       </div>
+
+      <div class="col-12 text-center mt-5">МЕХПОРТАЛ © <?= date('Y') ?> г. - сервис поиска заказов на металлообработку и не только.</div>
     </div>
 
     <div class="col-10 col-md-3 cookie-modal d-flex align-items-center justify-content-around">

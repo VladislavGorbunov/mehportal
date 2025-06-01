@@ -15,6 +15,7 @@ class CustomerSeeder extends Seeder
             'name' => 'Владислав',
             'lastname' => 'Горбунов',
             'company' => 'Технопром',
+            'legal_form' => 'ООО',
             'inn' => 1235453,
             'region_id' => 1,
             'adress' => 'dsfdsfdsfsdf',

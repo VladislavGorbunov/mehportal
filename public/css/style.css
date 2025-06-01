@@ -85,6 +85,14 @@ h2, h3, h4, h5, h6 {
     color: var(--btn-blue-color);
 }
 
+.logo-icon {
+    position: relative;
+    top: -2px;
+    width: 30px;
+    height: 30px;
+    margin-left: -2px;
+}
+
 .navbar .nav-link {
     color: #000;
 }
@@ -249,14 +257,69 @@ h2, h3, h4, h5, h6 {
     padding: 20px 30px;
 }
 
+.for-created-bg {
+    background: url("https://avatars.dzeninfra.ru/get-zen_doc/9703143/pub_64a99af75d18bb5b5acdc243_64a9a0996913945f0f387701/scale_1200") center no-repeat;
+    background-size: cover;
+    border-radius: 20px;
+    height: 490px;
+}
+
+.for-created-col {
+    position: relative;
+    background: #fff;
+}
+
+.square {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: rgb(26, 152, 210);
+    right: 15px;
+    top: 15px;
+    border-radius: 80px;
+    transform: rotate(45deg);
+    opacity: 0.2;
+    z-index: 2;
+}
+
+.square-2 {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: rgb(124, 26, 210);
+    right: 15px;
+    top: 15px;
+    border-radius: 10px;
+    transform: rotate(45deg);
+    opacity: 0.2;
+    z-index: 2;
+}
+
+.square-3 {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: rgb(26, 210, 192);
+    right: 15px;
+    top: 15px;
+    border-radius: 10px;
+    transform: rotate(45deg);
+    opacity: 0.2;
+    z-index: 2;
+}
+
 
 footer {
     font-size: 15px;
-    padding-bottom: 40px;
+    padding-bottom: 0px;
 }
 
 footer .link-secondary {
     color: #2b2d2e !important;
+}
+
+footer .link-secondary:hover {
+    color: var(--btn-blue-color) !important;
 }
 
 footer h5 {

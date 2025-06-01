@@ -12,6 +12,10 @@ class AuthController extends Controller
     //
     public function loginCustomerPage()
     {
+        if (Auth::guard('customer')->user()) {
+            return redirect('/customer');
+        }
+
         return view('customer.login-customer');
     }
 
@@ -23,7 +27,7 @@ class AuthController extends Controller
             $request->session()->regenerate();
             $user = Auth::guard('customer')->user();
             Auth::guard('customer')->login($user);
-            return redirect('/profile');
+            return redirect('/customer');
         } else {
             session()->flash('error', 'Неверный логин или пароль.');
             return redirect()->back();

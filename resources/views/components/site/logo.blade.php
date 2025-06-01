@@ -1,2 +1,2 @@
 <a class="navbar-brand" href="/">
-<span class="logo-blue-color">МЕХ</span>ПОРТАЛ</a>
+    МЕХ<img src="/images/logo.png" class="logo-icon" alt="МЕХПОРТАЛ - заказы на металлообработку в открытом доступе">ПОРТАЛ</a>

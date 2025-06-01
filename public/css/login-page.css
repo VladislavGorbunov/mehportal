@@ -7,8 +7,20 @@ body {
     font-size: 16px;
     font-weight: 400;
     font-style: normal;
+    overflow-x: hidden;
 }
 
+html {
+  overflow-x: hidden;
+}
+
+.logo-icon {
+    position: relative;
+    top: -2px;
+    width: 30px;
+    height: 30px;
+    margin-left: -2px;
+}
 
 .form-check-input:focus {
   outline: none !important;
