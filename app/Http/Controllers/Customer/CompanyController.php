@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Customer;
+use App\Models\LegalForm;
+use App\Models\Region;
 
 class CompanyController extends Controller
 {
@@ -21,7 +23,9 @@ class CompanyController extends Controller
 
     public function addCompanyPage()
     {
-        return view('customer.add-company');
+        $data['regions'] = Region::get();
+        $data['legal_forms'] = LegalForm::get();
+        return view('customer.add-company', $data);
     }
 
 }

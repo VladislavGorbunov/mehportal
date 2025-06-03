@@ -34,3 +34,11 @@
     background: var(--btn-blue-color);
     color: #fff;
 }
+
+hr {
+    border: 1px solid #d2dadc !important;
+}
+
+.form-control, .form-select {
+    padding: 10px 15px;
+}
