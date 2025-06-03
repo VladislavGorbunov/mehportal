@@ -6,7 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Customer\RegistrationCustomerRequest;
 use Illuminate\Http\Request;
 use App\Models\Region;
-use App\Models\LegalForm;
+use App\Models\Customer;
+use Illuminate\Support\Facades\Hash;
 
 class RegistrationController extends Controller
 {
@@ -14,7 +15,6 @@ class RegistrationController extends Controller
     public function registrationCustomerPage()
     {
         $data['regions'] = Region::get();
-        $data['legal_forms'] = LegalForm::get();
         return view('customer.registration-customer', $data);
     }
 
@@ -22,6 +22,14 @@ class RegistrationController extends Controller
     {
         $validated = $request->validated();
 
-        dd($validated);
+
+        $customer = Customer::create([
+            "name"      => $validated['name'],
+            "lastname"  => $validated['lastname'],
+            "email"     => $validated['email'],
+            "password"  => Hash::make($validated['password']),
+            "phone"     => $validated['phone'],
+            "active"    => true,
+        ]);
     }
 }

@@ -1,18 +1,14 @@
 @extends('layouts.customer-panel')
 
-@section('title', 'Панель заказчика - МЕХПОРТАЛ')
-@section('description', 'Панель заказчика - МЕХПОРТАЛ')
+@section('title', 'Панель заказчика - моя компания')
+@section('description', 'Панель заказчика - моя компания')
 
 @section('content')
-        <h2 class="fs-4">Личный кабинет заказчика</h2>
-        
+
+        <h2 class="fs-4">Моя компания</h2>
         @if (empty($companies->count())) 
                 <div class="alert alert-primary text-center mt-3">Добавьте информацию о вашей компании, чтобы получить доступ к размещению заказов.
                         <a href="{{ Route('customer-add-company') }}" class="btn btn-blue mx-2">Добавить компанию</a>
                 </div>
         @endif
-
-        @foreach ($companies as $company)
-                {{ $company->title }}
-        @endforeach
 @endsection

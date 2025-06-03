@@ -1,3 +1,4 @@
+
 .border {
     border: 1px solid #e2ebed !important;
 }
@@ -21,4 +22,15 @@
 
 .menu li {
     margin-bottom: 10px;
+}
+
+.btn-blue {
+    background: var(--btn-blue-color);
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.btn-blue:hover {
+    background: var(--btn-blue-color);
+    color: #fff;
 }

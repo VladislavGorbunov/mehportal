@@ -15,14 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('lastname');
-            $table->string('company');
-            $table->string('legal_form');
-            $table->integer('inn');
-            $table->integer('region_id');
-            $table->string('adress');
-            $table->string('contact_person');
             $table->string('phone');
-            $table->string('extension_number');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

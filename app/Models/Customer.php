@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Customer extends Authenticatable
 {
@@ -21,15 +22,18 @@ class Customer extends Authenticatable
     protected $fillable = [
         'name',
         'lastname',
-        'company',
-        'inn',
-        'region_id',
-        'adress',
-        'contact_person',
         'phone',
-        'extension_number',
         'active',
         'email',
         'password',
     ];
+
+
+    /**
+     * Получить компании заказчика
+     */
+    public function customerCompanies(): HasMany
+    {
+        return $this->hasMany(CustomerCompany::class);
+    }
 }

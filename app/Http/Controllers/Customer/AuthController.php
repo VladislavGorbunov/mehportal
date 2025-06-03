@@ -18,18 +18,22 @@ class AuthController extends Controller
 
         return view('customer.login-customer');
     }
+    
 
     public function loginCustomer(LoginCustomerRequest $request)
     {
         $validated = $request->validated();
         
-        if (Auth::guard('customer')->attempt($validated, true)) {
+        $email = $validated['email'];
+        $password = $validated['password'];
+
+        if (Auth::guard('customer')->attempt(['email' => $email, 'password' => $password, 'active' => 1], true)) {
             $request->session()->regenerate();
             $user = Auth::guard('customer')->user();
             Auth::guard('customer')->login($user);
             return redirect('/customer');
         } else {
-            session()->flash('error', 'Неверный логин или пароль.');
+            session()->flash('error', 'Ошибка входа.');
             return redirect()->back();
         }
     }
