@@ -9,9 +9,9 @@
           <div class="row"> 
             @foreach ($categories as $category) 
             <div class="col-4 mb-4">
-                <a href="{{ $regionSlug }}/orders/category/{{ $category->slug }}" class="category-link">{{$category->title}}</a>
+                <a href="/{{ $regionSlug }}/orders/category/{{ $category->slug }}" class="category-link">{{$category->title}}</a>
                   @foreach ($category->servicesLimit as $service) 
-                    <a href="{{ $regionSlug }}/orders/service/{{ $service->slug }}" class="service-link">{{ $service->title }}</a>
+                    <a href="/{{ $regionSlug }}/orders/service/{{ $service->slug }}" class="service-link">{{ $service->title }}</a>
                   @endforeach
                   <div class="mt-2">
                    <a href="">Смотреть все</a></div>
