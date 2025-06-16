@@ -1,7 +1,7 @@
-<div class="container">
+<div class="container position-relative">
     <div class="header-banner mt-4 mb-4 d-flex justify-content-center align-items-center flex-column">
         <div class="col-12 col-md-8">
-            <h1 class="text-center">Заказы на металлообработку в открытом доступе по всей России</h1>
+            <h1 class="text-center">{{ $headerTitle }}</h1>
             <p class="text-center mt-3">
                 Вам срочно нужно найти исполнителя для изготовления заказа? Или может быть у Вас своё производство и вы в поисках заказа на металлобоработку?
                 Наш сервис создан специально для Вас! Мы помогаем найти исполнителям и заказчикам друг друга, для взаимовыгодного сотрудничества!

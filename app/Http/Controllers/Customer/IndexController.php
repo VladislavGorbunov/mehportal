@@ -13,7 +13,7 @@ class IndexController extends Controller
     public function index()
     {
         $customer_id = Auth::guard('customer')->user()->id;
-        $data['companies'] = Customer::find($customer_id)->customerCompanies;
+        $data['company'] = Customer::find($customer_id)->customerCompanies;
 
         return view('customer.index', $data);
     }

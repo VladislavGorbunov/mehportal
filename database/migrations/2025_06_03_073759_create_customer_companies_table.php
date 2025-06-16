@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('inn');
             $table->integer('region_id');
-            $table->string('adress');
+            $table->string('address');
             
             $table->string('contact_person');
             $table->string('phone');

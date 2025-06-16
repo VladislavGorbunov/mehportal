@@ -43,4 +43,7 @@
       <div>Наш сервис использует файлы cookie. <a href="">Подробнее</a></div>
       <div class="mx-2"><button class="btn btn-cookie-ok">Хорошо</button></div>
     </div>
+    
+    <x-modal-regions />
+    <x-services-orders :region-slug="$regionSlug" />
   </footer>

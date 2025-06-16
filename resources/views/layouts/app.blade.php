@@ -16,11 +16,11 @@
     </head>
 
     <body>
-        <x-site.navbar />
-        <x-site.header-banner />
+        <x-site.navbar :regionName="$region_name"/>
+        <x-site.header-banner :headerTitle="$header_title"/>
         <div class="container">
             @yield('content')
-            <x-site.footer />
+            <x-site.footer :regionSlug="$region_slug" />
         </div>
         
 
