@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('inn');
             $table->integer('region_id');
             $table->string('address');
-            
             $table->string('contact_person');
             $table->string('phone');
             $table->string('extension_number');
