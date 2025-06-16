@@ -80,7 +80,7 @@ h2, h3, h4, h5, h6 {
     position: relative;
     font-family: "Rubik", sans-serif;
     font-optical-sizing: auto;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 700;
     margin: 0;
 }
@@ -175,7 +175,7 @@ h2, h3, h4, h5, h6 {
 .header-banner {
     position: relative;
     width: 100%;
-    min-height: 480px;
+    min-height: 500px;
     background: rgba(20, 27, 33, 1) url("https://avatars.mds.yandex.net/get-altay/15352901/2a00000193f2e1482729dc65678cea321639/orig") center ;
     background-size: cover;
     border-radius: 25px;
