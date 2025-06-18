@@ -1,9 +1,7 @@
 <h2 class="text-center">Для кого создан наш сервис</h2>
 <div class="row mt-4 gx-3">
 
-    <div class="col-12 col-md-6 mb-3">
-        <div class="for-created-bg"></div>
-    </div>
+    
 
     <div class="col-12 col-md-6">
     <div class="col-12 col-md-12 mb-3">
@@ -32,4 +30,9 @@
         </div>
     </div>
 </div>
+
+
+<div class="col-12 col-md-6 mb-3">
+        <div class="for-created-bg"></div>
+    </div>
 </div>

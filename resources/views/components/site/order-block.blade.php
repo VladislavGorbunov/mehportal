@@ -1,4 +1,4 @@
-<div class="order-block mt-3">
+<div class="order-block mt-4">
         <div class="row">
             <div class="col-4">
                 <img src="{{ Storage::disk('orders_images')->url('123.jpg') }}" class="img-fluid">

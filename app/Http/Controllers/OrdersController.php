@@ -40,7 +40,7 @@ class OrdersController extends Controller
         
         $category_id = $category->id;
     
-        $data['orders'] = Order::getOrdersForCategories($category_id);
+        $data['orders'] = Order::getOrdersForCategoriesRegion($category_id, $region->id);
         $data['region_name'] = $region->name;
         $data['region_slug'] = $region->slug;
         return view('site.orders', $data);
@@ -66,7 +66,7 @@ class OrdersController extends Controller
     public function getOrdersForServicesRegion($region_slug, $service_slug) 
     {
         $region = Region::where('slug', $region_slug)->first();
-
+        
         if (! $region) abort(404);
 
         $service = Service::where('slug', $service_slug)->first();
@@ -75,7 +75,7 @@ class OrdersController extends Controller
         $data['description'] = 'Заказы '. mb_strtolower($service->title_case) .' в открытом доступе ' . $region->name_in;
         $data['header_title'] = 'Заказы на '. mb_strtolower($service->title_case) .' в открытом доступе ' . $region->name_in;
         
-        $data['orders'] = Order::getOrdersForServices($service_slug);
+        $data['orders'] = Order::getOrdersForServicesRegion($service_slug, $region->id);
         $data['region_name'] = $region->name;
         $data['region_slug'] = $region->slug;
         return view('site.orders', $data);

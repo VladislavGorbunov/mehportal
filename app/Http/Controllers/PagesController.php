@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Region;
+use App\Models\Order;
 
 class PagesController extends Controller
 {
@@ -16,6 +17,7 @@ class PagesController extends Controller
         $data['header_title'] = 'Заказы на металлообработку в открытом доступе по всей России';
         $data['region_name'] = '';
         $data['region_slug'] = '';
+        $data['orders'] = Order::limit(15)->get();
         return view('site.index', $data);
     }
 
