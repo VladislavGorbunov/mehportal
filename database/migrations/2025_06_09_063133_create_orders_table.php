@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('price');
             $table->date('closing_date');
             $table->text('description');
+            $table->integer('active')->default(0);
+            $table->integer('archive')->default(0);
             $table->timestamps();
         });
     }

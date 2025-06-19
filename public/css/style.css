@@ -4,6 +4,7 @@
 :root {
     --btn-blue-color: rgb(19, 88, 200);
     --btn-dark-color: rgba(20, 27, 33, 1);
+    --blue-color-opacity: rgba(19, 88, 200, 0.1);
 }
 
 body {
@@ -340,6 +341,47 @@ h2, h3, h4, h5, h6 {
     z-index: 2;
 }
 
+.link-all-orders-block {
+    padding: 10px 15px;
+    font-size: 14px;
+}
+
+.link-all-orders-block a {
+    padding: 2px 0px;
+    border-bottom: 1px dashed var(--btn-blue-color);
+}
+
+.count-orders-block {
+    padding: 10px 25px;
+    border-radius: 6px;
+    font-size: 14px;
+    border: 1px solid var(--blue-color-opacity);
+}
+
+.count-orders-block b {
+    font-weight: 500;
+}
+
+.count-archive-orders-block {
+    padding: 10px 25px;
+    border-radius: 6px;
+    font-size: 14px;
+    border: 1px solid var(--blue-color-opacity);
+}
+
+.count-archive-orders-block b {
+    font-weight: 500;
+}
+
+.active-order-badge {
+    width: 60px;
+    height: 25px;
+    padding: 4px 8px;
+    background: rgb(61, 201, 138);
+    color: #fff;
+    border-radius: 4px;
+    font-size: 12px;
+}
 
 footer {
     font-size: 15px;
@@ -414,6 +456,10 @@ footer .logo-blue-color {
     border: 1px solid rgb(238, 244, 246);
     padding: 30px 20px;
     box-shadow: 0 3px 20px -18px #4f585d;
+}
+
+.order-block b, strong {
+    font-weight: 500;
 }
 
 .order-block img {

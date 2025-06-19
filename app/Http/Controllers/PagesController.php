@@ -17,7 +17,9 @@ class PagesController extends Controller
         $data['header_title'] = 'Заказы на металлообработку в открытом доступе по всей России';
         $data['region_name'] = '';
         $data['region_slug'] = '';
-        $data['orders'] = Order::limit(15)->get();
+        $data['orders'] = Order::getAllOrders();
+        $data['count_orders'] = Order::where('active', true)->count();
+        $data['archive_count_orders'] = Order::where('archive', true)->count();
         return view('site.index', $data);
     }
 

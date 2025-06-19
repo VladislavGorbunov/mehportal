@@ -44,6 +44,11 @@ return [
         'customer' => [
             'driver' => 'session',
             'provider' => 'customers',
+        ],
+
+        'executor' => [
+            'driver' => 'session',
+            'provider' => 'executors',
         ]
     ],
 
@@ -73,6 +78,11 @@ return [
         'customers' => [
             'driver' => 'eloquent',
             'model' => App\Models\Customer::class,
+        ],
+
+        'executors' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Executor::class,
         ],
 
         // 'users' => [

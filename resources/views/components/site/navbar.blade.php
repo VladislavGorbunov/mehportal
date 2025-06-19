@@ -45,8 +45,12 @@
           @else
             <a href="{{ Route('login-customer') }}" class="btn btn-none-bg mx-2" target="_blank">Заказчикам</a>
           @endif
-            
-            <a class="btn btn-dark">Исполнителям</a>
+          
+          @if (Auth::guard('executor')->check())
+            <a href="{{ Route('login-executor') }}" class="btn btn-dark" target="_blank">Мой кабинет</a>
+          @else
+            <a href="{{ Route('login-executor') }}" class="btn btn-dark" target="_blank">Исполнителям</a>
+          @endif
         </div>
     </div>
   </div>

@@ -1,4 +1,4 @@
-<h2 class="text-center">Для кого создан наш сервис</h2>
+<h2 class="text-center">Современный сервис для заказчиков и производителей</h2>
 <div class="row mt-4 gx-3">
 
     

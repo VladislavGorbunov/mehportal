@@ -5,6 +5,7 @@ use App\Http\Controllers\PagesController;
 use App\Http\Controllers\OrdersController;
 
 require __DIR__.'/customer.php';
+require __DIR__.'/executor.php';
 
 Route::get('/', [PagesController::class, 'index'])->name('index');
 Route::get('/about', [PagesController::class, 'about'])->name('about');
