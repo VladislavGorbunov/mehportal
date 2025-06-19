@@ -34,9 +34,8 @@
                 </div>
 
                 <div class="mb-1 d-flex align-items-center">
-                <a href="" class="btn btn-more mb-2 me-2">Подробнее о заказе</a>
-                <a href="" class="btn btn-file-download mb-2"><i class="bi bi-cloud-arrow-down"></i> Скачать архив чертежей</a>
-                
+                    <a href="" class="btn btn-more mb-2 me-2">Подробнее о заказе</a>
+                    <a href="" class="btn btn-file-download mb-2"><i class="bi bi-cloud-arrow-down"></i> Скачать архив чертежей</a>
                 </div>
             </div>
 
