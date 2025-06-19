@@ -18,6 +18,26 @@ class PagesController extends Controller
         $data['region_name'] = '';
         $data['region_slug'] = '';
         $data['orders'] = Order::getAllOrders();
+
+        foreach ($data['orders'] as $order) {
+
+            $closing_date = date("d.m.Y", strtotime($order->closing_date));
+
+            $orders[] = [
+                'title' => $order->title,
+                'order_id' => $order->id,
+                'region_name' => $order->region_name,
+                'quantity' => $order->quantity,
+                'price' => $order->price,
+                'closing_date' => $closing_date,
+                'description' => $order->description,
+                'services' => Order::find($order->id)->services,
+            ];
+        }
+        
+
+        $data['orders'] = $orders;
+
         $data['count_orders'] = Order::where('active', true)->count();
         $data['archive_count_orders'] = Order::where('archive', true)->count();
         return view('site.index', $data);

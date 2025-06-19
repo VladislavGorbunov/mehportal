@@ -42,6 +42,7 @@
     </div>
     
     @foreach ($orders as $order)
+        
         <x-site.order-block :order="$order"/>
     @endforeach
 @endsection

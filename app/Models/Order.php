@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Order extends Model
 {
@@ -85,10 +85,7 @@ class Order extends Model
 
     public static function getAllOrders()
     {
-        return DB::table('categories_services')
-            ->join('services', 'services.category_id', '=', 'categories_services.id', )
-            ->join('order_service', 'order_service.service_id', '=', 'services.id')
-            ->join('orders', 'orders.id', '=', 'order_service.order_id')
+        return DB::table('orders')
             ->join('customer_companies', 'customer_companies.customer_id', '=', 'orders.customer_id')
             ->join('regions', 'regions.id', '=', 'customer_companies.region_id')
             ->select('orders.*', 'customer_companies.title as company_title', 'customer_companies.legal_form as company_legal_form', 'regions.name as region_name')
@@ -96,11 +93,10 @@ class Order extends Model
             ->get();    
     }
 
-    /**
-     * Получить категории заказа
-     */
-    public function orderServices(): HasOne
+
+
+    public function services(): BelongsToMany
     {
-        return $this->hasOne(OrderService::class);
+        return $this->belongsToMany(Service::class);
     }
 }
