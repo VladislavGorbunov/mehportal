@@ -6,8 +6,8 @@
       
             <div class="col-8">
                 <div class="d-flex flex-column flex-md-row">
-                    <h2 class="order-title mb-4 me-2">{{ $order['title'] }}</h2>
-                    <div class="active-order-badge text-center me-2">Открыт</div>
+                    <h2 class="order-title mb-3 me-2">{{ $order['title'] }}</h2>
+                    <div class="active-order-badge text-center me-2">Заказ открыт</div>
                 </div>
                 <div class="row">
                     <div class="col-12 col-md-6">
@@ -22,20 +22,21 @@
                     </div> 
                 </div>
 
-                <hr class="mt-3">
+                <hr>
                 <p class="mb-1"><b>Описание заказа:</b></p>
-                <p>{{ $order['description'] }}</p>
+                {{ $order['description'] }}
 
-                <p class="mb-2"><b>Категории:</b></p>
-                <div class="mb-4 d-flex">
+                
+                <div class="mb-3 mt-3 d-flex flex-wrap">
                     @foreach ($order['services'] as $service)
-                        <div class="services-list me-2"><i class="bi bi-folder-check"></i> {{ $service->title }}</div>
+                        <div class="services-list me-2 mb-2"><i class="bi bi-folder-check"></i> {{ $service->title }}</div>
                     @endforeach
                 </div>
 
-                <div class="mb-4 d-flex justify-content-end align-items-center">
-                <a href="" class="btn btn-more mb-2">Посмотреть</a>
-                <a href="" class="btn btn-file-download mb-2"><i class="bi bi-cloud-arrow-down"></i> Скачать чертежи</a>
+                <div class="mb-1 d-flex align-items-center">
+                <a href="" class="btn btn-more mb-2 me-2">Подробнее о заказе</a>
+                <a href="" class="btn btn-file-download mb-2"><i class="bi bi-cloud-arrow-down"></i> Скачать архив чертежей</a>
+                
                 </div>
             </div>
 

@@ -374,7 +374,7 @@ h2, h3, h4, h5, h6 {
 }
 
 .active-order-badge {
-    width: 60px;
+    width: 100px;
     height: 25px;
     padding: 4px 8px;
     background: rgb(61, 201, 138);
@@ -473,7 +473,6 @@ footer .logo-blue-color {
 }
 
 .order-block .btn-file-download {
-    background: #f9fdff;
     color: var(--btn-blue-color);
     padding: 8px 20px;
 }
@@ -492,7 +491,7 @@ footer .logo-blue-color {
 
 .services-list {
     background: rgb(241, 245, 248);
-    padding: 6px 15px;
+    padding: 4px 12px;
     font-size: 13px;
     border-radius: 5px;
     color: var(--btn-blue-color);
@@ -505,5 +504,6 @@ footer .logo-blue-color {
 hr {
     color: rgb(226, 235, 238);
     opacity: 1;
-
+    margin: 10px 0px;
+    padding: 0;
 }
