@@ -7,7 +7,13 @@
             <div class="col-8">
                 <div class="d-flex flex-column flex-md-row">
                     <h2 class="order-title mb-3 me-2">{{ $order['title'] }}</h2>
-                    <div class="active-order-badge text-center me-2">Заказ открыт</div>
+                    @if ($order['active'] == true)
+                        <div class="active-order-badge text-center me-2">Заказ открыт</div>
+                    @endif
+
+                    @if ($order['archive'] == true)
+                        <div class="archive-order-badge text-center me-2">Заказ закрыт</div>
+                    @endif
                 </div>
                 <div class="row">
                     <div class="col-12 col-md-6">

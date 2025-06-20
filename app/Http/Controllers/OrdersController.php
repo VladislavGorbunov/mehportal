@@ -19,9 +19,37 @@ class OrdersController extends Controller
         $category = CategoryService::where('slug', $category_slug)->first();
         $category_id = $category->id;
         $data['header_title'] = 'Заказы на '. mb_strtolower($category->title_case) .' в открытом доступе по всей России';
-        $data['orders'] = Order::getOrdersForCategories($category_id);
+        
         $data['region_name'] = '';
         $data['region_slug'] = '';
+
+        $orders_array = Order::getOrdersForCategories($category_id);
+    
+        $orders = [];
+
+        foreach ($orders_array as $order) {
+
+            $closing_date = date("d.m.Y", strtotime($order->closing_date));
+
+            $orders[] = [
+                'title' => $order->title,
+                'order_id' => $order->id,
+                'region_name' => $order->region_name,
+                'quantity' => $order->quantity,
+                'price' => $order->price,
+                'closing_date' => $closing_date,
+                'description' => $order->description,
+                'services' => Order::find($order->id)->services,
+                'active' => $order->active,
+                'archive' => $order->archive
+            ];
+        }
+        
+        $data['count_orders'] = Order::countActiveOrdersForCategories($category_id);
+        $data['archive_count_orders'] = Order::countArchiveOrdersForCategories($category_id);
+
+        $data['orders'] = $orders;
+        $data['paginate'] =  $orders_array;
         return view('site.orders', $data);
     }
 
@@ -37,12 +65,38 @@ class OrdersController extends Controller
         $data['description'] = 'Заказы '. mb_strtolower($category->title_case) .' в открытом доступе ' . $region->name_in;
         $data['header_title'] = 'Заказы на '. mb_strtolower($category->title_case) .' в открытом доступе ' . $region->name_in;
         
-        
         $category_id = $category->id;
     
-        $data['orders'] = Order::getOrdersForCategoriesRegion($category_id, $region->id);
+        $orders_array = Order::getOrdersForCategoriesRegion($category_id, $region->id);
         $data['region_name'] = $region->name;
         $data['region_slug'] = $region->slug;
+
+        $orders = [];
+
+        foreach ($orders_array as $order) {
+
+            $closing_date = date("d.m.Y", strtotime($order->closing_date));
+
+            $orders[] = [
+                'title' => $order->title,
+                'order_id' => $order->id,
+                'region_name' => $order->region_name,
+                'quantity' => $order->quantity,
+                'price' => $order->price,
+                'closing_date' => $closing_date,
+                'description' => $order->description,
+                'services' => Order::find($order->id)->services,
+                'active' => $order->active,
+                'archive' => $order->archive
+            ];
+        }
+        
+        $data['count_orders'] = Order::countActiveOrdersForCategoriesRegion($category_id, $region->id);
+        $data['archive_count_orders'] = Order::countArchiveOrdersForCategoriesRegion($category_id, $region->id);
+
+        $data['orders'] = $orders;
+        $data['paginate'] =  $orders_array;
+
         return view('site.orders', $data);
     }
 
@@ -55,9 +109,36 @@ class OrdersController extends Controller
         $service = Service::where('slug', $slug)->first();
         $data['header_title'] = 'Заказы на '. mb_strtolower($service->title) .' в открытом доступе по всей России';
 
-        $data['orders'] = Order::getOrdersForServices($slug);
+        $orders_array = Order::getOrdersForServices($slug);
         $data['region_name'] = '';
         $data['region_slug'] = '';
+
+        $orders = [];
+
+        foreach ($orders_array as $order) {
+
+            $closing_date = date("d.m.Y", strtotime($order->closing_date));
+
+            $orders[] = [
+                'title' => $order->title,
+                'order_id' => $order->id,
+                'region_name' => $order->region_name,
+                'quantity' => $order->quantity,
+                'price' => $order->price,
+                'closing_date' => $closing_date,
+                'description' => $order->description,
+                'services' => Order::find($order->id)->services,
+                'active' => $order->active,
+                'archive' => $order->archive
+            ];
+        }
+        
+        $data['count_orders'] = Order::countActiveOrdersForServices($slug);
+        $data['archive_count_orders'] = Order::countArchiveOrdersForServices($slug);
+
+        $data['orders'] = $orders;
+        $data['paginate'] =  $orders_array;
+
         return view('site.orders', $data);
     }
 
@@ -75,9 +156,36 @@ class OrdersController extends Controller
         $data['description'] = 'Заказы '. mb_strtolower($service->title_case) .' в открытом доступе ' . $region->name_in;
         $data['header_title'] = 'Заказы на '. mb_strtolower($service->title_case) .' в открытом доступе ' . $region->name_in;
         
-        $data['orders'] = Order::getOrdersForServicesRegion($service_slug, $region->id);
+        $orders_array = Order::getOrdersForServicesRegion($service_slug, $region->id);
         $data['region_name'] = $region->name;
         $data['region_slug'] = $region->slug;
+
+        $orders = [];
+
+        foreach ($orders_array as $order) {
+
+            $closing_date = date("d.m.Y", strtotime($order->closing_date));
+
+            $orders[] = [
+                'title' => $order->title,
+                'order_id' => $order->id,
+                'region_name' => $order->region_name,
+                'quantity' => $order->quantity,
+                'price' => $order->price,
+                'closing_date' => $closing_date,
+                'description' => $order->description,
+                'services' => Order::find($order->id)->services,
+                'active' => $order->active,
+                'archive' => $order->archive
+            ];
+        }
+        
+        $data['count_orders'] = Order::countActiveOrdersForServicesRegion($service_slug, $region->id);
+        $data['archive_count_orders'] = Order::countArchiveOrdersForservicesRegion($service_slug, $region->id);
+
+        $data['orders'] = $orders;
+        $data['paginate'] =  $orders_array;
+
         return view('site.orders', $data);
     }
 

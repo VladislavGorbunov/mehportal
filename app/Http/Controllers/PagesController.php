@@ -17,9 +17,11 @@ class PagesController extends Controller
         $data['header_title'] = 'Заказы на металлообработку в открытом доступе по всей России';
         $data['region_name'] = '';
         $data['region_slug'] = '';
-        $data['orders'] = Order::getAllOrders();
+        $orders_array = Order::getAllOrders();
 
-        foreach ($data['orders'] as $order) {
+        $orders = [];
+
+        foreach ($orders_array as $order) {
 
             $closing_date = date("d.m.Y", strtotime($order->closing_date));
 
@@ -32,6 +34,8 @@ class PagesController extends Controller
                 'closing_date' => $closing_date,
                 'description' => $order->description,
                 'services' => Order::find($order->id)->services,
+                'active' => $order->active,
+                'archive' => $order->archive
             ];
         }
         
@@ -54,6 +58,32 @@ class PagesController extends Controller
         $data['header_title'] = 'Заказы на металлообработку в открытом доступе ' . $region->name_in;
         $data['region_name'] = $region->name;
         $data['region_slug'] = $region->slug;
+
+        $orders_array = Order::getAllOrdersRegion($region->id);
+
+        $orders = [];
+
+        foreach ($orders_array as $order) {
+
+            $closing_date = date("d.m.Y", strtotime($order->closing_date));
+
+            $orders[] = [
+                'title' => $order->title,
+                'order_id' => $order->id,
+                'region_name' => $order->region_name,
+                'quantity' => $order->quantity,
+                'price' => $order->price,
+                'closing_date' => $closing_date,
+                'description' => $order->description,
+                'services' => Order::find($order->id)->services,
+                'active' => $order->active,
+                'archive' => $order->archive
+            ];
+        }
+        
+        $data['orders'] = $orders;
+        $data['count_orders'] = Order::countActiveOrders($region->id);
+        $data['archive_count_orders'] = Order::countArchiveOrders($region->id);
         return view('site.index', $data);
     }
 

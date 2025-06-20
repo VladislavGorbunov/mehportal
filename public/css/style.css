@@ -383,6 +383,16 @@ h2, h3, h4, h5, h6 {
     font-size: 12px;
 }
 
+.archive-order-badge {
+    width: 100px;
+    height: 25px;
+    padding: 4px 8px;
+    background: rgb(201, 61, 91);
+    color: #fff;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
 footer {
     font-size: 15px;
     padding-bottom: 0px;
