@@ -8,7 +8,7 @@
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-    <button type="button" class="btn btn-modal-city my-3 my-md-0 mx-md-3 d-block mx-auto" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <button type="button" class="btn btn-modal-city my-3 my-md-0 mx-md-2 d-block mx-auto" data-bs-toggle="modal" data-bs-target="#exampleModal">
         
     <i class="bi bi-cursor-fill"></i>
         @if ($regionName) 
@@ -26,6 +26,9 @@
         </li>
         <li class="nav-item">
           <a class="nav-link link-blue" href="#companies">Исполнители</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-blue" href="#companies">Поставщики</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="#">О нас</a>

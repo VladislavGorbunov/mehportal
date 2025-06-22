@@ -1,5 +1,5 @@
 <div class="container position-relative">
-    <div class="header-banner mt-4 mb-4 d-flex justify-content-center align-items-center flex-column">
+    <div class="header-banner mt-3 mb-4 d-flex justify-content-center align-items-center flex-column">
         <div class="col-12 col-md-8">
             <h1 class="text-center">{{ $headerTitle }}</h1>
             <p class="text-center mt-3">
@@ -16,8 +16,11 @@
 
     <div class="circle-layout"></div>
     <div class="circle-layout-2"></div>
+  
     <div class="circle-layout-3"></div>
     <div class="circle-layout-4"></div>
 
+    <div class="header-banner-shadow-left"></div>
+    <div class="header-banner-shadow-right"></div>
 </div>
 

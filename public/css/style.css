@@ -81,7 +81,7 @@ h2, h3, h4, h5, h6 {
     position: relative;
     font-family: "Rubik", sans-serif;
     font-optical-sizing: auto;
-    font-size: 22px;
+    font-size: 21px;
     font-weight: 700;
     margin: 0;
 }
@@ -117,7 +117,7 @@ h2, h3, h4, h5, h6 {
     color: #fff;
     z-index: 2;
     background: var(--btn-dark-color);
-    padding: 11px 24px;
+    padding: 11px 20px;
     border: 1px solid var(--btn-dark-color);
     font-size: 14px;
     border-radius: 10px;
@@ -134,7 +134,7 @@ h2, h3, h4, h5, h6 {
     border: 1px solid rgba(19, 88, 200, 0.2);
     z-index: 2;
     background: none;
-    padding: 11px 24px;
+    padding: 11px 20px;
     font-size: 14px;
     border-radius: 10px;
 }
@@ -179,9 +179,33 @@ h2, h3, h4, h5, h6 {
     min-height: 500px;
     background: rgba(20, 27, 33, 1) url("https://avatars.mds.yandex.net/get-altay/15352901/2a00000193f2e1482729dc65678cea321639/orig") center ;
     background-size: cover;
-    border-radius: 25px;
+    border-radius: 40px;
     overflow: hidden;
-    padding: 80px 0px;
+    padding: 50px 20px;
+}
+
+.header-banner-shadow-left {
+    position: absolute;
+    width: 50%;
+    height: 100px;
+    background: rgba(20, 27, 33, 0.5);
+    left: 60px;
+    bottom: 0px;
+    filter: blur(10px);
+    z-index: -2;
+    transform: rotate(-3deg);
+}
+
+.header-banner-shadow-right {
+    position: absolute;
+    width: 50%;
+    height: 100px;
+    background: rgba(20, 27, 33, 0.5);
+    right: 60px;
+    bottom: 0px;
+    filter: blur(10px);
+    z-index: -2;
+    transform: rotate(3deg);
 }
 
 .header-banner h1 {
@@ -201,7 +225,7 @@ h2, h3, h4, h5, h6 {
     color: #fff;
     z-index: 2;
     background: var(--btn-blue-color);
-    padding: 13px 10px;
+    padding: 13px 8px;
     border: none;
     border-radius: 10px;
     width: 220px;
@@ -212,10 +236,10 @@ h2, h3, h4, h5, h6 {
     color: #111;
     z-index: 2;
     background: #fff;
-    padding: 13px 10px;
+    padding: 13px 8px;
     border: none;
     border-radius: 10px;
-    width: 220px;
+    width: 180px;
 }
 
 .header-banner-layout {
@@ -224,28 +248,33 @@ h2, h3, h4, h5, h6 {
     height: 100%;
     top: 0;
     left: 0;
-    background: rgba(20, 27, 33, 0.8);
-    backdrop-filter: blur(1px);
+    background: linear-gradient(90deg, rgba(20, 27, 33, 0.96), rgba(20, 27, 33, 0.7));
+    backdrop-filter: blur(0px);
     z-index: 1;
 }
 
 .circle-layout {
     position: absolute;
-    left: -50px;
-    top: 160px;
-    width: 70px;
-    height: 70px;
+    left: -30px;
+    top: 120px;
+    width: 110px;
+    height: 110px;
     background: rgb(65, 89, 211);
     border-radius: 10px;
     z-index: -2;
-    opacity: 0.3;
+    opacity: 0.2;
     transform: rotate(35deg);
+
+    animation: circle-anim;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
 }
 
 .circle-layout-2 {
     position: absolute;
-    left: -70px;
-    top: 290px;
+    left: -50px;
+    bottom: 190px;
     width: 40px;
     height: 40px;
     background: rgb(65, 196, 211);
@@ -253,26 +282,37 @@ h2, h3, h4, h5, h6 {
     z-index: -1;
     opacity: 0.3;
     transform: rotate(75deg); 
-    filter: blur(2px);
+    filter: blur(0px);
+    animation: circle-anim2;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
 }
+
+
 
 .circle-layout-3 {
     position: absolute;
-    right: -50px;
-    top: 290px;
-    width: 70px;
-    height: 70px;
+    right: -30px;
+    bottom: 120px;
+    width: 110px;
+    height: 110px;
     background: rgb(65, 89, 211);
     border-radius: 10px;
     z-index: -2;
-    opacity: 0.3;
+    opacity: 0.2;
     transform: rotate(35deg);
+
+    animation: circle-anim;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
 }
 
 .circle-layout-4 {
     position: absolute;
-    right: -70px;
-    top: 160px;
+    right: -50px;
+    top: 190px;
     width: 40px;
     height: 40px;
     background: rgb(65, 196, 211);
@@ -280,7 +320,37 @@ h2, h3, h4, h5, h6 {
     z-index: -1;
     opacity: 0.3;
     transform: rotate(75deg); 
-    filter: blur(2px);
+    filter: blur(0px);
+
+    animation: circle-anim2;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+}
+
+
+@keyframes circle-anim {
+    0% {
+        transform: rotate(75deg);
+    }
+    50% {
+        transform: rotate(50deg);
+    }
+    100% {
+        transform: rotate(75deg);
+    }
+}
+
+@keyframes circle-anim2 {
+    0% {
+        transform: rotate(135deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(135deg);
+    }
 }
 
 
@@ -294,13 +364,15 @@ h2, h3, h4, h5, h6 {
     background: url("https://avatars.dzeninfra.ru/get-zen_doc/9703143/pub_64a99af75d18bb5b5acdc243_64a9a0996913945f0f387701/scale_1200") center no-repeat;
     background-size: cover;
     border-radius: 20px;
-    height: 490px;
+    height: 515px;
 }
 
 .for-created-col {
     position: relative;
     background: #fff;
 }
+
+
 
 .square {
     position: absolute;
@@ -326,6 +398,7 @@ h2, h3, h4, h5, h6 {
     transform: rotate(45deg);
     opacity: 0.2;
     z-index: 2;
+    
 }
 
 .square-3 {
@@ -341,6 +414,8 @@ h2, h3, h4, h5, h6 {
     z-index: 2;
 }
 
+
+
 .link-all-orders-block {
     padding: 10px 15px;
     font-size: 14px;
@@ -353,7 +428,7 @@ h2, h3, h4, h5, h6 {
 
 .count-orders-block {
     padding: 10px 25px;
-    border-radius: 6px;
+    border-radius: 10px 25px;
     font-size: 14px;
     border: 1px solid var(--blue-color-opacity);
 }
@@ -364,7 +439,7 @@ h2, h3, h4, h5, h6 {
 
 .count-archive-orders-block {
     padding: 10px 25px;
-    border-radius: 6px;
+    border-radius: 10px 25px;
     font-size: 14px;
     border: 1px solid var(--blue-color-opacity);
 }
@@ -373,25 +448,6 @@ h2, h3, h4, h5, h6 {
     font-weight: 500;
 }
 
-.active-order-badge {
-    width: 100px;
-    height: 25px;
-    padding: 4px 8px;
-    background: rgb(61, 201, 138);
-    color: #fff;
-    border-radius: 4px;
-    font-size: 12px;
-}
-
-.archive-order-badge {
-    width: 100px;
-    height: 25px;
-    padding: 4px 8px;
-    background: rgb(201, 61, 91);
-    color: #fff;
-    border-radius: 4px;
-    font-size: 12px;
-}
 
 footer {
     font-size: 15px;
@@ -462,18 +518,21 @@ footer .logo-blue-color {
 }
 
 .order-block {
+    position: relative;
     border-radius: 15px;
     border: 1px solid rgb(238, 244, 246);
-    padding: 30px 20px;
+    padding: 40px 20px;
     box-shadow: 0 3px 20px -18px #4f585d;
+    overflow: hidden;
 }
+
 
 .order-block b, strong {
     font-weight: 500;
 }
 
 .order-block img {
-    border-radius: 10px;
+    border-radius: 2px;
 }
 
 .order-block .btn-more {
@@ -495,20 +554,59 @@ footer .logo-blue-color {
 }
 
 .order-title {
-    font-size: 21px;
-    font-weight: 600;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--btn-dark-color);
+}
+
+.order-block .order-block-square {
+    position: absolute;
+    right: -30px;
+    bottom: -40px;
+    width: 90px;
+    height: 90px;
+    background: rgb(65, 196, 211);
+    border-radius: 10px;
+    z-index: -1;
+    opacity: 0.2;
+    transform: rotate(35deg); 
+}
+
+.zoom-link {
+    font-size: 14px;
+}
+
+.active-order-badge {
+    width: 100px;
+    height: 25px;
+    padding: 4px 8px;
+    background: rgb(61, 201, 138);
+    color: #fff;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.archive-order-badge {
+    width: 100px;
+    height: 25px;
+    padding: 4px 8px;
+    background: rgb(218, 70, 70);
+    color: #fff;
+    border-radius: 4px;
+    font-size: 12px;
 }
 
 .services-list {
     background: rgb(241, 245, 248);
-    padding: 4px 12px;
+    padding: 6px 14px;
     font-size: 13px;
-    border-radius: 5px;
+    border-radius: 8px;
     color: var(--btn-blue-color);
 }
 
 .services-list .bi {
-    margin-right: 3px;
+    margin-right: 5px;
+    font-size: 16px;
 }
 
 hr {

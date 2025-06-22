@@ -4,7 +4,7 @@
 @section('description', $description)
 
 @section('content')
-    <div class="mt-1">
+    <div class="mt-5">
         <div class="d-md-flex align-items-center">
         
             <div class="flex-grow-1">
@@ -38,7 +38,7 @@
     </div>
 
     @foreach ($orders as $order)
-        <x-site.order-block :order="$order"/>
+        <x-site.order-block :order="$order" :regionSlug="$region_slug"/>
     @endforeach
 
 

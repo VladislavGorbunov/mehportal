@@ -1,7 +1,11 @@
 <div class="order-block mt-4">
+    <div class="order-block-square"></div>
         <div class="row">
             <div class="col-12 col-md-4">
                 <img src="{{ Storage::disk('orders_images')->url('123.jpg') }}" class="img-fluid">
+                <div class="d-flex justify-content-center mt-3 mb-3">
+                    <a href="{{ Storage::disk('orders_images')->url('123.jpg') }}" target="_blank" class="zoom-link"><i class="bi bi-zoom-in"></i> Увеличить чертёж</a>
+                </div>
             </div>
       
             <div class="col-8">
@@ -17,14 +21,14 @@
                 </div>
                 <div class="row">
                     <div class="col-12 col-md-6">
-                        <p class="mb-1"><strong>Номер заказа:</strong> {{ $order['order_id'] }}</p>
-                        <p class="mb-1"><strong>Город заказчика:</strong> {{ $order['region_name'] }}</p>
-                        <p class="mb-1"><strong>Необходимое количество:</strong> {{ $order['quantity'] }} шт.</p>
+                        <p class="mb-1">Номер заказа:<strong> {{ $order['order_id'] }}</strong></p>
+                        <p class="mb-1">Город заказчика:<strong> {{ $order['region_name'] }}</strong></p>
+                        <p class="mb-1">Необходимое количество:<strong> {{ $order['quantity'] }} шт.</strong></p>
                     </div>
                     
                     <div class="col-12 col-md-6">
-                        <p class="mb-1"><strong>Проходная цена:</strong> {{ $order['price'] }} руб.</p>
-                        <p class="mb-1"><strong>Дата сбора КП:</strong> до {{ $order['closing_date'] }} </p>
+                        <p class="mb-1">Проходная цена:<strong> {{ $order['price'] }} руб.</strong></p>
+                        <p class="mb-1">Дата сбора КП: до <strong>{{ $order['closing_date'] }}</strong> <small>- включительно</small></p>
                     </div> 
                 </div>
 
@@ -32,10 +36,14 @@
                 <p class="mb-1"><b>Описание заказа:</b></p>
                 {{ $order['description'] }}
 
-                
-                <div class="mb-3 mt-3 d-flex flex-wrap">
+                <p class="mt-3 mb-0"><b>Категории:</b></p>
+                <div class="mb-3 mt-2 d-flex flex-wrap">
                     @foreach ($order['services'] as $service)
-                        <div class="services-list me-2 mb-2"><i class="bi bi-folder-check"></i> {{ $service->title }}</div>
+                        @if ($regionSlug !== '')
+                            <div class="services-list me-2 mb-2 d-flex align-items-center"><i class="bi bi-folder-check"></i> <a href="/{{ $regionSlug }}/orders/service/{{ $service->slug }}">{{ $service->title }}</a></div>
+                        @else
+                            <div class="services-list me-2 mb-2 d-flex align-items-center"><i class="bi bi-folder-check"></i> <a href="{{ $regionSlug }}/orders/service/{{ $service->slug }}">{{ $service->title }}</a></div>
+                        @endif
                     @endforeach
                 </div>
 

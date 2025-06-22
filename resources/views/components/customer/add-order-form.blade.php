@@ -22,7 +22,7 @@
 
             <div class="mb-3">
   				<label class="form-label">Дата сбора предложений до:</label>
-  				<input type="date" class="form-control" name="closing_date" placeholder="">
+  				<input type="date" class="form-control" name="closing_date" placeholder="" min="<?= date('Y-m-d') ?>">
 			</div>
         </div>
 

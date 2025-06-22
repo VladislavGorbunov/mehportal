@@ -42,7 +42,6 @@
     </div>
     
     @foreach ($orders as $order)
-        
-        <x-site.order-block :order="$order"/>
+        <x-site.order-block :order="$order" :regionSlug="$region_slug"/>
     @endforeach
 @endsection

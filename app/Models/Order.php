@@ -24,7 +24,9 @@ class Order extends Model
         'quantity',
         'price',
         'closing_date',
-        'description'
+        'description',
+        'active',
+        'archive'
     ];
 
     public static function getOrdersForServices($service_slug)
