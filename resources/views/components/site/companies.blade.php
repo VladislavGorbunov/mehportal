@@ -1,4 +1,4 @@
-<div class="mb-5 mt-5">
+<div class="mb-5 mt-4">
 <h2 class="text-center">У нас вы найдёте заказы от крупных компаний</h2>
 <p class="text-center">Станьте исполнителем заказа на металлообработку для крупных компаний</p>
 <div class="row gx-4 gy-4">

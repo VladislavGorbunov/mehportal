@@ -46,4 +46,5 @@
     
     <x-modal-regions />
     <x-services-orders :region-slug="$regionSlug" />
+    <x-companies :region-slug="$regionSlug" />
   </footer>

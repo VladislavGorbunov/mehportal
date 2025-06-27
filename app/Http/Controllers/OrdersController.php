@@ -34,6 +34,8 @@ class OrdersController extends Controller
             $orders[] = [
                 'title' => $order->title,
                 'order_id' => $order->id,
+                'order_image' => $order->order_image,
+                'order_archive' => $order->order_archive_file,
                 'region_name' => $order->region_name,
                 'quantity' => $order->quantity,
                 'price' => $order->price,
@@ -80,6 +82,8 @@ class OrdersController extends Controller
             $orders[] = [
                 'title' => $order->title,
                 'order_id' => $order->id,
+                'order_image' => $order->order_image,
+                'order_archive' => $order->order_archive_file,
                 'region_name' => $order->region_name,
                 'quantity' => $order->quantity,
                 'price' => $order->price,
@@ -122,6 +126,8 @@ class OrdersController extends Controller
             $orders[] = [
                 'title' => $order->title,
                 'order_id' => $order->id,
+                'order_image' => $order->order_image,
+                'order_archive' => $order->order_archive_file,
                 'region_name' => $order->region_name,
                 'quantity' => $order->quantity,
                 'price' => $order->price,
@@ -169,6 +175,8 @@ class OrdersController extends Controller
             $orders[] = [
                 'title' => $order->title,
                 'order_id' => $order->id,
+                'order_image' => $order->order_image,
+                'order_archive' => $order->order_archive_file,
                 'region_name' => $order->region_name,
                 'quantity' => $order->quantity,
                 'price' => $order->price,
@@ -187,6 +195,50 @@ class OrdersController extends Controller
         $data['paginate'] =  $orders_array;
 
         return view('site.orders', $data);
+    }
+
+
+    public function getOrder($order_id)
+    {
+        $order = Order::getOrder($order_id);
+
+        $date = date("d.m.Y", strtotime($order->created_at));
+        $closing_date = date("d.m.Y", strtotime($order->closing_date));
+
+        // dd($order);
+
+        $order_data = [
+            'id' => $order->id,
+            'title' => $order->title,
+            'order_image' => $order->order_image,
+            'order_archive' => $order->order_archive_file,
+            'region_name' => $order->region_name,
+            'description' => $order->description,
+            'date' => $date,
+            'closing_date' => $closing_date,
+            'quantity' => $order->quantity,
+            'price' => $order->price,
+            'active' => $order->active,
+            'archive' => $order->archive,
+            'services' => Order::find($order->id)->services,
+            'company_legal_form' => $order->company_legal_form,
+            'company_title' => $order->company_title,
+            'company_inn' => $order->company_inn,
+            'company_phone' => $order->phone,
+            'extension_number' => $order->extension_number,
+            'company_address' => $order->address,
+            'company_email' => $order->email,
+            'person' => $order->person
+
+        ];
+
+        $data['title'] = 'Заказ на металлообработку №' .$order_id . ' от ' . $date . '. '. $order->title;
+        $data['description'] = 'Заказы';
+        $data['header_title'] = $order->title;
+        $data['region_name'] = '';
+        $data['region_slug'] = '';
+        $data['order'] = $order_data;
+        return view('site.order', $data);
     }
 
 }

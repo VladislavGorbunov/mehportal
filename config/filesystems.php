@@ -52,6 +52,14 @@ return [
             'throw' => false,
         ],
 
+        'orders_files' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/orders_files'),
+            'url' => env('APP_URL').'/storage/orders_files',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),
@@ -80,6 +88,7 @@ return [
     'links' => [
         public_path('storage') => storage_path('app/public'),
         public_path('orders_images') => storage_path('app/public/orders_images'),
+        public_path('orders_files') => storage_path('app/public/orders_files'),
     ],
 
 ];

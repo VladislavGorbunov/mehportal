@@ -28,6 +28,8 @@ class PagesController extends Controller
             $orders[] = [
                 'title' => $order->title,
                 'order_id' => $order->id,
+                'order_image' => $order->order_image,
+                'order_archive' => $order->order_archive_file,
                 'region_name' => $order->region_name,
                 'quantity' => $order->quantity,
                 'price' => $order->price,
@@ -70,6 +72,8 @@ class PagesController extends Controller
             $orders[] = [
                 'title' => $order->title,
                 'order_id' => $order->id,
+                'order_image' => $order->order_image,
+                'order_archive' => $order->order_archive_file,
                 'region_name' => $order->region_name,
                 'quantity' => $order->quantity,
                 'price' => $order->price,
@@ -99,5 +103,16 @@ class PagesController extends Controller
     public function contacts() 
     {
         echo 'contacts';
+    }
+
+    // Страница тарифов
+    public function tariffs() 
+    {
+        $data['title'] = 'Тарифные планы - МехПортал';
+        $data['description'] = 'Тарифные планы на доступ к контакной информации.';
+        $data['header_title'] = 'Тарифные планы';
+        $data['region_name'] = '';
+        $data['region_slug'] = '';
+        return view('site.tariffs', $data);
     }
 }

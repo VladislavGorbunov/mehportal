@@ -28,6 +28,8 @@ class AddOrderRequest extends FormRequest
             'quantity' => 'required',
             'description' => 'required',
             'categories' => 'required',
+            'order_image_file' => 'extensions:jpg,png|mimes:jpg,png|max:10240',
+            'order_archive_file' => 'extensions:zip,rar|mimes:zip,rar|max:20480'
         ];
     }
 
@@ -44,6 +46,9 @@ class AddOrderRequest extends FormRequest
             'closing_date' => '«Дата сбора предложений»',
             'quantity' => '«Количество»',
             'description' => '«Описание заказа»',
+            'order_image_file' => '«Чертёж заказа»',
+            'categories' => '«Категории заказа»',
+            'order_archive_file' => '«Архив файлов»'
         ];
     }
 }

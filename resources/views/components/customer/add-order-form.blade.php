@@ -1,51 +1,50 @@
 <x-site.errors />
-<form method="post">
+<form method="post" enctype="multipart/form-data">
 @csrf
     <div class="row mt-3">
         <div class="col-12 col-md-6">
             <div class="mb-3">
   				<label class="form-label">Название заказа:</label>
-  				<input type="text" class="form-control" name="title" placeholder="">
+  				<input type="text" class="form-control" name="title" placeholder="" value="{{ old('title') }}">
 			</div>
 
             <div class="mb-3">
   				<label class="form-label">Количество:</label>
-  				<input type="number" class="form-control" name="quantity" placeholder="">
+  				<input type="number" class="form-control" name="quantity" placeholder="" value="{{ old('quantity') }}">
 			</div>
         </div>
 
         <div class="col-12 col-md-6">
             <div class="mb-3">
-  				<label class="form-label">Проходная цена (руб.):</label>
-  				<input type="number" class="form-control" name="price" placeholder="">
+  				<label class="form-label">Проходная цена руб.: <small>Значение 0 означает договорную цену</small></label>
+  				<input type="number" class="form-control" name="price" placeholder="" value="{{ old('price') }}">
 			</div>
 
             <div class="mb-3">
   				<label class="form-label">Дата сбора предложений до:</label>
-  				<input type="date" class="form-control" name="closing_date" placeholder="" min="<?= date('Y-m-d') ?>">
+  				<input type="date" class="form-control" name="closing_date" placeholder="" min="<?= date('Y-m-d') ?>" value="{{ old('closing_date') }}">
 			</div>
         </div>
 
         <div class="mb-3">
             <label class="form-label">Описание заказа:</label>
-            <textarea class="form-control" name="description" rows="6"></textarea>
+            <textarea class="form-control" name="description" rows="6">{{ old('description') }}</textarea>
         </div>
 
         
             <label class="form-label">Чертежи и дополнительные файлы:</label>
             <div class="col-12 col-md-6 mt-2">
-                <input type="file" hidden>
-                <div class="file-column d-flex justify-content-center align-items-center flex-column">
+                <input type="file" class="order-image-input" name="order_image_file" accept=".jpg,.png" hidden>
+                <div class="file-column d-flex justify-content-center align-items-center flex-column order-image">
                     <i class="bi bi-file-image fs-1"></i>
                     <p class="m-0 mt-2 title">Основной чертёж</p>
                     <span class="m-0"><small>Файл в формате: JPG или PNG</small></span>
                     <small>Будет виден на странице поиска и в карточке заказа.</small>
                 </div>
-                
             </div>
             <div class="col-12 col-md-6 mt-2">
-                <input type="file" hidden>
-                <div class="file-column d-flex justify-content-center align-items-center flex-column">
+                <input type="file" class="order-file-input" name="order_archive_file" accept=".zip,.rar" hidden>
+                <div class="file-column d-flex justify-content-center align-items-center flex-column order-file">
                     <i class="bi bi-file-zip fs-1"></i>
                     <p class="m-0 mt-2 title">Архив с доп. файлами</p>
                     <span class="m-0"><small>Файл в формате: RAR или ZIP</small></span>
@@ -89,5 +88,20 @@
             parent_ckeckbox = document.querySelector(`[data-parent="${parent_id}"]`);
             parent_ckeckbox.checked = true
         })
+    })
+
+    // Input главного чертежа
+    const order_image = document.querySelector('.order-image')
+    const order_image_input = document.querySelector('.order-image-input')
+
+    const order_file = document.querySelector('.order-file')
+    const order_file_input = document.querySelector('.order-file-input')
+
+    order_image.addEventListener('click', () => {
+        order_image_input.click()
+    })
+
+    order_file.addEventListener('click', () => {
+        order_file_input.click()
     })
 </script>

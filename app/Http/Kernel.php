@@ -58,6 +58,7 @@ class Kernel extends HttpKernel
         'auth.session' => \Illuminate\Session\Middleware\AuthenticateSession::class,
         'customer' => \App\Http\Middleware\Customer::class,
         'executor' => \App\Http\Middleware\Executor::class,
+        'admin' => \App\Http\Middleware\Admin::class,
         'cache.headers' => \Illuminate\Http\Middleware\SetCacheHeaders::class,
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,

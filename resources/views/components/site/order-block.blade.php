@@ -2,9 +2,12 @@
     <div class="order-block-square"></div>
         <div class="row">
             <div class="col-12 col-md-4">
-                <img src="{{ Storage::disk('orders_images')->url('123.jpg') }}" class="img-fluid">
+             
+                <img src="{{ Storage::disk('orders_images')->url($order['order_image']) }}" class="img-fluid order-image d-block mx-auto">
                 <div class="d-flex justify-content-center mt-3 mb-3">
-                    <a href="{{ Storage::disk('orders_images')->url('123.jpg') }}" target="_blank" class="zoom-link"><i class="bi bi-zoom-in"></i> Увеличить чертёж</a>
+                    @if ($order['order_image'] != 'no-image.jpg')
+                        <a href="{{ Storage::disk('orders_images')->url($order['order_image']) }}" target="_blank" class="zoom-link"><i class="bi bi-zoom-in"></i> Увеличить чертёж</a>
+                    @endif
                 </div>
             </div>
       
@@ -27,7 +30,11 @@
                     </div>
                     
                     <div class="col-12 col-md-6">
-                        <p class="mb-1">Проходная цена:<strong> {{ $order['price'] }} руб.</strong></p>
+                        @if ($order['price'] > 0)
+                            <p class="mb-1">Проходная цена:<strong> {{ $order['price'] }} руб.</strong></p>
+                        @else 
+                            <p class="mb-1">Проходная цена:<strong> Договорная</strong></p>
+                        @endif
                         <p class="mb-1">Дата сбора КП: до <strong>{{ $order['closing_date'] }}</strong> <small>- включительно</small></p>
                     </div> 
                 </div>
@@ -48,8 +55,12 @@
                 </div>
 
                 <div class="mb-1 d-flex align-items-center">
-                    <a href="" class="btn btn-more mb-2 me-2">Подробнее о заказе</a>
-                    <a href="" class="btn btn-file-download mb-2"><i class="bi bi-cloud-arrow-down"></i> Скачать архив чертежей</a>
+                    <a href="/order/{{ $order['order_id'] }}" class="btn btn-more mb-2 me-2 d-flex align-items-center" target="_blank"><i class="bi bi-three-dots"></i> Подробнее о заказе</a>
+                    @if (!empty($order['order_archive']))
+                        <a href="{{ Storage::disk('orders_files')->url($order['order_archive']) }}" class="btn btn-file-download mb-2"><i class="bi bi-cloud-arrow-down"></i> Скачать файлы к заказу</a>
+                    @else
+                        <a class="btn btn-file-download-noactive mb-2 d-flex align-items-center"><i class="bi bi-cloud-arrow-down"></i> Файлы отсутствуют</a>
+                    @endif
                 </div>
             </div>
 

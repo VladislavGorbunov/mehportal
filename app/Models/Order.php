@@ -21,13 +21,32 @@ class Order extends Model
     protected $fillable = [
         'customer_id',
         'title',
+        'order_image',
+        'order_archive_file',
         'quantity',
         'price',
         'closing_date',
         'description',
         'active',
-        'archive'
+        'archive',
+        'created_at'
     ];
+
+
+    public static function getOrder(int $id)
+    {
+        return DB::table('orders')
+            ->join('customer_companies', 'customer_companies.customer_id', '=', 'orders.customer_id')
+            ->join('regions', 'regions.id', '=', 'customer_companies.region_id')
+            ->select('orders.*', 'orders.id', 'orders.price', 'customer_companies.title as company_title', 
+            'customer_companies.legal_form as company_legal_form', 'customer_companies.inn as company_inn', 'customer_companies.phone as phone', 'customer_companies.address as address', 'customer_companies.contact_person as person', 'customer_companies.extension_number as extension_number', 'customer_companies.email as email',
+            'regions.name as region_name')
+            ->groupBy('orders.id', 'customer_companies.title', 'customer_companies.legal_form', 'customer_companies.inn', 'customer_companies.phone', 'customer_companies.address', 'customer_companies.email', 'customer_companies.contact_person', 'customer_companies.extension_number', 'regions.name')
+            ->where('orders.id', $id)
+            ->first();
+    }
+
+
 
     public static function getOrdersForServices($service_slug)
     {
@@ -38,7 +57,8 @@ class Order extends Model
             ->join('regions', 'regions.id', '=', 'customer_companies.region_id')
             ->select('orders.*', 'orders.id', 'orders.price', 'services.title as service_title', 'services.slug', 'customer_companies.title as company_title', 'customer_companies.legal_form as company_legal_form', 'regions.name as region_name')
             ->where('services.slug', $service_slug)
-            ->orderBy('active', 'desc')
+            ->orderBy('orders.active', 'desc')
+            ->orderBy('orders.id', 'desc')
             ->paginate(15);
     }
 
@@ -79,7 +99,8 @@ class Order extends Model
             ->select('orders.*', 'orders.id', 'orders.price', 'services.title as service_title', 'services.slug', 'customer_companies.title as company_title', 'customer_companies.legal_form as company_legal_form', 'regions.name as region_name')
             ->where('services.slug', $service_slug)
             ->where('customer_companies.region_id', $region_id)
-            ->orderBy('active', 'desc')
+            ->orderBy('orders.active', 'desc')
+            ->orderBy('orders.id', 'desc')
             ->paginate(15);
     }
 
@@ -123,7 +144,8 @@ class Order extends Model
             ->select('orders.*', 'customer_companies.title as company_title', 'customer_companies.legal_form as company_legal_form', 'regions.name as region_name')
             ->where('categories_services.id', '=', $category_id)
             ->groupBy('orders.id', 'customer_companies.title', 'customer_companies.legal_form', 'regions.name')
-            ->orderBy('active', 'desc')
+            ->orderBy('orders.active', 'desc')
+            ->orderBy('orders.id', 'desc')
             ->paginate(15);    
     }
 
@@ -171,7 +193,8 @@ class Order extends Model
             ->where('categories_services.id', '=', $category_id)
             ->where('customer_companies.region_id', $region_id)
             ->groupBy('orders.id', 'customer_companies.title', 'customer_companies.legal_form', 'regions.name')
-            ->orderBy('active', 'desc')
+            ->orderBy('orders.active', 'desc')
+            ->orderBy('orders.id', 'desc')
             ->paginate(15);    
     }
 
@@ -214,7 +237,8 @@ class Order extends Model
             ->join('customer_companies', 'customer_companies.customer_id', '=', 'orders.customer_id')
             ->join('regions', 'regions.id', '=', 'customer_companies.region_id')
             ->select('orders.*', 'customer_companies.title as company_title', 'customer_companies.legal_form as company_legal_form', 'regions.name as region_name')
-            ->orderBy('active', 'desc')
+            ->orderBy('orders.active', 'desc')
+            ->orderBy('orders.id', 'desc')
             ->limit(15)
             ->get();    
     }
@@ -227,7 +251,8 @@ class Order extends Model
             ->join('regions', 'regions.id', '=', 'customer_companies.region_id')
             ->select('orders.*', 'customer_companies.title as company_title', 'customer_companies.legal_form as company_legal_form', 'regions.name as region_name')
             ->where('customer_companies.region_id', $region_id)
-            ->orderBy('active', 'desc')
+            ->orderBy('orders.active', 'desc')
+            ->orderBy('orders.id', 'desc')
             ->limit(15)
             ->get();    
     }
