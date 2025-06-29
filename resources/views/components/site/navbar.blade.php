@@ -1,11 +1,11 @@
 <style>
   .top-menu {
     width: 100%;
-    background:linear-gradient(90deg, rgb(12, 13, 13), rgb(33, 34, 36));
+    background:linear-gradient(90deg, rgb(12, 13, 13), rgb(34, 35, 37));
   }
 
   .top-menu-block {
-        min-height: 46px;
+        min-height: 52px;
         padding: 8px 0px;
   }
 

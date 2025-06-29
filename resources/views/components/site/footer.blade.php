@@ -1,8 +1,9 @@
-<footer class="pt-4 my-md-5 pt-md-5 border-top">
+<footer class="pt-4 pb-4 pt-md-5 border-top">
+    <div class="container">
     <div class="row">
       <div class="col-6 col-md-3 text-center">
         <x-site.logo />
-        <p>Наш сервис создан для быстрого и удобного поиска заказчиков и исполнителей 
+        <p class="text-light">Наш сервис создан для быстрого и удобного поиска заказчиков и исполнителей 
             на различные услуги по металлообработке во всех регионах России.
         </p>
       </div>
@@ -37,10 +38,11 @@
 
       <div class="col-12 text-center mt-5">МЕХПОРТАЛ © <?= date('Y') ?> г. - сервис поиска заказов на металлообработку и не только.</div>
     </div>
+</div>
 
     <div class="col-10 col-md-3 cookie-modal d-flex align-items-center justify-content-around">
       <div><img src="/images/cookie-icon.svg" class="cookie-icon"></div>
-      <div>Наш сервис использует файлы cookie. <a href="">Подробнее</a></div>
+      <div>Мы используем файлы cookie, они помогают нам делать этот сайт удобнее для пользователя.</div>
       <div class="mx-2"><button class="btn btn-cookie-ok">Хорошо</button></div>
     </div>
     

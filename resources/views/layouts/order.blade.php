@@ -20,9 +20,9 @@
         <x-site.header-banner-order :headerTitle="$header_title"/>
         <div class="container">
             @yield('content')
-            <x-site.footer :regionSlug="$region_slug" />
+            
         </div>
-        
+        <x-site.footer :regionSlug="$region_slug" />
 
         <script src="{{ asset('bootstrap/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js') }}"></script>
     </body>

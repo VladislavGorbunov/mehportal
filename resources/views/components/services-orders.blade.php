@@ -1,7 +1,7 @@
 <div class="modal fade" id="categories-services-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-categories">
         <div class="modal-content">
-            <div class="modal-header"><span class="fs-5"><b>Заказы на металлообработу</b></span>
+            <div class="modal-header"><span class="fs-5"><b>Заказы на металлообработку</b></span>
 
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
