@@ -82,7 +82,8 @@ class PagesController extends Controller
                 'description' => $order->description,
                 'services' => Order::find($order->id)->services,
                 'active' => $order->active,
-                'archive' => $order->archive
+                'archive' => $order->archive,
+                'customer_premium' => $order->customer_premium,
             ];
         }
         
