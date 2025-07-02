@@ -7,6 +7,9 @@
     margin-right: 15px;
 }
 
+.navbar-customer {
+    border-bottom: 1px solid #eaeef2;
+}
 
 .border {
     border: 1px solid #e2ebed !important;
@@ -45,7 +48,7 @@
 }
 
 hr {
-    border: 1px solid #d2dadc !important;
+    border: 1px solid #f2f8f9 !important;
 }
 
 .form-control, .form-select {
@@ -65,4 +68,17 @@ hr {
 
 .file-column .title {
     font-weight: 500;
+}
+
+.btn-close-order {
+    padding: 7px 15px;
+    background: rgb(219, 57, 57);
+    color: #fff;
+    font-size: 14px;
+}
+
+.btn-close-order:hover {
+    padding: 7px 15px;
+    background: rgb(219, 57, 57);
+    color: #fff;
 }

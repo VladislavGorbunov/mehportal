@@ -2,7 +2,6 @@
     <div class="order-block-square"></div>
         <div class="row">
             <div class="col-12 col-md-4">
-             
                 <img src="{{ Storage::disk('orders_images')->url($order['order_image']) }}" class="img-fluid order-image d-block mx-auto">
                 <div class="d-flex justify-content-center mt-3 mb-3">
                     @if ($order['order_image'] != 'no-image.jpg')
@@ -11,35 +10,42 @@
                 </div>
             </div>
       
-            <div class="col-8">
+            <div class="col-12 col-md-8">
                 <div class="d-flex flex-column flex-md-row">
                     <h2 class="order-title mb-3 me-2">{{ $order['title'] }}</h2>
                     @if ($order['active'] == true)
-                        <div class="active-order-badge text-center me-2">Заказ открыт</div>
+                        <div class="active-order-badge text-center me-2 mb-2">Заказ открыт</div>
                     @endif
 
                     @if ($order['archive'] == true)
-                        <div class="archive-order-badge text-center me-2">Заказ закрыт</div>
+                        <div class="archive-order-badge text-center me-2 mb-2">В архиве</div>
                     @endif
                 </div>
                 <div class="row">
                     <div class="col-12 col-md-6">
                         <p class="mb-1">Номер заказа:<strong> {{ $order['order_id'] }}</strong></p>
+                        
+                        @if ($order['customer_premium']) 
+                            <p class="mb-1">Статус заказчика: <span class="mb-1 premium-customer2"><i class="bi bi-fire"></i> Premium</span></p>
+                        @endif
+                        
                         <p class="mb-1">Город заказчика:<strong> {{ $order['region_name'] }}</strong></p>
-                        <p class="mb-1">Необходимое количество:<strong> {{ $order['quantity'] }} шт.</strong></p>
                     </div>
                     
                     <div class="col-12 col-md-6">
+                        <p class="mb-1">Необходимое количество:<strong> {{ $order['quantity'] }} шт.</strong></p>
                         @if ($order['price'] > 0)
                             <p class="mb-1">Проходная цена:<strong> {{ $order['price'] }} руб.</strong></p>
                         @else 
                             <p class="mb-1">Проходная цена:<strong> Договорная</strong></p>
                         @endif
                         <p class="mb-1">Дата сбора КП: до <strong>{{ $order['closing_date'] }}</strong> <small>- включительно</small></p>
+                    
+                       
                     </div> 
                 </div>
-
                 <hr>
+            
                 <p class="mb-1"><b>Описание заказа:</b></p>
                 {{ $order['description'] }}
 
@@ -54,12 +60,12 @@
                     @endforeach
                 </div>
 
-                <div class="mb-1 d-flex align-items-center">
-                    <a href="/order/{{ $order['order_id'] }}" class="btn btn-more mb-2 me-2 d-flex align-items-center" target="_blank"><i class="bi bi-three-dots"></i> Подробнее о заказе</a>
+                <div class="mb-1 d-flex flex-column flex-md-row align-items-start">
+                    <a href="/order/{{ $order['order_id'] }}" class="btn btn-more mb-2 me-2 d-flex align-items-center justify-content-center" target="_blank"><i class="bi bi-three-dots"></i> Подробнее о заказе</a>
                     @if (!empty($order['order_archive']))
-                        <a href="{{ Storage::disk('orders_files')->url($order['order_archive']) }}" class="btn btn-file-download mb-2"><i class="bi bi-cloud-arrow-down"></i> Скачать файлы к заказу</a>
+                        <a href="{{ Storage::disk('orders_files')->url($order['order_archive']) }}" class="btn btn-file-download mb-2"><i class="bi bi-cloud-arrow-down"></i> Скачать файлы</a>
                     @else
-                        <a class="btn btn-file-download-noactive mb-2 d-flex align-items-center"><i class="bi bi-cloud-arrow-down"></i> Файлы отсутствуют</a>
+                        <a class="btn btn-file-download-noactive mb-2 d-flex align-items-center justify-content-center"><i class="bi bi-cloud-arrow-down"></i> Файлы отсутствуют</a>
                     @endif
                 </div>
             </div>

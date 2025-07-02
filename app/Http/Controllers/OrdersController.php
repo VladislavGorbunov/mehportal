@@ -7,6 +7,7 @@ use App\Models\Order;
 use App\Models\CategoryService;
 use App\Models\Service;
 use App\Models\Region;
+use App\Models\Customer;
 
 class OrdersController extends Controller
 {
@@ -43,7 +44,8 @@ class OrdersController extends Controller
                 'description' => $order->description,
                 'services' => Order::find($order->id)->services,
                 'active' => $order->active,
-                'archive' => $order->archive
+                'archive' => $order->archive,
+                'customer_premium' => $order->customer_premium,
             ];
         }
         
@@ -91,7 +93,8 @@ class OrdersController extends Controller
                 'description' => $order->description,
                 'services' => Order::find($order->id)->services,
                 'active' => $order->active,
-                'archive' => $order->archive
+                'archive' => $order->archive,
+                'customer_premium' => $order->customer_premium,
             ];
         }
         
@@ -135,7 +138,8 @@ class OrdersController extends Controller
                 'description' => $order->description,
                 'services' => Order::find($order->id)->services,
                 'active' => $order->active,
-                'archive' => $order->archive
+                'archive' => $order->archive,
+                'customer_premium' => $order->customer_premium,
             ];
         }
         
@@ -184,7 +188,8 @@ class OrdersController extends Controller
                 'description' => $order->description,
                 'services' => Order::find($order->id)->services,
                 'active' => $order->active,
-                'archive' => $order->archive
+                'archive' => $order->archive,
+                'customer_premium' => $order->customer_premium,
             ];
         }
         
@@ -201,6 +206,8 @@ class OrdersController extends Controller
     public function getOrder($order_id)
     {
         $order = Order::getOrder($order_id);
+        
+        if (! $order) abort('404');
 
         $date = date("d.m.Y", strtotime($order->created_at));
         $closing_date = date("d.m.Y", strtotime($order->closing_date));
@@ -228,8 +235,9 @@ class OrdersController extends Controller
             'extension_number' => $order->extension_number,
             'company_address' => $order->address,
             'company_email' => $order->email,
-            'person' => $order->person
-
+            'person' => $order->person,
+            'customer_premium' => $order->customer_premium,
+            'customer_id' => $order->customer_id,
         ];
 
         $data['title'] = 'Заказ на металлообработку №' .$order_id . ' от ' . $date . '. '. $order->title;
@@ -238,6 +246,8 @@ class OrdersController extends Controller
         $data['region_name'] = '';
         $data['region_slug'] = '';
         $data['order'] = $order_data;
+        $data['customerCheck'] = Customer::find($order->customer_id)->customerCheckData;
+        
         return view('site.order', $data);
     }
 

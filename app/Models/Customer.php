@@ -13,6 +13,7 @@ class Customer extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
 
     protected $table = 'customers';
+    protected $primaryKey = 'id';
 
     /**
      * The attributes that are mass assignable.
@@ -35,5 +36,13 @@ class Customer extends Authenticatable
     public function customerCompanies(): HasOne
     {
         return $this->hasOne(CustomerCompany::class);
+    }
+
+    /**
+     * Данные о проверке компании
+     */
+    public function customerCheckData(): HasOne
+    {
+        return $this->hasOne(CustomerCheckdata::class, 'customer_id');
     }
 }

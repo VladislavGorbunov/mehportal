@@ -19,7 +19,7 @@
     <body>
 
     <x-customer.navbar />
-    <div class="container mt-4">
+    <div class="container mt-4 mb-4">
         <div class="row">
             <x-customer.sidebar />
             <div class="col-12 col-md-9">

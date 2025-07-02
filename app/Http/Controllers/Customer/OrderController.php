@@ -2,31 +2,59 @@
 namespace App\Http\Controllers\Customer;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Customer\CustomerCheckController;
 use App\Http\Requests\Customer\addOrderRequest;
 use App\Models\CategoryService;
 use App\Models\Order;
 use App\Models\OrderService;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use App\Models\CustomerCompany;
+
 
 class OrderController extends Controller
 {
     //
     public function addOrder()
     {
+        $company = CustomerCompany::where('customer_id', Auth::guard('customer')->id())->count();
+
+        if ($company == 0) {
+            session()->flash('message', 'Сначала добавьте компанию, от лица которой будет размещён заказ.');
+            return redirect()->route('customer-add-company');
+        }
+
         $data['categories_services'] = CategoryService::get();
         return view('customer.add-order', $data);
     }
 
     public function myOrders()
     {
-        $data['orders'] = Order::where('customer_id', Auth::guard('customer')->id())->orderBy('orders.active', 'desc')->get();
+        $data['orders'] = Order::where('customer_id', Auth::guard('customer')->id())->orderBy('orders.active', 'desc')->paginate(10);
         return view('customer.my-orders', $data);
+    }
+
+    public function orderClose($id) {
+        $customer_id = Auth::guard('customer')->id();
+        $order = Order::where('id', $id)->first();
+
+        if (!$order) abort(404);
+
+        if ($customer_id == $order->customer_id) {
+            $order->active = false;
+            $order->archive = true;
+            $order->save();
+            session()->flash('message', 'Заказ перенесён в архив.');
+        } 
+        
+        return redirect()->back();
     }
 
     public function store(addOrderRequest $request)
     {
         $validated = $request->validated();
+
+        CustomerCheckController::addCustomerCheckData(Auth::guard('customer')->id());
 
         if (array_key_exists('order_image_file', $validated)) {
             $order_image_file = $validated['order_image_file'];
@@ -68,9 +96,14 @@ class OrderController extends Controller
             UPDATE orders SET active = 0, archive = 1 WHERE orders.id = $order->id;"
         );
 
+
+
         return redirect()->route('my-orders');
 
     }
+
+
+
 
     public static function uploadPlan($plan)
     {

@@ -5,6 +5,6 @@
 
 @section('content')
 
-    <x-site.order :order="$order" :regionSlug="$region_slug"/>
+    <x-site.order.order :order="$order" :regionSlug="$region_slug" :customerCheck="$customerCheck"/>
 
 @endsection

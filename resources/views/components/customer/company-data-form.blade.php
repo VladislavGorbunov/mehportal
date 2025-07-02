@@ -1,4 +1,5 @@
 <x-site.errors />
+<x-site.message />
 <div class="alert alert-warning text-center mt-3">Все поля обязательны для заполнения.</div>
     <form method="post">
     @csrf

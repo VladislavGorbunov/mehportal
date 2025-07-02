@@ -1,22 +1,22 @@
 <?php
 
-namespace App\Http\Controllers\Customer;
+namespace App\Http\Controllers\Executor;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Customer\RegistrationCustomerRequest;
 use Illuminate\Http\Request;
 use App\Models\Region;
-use App\Models\Customer;
+use App\Models\Executor;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 
 class RegistrationController extends Controller
 {
     //
-    public function registrationCustomerPage()
+    public function registrationExecutorPage()
     {
         $data['regions'] = Region::get();
-        return view('customer.registration-customer', $data);
+        return view('executor.registration-executor', $data);
     }
 
     public function store(RegistrationCustomerRequest $request)
@@ -24,7 +24,7 @@ class RegistrationController extends Controller
         $validated = $request->validated();
 
 
-        $customer = Customer::create([
+        $customer = Executor::create([
             "name"      => $validated['name'],
             "lastname"  => $validated['lastname'],
             "email"     => $validated['email'],
@@ -33,11 +33,11 @@ class RegistrationController extends Controller
             "active"    => true,
         ]);
 
-        if (Auth::guard('customer')->attempt(['email' => $validated['email'], 'password' => $validated['password'], 'active' => 1], true)) {
+        if (Auth::guard('executor')->attempt(['email' => $validated['email'], 'password' => $validated['password'], 'active' => 1], true)) {
             $request->session()->regenerate();
-            $user = Auth::guard('customer')->user();
-            Auth::guard('customer')->login($user);
-            return redirect('/customer');
+            $user = Auth::guard('executor')->user();
+            Auth::guard('executor')->login($user);
+            return redirect('/executor');
         } else {
             session()->flash('error', 'Произошла ошибка при попытке авторизации.');
             return redirect()->back();
