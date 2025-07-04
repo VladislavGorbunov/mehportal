@@ -11,8 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('customer_companies', function (Blueprint $table) {
+        Schema::create('executor_companies', function (Blueprint $table) {
             $table->id();
+            $table->string('logo');
             $table->string('legal_form');
             $table->string('title');
             $table->string('inn');
@@ -20,16 +21,16 @@ return new class extends Migration
             $table->string('address');
             $table->string('contact_person');
             $table->string('phone');
-            $table->string('extension_number')->nullable();
+            $table->string('extension_number');
             $table->string('email');
             $table->string('description');
             $table->integer('active')->default(true);
             $table->timestamps();
         });
 
-        Schema::table('customer_companies', function (Blueprint $table) {
-            $table->unsignedBigInteger('customer_id');
-            $table->foreign('customer_id')->references('id')->on('customers')
+        Schema::table('executor_companies', function (Blueprint $table) {
+            $table->unsignedBigInteger('executor_id');
+            $table->foreign('executor_id')->references('id')->on('executors')
             ->onUpdate('cascade')
             ->onDelete('cascade');
         });
@@ -40,6 +41,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('customer_companies');
+        Schema::dropIfExists('executor_companies');
     }
 };

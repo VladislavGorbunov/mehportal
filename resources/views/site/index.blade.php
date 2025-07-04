@@ -41,12 +41,16 @@
         
     </div>
     
-    @foreach ($orders as $order)
-        <x-site.order-block :order="$order" :regionSlug="$region_slug"/>
-    @endforeach
-
+    @if (!empty($orders))
+        @foreach ($orders as $order)
+            <x-site.order-block :order="$order" :regionSlug="$region_slug"/>
+            <x-site.add-order-banner />
+        @endforeach
+    @else
+        <x-site.no-order />
+    @endif
     <div class="p-2">
-        <h3 class="text-center mt-5">«МехПортал» - открытые заказы на металлообработку</h3>
+        <h3 class="text-center mt-3">«МехПортал» - открытые заказы на металлообработку</h3>
     <p class="mt-2 text-center">
         Поиск выгодных предложений в сфере металлообработки – задача не самая простая. Однако, уровень загрузки 
         вашего производства напрямую зависит от ваших усилий. Ключевым шагом является выбор подходящей платформы 

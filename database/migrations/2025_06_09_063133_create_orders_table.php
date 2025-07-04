@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->integer('customer_id');
+            $table->string('order_image')->nullable();
+            $table->string('order_archive_file')->nullable();
             $table->string('title');
             $table->string('quantity');
             $table->string('price');
@@ -22,6 +23,13 @@ return new class extends Migration
             $table->integer('active')->default(0);
             $table->integer('archive')->default(0);
             $table->timestamps();
+        });
+
+        Schema::table('orders', function (Blueprint $table) {
+            $table->unsignedBigInteger('customer_id');
+            $table->foreign('customer_id')->references('id')->on('customers')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
         });
     }
 

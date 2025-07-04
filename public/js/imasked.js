@@ -5961,18 +5961,18 @@ window.addEventListener("DOMContentLoaded", function() {
 
             inputTel.addEventListener('input', function() {
                 if (this.value.replace(/\D/g, '').length === 2) {
-                    if (this.value == '+7 (8') {
-                        mask.updateOptions({ mask: '{8} (000) 000-00-00' });
-                        this.value = '8';
+                    if (this.value == '+7 (') {
+                        // mask.updateOptions({ mask: '{8} (000) 000-00-00' });
+                        // this.value = '8';
                         mask.updateValue();
                     }
                 }
                 if (this.value.length > 18 && this.value.substring(0, 5) == '+7 (8') {
-                    newval = this.value.replace('+7 (8', '').replace(/\D/g, '');
-                    this.value = '+7 (' + newval.substring(0, 3) + ') ' +
-                        newval.substring(3, 6) + '-' +
-                        newval.substring(6, 8) + '-' +
-                        newval.substring(8, 12);
+                    // newval = this.value.replace('+7 (8', '').replace(/\D/g, '');
+                    // this.value = '+7 (' + newval.substring(0, 3) + ') ' +
+                    //     newval.substring(3, 6) + '-' +
+                    //     newval.substring(6, 8) + '-' +
+                    //     newval.substring(8, 12);
                     mask.updateValue();
                 }
             });
@@ -5990,7 +5990,7 @@ window.addEventListener("DOMContentLoaded", function() {
                                 mask: '+{7} (000) 000-00-00',
                             },
                             {
-                                mask: '{8} (000) 000-00-00',
+                                mask: '+{7} (000) 000-00-00',
                             }
                         ]
                     });

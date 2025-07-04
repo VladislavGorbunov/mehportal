@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('customers_check_data', function (Blueprint $table) {
             $table->id();
-            $table->integer('customer_id');
+            
             $table->string('ogrn')->nullable();
             $table->string('kpp')->nullable();
             $table->string('okpo')->nullable();
@@ -28,6 +28,13 @@ return new class extends Migration
             $table->integer('bad_provider')->nullable();
             $table->integer('sanctions')->nullable();
             $table->timestamps();
+        });
+
+        Schema::table('customers_check_data', function (Blueprint $table) {
+            $table->unsignedBigInteger('customer_id');
+            $table->foreign('customer_id')->references('id')->on('customers')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
         });
     }
 

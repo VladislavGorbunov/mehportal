@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Executor;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Customer\RegistrationCustomerRequest;
+use App\Http\Requests\Executor\RegistrationExecutorRequest;
 use Illuminate\Http\Request;
 use App\Models\Region;
 use App\Models\Executor;
@@ -19,10 +19,9 @@ class RegistrationController extends Controller
         return view('executor.registration-executor', $data);
     }
 
-    public function store(RegistrationCustomerRequest $request)
+    public function store(RegistrationExecutorRequest $request)
     {
         $validated = $request->validated();
-
 
         $customer = Executor::create([
             "name"      => $validated['name'],

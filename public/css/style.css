@@ -16,6 +16,10 @@ body {
     overflow-x: hidden;
 }
 
+.alert-primary {
+  border-radius: 15px;
+}
+
 @media (min-width: 1500px) {
   .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
     max-width: 1420px;
@@ -77,6 +81,31 @@ h2, h3, h4, h5, h6 {
     position: relative;
     top: 1px;
     font-size: 18px;
+}
+
+.top-menu {
+    width: 100%;
+    background: #111;
+}
+
+.top-menu-block {
+        min-height: 52px;
+        padding: 12px 0px;
+}
+
+.top-menu a {
+    color:rgba(227, 232, 237, 0.8);
+    font-size: 13px;
+}
+
+.badge-us {
+    position: relative;
+    
+    background: rgb(36, 107, 222);
+    color: #fff !important;
+    font-size: 13px !important;
+    padding: 5px 20px;
+    border-radius: 12px 26px;
 }
 
 .navbar {
@@ -185,7 +214,7 @@ h2, h3, h4, h5, h6 {
 .header-banner-order {
     position: relative;
     width: 100%;
-    min-height: 80px;
+    min-height: 120px;
     background: rgba(20, 27, 33, 1) url("/images/banner-bg.jpg") center;
     background-size: cover;
     border-radius: 10px;
@@ -210,7 +239,7 @@ h2, h3, h4, h5, h6 {
     position: relative;
     color: #fff;
     z-index: 2;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .header-banner p, .header-banner-order p {
@@ -395,6 +424,18 @@ h2, h3, h4, h5, h6 {
     color: #fff;
 }
 
+.btn-add-order-site {
+    background: var(--btn-blue-color);
+    color: #fff;
+    font-size: 14px;
+    padding: 12px 15px;
+}
+
+.btn-add-order-site:hover {
+    background: #111;
+    color: #fff;
+    
+}
 
 .square {
     position: absolute;
@@ -483,9 +524,7 @@ footer .link-secondary {
     color: #afacac !important;
 }
 
-footer .link-secondary:hover {
-    color: var(--btn-blue-color) !important;
-}
+
 
 footer h5 {
     font-size: 18px;
@@ -498,6 +537,10 @@ footer .navbar-brand {
     font-optical-sizing: auto;
     font-size: 21px;
     font-weight: 700;
+    color: #fff;
+}
+
+footer .navbar-brand:hover {
     color: #fff;
 }
 
@@ -520,7 +563,7 @@ footer .logo-blue-color {
 }
 
 .cookie-modal .btn-cookie-ok {
-    background: var(--btn-blue-color);
+    background: #111;
     color: #fff;
     border-radius: 8px;
     font-size: 12px;

@@ -13,17 +13,20 @@ class CustomerCheckController extends Controller
     public static function addCustomerCheckData(int $customer_id)
     {
         $customer = CustomerCompany::where('customer_id', $customer_id)->first();
-        $response = Http::get('https://api.checko.ru/v2/company?key=' . self::$key . '&inn='.$customer->inn.'');
-        
+        $response = Http::get('https://api.checko.ru/v2/company?key=' . self::$key . '&inn=' . $customer->inn . '');
+
         $data = $response->json($key = null, $default = null);
-        
-        if (! array_key_exists('data', $data)) {
-            return false;
+       
+        if (array_key_exists('data', $data) && ! empty($data['data'])) {
+            self::addData($customer_id, $data);
         }
 
-   
+    }
+
+    public static function addData($customer_id, $data)
+    {
         $count = CustomerCheckData::where('customer_id', $customer_id)->count();
-       
+
         if ($count == 0) {
             CustomerCheckData::create([
                 "customer_id"   => $customer_id,

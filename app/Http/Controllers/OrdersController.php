@@ -14,11 +14,12 @@ class OrdersController extends Controller
     // Заказы по категории 
     public function getOrdersForCategories($category_slug) 
     {
-        $data['title'] = 'Заказы на металлообработку в открытом доступе по всей России - МЕХПОРТАЛ';
-        $data['description'] = 'Заказы на металлообработку в открытом доступе по всей России - МЕХПОРТАЛ';
-        
         $category = CategoryService::where('slug', $category_slug)->first();
         $category_id = $category->id;
+
+        $data['title'] = 'Заказы на '. mb_strtolower($category->title_case) .' в открытом доступе в России';
+        $data['description'] = 'Заказы на '. mb_strtolower($category->title_case) .' в открытом доступе в России';
+        
         $data['header_title'] = 'Заказы на '. mb_strtolower($category->title_case) .' в открытом доступе по всей России';
         
         $data['region_name'] = '';
@@ -65,8 +66,8 @@ class OrdersController extends Controller
 
         if (! $region) abort(404);
         $category = CategoryService::where('slug', $category_slug)->first();
-        $data['title'] = 'Заказы '. mb_strtolower($category->title_case) .' в открытом доступе ' . $region->name_in;
-        $data['description'] = 'Заказы '. mb_strtolower($category->title_case) .' в открытом доступе ' . $region->name_in;
+        $data['title'] = 'Заказы на '. mb_strtolower($category->title_case) .' в открытом доступе ' . $region->name_in;
+        $data['description'] = 'Заказы на '. mb_strtolower($category->title_case) .' в открытом доступе ' . $region->name_in;
         $data['header_title'] = 'Заказы на '. mb_strtolower($category->title_case) .' в открытом доступе ' . $region->name_in;
         
         $category_id = $category->id;
@@ -111,9 +112,11 @@ class OrdersController extends Controller
     // Заказы по категории услуг
     public function getOrdersForServices($slug) 
     {
-        $data['title'] = 'Заказы на металлообработку в открытом доступе по всей России - МЕХПОРТАЛ';
-        $data['description'] = 'Заказы на металлообработку в открытом доступе по всей России - МЕХПОРТАЛ';
         $service = Service::where('slug', $slug)->first();
+
+        $data['title'] = 'Заказы на '. mb_strtolower($service->title_case) .' в открытом доступе в России';
+        $data['description'] = 'Заказы на '. mb_strtolower($service->title_case) .' в открытом доступе в России';
+        
         $data['header_title'] = 'Заказы на '. mb_strtolower($service->title) .' в открытом доступе по всей России';
 
         $orders_array = Order::getOrdersForServices($slug);
@@ -162,8 +165,8 @@ class OrdersController extends Controller
 
         $service = Service::where('slug', $service_slug)->first();
         
-        $data['title'] = 'Заказы '. mb_strtolower($service->title_case) .' в открытом доступе ' . $region->name_in;
-        $data['description'] = 'Заказы '. mb_strtolower($service->title_case) .' в открытом доступе ' . $region->name_in;
+        $data['title'] = 'Заказы на '. mb_strtolower($service->title_case) .' в открытом доступе ' . $region->name_in;
+        $data['description'] = 'Заказы на '. mb_strtolower($service->title_case) .' в открытом доступе ' . $region->name_in;
         $data['header_title'] = 'Заказы на '. mb_strtolower($service->title_case) .' в открытом доступе ' . $region->name_in;
         
         $orders_array = Order::getOrdersForServicesRegion($service_slug, $region->id);

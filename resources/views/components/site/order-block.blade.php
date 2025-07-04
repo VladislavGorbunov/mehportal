@@ -23,23 +23,26 @@
                 </div>
                 <div class="row">
                     <div class="col-12 col-md-6">
-                        <p class="mb-1">Номер заказа:<strong> {{ $order['order_id'] }}</strong></p>
+                        <p class="mb-2">Номер заказа:<strong> {{ $order['order_id'] }}</strong></p>
                         
                         @if ($order['customer_premium']) 
-                            <p class="mb-1">Статус заказчика: <span class="mb-1 premium-customer2"><i class="bi bi-fire"></i> Premium</span></p>
+                            <p class="mb-2">Статус заказчика: <span class="mb-1 premium-customer2"><i class="bi bi-fire"></i> Premium</span></p>
+                            <p class="mb-2">Контакты: <a href="/order/{{ $order['order_id'] }}" target="_blank">Доступны всем исполнителям</a></p>
+                        @else
+                            <p class="mb-2">Статус заказчика: Стандартный</p>
                         @endif
                         
-                        <p class="mb-1">Город заказчика:<strong> {{ $order['region_name'] }}</strong></p>
+                        <p class="mb-2">Город заказчика:<strong> {{ $order['region_name'] }}</strong></p>
                     </div>
                     
                     <div class="col-12 col-md-6">
-                        <p class="mb-1">Необходимое количество:<strong> {{ $order['quantity'] }} шт.</strong></p>
+                        <p class="mb-2">Необходимое количество:<strong> {{ $order['quantity'] }} шт.</strong></p>
                         @if ($order['price'] > 0)
-                            <p class="mb-1">Проходная цена:<strong> {{ $order['price'] }} руб.</strong></p>
+                            <p class="mb-2">Проходная цена:<strong> {{ $order['price'] }} руб.</strong></p>
                         @else 
-                            <p class="mb-1">Проходная цена:<strong> Договорная</strong></p>
+                            <p class="mb-2">Проходная цена:<strong> Договорная</strong></p>
                         @endif
-                        <p class="mb-1">Дата сбора КП: до <strong>{{ $order['closing_date'] }}</strong> <small>- включительно</small></p>
+                        <p class="mb-2">Дата сбора КП: до <strong>{{ $order['closing_date'] }}</strong> <small>- включительно</small></p>
                     
                        
                     </div> 

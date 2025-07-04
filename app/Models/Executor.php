@@ -30,11 +30,10 @@ class Executor extends Authenticatable
     ];
 
 
-    /**
-     * Получить компании заказчика
-     */
-    public function customerCompanies(): HasOne
+    public function executorCompanies(): HasOne
     {
-        return $this->hasOne(CustomerCompany::class);
+        return $this->hasOne(ExecutorCompany::class);
     }
+
+
 }

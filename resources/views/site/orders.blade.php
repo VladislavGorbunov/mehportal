@@ -37,10 +37,14 @@
 
         
     </div>
-
-    @foreach ($orders as $order)
-        <x-site.order-block :order="$order" :regionSlug="$region_slug"/>
-    @endforeach
+    @if (!empty($orders))
+        @foreach ($orders as $order)
+            <x-site.order-block :order="$order" :regionSlug="$region_slug"/>
+            <x-site.add-order-banner />
+        @endforeach   
+    @else
+        <x-site.no-order />
+    @endif
 
 
     {{ $paginate->links() }}

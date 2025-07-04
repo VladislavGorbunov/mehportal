@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Customer;
+namespace App\Http\Requests\Executor;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AddCustomerCompanyRequest extends FormRequest
+class UpdateExecutorCompanyRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -29,9 +29,10 @@ class AddCustomerCompanyRequest extends FormRequest
             'address' => 'required|min:10',
             'contact_person' => 'required',
             'phone' => 'required',
-            'extension_number' => 'min:0|max:5',
+            'extension_number' => 'required',
             'email' => 'required|email',
             'description' => 'required|min:50',
+            'categories' => 'required',
         ];
     }
 
@@ -54,6 +55,7 @@ class AddCustomerCompanyRequest extends FormRequest
             'extension_number' => '«Добавочный номер»',
             'email' => '«Email»',
             'description' => '«Описание организации»',
+            'categories' => '«Категории услуг»'
         ];
     }
 }

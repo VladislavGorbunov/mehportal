@@ -26,14 +26,16 @@
     <p class="mb-3"><b>Юр. адрес:</b> {{ $check->ur_address }}</p>
     <p class="mb-3"><b>Основной код ОКВЭД:</b> {{ $check->okved_code }}</p>
     <p class="mb-3"><b>Основной вид деятельности:</b> {{ $check->okved_name }}</p>
-    <p class="mb-3"><b>Уставной капитал:</b> {{ $check->capital }} руб.</p>
+    <p class="mb-3"><b>Уставный капитал:</b> {{ $check->capital }} руб.</p>
     <p class="mb-3"><b>Руководитель:</b> {{ $check->director_fio }}</p>
     <p class="mb-3"><b>Сайт компании:</b> {{ $check->site ? $check->site : '-' }}</p>
     
 </div>
 @else
-    <div class="alert alert-primary text-center">
-        Нам неудалось получить данные о заказчике. <br>
-        Вы можете проверить компанию самостоятельно на этом ресурсе:<br> <a href="https://checko.ru/">Проверить компанию на Checko</a>
+    <div class="alert alert-primary text-center mt-3">
+        <small>Нам неудалось получить данные о заказчике по его ИНН.<br>
+        Вы можете проверить компанию самостоятельно на этом ресурсе:<br>
+        </small> 
+        <a href="https://checko.ru/" rel="nofollow" target="_blank">Проверить компанию на Checko.ru</a>
     </div>
 @endif

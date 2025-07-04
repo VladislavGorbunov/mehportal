@@ -37,12 +37,12 @@
 
                     <div class="mb-3">
                         <label class="form-label">Пароль для входа: <small>(не менее 8 символов)</small></label>
-                        <input type="password" class="form-control" placeholder="" name="password" required>
+                        <input type="password" class="form-control password" placeholder="" name="password" required>
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">Повторите пароль:</label>
-                        <input type="password" class="form-control" placeholder="" name="password" required>
+                        <input type="password" class="form-control password-replay" placeholder="" name="password" required>
                     </div>
 
                 </div>
@@ -69,18 +69,32 @@
 <script>
     const checkbox = document.querySelector('#flexCheckChecked')
     const button = document.querySelector('.btn-registration')
-    buttonSwitch()
-    
-    function buttonSwitch() {
+    const password = document.querySelector('.password')
+    const passwordReplay = document.querySelector('.password-replay')
+    button.disabled = true
+    let checkboxFlag
+    let passwordOk
+
+    function checkboxFunc() {
         if (checkbox.checked) {
-            console.log('true')
+            checkboxFlag = true
+        } else {
+            checkboxFlag = false
+        }
+
+        check()
+    }
+
+    function check() {
+        if (password.value == passwordReplay.value && checkboxFlag == true) {
             button.disabled = false
         } else {
-            console.log('false')
             button.disabled = true
         }
     }
 
-    checkbox.addEventListener('click', buttonSwitch)
+    checkbox.addEventListener('click', checkboxFunc)
+    password.addEventListener('input', checkboxFunc)
+    passwordReplay.addEventListener('input', checkboxFunc)
     
 </script>

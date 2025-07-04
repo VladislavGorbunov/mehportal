@@ -52,6 +52,14 @@ return [
             'throw' => false,
         ],
 
+        'executors_logo' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/executors_logo'),
+            'url' => env('APP_URL').'/storage/executors_logo',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
+
         'orders_files' => [
             'driver' => 'local',
             'root' => storage_path('app/public/orders_files'),
@@ -89,6 +97,7 @@ return [
         public_path('storage') => storage_path('app/public'),
         public_path('orders_images') => storage_path('app/public/orders_images'),
         public_path('orders_files') => storage_path('app/public/orders_files'),
+        public_path('executors_logo') => storage_path('app/public/executors_logo'),
     ],
 
 ];

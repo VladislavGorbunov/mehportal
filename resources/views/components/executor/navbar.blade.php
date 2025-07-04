@@ -10,7 +10,7 @@
 
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="{{ Route('customer-index') }}">Главная страница</a>
+          <a class="nav-link" href="{{ Route('executor-index') }}">Главная страница</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/" target="_blank">Перейти на портал</a>
@@ -21,7 +21,7 @@
         
       </ul>
         <div class="d-flex justify-content-around align-items-center">
-            <a href="{{ Route('customer-logout') }}" class="btn btn-dark">Выйти</a>
+            <a href="{{ Route('executor-logout') }}" class="btn btn-dark">Выйти</a>
         </div>
     </div>
   </div>

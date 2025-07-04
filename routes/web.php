@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\OrdersController;
+use App\Http\Controllers\CompaniesController;
 
 require __DIR__.'/customer.php';
 require __DIR__.'/executor.php';
@@ -19,5 +20,7 @@ Route::get('/{region_slug}/orders/category/{category_slug}', [OrdersController::
 
 Route::get('/orders/service/{service_slug}', [OrdersController::class, 'getOrdersForServices']);
 Route::get('/orders/category/{category_slug}', [OrdersController::class, 'getOrdersForCategories']);
+
+Route::get('/companies/service/{service_slug}', [CompaniesController::class, 'getCompaniesForServices']);
 
 Route::get('/order/{order_id}', [OrdersController::class, 'getOrder']);
