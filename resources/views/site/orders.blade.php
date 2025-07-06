@@ -40,8 +40,8 @@
     @if (!empty($orders))
         @foreach ($orders as $order)
             <x-site.order-block :order="$order" :regionSlug="$region_slug"/>
-            <x-site.add-order-banner />
         @endforeach   
+        <x-site.add-order-banner />
     @else
         <x-site.no-order />
     @endif

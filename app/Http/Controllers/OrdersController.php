@@ -12,21 +12,19 @@ use App\Models\Customer;
 class OrdersController extends Controller
 {
     // Заказы по категории 
-    public function getOrdersForCategories($category_slug) 
+    public function getOrdersForCategories($category_slug)
     {
         $category = CategoryService::where('slug', $category_slug)->first();
         $category_id = $category->id;
 
-        $data['title'] = 'Заказы на '. mb_strtolower($category->title_case) .' в открытом доступе в России';
-        $data['description'] = 'Заказы на '. mb_strtolower($category->title_case) .' в открытом доступе в России';
-        
-        $data['header_title'] = 'Заказы на '. mb_strtolower($category->title_case) .' в открытом доступе по всей России';
-        
+        $data['title'] = 'Заказы на ' . mb_strtolower($category->title_case) . ' в открытом доступе в России';
+        $data['description'] = 'Заказы на ' . mb_strtolower($category->title_case) . ' в открытом доступе в России';
+        $data['header_title'] = 'Заказы на ' . mb_strtolower($category->title_case) . ' в открытом доступе по всей России';
         $data['region_name'] = '';
         $data['region_slug'] = '';
 
         $orders_array = Order::getOrdersForCategories($category_id);
-    
+
         $orders = [];
 
         foreach ($orders_array as $order) {
@@ -49,10 +47,9 @@ class OrdersController extends Controller
                 'customer_premium' => $order->customer_premium,
             ];
         }
-        
+
         $data['count_orders'] = Order::countActiveOrdersForCategories($category_id);
         $data['archive_count_orders'] = Order::countArchiveOrdersForCategories($category_id);
-
         $data['orders'] = $orders;
         $data['paginate'] =  $orders_array;
         return view('site.orders', $data);
@@ -60,18 +57,18 @@ class OrdersController extends Controller
 
 
     // Заказы по категории в регионе
-    public function getOrdersForCategoriesRegion($region_slug, $category_slug) 
+    public function getOrdersForCategoriesRegion($region_slug, $category_slug)
     {
         $region = Region::where('slug', $region_slug)->first();
 
         if (! $region) abort(404);
         $category = CategoryService::where('slug', $category_slug)->first();
-        $data['title'] = 'Заказы на '. mb_strtolower($category->title_case) .' в открытом доступе ' . $region->name_in;
-        $data['description'] = 'Заказы на '. mb_strtolower($category->title_case) .' в открытом доступе ' . $region->name_in;
-        $data['header_title'] = 'Заказы на '. mb_strtolower($category->title_case) .' в открытом доступе ' . $region->name_in;
-        
+        $data['title'] = 'Заказы на ' . mb_strtolower($category->title_case) . ' в открытом доступе ' . $region->name_in;
+        $data['description'] = 'Заказы на ' . mb_strtolower($category->title_case) . ' в открытом доступе ' . $region->name_in;
+        $data['header_title'] = 'Заказы на ' . mb_strtolower($category->title_case) . ' в открытом доступе ' . $region->name_in;
+
         $category_id = $category->id;
-    
+
         $orders_array = Order::getOrdersForCategoriesRegion($category_id, $region->id);
         $data['region_name'] = $region->name;
         $data['region_slug'] = $region->slug;
@@ -98,7 +95,7 @@ class OrdersController extends Controller
                 'customer_premium' => $order->customer_premium,
             ];
         }
-        
+
         $data['count_orders'] = Order::countActiveOrdersForCategoriesRegion($category_id, $region->id);
         $data['archive_count_orders'] = Order::countArchiveOrdersForCategoriesRegion($category_id, $region->id);
 
@@ -110,14 +107,14 @@ class OrdersController extends Controller
 
 
     // Заказы по категории услуг
-    public function getOrdersForServices($slug) 
+    public function getOrdersForServices($slug)
     {
         $service = Service::where('slug', $slug)->first();
 
-        $data['title'] = 'Заказы на '. mb_strtolower($service->title_case) .' в открытом доступе в России';
-        $data['description'] = 'Заказы на '. mb_strtolower($service->title_case) .' в открытом доступе в России';
-        
-        $data['header_title'] = 'Заказы на '. mb_strtolower($service->title) .' в открытом доступе по всей России';
+        $data['title'] = 'Заказы на ' . mb_strtolower($service->title_case) . ' в открытом доступе в России';
+        $data['description'] = 'Заказы на ' . mb_strtolower($service->title_case) . ' в открытом доступе в России';
+
+        $data['header_title'] = 'Заказы на ' . mb_strtolower($service->title) . ' в открытом доступе по всей России';
 
         $orders_array = Order::getOrdersForServices($slug);
         $data['region_name'] = '';
@@ -145,10 +142,9 @@ class OrdersController extends Controller
                 'customer_premium' => $order->customer_premium,
             ];
         }
-        
+
         $data['count_orders'] = Order::countActiveOrdersForServices($slug);
         $data['archive_count_orders'] = Order::countArchiveOrdersForServices($slug);
-
         $data['orders'] = $orders;
         $data['paginate'] =  $orders_array;
 
@@ -157,18 +153,18 @@ class OrdersController extends Controller
 
 
     // Заказы по категории услуг в регионе
-    public function getOrdersForServicesRegion($region_slug, $service_slug) 
+    public function getOrdersForServicesRegion($region_slug, $service_slug)
     {
         $region = Region::where('slug', $region_slug)->first();
-        
+
         if (! $region) abort(404);
 
         $service = Service::where('slug', $service_slug)->first();
-        
-        $data['title'] = 'Заказы на '. mb_strtolower($service->title_case) .' в открытом доступе ' . $region->name_in;
-        $data['description'] = 'Заказы на '. mb_strtolower($service->title_case) .' в открытом доступе ' . $region->name_in;
-        $data['header_title'] = 'Заказы на '. mb_strtolower($service->title_case) .' в открытом доступе ' . $region->name_in;
-        
+
+        $data['title'] = 'Заказы на ' . mb_strtolower($service->title_case) . ' в открытом доступе ' . $region->name_in;
+        $data['description'] = 'Заказы на ' . mb_strtolower($service->title_case) . ' в открытом доступе ' . $region->name_in;
+        $data['header_title'] = 'Заказы на ' . mb_strtolower($service->title_case) . ' в открытом доступе ' . $region->name_in;
+
         $orders_array = Order::getOrdersForServicesRegion($service_slug, $region->id);
         $data['region_name'] = $region->name;
         $data['region_slug'] = $region->slug;
@@ -195,7 +191,7 @@ class OrdersController extends Controller
                 'customer_premium' => $order->customer_premium,
             ];
         }
-        
+
         $data['count_orders'] = Order::countActiveOrdersForServicesRegion($service_slug, $region->id);
         $data['archive_count_orders'] = Order::countArchiveOrdersForservicesRegion($service_slug, $region->id);
 
@@ -209,7 +205,7 @@ class OrdersController extends Controller
     public function getOrder($order_id)
     {
         $order = Order::getOrder($order_id);
-        
+
         if (! $order) abort('404');
 
         $date = date("d.m.Y", strtotime($order->created_at));
@@ -243,15 +239,14 @@ class OrdersController extends Controller
             'customer_id' => $order->customer_id,
         ];
 
-        $data['title'] = 'Заказ на металлообработку №' .$order_id . ' от ' . $date . '. '. $order->title;
+        $data['title'] = 'Заказ на металлообработку №' . $order_id . ' от ' . $date . '. ' . $order->title;
         $data['description'] = 'Заказы';
         $data['header_title'] = $order->title;
         $data['region_name'] = '';
         $data['region_slug'] = '';
         $data['order'] = $order_data;
         $data['customerCheck'] = Customer::find($order->customer_id)->customerCheckData;
-        
+
         return view('site.order', $data);
     }
-
 }

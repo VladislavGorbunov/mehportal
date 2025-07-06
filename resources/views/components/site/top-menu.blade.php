@@ -12,8 +12,8 @@
 
             <div class="d-flex flex-row gap-3">
                 <a href="mailto:info@mehportal.ru">info@mehportal.ru</a>
-                <a href="https://vk.com/" target="_blank"><img src="/images/vk.svg"></a>
-                <a href="https://t.me" target="_blank"><img src="/images/telegram.svg"></a>
+                <a href="https://vk.com/mehportalru" target="_blank"><img src="/images/vk.svg"></a>
+                <a href="https://t.me/mehport" target="_blank"><img src="/images/telegram.svg"></a>
             </div> 
         </div>
     </div>

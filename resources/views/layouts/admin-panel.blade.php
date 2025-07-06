@@ -18,11 +18,11 @@
 
     <body>
 
-    <x-customer.navbar />
+    <x-admin.navbar />
     <div class="container mt-4">
         <div class="row">
             
-            <x-customer.sidebar />
+            <x-admin.sidebar />
             <div class="col-12 col-md-9">
                 <div class="col-12 px-2">
                     @if ($event_scheduler == 'OFF')

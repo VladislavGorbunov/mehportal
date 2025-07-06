@@ -24,7 +24,7 @@
                 <p class="text-center">Ваши контакты доступны всем исполнителям</p><hr>
                 <p class="text-center">Приоритетное ранжирование вашего заказа в разделе «Заказы».</p><hr>
                 <p class="text-center">Бейдж для карточки заказа «Premium заказчик»</p><hr>
-                
+                <p class="text-center">Размещение заказов в Telegram канале</p><hr>
                 <a href="" class="btn btn-tariff d-block mx-auto mt-4">Подключить на 1 месяц</a>
             </div>
         </div>
@@ -39,6 +39,7 @@
                 <p class="text-center">Ваши контакты доступны всем исполнителям</p><hr>
                 <p class="text-center">Приоритетное ранжирование вашего заказа в разделе «Заказы».</p><hr>
                 <p class="text-center">Бейдж для карточки заказа «Premium заказчик»</p><hr>
+                <p class="text-center">Размещение заказов в Telegram канале</p><hr>
                 <a href="" class="btn btn-tariff d-block mx-auto mt-4">Подключить на 6 месяцев</a>
             </div>
         </div>
@@ -53,6 +54,7 @@
                 <p class="text-center">Ваши контакты доступны всем исполнителям</p><hr>
                 <p class="text-center">Приоритетное ранжирование вашего заказа в разделе «Заказы».</p><hr>
                 <p class="text-center">Бейдж для карточки заказа «Premium заказчик»</p><hr>
+                <p class="text-center">Размещение заказов в Telegram канале</p><hr>
                 <a href="" class="btn btn-tariff d-block mx-auto mt-4">Подключить на год</a>
             </div>
         </div>

@@ -25,7 +25,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="#companies" class="nav-link link-blue" href="#companies" data-bs-toggle="modal" data-bs-target="#companies">Предприятия</a>
+          <a href="#companies" class="nav-link link-blue" data-bs-toggle="modal" data-bs-target="#companies">Предприятия</a>
         </li>
         <li class="nav-item">
           <a class="nav-link link-blue" href="#companies">Поставщики</a>

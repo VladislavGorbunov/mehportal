@@ -634,10 +634,16 @@ footer .logo-blue-color {
 
 .premium-customer2 {
     color: rgb(249, 95, 40);
+    border: 1px solid rgb(250, 202, 184);
+    padding: 3px 12px;
+    border-radius: 12px;
+    margin-left: 4px;
+    font-size: 14px;;
+    
 }
 
 .premium-customer2 .bi {
-    font-size: 14px;
+    font-size: 12px;
     top: 0px;
 }
 
@@ -760,3 +766,18 @@ hr {
     margin: 10px 0px;
     padding: 0;
 }
+
+.page-link {
+    border: 1px solid #eee !important;
+    color: #707579;
+    font-size: 14px;
+}
+
+.active > .page-link, .page-link.active {
+  z-index: 3;
+  color: var(--btn-blue-color);
+  background-color: #bee2f7 !important;
+  border: 1px solid #eee;
+  font-weight: 600;
+}
+

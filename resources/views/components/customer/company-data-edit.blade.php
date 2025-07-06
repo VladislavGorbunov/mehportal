@@ -76,5 +76,5 @@
         </div>
 
 		<button type="submit" class="btn btn-blue mt-3 mb-3">Сохранить</button>
-        <a class="btn btn-blue mt-3 mb-3">Удалить</a>
+     
     </form>

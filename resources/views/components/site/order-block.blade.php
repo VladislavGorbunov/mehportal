@@ -2,7 +2,7 @@
     <div class="order-block-square"></div>
         <div class="row">
             <div class="col-12 col-md-4">
-                <img src="{{ Storage::disk('orders_images')->url($order['order_image']) }}" class="img-fluid order-image d-block mx-auto">
+                <img src="{{ Storage::disk('orders_images')->url($order['order_image']) }}" class="img-fluid order-image d-block mx-auto" alt="Чертёж к заказу - {{ $order['title'] }}">
                 <div class="d-flex justify-content-center mt-3 mb-3">
                     @if ($order['order_image'] != 'no-image.jpg')
                         <a href="{{ Storage::disk('orders_images')->url($order['order_image']) }}" target="_blank" class="zoom-link"><i class="bi bi-zoom-in"></i> Увеличить чертёж</a>
@@ -22,27 +22,27 @@
                     @endif
                 </div>
                 <div class="row">
-                    <div class="col-12 col-md-6">
-                        <p class="mb-2">Номер заказа:<strong> {{ $order['order_id'] }}</strong></p>
+                    <div class="col-12 col-md-6 mt-2">
+                        <p class="mb-3">Номер заказа в системе: <strong>#{{ $order['order_id'] }}</strong></p>
                         
                         @if ($order['customer_premium']) 
-                            <p class="mb-2">Статус заказчика: <span class="mb-1 premium-customer2"><i class="bi bi-fire"></i> Premium</span></p>
-                            <p class="mb-2">Контакты: <a href="/order/{{ $order['order_id'] }}" target="_blank">Доступны всем исполнителям</a></p>
+                            <p class="mb-3">Статус заказчика: <span class="mb-1 premium-customer2"><i class="bi bi-fire"></i> Premium</span></p>
+                            <p class="mb-3">Контакты: <a href="/order/{{ $order['order_id'] }}" target="_blank">Доступны всем исполнителям</a></p>
                         @else
-                            <p class="mb-2">Статус заказчика: Стандартный</p>
+                            <p class="mb-3">Статус заказчика: Стандартный</p>
                         @endif
                         
-                        <p class="mb-2">Город заказчика:<strong> {{ $order['region_name'] }}</strong></p>
+                        <p class="mb-3">Город заказчика:<strong> {{ $order['region_name'] }}</strong></p>
                     </div>
                     
-                    <div class="col-12 col-md-6">
-                        <p class="mb-2">Необходимое количество:<strong> {{ $order['quantity'] }} шт.</strong></p>
+                    <div class="col-12 col-md-6 mt-2">
+                        <p class="mb-3">Необходимое количество:<strong> {{ $order['quantity'] }} шт.</strong></p>
                         @if ($order['price'] > 0)
-                            <p class="mb-2">Проходная цена:<strong> {{ $order['price'] }} руб.</strong></p>
+                            <p class="mb-3">Проходная цена:<strong> {{ $order['price'] }} руб.</strong></p>
                         @else 
-                            <p class="mb-2">Проходная цена:<strong> Договорная</strong></p>
+                            <p class="mb-3">Проходная цена:<strong> Договорная</strong></p>
                         @endif
-                        <p class="mb-2">Дата сбора КП: до <strong>{{ $order['closing_date'] }}</strong> <small>- включительно</small></p>
+                        <p class="mb-3">Дата сбора КП: до <strong>{{ $order['closing_date'] }}</strong> <small>- включительно</small></p>
                     
                        
                     </div> 

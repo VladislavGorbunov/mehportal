@@ -10,6 +10,8 @@ use App\Models\OrderService;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Models\CustomerCompany;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\NewOrder;
 
 
 class OrderController extends Controller
@@ -87,6 +89,8 @@ class OrderController extends Controller
                 'order_id'   => $order->id,
             ]);
         }
+
+        // Mail::to('dfgdfg@yan.ru')->send(new NewOrder());
 
         $archive_date = $validated['closing_date'] . ' 23:59:59';
         // Добавление события для архивации заказа

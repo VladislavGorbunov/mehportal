@@ -1,9 +1,9 @@
 <div class="row">
 <div class="col-12 col-md-6">
     <p class="mb-3">Заказчик: <i class="bi bi-dash-lg"></i></p>
-    <p class="mb-3">ИНН заказчика: <i class="bi bi-dash-lg"></i></p>
-    <p class="mb-3">Регион заказчика: <i class="bi bi-dash-lg"></i></p>
-    <p class="mb-3">Адрес заказчика: <i class="bi bi-dash-lg"></i></p>
+    <p class="mb-3">ИНН: <i class="bi bi-dash-lg"></i></p>
+    <p class="mb-3">Регион: <i class="bi bi-dash-lg"></i></p>
+    <p class="mb-3">Адрес: <i class="bi bi-dash-lg"></i></p>
 </div>
 
 <div class="col-12 col-md-6">

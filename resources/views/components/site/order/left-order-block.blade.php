@@ -1,6 +1,6 @@
 <div class="col-12 col-md-4">
     <div class="sticky">
-        <img src="{{ Storage::disk('orders_images')->url($order['order_image']) }}" class="img-fluid order-image d-block mx-auto">
+        <img src="{{ Storage::disk('orders_images')->url($order['order_image']) }}" class="img-fluid order-image d-block mx-auto" alt="Чертёж к заказу - {{ $order['title'] }}">
             <div class="mt-3 mb-3">
                 <div>
                     @if ($order['order_image'] != 'no-image.jpg')

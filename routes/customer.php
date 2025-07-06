@@ -6,6 +6,7 @@ use App\Http\Controllers\Customer\RegistrationController;
 use App\Http\Controllers\Customer\OrderController;
 use App\Http\Controllers\Customer\CompanyController;
 use App\Http\Controllers\Customer\ProfileController;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/registration/customer', [RegistrationController::class, 'registrationCustomerPage'])->name('registration-customer');
 Route::post('/registration/customer', [RegistrationController::class, 'store']);
