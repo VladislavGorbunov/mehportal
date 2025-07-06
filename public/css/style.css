@@ -16,6 +16,11 @@ body {
     overflow-x: hidden;
 }
 
+html {
+  overflow-x: hidden;
+}
+
+
 .alert-primary {
   border-radius: 15px;
 }
@@ -100,12 +105,11 @@ h2, h3, h4, h5, h6 {
 
 .badge-us {
     position: relative;
-    
     background: rgb(36, 107, 222);
     color: #fff !important;
     font-size: 13px !important;
     padding: 5px 20px;
-    border-radius: 12px 26px;
+    border-radius: 6px ;
 }
 
 .navbar {
