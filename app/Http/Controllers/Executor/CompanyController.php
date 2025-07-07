@@ -19,11 +19,17 @@ class CompanyController extends Controller
     {
         $executor_id                 = Auth::guard('executor')->user()->id;
         $company                     = Executor::find($executor_id)->executorCompanies;
-        $services                    = ExecutorCompany::find($company->id)->services;
+        $services = [];
+
+        if (! empty($company)) {
+            $services = ExecutorCompany::find($company->id)->services;
+        }
+        
         $data['legal_forms']         = LegalForm::get();
         $data['regions']             = Region::get();
         $data['categories_services'] = CategoryService::get();
         $data['company']             = $company;
+        
         $services_array = [];
 
         foreach ($services as $service) {

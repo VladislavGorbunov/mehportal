@@ -12,7 +12,7 @@
         <li><a href="">Сменить пароль</a></li>
         <hr>
         <p class="mt-2 mb-2"><b>Платные услуги</b></p>
-        <li><a href="/customer/profile">Изменить тариф</a></li>
+        <li><a href="/customer/profile">Подключить Premium</a></li>
     </ul>
 </div>
 
