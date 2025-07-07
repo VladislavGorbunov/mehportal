@@ -29,7 +29,7 @@ class UpdateCustomerCompanyRequest extends FormRequest
             'address' => 'required|min:10',
             'contact_person' => 'required',
             'phone' => 'required',
-            'extension_number' => 'required',
+            'extension_number' => 'min:0|max:5',
             'email' => 'required|email',
             'description' => 'required|min:50',
         ];

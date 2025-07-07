@@ -25,12 +25,13 @@
             <x-admin.sidebar />
             <div class="col-12 col-md-9">
                 <div class="col-12 px-2">
+                @if (!empty($event_scheduler))
                     @if ($event_scheduler == 'OFF')
                         <div class="alert alert-danger text-center">Планировщик событий MySQL отключён.<br> 
                             Для включения добавьте строку event_scheduler=ON в файл конфигурации MySQL.
                         </div>
                     @endif
-                    
+                @endif
                     @yield('content')
                 </div>
             </div>

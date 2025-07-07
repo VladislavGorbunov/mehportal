@@ -21,9 +21,9 @@ html {
 }
 
 
-.alert-primary {
-  border-radius: 15px;
-}
+/* .alert-primary {
+  border-radius: 10px;
+} */
 
 @media (min-width: 1500px) {
   .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
@@ -263,6 +263,10 @@ h2, h3, h4, h5, h6 {
     border-radius: 8px;
     width: 210px;
     font-size: 15px;
+}
+
+.font-14 {
+    font-size: 14px !important;
 }
 
 .header-banner .btn-white {

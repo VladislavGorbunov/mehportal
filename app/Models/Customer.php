@@ -25,6 +25,9 @@ class Customer extends Authenticatable
         'lastname',
         'phone',
         'active',
+        'premium',
+        'premium_start_date',
+        'premium_end_date',
         'email',
         'password',
     ];

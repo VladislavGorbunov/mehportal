@@ -15,4 +15,8 @@ Route::middleware(['admin'])->group(function () {
     Route::get('/admin/customers/active', [CustomerController::class, 'getActiveCustomers'])->name('admin-get-active-customers');
     Route::get('/admin/customers/no-active', [CustomerController::class, 'getNoActiveCustomers'])->name('admin-get-noactive-customers');
     Route::get('/admin/customers/premium', [CustomerController::class, 'getPremiumCustomers'])->name('admin-get-premium-customers');
+    Route::get('/admin/customer/edit/{id}', [CustomerController::class, 'customerEdit'])->name('admin-customer-edit');
+    Route::post('/admin/customer/update', [CustomerController::class, 'update']);
+    Route::get('/admin/customer/premium-set/{id}', [CustomerController::class, 'premiumSet'])->name('admin-customer-premium-set');
+    Route::post('/admin/customer/premium-activation', [CustomerController::class, 'premiumActivation']);
 });
