@@ -1,7 +1,7 @@
 @extends('layouts.admin-panel')
 
-@section('title', 'Панель администратора - МЕХПОРТАЛ')
-@section('description', 'Панель администратора - МЕХПОРТАЛ')
+@section('title', 'Панель администратора - заказчики')
+@section('description', 'Панель администратора - заказчики')
 
 @section('content')
     <h2 class="fs-4 mb-3">{{ $title }}</h2>
@@ -25,7 +25,7 @@
                             @endif
                             <p>Дата регистрации: {{ date('d.m.Y', strtotime($customer->created_at)) }}</p>
                             @if (!empty($customer->customerCompanies))
-                                <p>Связанная организация: {{ $customer->customerCompanies->legal_form }} {{ $customer->customerCompanies->title }}</p>
+                                <p>Связанная организация: <a href="">{{ $customer->customerCompanies->legal_form }} {{ $customer->customerCompanies->title }}</a></p>
                             @else
                                 <p>Связанная организация: -</p>
                             @endif

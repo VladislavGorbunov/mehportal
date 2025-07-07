@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\UpdateCustomerProfileRequest;
 use App\Models\Customer;
 use App\Models\CustomerTariffs;
+use App\Models\CustomerCompany;
 use App\Models\PremiumCustomersInfo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -28,14 +29,18 @@ class CustomerController extends Controller
 
     public function getPremiumCustomers()
     {
-        $customers = Customer::where('premium', true)->paginate(15);
-        dd($customers);
+        $data['customers'] = Customer::where('premium', true)->paginate(10);
+        $data['title']     = 'Premium заказчики';
+        return view('admin.customers', $data);
     }
 
     public function getCustomersCompanies()
     {
-        $customers = Customer::where('active', true)->paginate(15);
-        dd($customers);
+        $data['customers_companies'] = CustomerCompany::paginate(10);
+        
+        $data['title']     = 'Компании заказчиков';
+        return view('admin.customers-companies', $data);
+    
     }
 
     public function customerEdit($id)
@@ -123,5 +128,10 @@ class CustomerController extends Controller
         session()->flash('message', 'Изменения сохранены');
         
         return redirect()->back();
+    }
+
+    public function editCustomerCompany()
+    {
+
     }
 }
