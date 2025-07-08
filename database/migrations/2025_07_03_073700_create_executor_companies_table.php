@@ -21,7 +21,8 @@ return new class extends Migration
             $table->string('address');
             $table->string('contact_person');
             $table->string('phone');
-            $table->string('extension_number');
+            $table->string('extension_number')->nullable();
+            $table->string('site')->nullable();
             $table->string('email');
             $table->string('description');
             $table->integer('active')->default(true);

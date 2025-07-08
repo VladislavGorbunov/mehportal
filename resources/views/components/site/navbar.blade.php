@@ -47,13 +47,13 @@
       </ul>
         <div class="d-flex justify-content-around align-items-center">
           @if (Auth::guard('customer')->check())
-            <a href="{{ Route('login-customer') }}" class="btn btn-none-bg mx-2" target="_blank">Мой кабинет</a>
+            <a href="{{ Route('login-customer') }}" class="btn btn-none-bg mx-2" target="_blank">Заказчик</a>
           @else
             <a href="{{ Route('login-customer') }}" class="btn btn-none-bg mx-2" target="_blank">Заказчикам</a>
           @endif
           
           @if (Auth::guard('executor')->check())
-            <a href="{{ Route('login-executor') }}" class="btn btn-dark" target="_blank">Мой кабинет</a>
+            <a href="{{ Route('login-executor') }}" class="btn btn-dark" target="_blank">Исполнитель</a>
           @else
             <a href="{{ Route('login-executor') }}" class="btn btn-dark" target="_blank">Исполнителям</a>
           @endif

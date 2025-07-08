@@ -21,6 +21,8 @@
         <meta name="application-name" content="МЕХПОРТАЛ - открытые заказы на металлообработку по всей России.">
         <meta name="theme-color" content="#1c1c1c" />
         <meta name="msapplication-navbutton-color" content="#1c1c1c" />
+
+        <link rel="canonical" href="{{ url()->current() }}"/>
     </head>
 
     <body>

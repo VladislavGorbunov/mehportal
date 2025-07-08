@@ -23,7 +23,7 @@
                             <p>Email: {{ $company->email }}</p> 
                             <p>Активирована: {{ $company->active ? 'Да' : 'Нет' }}</p>
                             <p>Дата добавления: {{ date('d.m.Y', strtotime($company->created_at)) }}</p>
-                            <p>Профиль заказчика: <a href="">{{ $company->customer->name }} {{ $company->customer->lastname }}</a></p>
+                            <p>Профиль заказчика: <a href="{{ Route('admin-customer-edit', ['id' => $company->customer->id]) }}">{{ $company->customer->name }} {{ $company->customer->lastname }}</a></p>
                         </div>
                     </div>
                     <hr>

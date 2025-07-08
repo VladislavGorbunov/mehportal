@@ -6,6 +6,7 @@
 
         <div class="col-12 col-md-9">
             <h2 class="order-title mb-3">{{ $company['legal'] }} «{{ $company['title'] }}»</h2>
+            <x-site.companies.company-info :company="$company"/>
         </div>
     </div>
 </div>

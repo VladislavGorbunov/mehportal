@@ -20,6 +20,17 @@ html {
   overflow-x: hidden;
 }
 
+.breadcrumb {
+    background: none;
+    padding: 9px 15px;
+    border: 1px solid #eeeff2;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.breadcrumb-item.active {
+  color: var(--btn-dark-color);
+}
 
 /* .alert-primary {
   border-radius: 10px;
@@ -110,8 +121,9 @@ h2, h3, h4, h5, h6 {
     color: #fff !important;
     font-size: 13px !important;
     padding: 5px 20px;
-    border-radius: 7px 22px;
+    border-radius: 8px 22px;
 }
+
 
 .navbar {
     font-size: 15px;
@@ -522,23 +534,33 @@ h2, h3, h4, h5, h6 {
 
 
 footer {
+    position: relative;
     font-size: 15px;
     padding-bottom: 0px;
     background: #111;
     margin-top: 30px;
     min-height: 350px;
+    overflow: hidden;
+    
 }
 
 footer .link-secondary {
-    color: #afacac !important;
+    position: relative;
+    color: #fefefe !important;
+    z-index: 1;
+    font-size: 14px;
 }
 
-
+footer .link-secondary:hover {
+    color: #8b99b8 !important;
+}
 
 footer h5 {
+    position: relative;
     font-size: 18px;
     font-weight: 500;
     color: #fff;
+    z-index: 1;
 }
 
 footer .navbar-brand {
@@ -555,6 +577,19 @@ footer .navbar-brand:hover {
 
 footer .logo-blue-color {
     color: var(--btn-blue-color);
+}
+
+footer .footer-light {
+    position: absolute;
+    left: calc(50% - 175px);
+    top: 30px;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: linear-gradient(0deg, rgb(203, 41, 92), var(--btn-blue-color));
+    filter: blur(100px);
+    opacity: 0.35;
+    z-index: 0;
 }
 
 .cookie-modal {
@@ -616,7 +651,7 @@ footer .logo-blue-color {
     border-radius: 2px;
 }
 
-.order-block .btn-more {
+.btn-more, .btn-more:hover {
     background: var(--btn-blue-color);
     color: #fff;
     padding: 6px 20px;
@@ -675,8 +710,6 @@ footer .logo-blue-color {
     margin-right: 5px;
     font-size: 21px;
 }
-
-
 
 .order-title {
     font-size: 22px;

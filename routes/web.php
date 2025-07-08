@@ -22,5 +22,9 @@ Route::get('/orders/service/{service_slug}', [OrdersController::class, 'getOrder
 Route::get('/orders/category/{category_slug}', [OrdersController::class, 'getOrdersForCategories']);
 
 Route::get('/companies/service/{service_slug}', [CompaniesController::class, 'getCompaniesForServices']);
+Route::get('/{region_slug}/companies/service/{service_slug}', [CompaniesController::class, 'getCompaniesForServicesregion']);
+
+Route::get('/companies/category/{category_slug}', [CompaniesController::class, 'getCompaniesForCategory']);
+Route::get('/{region_slug}/companies/category/{category_slug}', [CompaniesController::class, 'getCompaniesForCategoryRegion']);
 
 Route::get('/order/{order_id}', [OrdersController::class, 'getOrder']);

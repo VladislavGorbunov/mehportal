@@ -38,9 +38,57 @@ class ExecutorCompany extends Model
         return DB::table('executor_companies')
             ->join('executor_services', 'executor_services.company_id', '=', 'executor_companies.id')
             ->join('services', 'services.id', '=', 'executor_services.service_id')
-            ->select('executor_companies.*')
+            ->join('executors', 'executors.id', '=', 'executor_companies.executor_id')
+            ->join('regions', 'regions.id', '=', 'executor_companies.region_id')
+            ->select('executor_companies.*', 'executors.premium as executor_premium', 'executors.phone as executor_phone', 'executors.email as executor_email', 'regions.name as region_name')
             ->where('services.slug', $service_slug)
-            ->get();
+            ->orderBy('executors.premium', 'desc')
+            ->paginate(20);
+    }
+
+
+    public static function getCompaniesForCategory($category_id) {
+        return DB::table('executor_companies')
+            ->join('executor_services', 'executor_services.company_id', '=', 'executor_companies.id')
+            ->join('services', 'services.id', '=', 'executor_services.service_id')
+            ->join('categories_services', 'categories_services.id', '=', 'services.category_id')
+            ->join('executors', 'executors.id', '=', 'executor_companies.executor_id')
+            ->join('regions', 'regions.id', '=', 'executor_companies.region_id')
+            ->select('executor_companies.*', 'executors.premium as executor_premium', 'executors.phone as executor_phone', 'executors.email as executor_email', 'regions.name as region_name')
+            ->where('categories_services.id', '=', $category_id)
+            ->groupBy('executor_companies.id', 'regions.name')
+            ->orderBy('executors.premium', 'desc')
+            ->paginate(20);
+    }
+
+
+    public static function getCompaniesForServicesRegion($service_slug, $region_id) {
+        return DB::table('executor_companies')
+            ->join('executor_services', 'executor_services.company_id', '=', 'executor_companies.id')
+            ->join('services', 'services.id', '=', 'executor_services.service_id')
+            ->join('executors', 'executors.id', '=', 'executor_companies.executor_id')
+            ->join('regions', 'regions.id', '=', 'executor_companies.region_id')
+            ->select('executor_companies.*', 'executors.premium as executor_premium', 'executors.phone as executor_phone', 'executors.email as executor_email', 'regions.name as region_name')
+            ->where('services.slug', $service_slug)
+            ->where('regions.id', $region_id)
+            ->orderBy('executors.premium', 'desc')
+            ->paginate(20);
+    }
+
+
+    public static function getCompaniesForCategoryRegion(int $region_id, int $category_id) {
+        return DB::table('executor_companies')
+            ->join('executor_services', 'executor_services.company_id', '=', 'executor_companies.id')
+            ->join('services', 'services.id', '=', 'executor_services.service_id')
+            ->join('categories_services', 'categories_services.id', '=', 'services.category_id')
+            ->join('executors', 'executors.id', '=', 'executor_companies.executor_id')
+            ->join('regions', 'regions.id', '=', 'executor_companies.region_id')
+            ->select('executor_companies.*', 'executors.premium as executor_premium', 'executors.phone as executor_phone', 'executors.email as executor_email', 'regions.name as region_name')
+            ->where('categories_services.id', '=', $category_id)
+            ->where('regions.id', $region_id)
+            // ->groupBy('executor_companies.id', 'regions.name')
+            ->orderBy('executors.premium', 'desc')
+            ->paginate(20);
     }
 
 
