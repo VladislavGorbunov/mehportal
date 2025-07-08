@@ -44,6 +44,7 @@ class Order extends Model
             'regions.name as region_name', 'customers.premium as customer_premium', 'customers.id as customer_id')
             ->groupBy('orders.id', 'customer_companies.title', 'customer_companies.legal_form', 'customer_companies.inn', 'customer_companies.phone', 'customer_companies.address', 'customer_companies.email', 'customer_companies.contact_person', 'customer_companies.extension_number', 'regions.name')
             ->where('orders.id', $id)
+            ->where('customers.active', true)
             ->first();
     }
 
@@ -59,6 +60,7 @@ class Order extends Model
             ->join('customers', 'customers.id', '=', 'orders.customer_id')
             ->select('orders.*', 'orders.id', 'orders.price', 'services.title as service_title', 'services.slug', 'customer_companies.title as company_title', 'customer_companies.legal_form as company_legal_form', 'regions.name as region_name', 'customers.premium as customer_premium')
             ->where('services.slug', $service_slug)
+            ->where('customers.active', true)
             ->orderBy('orders.active', 'desc')
             ->orderBy('customers.premium', 'desc')
             ->orderBy('orders.id', 'desc')
@@ -72,9 +74,11 @@ class Order extends Model
             ->join('services', 'order_service.service_id', '=', 'services.id')
             ->join('customer_companies', 'customer_companies.customer_id', '=', 'orders.customer_id')
             ->join('regions', 'regions.id', '=', 'customer_companies.region_id')
+            ->join('customers', 'customers.id', '=', 'orders.customer_id')
             ->select('orders.*', 'orders.id', 'orders.price', 'services.title as service_title', 'services.slug', 'customer_companies.title as company_title', 'customer_companies.legal_form as company_legal_form', 'regions.name as region_name')
             ->where('services.slug', $service_slug)
             ->where('orders.active', true)
+            ->where('customers.active', true)
             ->count();
     }
 
@@ -85,9 +89,11 @@ class Order extends Model
             ->join('services', 'order_service.service_id', '=', 'services.id')
             ->join('customer_companies', 'customer_companies.customer_id', '=', 'orders.customer_id')
             ->join('regions', 'regions.id', '=', 'customer_companies.region_id')
+            ->join('customers', 'customers.id', '=', 'orders.customer_id')
             ->select('orders.*', 'orders.id', 'orders.price', 'services.title as service_title', 'services.slug', 'customer_companies.title as company_title', 'customer_companies.legal_form as company_legal_form', 'regions.name as region_name')
             ->where('services.slug', $service_slug)
             ->where('orders.archive', true)
+            ->where('customers.active', true)
             ->count();
     }
 
@@ -103,6 +109,7 @@ class Order extends Model
             ->select('orders.*', 'orders.id', 'orders.price', 'services.title as service_title', 'services.slug', 'customer_companies.title as company_title', 'customer_companies.legal_form as company_legal_form', 'regions.name as region_name', 'customers.premium as customer_premium')
             ->where('services.slug', $service_slug)
             ->where('customer_companies.region_id', $region_id)
+            ->where('customers.active', true)
             ->orderBy('orders.active', 'desc')
             ->orderBy('customers.premium', 'desc')
             ->orderBy('orders.id', 'desc')
@@ -116,10 +123,12 @@ class Order extends Model
             ->join('services', 'order_service.service_id', '=', 'services.id')
             ->join('customer_companies', 'customer_companies.customer_id', '=', 'orders.customer_id')
             ->join('regions', 'regions.id', '=', 'customer_companies.region_id')
+            ->join('customers', 'customers.id', '=', 'orders.customer_id')
             ->select('orders.*')
             ->where('services.slug', $service_slug)
             ->where('customer_companies.region_id', $region_id)
             ->having('orders.active', true)
+            ->where('customers.active', true)
             ->count();
     }
 
@@ -130,10 +139,12 @@ class Order extends Model
             ->join('services', 'order_service.service_id', '=', 'services.id')
             ->join('customer_companies', 'customer_companies.customer_id', '=', 'orders.customer_id')
             ->join('regions', 'regions.id', '=', 'customer_companies.region_id')
+            ->join('customers', 'customers.id', '=', 'orders.customer_id')
             ->select('orders.*')
             ->where('services.slug', $service_slug)
             ->where('customer_companies.region_id', $region_id)
             ->having('orders.archive', true)
+            ->where('customers.active', true)
             ->count();
     }
 
@@ -149,6 +160,7 @@ class Order extends Model
             ->join('customers', 'customers.id', '=', 'orders.customer_id')
             ->select('orders.*', 'customer_companies.title as company_title', 'customer_companies.legal_form as company_legal_form', 'regions.name as region_name', 'customers.premium as customer_premium')
             ->where('categories_services.id', '=', $category_id)
+            ->where('customers.active', true)
             ->groupBy('orders.id', 'customer_companies.title', 'customer_companies.legal_form', 'regions.name')
             ->orderBy('orders.active', 'desc')
             ->orderBy('customers.premium', 'desc')
@@ -164,10 +176,12 @@ class Order extends Model
             ->join('categories_services', 'categories_services.id', '=', 'services.category_id')
             ->join('customer_companies', 'customer_companies.customer_id', '=', 'orders.customer_id')
             ->join('regions', 'regions.id', '=', 'customer_companies.region_id')
+            ->join('customers', 'customers.id', '=', 'orders.customer_id')
             ->select('orders.*', 'customer_companies.title as company_title', 'customer_companies.legal_form as company_legal_form', 'regions.name as region_name')
             ->where('categories_services.id', '=', $category_id)
             ->groupBy('orders.id', 'customer_companies.title', 'customer_companies.legal_form', 'regions.name')
             ->having('orders.active', true)
+            ->where('customers.active', true)
             ->count();   
     }
 
@@ -179,10 +193,12 @@ class Order extends Model
             ->join('categories_services', 'categories_services.id', '=', 'services.category_id')
             ->join('customer_companies', 'customer_companies.customer_id', '=', 'orders.customer_id')
             ->join('regions', 'regions.id', '=', 'customer_companies.region_id')
+            ->join('customers', 'customers.id', '=', 'orders.customer_id')
             ->select('orders.*', 'customer_companies.title as company_title', 'customer_companies.legal_form as company_legal_form', 'regions.name as region_name')
             ->where('categories_services.id', '=', $category_id)
             ->groupBy('orders.id', 'customer_companies.title', 'customer_companies.legal_form', 'regions.name')
             ->having('orders.archive', true)
+            ->where('customers.active', true)
             ->count();   
     }
 
@@ -199,6 +215,7 @@ class Order extends Model
             ->select('orders.*', 'customer_companies.title as company_title', 'customer_companies.legal_form as company_legal_form', 'regions.name as region_name', 'customers.premium as customer_premium')
             ->where('categories_services.id', '=', $category_id)
             ->where('customer_companies.region_id', $region_id)
+            ->where('customers.active', true)
             ->groupBy('orders.id', 'customer_companies.title', 'customer_companies.legal_form', 'regions.name')
             ->orderBy('orders.active', 'desc')
             ->orderBy('customers.premium', 'desc')
@@ -214,11 +231,13 @@ class Order extends Model
             ->join('orders', 'orders.id', '=', 'order_service.order_id')
             ->join('customer_companies', 'customer_companies.customer_id', '=', 'orders.customer_id')
             ->join('regions', 'regions.id', '=', 'customer_companies.region_id')
+            ->join('customers', 'customers.id', '=', 'orders.customer_id')
             ->select('orders.*', 'customer_companies.title as company_title', 'customer_companies.legal_form as company_legal_form', 'regions.name as region_name')
             ->where('categories_services.id', '=', $category_id)
             ->where('customer_companies.region_id', $region_id)
             ->groupBy('orders.id', 'customer_companies.title', 'customer_companies.legal_form', 'regions.name')
             ->having('orders.archive', true)
+            ->where('customers.active', true)
             ->count();     
     }
 
@@ -230,11 +249,13 @@ class Order extends Model
             ->join('orders', 'orders.id', '=', 'order_service.order_id')
             ->join('customer_companies', 'customer_companies.customer_id', '=', 'orders.customer_id')
             ->join('regions', 'regions.id', '=', 'customer_companies.region_id')
+            ->join('customers', 'customers.id', '=', 'orders.customer_id')
             ->select('orders.*', 'customer_companies.title as company_title', 'customer_companies.legal_form as company_legal_form', 'regions.name as region_name')
             ->where('categories_services.id', '=', $category_id)
             ->where('customer_companies.region_id', $region_id)
             ->groupBy('orders.id', 'customer_companies.title', 'customer_companies.legal_form', 'regions.name')
             ->having('orders.archive', true)
+            ->where('customers.active', true)
             ->count();     
     }
 
@@ -246,6 +267,7 @@ class Order extends Model
             ->join('regions', 'regions.id', '=', 'customer_companies.region_id')
             ->join('customers', 'customers.id', '=', 'orders.customer_id')
             ->select('orders.*', 'customer_companies.title as company_title', 'customer_companies.legal_form as company_legal_form', 'regions.name as region_name', 'customers.premium as customer_premium')
+            ->where('customers.active', true)
             ->orderBy('orders.active', 'desc')
             ->orderBy('customers.premium', 'desc')
             ->orderBy('orders.id', 'desc')
@@ -262,6 +284,7 @@ class Order extends Model
             ->join('customers', 'customers.id', '=', 'orders.customer_id')
             ->select('orders.*', 'customer_companies.title as company_title', 'customer_companies.legal_form as company_legal_form', 'regions.name as region_name', 'customers.premium as customer_premium')
             ->where('customer_companies.region_id', $region_id)
+            ->where('customers.active', true)
             ->orderBy('orders.active', 'desc')
             ->orderBy('customers.premium', 'desc')
             ->orderBy('orders.id', 'desc')
@@ -270,14 +293,16 @@ class Order extends Model
     }
 
 
-    public static function countActiveOrders($region_id)
+    public static function countActiveOrders($region_id = null)
     {
         return DB::table('orders')
             ->join('customer_companies', 'customer_companies.customer_id', '=', 'orders.customer_id')
             ->join('regions', 'regions.id', '=', 'customer_companies.region_id')
+            ->join('customers', 'customers.id', '=', 'orders.customer_id')
             ->select('orders.*', 'customer_companies.title as company_title', 'customer_companies.legal_form as company_legal_form', 'regions.name as region_name')
             ->where('customer_companies.region_id', $region_id)
             ->where('orders.active', true)
+            ->where('customers.active', true)
             ->count();  
     }
 
@@ -287,9 +312,39 @@ class Order extends Model
         return DB::table('orders')
             ->join('customer_companies', 'customer_companies.customer_id', '=', 'orders.customer_id')
             ->join('regions', 'regions.id', '=', 'customer_companies.region_id')
+            ->join('customers', 'customers.id', '=', 'orders.customer_id')
             ->select('orders.*', 'customer_companies.title as company_title', 'customer_companies.legal_form as company_legal_form', 'regions.name as region_name')
             ->where('customer_companies.region_id', $region_id)
             ->where('orders.archive', true)
+            ->where('customers.active', true)
+            ->count();  
+    }
+
+
+    public static function countArchiveOrdersNoRegion()
+    {
+        return DB::table('orders')
+            ->join('customer_companies', 'customer_companies.customer_id', '=', 'orders.customer_id')
+            ->join('regions', 'regions.id', '=', 'customer_companies.region_id')
+            ->join('customers', 'customers.id', '=', 'orders.customer_id')
+            ->select('orders.*', 'customer_companies.title as company_title', 'customer_companies.legal_form as company_legal_form', 'regions.name as region_name')
+            ->where('orders.archive', true)
+            ->where('customers.active', true)
+            ->count();  
+    }
+
+
+
+    public static function countActiveOrdersNoRegion()
+    {
+        return DB::table('orders')
+            ->join('customer_companies', 'customer_companies.customer_id', '=', 'orders.customer_id')
+            ->join('regions', 'regions.id', '=', 'customer_companies.region_id')
+            ->join('customers', 'customers.id', '=', 'orders.customer_id')
+            ->select('orders.*', 'customer_companies.title as company_title', 'customer_companies.legal_form as company_legal_form', 'regions.name as region_name')
+           
+            ->where('orders.active', true)
+            ->where('customers.active', true)
             ->count();  
     }
 

@@ -45,8 +45,8 @@ class PagesController extends Controller
 
         $data['orders'] = $orders;
 
-        $data['count_orders'] = Order::where('active', true)->count();
-        $data['archive_count_orders'] = Order::where('archive', true)->count();
+        $data['count_orders'] = Order::countActiveOrdersNoRegion();
+        $data['archive_count_orders'] = Order::countArchiveOrdersNoRegion();
         return view('site.index', $data);
     }
 

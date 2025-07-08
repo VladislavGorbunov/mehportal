@@ -17,11 +17,6 @@
 
             <div class="d-flex flex-row justify-content-end">
                 <div class="row gx-3">
-                    <div class="col-12 col-md-auto text-center mb-2 mb-md-0">
-                        <div class="col-12 link-all-orders-block">
-                            <a href="">Смотреть все заказы</a>
-                        </div>
-                    </div>
 
                     <div class="col-12 col-md-auto text-center mb-2 mb-md-0">
                         <div class="col-12 count-orders-block">
