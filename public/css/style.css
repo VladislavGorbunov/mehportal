@@ -122,7 +122,7 @@ h2, h3, h4, h5, h6 {
 
 .container .top-menu-light {
     position: absolute;
-    right: -5px;
+    right: 0px;
     top: 0px;
     width: 180px;
     height: 100%;
