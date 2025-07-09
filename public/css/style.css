@@ -119,7 +119,8 @@ h2, h3, h4, h5, h6 {
     z-index: 2
 }
 
-.top-menu .top-menu-light {
+
+.container .top-menu-light {
     position: absolute;
     right: -5px;
     top: 0px;
@@ -127,8 +128,8 @@ h2, h3, h4, h5, h6 {
     height: 100%;
     border-radius: 30px;
     background: linear-gradient(0deg, rgb(203, 41, 92), var(--btn-blue-color));
-    filter: blur(40px);
-    opacity: 0.8;
+    filter: blur(33px);
+    opacity: 0.9;
     z-index: 1;
 }
 

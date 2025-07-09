@@ -1,5 +1,5 @@
 <div class="top-menu">
-    <div class="container">
+    <div class="container position-relative">
         <div class="top-menu-block py-3 py-md-2 text-center d-flex  align-items-center justify-content-between gap-3">
             <div class="d-flex gap-3 align-items-center">
                 <a href="/about" class="d-none d-md-block">О проекте «МехПортал»</a>
@@ -16,7 +16,9 @@
                 <a href="https://t.me/mehport" target="_blank"><img src="/images/telegram.svg"></a>
             </div> 
         </div>
+
+        <div class="top-menu-light"></div>
     </div>
 
-    <div class="top-menu-light"></div>
+    
 </div>
