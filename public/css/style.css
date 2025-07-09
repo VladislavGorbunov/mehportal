@@ -101,8 +101,10 @@ h2, h3, h4, h5, h6 {
 
 
 .top-menu {
+    position: relative;
     width: 100%;
     background: #111;
+    z-index: 0;
 }
 
 .top-menu-block {
@@ -111,8 +113,23 @@ h2, h3, h4, h5, h6 {
 }
 
 .top-menu a {
+    position: relative;
     color:rgba(227, 232, 237, 0.8);
     font-size: 13px;
+    z-index: 2
+}
+
+.top-menu .top-menu-light {
+    position: absolute;
+    right: -5px;
+    top: 0px;
+    width: 180px;
+    height: 100%;
+    border-radius: 30px;
+    background: linear-gradient(0deg, rgb(203, 41, 92), var(--btn-blue-color));
+    filter: blur(40px);
+    opacity: 0.8;
+    z-index: 1;
 }
 
 .badge-us {

@@ -119,7 +119,7 @@ class CompaniesController extends BaseController
         $data['header_title'] = $category->title .' - каталог предприятий ' . $region->name_in;
     
         $data['breadcrumb'] = [
-            'region' => $region->name,
+            'region' => $region->name_in,
             'region_slug' => $region->slug,
             'category' => $category->title,
         ];
@@ -166,7 +166,7 @@ class CompaniesController extends BaseController
         $data['header_title'] = $service->title .' - каталог предприятий ' . $region->name_in;
         
         $data['breadcrumb'] = [
-            'region' => $region->name,
+            'region' => $region->name_in,
             'region_slug' => $region->slug,
             'category' => $service->title,
         ];

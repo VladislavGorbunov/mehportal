@@ -23,6 +23,12 @@ class OrdersController extends Controller
         $data['region_name'] = '';
         $data['region_slug'] = '';
 
+        $data['breadcrumb'] = [
+            'region' => null,
+            'region_slug' => null,
+            'category' => $category->title,
+        ];
+
         $orders_array = Order::getOrdersForCategories($category_id);
 
         $orders = [];
@@ -73,6 +79,12 @@ class OrdersController extends Controller
         $data['region_name'] = $region->name;
         $data['region_slug'] = $region->slug;
 
+        $data['breadcrumb'] = [
+            'region' => $region->name_in,
+            'region_slug' => $region->slug,
+            'category' => $category->title,
+        ];
+
         $orders = [];
 
         foreach ($orders_array as $order) {
@@ -119,6 +131,12 @@ class OrdersController extends Controller
         $orders_array = Order::getOrdersForServices($slug);
         $data['region_name'] = '';
         $data['region_slug'] = '';
+
+        $data['breadcrumb'] = [
+            'region' => null,
+            'region_slug' => null,
+            'category' => $service->title,
+        ];
 
         $orders = [];
 
@@ -168,6 +186,12 @@ class OrdersController extends Controller
         $orders_array = Order::getOrdersForServicesRegion($service_slug, $region->id);
         $data['region_name'] = $region->name;
         $data['region_slug'] = $region->slug;
+
+        $data['breadcrumb'] = [
+            'region' => $region->name_in,
+            'region_slug' => $region->slug,
+            'category' => $service->title,
+        ];
 
         $orders = [];
 

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class ExecutorCompany extends Model
 {
@@ -95,5 +96,10 @@ class ExecutorCompany extends Model
     public function services(): BelongsToMany
     {
         return $this->belongsToMany(Service::class, 'executor_services', 'company_id', 'service_id');
+    }
+
+    public function executor(): BelongsTo
+    {
+        return $this->belongsTo(Executor::class);
     }
 }

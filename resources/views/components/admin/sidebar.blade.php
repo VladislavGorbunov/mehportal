@@ -10,10 +10,10 @@
         <li><a href="{{ Route('admin-customers-companies') }}">Организации заказчиков</a></li>
         <hr>
         <p class="mt-2 mb-2"><b>Исполнители</b></p>
-        <li><a href="">Активные исполнители</a></li>
-        <li><a href="">Не активные исполнители</a></li>
-        <li><a href="">Premium исполнители</a></li>
-        <li><a href="">Организации исполнителей</a></li>
+        <li><a href="{{ Route('admin-get-active-executors') }}">Активные исполнители</a></li>
+        <li><a href="{{ Route('admin-get-noactive-executors') }}">Не активные исполнители</a></li>
+        <li><a href="{{ Route('admin-get-premium-executors') }}">Premium исполнители</a></li>
+        <li><a href="{{ Route('admin-executors-companies') }}">Организации исполнителей</a></li>
         <hr>
         <p class="mt-2 mb-2"><b>Заказы</b></p>
         <li><a href="/customer/profile">Открытые заказы</a></li>

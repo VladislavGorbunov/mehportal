@@ -11,15 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('premium_customers_info', function (Blueprint $table) {
+        Schema::create('executors_tariffs', function (Blueprint $table) {
             $table->id();
-            $table->integer('customer_id');
-            $table->string('tariff_months');
+            $table->string('title');
+            $table->string('months');
             $table->string('price');
-            $table->timestamp('premium_start_date');
-            $table->timestamp('premium_end_date');
-            $table->string('payment_invoice');
-            $table->string('note')->nullable();
+            $table->string('active')->default(true);
             $table->timestamps();
         });
     }
@@ -29,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('premium_customers_info');
+        Schema::dropIfExists('executors_tariffs');
     }
 };

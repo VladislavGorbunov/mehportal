@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('premium_customers_info', function (Blueprint $table) {
+        Schema::create('premium_executors_info', function (Blueprint $table) {
             $table->id();
-            $table->integer('customer_id');
+            $table->integer('executor_id');
             $table->string('tariff_months');
             $table->string('price');
             $table->timestamp('premium_start_date');
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('premium_customers_info');
+        Schema::dropIfExists('premium_executors_info');
     }
 };

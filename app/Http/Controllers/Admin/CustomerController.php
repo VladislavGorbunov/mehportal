@@ -3,9 +3,12 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\UpdateCustomerProfileRequest;
+use App\Http\Requests\Admin\UpdateCustomerCompanyRequest;
 use App\Models\Customer;
 use App\Models\CustomerTariffs;
 use App\Models\CustomerCompany;
+use App\Models\LegalForm;
+use App\Models\Region;
 use App\Models\PremiumCustomersInfo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -130,8 +133,34 @@ class CustomerController extends Controller
         return redirect()->back();
     }
 
-    public function editCustomerCompany()
+    public function editCustomerCompany($id)
     {
+        $data['company'] = CustomerCompany::where('id', $id)->first();
+        $data['legal_forms'] = LegalForm::get();
+        $data['regions'] = Region::get();
+        return view('admin.customer-company-edit', $data);
+    }
 
+
+    public function updateCustomerCompany(UpdateCustomerCompanyRequest $request)
+    {
+        $validated = $request->validated();
+        
+        CustomerCompany::where('id', $request->id)->update([
+            'legal_form' => $validated['legal_form'],
+            'title' => $validated['title'],
+            'inn' => $validated['inn'],
+            'region_id' => $validated['region_id'],
+            'contact_person' => $validated['contact_person'],
+            'phone' => $validated['phone'],
+            'email' => $validated['email'],
+            'extension_number' => $validated['extension_number'],
+            'address' => $validated['address'],
+            'description' => $validated['description']
+        ]);
+
+        session()->flash('message', 'Изменения сохранены');
+
+        return redirect()->back();
     }
 }

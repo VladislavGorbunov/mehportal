@@ -4,7 +4,6 @@
 @section('description', $description)
 
 @section('content')
-
     <div class="mt-5">
         <div class="d-md-flex align-items-center">
         
@@ -30,9 +29,23 @@
                 </div>
             </div>
         </div>
-
-        
     </div>
+
+    <div class="d-none d-md-block">
+<nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9' height='9'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Главная</a></li>
+    @if ($breadcrumb['region'])
+    <li class="breadcrumb-item"><a href="/{{ $breadcrumb['region_slug'] }}">Каталог заказов {{ $breadcrumb['region'] }}</a></li>
+    @else 
+    <li class="breadcrumb-item">Каталог заказов</li>
+    @endif
+    
+    <li class="breadcrumb-item active" aria-current="page">{{ $breadcrumb['category'] }}</li>
+  </ol>
+</nav>
+</div>
+
     @if (!empty($orders))
         @foreach ($orders as $order)
             <x-site.order-block :order="$order" :regionSlug="$region_slug"/>

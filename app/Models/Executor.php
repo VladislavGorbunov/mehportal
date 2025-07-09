@@ -13,6 +13,7 @@ class Executor extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
 
     protected $table = 'executors';
+    protected $primaryKey = 'id';
 
     /**
      * The attributes that are mass assignable.

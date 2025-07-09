@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('password');
             $table->integer('active')->default(0);
             $table->integer('premium')->default(0);
+            $table->timestamp('premium_start_date')->nullable();
+            $table->timestamp('premium_end_date')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
