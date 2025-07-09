@@ -7,7 +7,7 @@
                 <a href="/faq" class="d-none d-md-block">FAQ</a>
                 <a href="/legal-documents" class="d-none d-md-block">Правовые документы</a>
                 <a href="/calculators" class="d-none d-md-block">Полезные калькуляторы</a>
-                <a href="/tariffs" class="badge-us ms-2"> Premium тариф за 0 руб.</a>
+                <a href="/tariffs" class="badge-us ms-2">Подключить Premium за 0 руб.</a>
             </div>
 
             <div class="d-flex flex-row gap-3">
