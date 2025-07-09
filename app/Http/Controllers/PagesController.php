@@ -104,7 +104,12 @@ class PagesController extends Controller
     // Страница контактов
     public function contacts() 
     {
-        echo 'contacts';
+        $data['title'] = 'МЕХПОРТАЛ - контакты';
+        $data['description'] = 'МЕХПОРТАЛ - наши контакты, адреса и реквизиты';
+        $data['header_title'] = 'МехПортал - наши контакты, адрес и реквизиты';
+        $data['region_name'] = null;
+        $data['region_slug'] = null;
+        return view('site.contacts', $data);
     }
 
     // Страница тарифов
