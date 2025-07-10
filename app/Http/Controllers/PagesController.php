@@ -13,7 +13,7 @@ class PagesController extends Controller
     public function index() 
     {
         $data['title'] = 'Заказы на металлообработку в открытом доступе по всей России - МЕХПОРТАЛ';
-        $data['description'] = 'Заказы на металлообработку в открытом доступе по всей России - МЕХПОРТАЛ';
+        $data['description'] = 'Все заказы на металлообработку в открытом доступе от заказчиков на портале - МЕХПОРТАЛ. Размещайте заказы бесплатно! Только проверенные заказчики и исполнители.';
         $data['header_title'] = 'Заказы на металлообработку в открытом доступе по всей России';
         $data['region_name'] = '';
         $data['region_slug'] = '';
@@ -56,8 +56,8 @@ class PagesController extends Controller
 
         if (! $region) abort(404);
 
-        $data['title'] = 'Заказы на металлообработку в открытом доступе ' . $region->name_in;
-        $data['description'] = 'Заказы на металлообработку в открытом доступе ' . $region->name_in;
+        $data['title'] = 'Заказы на металлообработку от заказчиков в открытом доступе ' . $region->name_in;
+        $data['description'] = 'Все заказы на металлообработку в открытом доступе '. $region->name_in .' от заказчиков на портале - МЕХПОРТАЛ. Размещайте заказы бесплатно! Только проверенные заказчики и исполнители.';
         $data['header_title'] = 'Заказы на металлообработку в открытом доступе ' . $region->name_in;
         $data['region_name'] = $region->name;
         $data['region_slug'] = $region->slug;

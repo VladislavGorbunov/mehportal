@@ -18,7 +18,7 @@ class OrdersController extends Controller
         $category_id = $category->id;
 
         $data['title'] = 'Заказы на ' . mb_strtolower($category->title_case) . ' в открытом доступе в России';
-        $data['description'] = 'Заказы на ' . mb_strtolower($category->title_case) . ' в открытом доступе в России';
+        $data['description'] = 'Каталог заказов на ' . mb_strtolower($category->title_case) . ' в открытом доступе по всей России. Заказы напрямую от заказчиков. Удобный поиск и ежедневное обновление. Заходите!';
         $data['header_title'] = 'Заказы на ' . mb_strtolower($category->title_case) . ' в открытом доступе по всей России';
         $data['region_name'] = '';
         $data['region_slug'] = '';
@@ -70,7 +70,7 @@ class OrdersController extends Controller
         if (! $region) abort(404);
         $category = CategoryService::where('slug', $category_slug)->first();
         $data['title'] = 'Заказы на ' . mb_strtolower($category->title_case) . ' в открытом доступе ' . $region->name_in;
-        $data['description'] = 'Заказы на ' . mb_strtolower($category->title_case) . ' в открытом доступе ' . $region->name_in;
+        $data['description'] = 'Каталог заказов на ' . mb_strtolower($category->title_case) . ' в открытом доступе '.$region->name_in.'. Заказы напрямую от заказчиков. Удобный поиск и ежедневное обновление. Заходите!';
         $data['header_title'] = 'Заказы на ' . mb_strtolower($category->title_case) . ' в открытом доступе ' . $region->name_in;
 
         $category_id = $category->id;
@@ -124,7 +124,7 @@ class OrdersController extends Controller
         $service = Service::where('slug', $slug)->first();
 
         $data['title'] = 'Заказы на ' . mb_strtolower($service->title_case) . ' в открытом доступе в России';
-        $data['description'] = 'Заказы на ' . mb_strtolower($service->title_case) . ' в открытом доступе в России';
+        $data['description'] = 'Каталог заказов на ' . mb_strtolower($service->title_case) . ' в открытом доступе по всей России. Заказы напрямую от заказчиков. Удобный поиск и ежедневное обновление. Заходите!';
 
         $data['header_title'] = 'Заказы на ' . mb_strtolower($service->title) . ' в открытом доступе по всей России';
 
@@ -180,7 +180,7 @@ class OrdersController extends Controller
         $service = Service::where('slug', $service_slug)->first();
 
         $data['title'] = 'Заказы на ' . mb_strtolower($service->title_case) . ' в открытом доступе ' . $region->name_in;
-        $data['description'] = 'Заказы на ' . mb_strtolower($service->title_case) . ' в открытом доступе ' . $region->name_in;
+        $data['description'] = 'Каталог заказов на ' . mb_strtolower($service->title_case) . ' в открытом доступе '.$region->name_in.'. Заказы напрямую от заказчиков. Удобный поиск и ежедневное обновление. Заходите!';
         $data['header_title'] = 'Заказы на ' . mb_strtolower($service->title_case) . ' в открытом доступе ' . $region->name_in;
 
         $orders_array = Order::getOrdersForServicesRegion($service_slug, $region->id);
