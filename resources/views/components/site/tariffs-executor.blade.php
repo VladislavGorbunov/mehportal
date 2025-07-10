@@ -25,7 +25,7 @@
                 <p class="text-center">Бейдж для карточки предприятия «Premium исполнитель»</p><hr>
                 <p class="text-center">Доступ к контактам активных заказов.</p><hr>
                 <p class="text-center">Доступ к контактам архивных заказов.</p><hr>
-                <a href="" class="btn btn-tariff d-block mx-auto mt-4">Подключить на 1 месяц</a>
+                <a href="{{ Route('executor-select-tariff') }}" class="btn btn-tariff d-block mx-auto mt-4" target="_blank">Подключить на 1 месяц</a>
             </div>
         </div>
 
@@ -40,7 +40,7 @@
                 <p class="text-center">Бейдж для карточки предприятия «Premium исполнитель»</p><hr>
                 <p class="text-center">Доступ к контактам активных заказов.</p><hr>
                 <p class="text-center">Доступ к контактам архивных заказов.</p><hr>
-                <a href="" class="btn btn-tariff d-block mx-auto mt-4">Подключить на 6 месяцев</a>
+                <a href="{{ Route('executor-select-tariff') }}" class="btn btn-tariff d-block mx-auto mt-4" target="_blank">Подключить на 6 месяцев</a>
             </div>
         </div>
 
@@ -55,7 +55,7 @@
                 <p class="text-center">Бейдж для карточки предприятия «Premium исполнитель»</p><hr>
                 <p class="text-center">Доступ к контактам активных заказов.</p><hr>
                 <p class="text-center">Доступ к контактам архивных заказов.</p><hr>
-                <a href="" class="btn btn-tariff d-block mx-auto mt-4">Подключить на год</a>
+                <a href="{{ Route('executor-select-tariff') }}" class="btn btn-tariff d-block mx-auto mt-4" target="_blank">Подключить на год</a>
             </div>
         </div>
     </div>
