@@ -1,8 +1,8 @@
 
-<h2 class="fs-4 text-center mt-4 mb-4">Для заказчиков</h2>
-    <hr>
+<h2 class="fs-3 text-center mt-4 mb-4">Для заказчиков</h2>
+
     <div class="row mt-4">
-        <div class="col-12 col-md-3">
+        <div class="col-12 col-md-3 mb-3">
             <div class="col-12 border rounded p-3">
                 <p class="text-center fs-5 mb-2 tariff-title">Базовый</p>
                 <p class="text-center">Бессрочно</p>
@@ -14,7 +14,7 @@
             </div>
         </div>
 
-        <div class="col-12 col-md-3">
+        <div class="col-12 col-md-3 mb-3">
             <div class="col-12 border rounded p-3">
                 <p class="text-center fs-5 mb-2 tariff-title">«Premium»</p>
                 <p class="text-center">на 1 месяц</p>
@@ -29,7 +29,7 @@
             </div>
         </div>
 
-        <div class="col-12 col-md-3">
+        <div class="col-12 col-md-3 mb-3">
             <div class="col-12 border rounded p-3">
                 <p class="text-center fs-5 mb-2 tariff-title">«Premium»</p>
                 <p class="text-center">на 6 месяцев</p>
@@ -44,7 +44,7 @@
             </div>
         </div>
 
-        <div class="col-12 col-md-3">
+        <div class="col-12 col-md-3 mb-3">
             <div class="col-12 border rounded p-3">
                 <p class="text-center fs-5 mb-2 tariff-title">«Premium»</p>
                 <p class="text-center">на 12 месяцев</p>

@@ -32,9 +32,11 @@ html {
   color: var(--btn-dark-color);
 }
 
-/* .alert-primary {
-  border-radius: 10px;
-} */
+.alert {
+  border-left: none;
+  border-right: none;
+  border-radius: 0px;
+}
 
 @media (min-width: 1500px) {
   .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
