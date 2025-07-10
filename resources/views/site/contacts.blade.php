@@ -26,7 +26,7 @@
         </div>
 
         <div class="col-12 col-md-2 mb-2">
-            <img src="/images/tg-qr.jpg" class="img-fluid">
+            <img src="/images/tg-qr.jpg" class="img-fluid" alt="МехПортал - QR код на канал в Телеграм">
         </div>
     </div>
 

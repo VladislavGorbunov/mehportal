@@ -46,10 +46,11 @@
     	</div>
 	</div>
 
-    <div class="col-10 col-md-3 cookie-modal d-flex align-items-center justify-content-around">
+    <div class="cookie-modal ">
+	<div class="container cookie-modal-container d-flex align-items-center justify-content-around">
       <div><img src="/images/cookie-icon.svg" class="cookie-icon"></div>
       <div>Мы используем файлы cookie, они помогают нам делать этот сайт удобнее для пользователя.</div>
-      <div class="mx-2"><button class="btn btn-cookie-ok">Хорошо</button></div>
+      <div class="mx-2"><button class="btn btn-cookie-ok">Хорошо</button></div></div>
     </div>
 
     <x-modal-regions />

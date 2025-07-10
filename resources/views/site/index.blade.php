@@ -7,7 +7,6 @@
     <x-site.companies />
     <x-site.for-created />
    
-
     <div class="mt-4">
         <div class="d-md-flex align-items-center">
         
@@ -17,7 +16,6 @@
 
             <div class="d-flex flex-row justify-content-end">
                 <div class="row gx-3">
-
                     <div class="col-12 col-md-auto text-center mb-2 mb-md-0">
                         <div class="col-12 count-orders-block">
                             <b>Активных заказов: {{ $count_orders }}</b>
@@ -32,8 +30,6 @@
                 </div>
             </div>
         </div>
-
-        
     </div>
     
     @if (!empty($orders))
