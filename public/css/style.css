@@ -627,7 +627,7 @@ footer .footer-light {
     position: fixed;
     width: 100% !important;
     left: 0px;
-    bottom: 5px;
+    bottom: 0px;
     font-size: 13px;
     color: #111;
     z-index: 3;
@@ -637,8 +637,8 @@ footer .footer-light {
     background: rgba(251, 253, 255, 0.9);
     padding: 15px 15px;
     backdrop-filter: blur(10px);
-    box-shadow: 0 4px 12px -3px rgba(23, 26, 35, 0.15);
-    border-radius: 10px;
+    box-shadow: 0 4px 12px 0px rgba(23, 26, 35, 0.2);
+    border-radius: 20px 20px 0 0;
     max-width: 480px;
 }
 
