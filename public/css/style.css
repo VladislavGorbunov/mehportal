@@ -626,7 +626,7 @@ footer .footer-light {
     width: 100% !important;
     left: 0px;
     bottom: 15px;
-    font-size: 14px;
+    font-size: 13px;
     color: #111;
     z-index: 3;
 }
@@ -637,14 +637,14 @@ footer .footer-light {
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 12px -3px rgba(23, 26, 35, 0.15);
     border-radius: 10px;
-    max-width: 520px;
+    max-width: 480px;
 }
 
 .cookie-modal .btn-cookie-ok {
     background: #111;
     color: #fff;
     border-radius: 8px;
-    font-size: 13px;
+    font-size: 12px;
     padding: 8px 15px;
 }
 
