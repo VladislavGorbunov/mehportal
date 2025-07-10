@@ -1,12 +1,12 @@
 <?php
-namespace App\Http\Controllers\Customer;
+namespace App\Http\Controllers\Executor;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\Customer\UpdateCustomerProfileRequest;
-use App\Models\Customer;
-use App\Models\CustomerTariffConnectionRequest;
-use App\Models\CustomerTariffs;
+use App\Models\Executor;
+use App\Models\ExecutorTariffConnectionRequest;
+use App\Models\ExecutorTariffs;
 use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
@@ -14,17 +14,17 @@ class ProfileController extends Controller
     //
     public function index()
     {
-        $customer_id      = Auth::guard('customer')->user()->id;
-        $data['customer'] = Customer::where('id', $customer_id)->first();
-        return view('customer.profile', $data);
+        $executor_id      = Auth::guard('executor')->user()->id;
+        $data['executor'] = Executor::where('id', $executor_id)->first();
+        return view('executor.profile', $data);
     }
 
     public function update(UpdateCustomerProfileRequest $request)
     {
         $validated   = $request->validated();
-        $customer_id = Auth::guard('customer')->user()->id;
+        $executor_id = Auth::guard('executor')->user()->id;
 
-        Customer::where('id', $customer_id)->update([
+        Executor::where('id', $executor_id)->update([
             'name'     => $validated['name'],
             'lastname' => $validated['lastname'],
             'phone'    => $validated['phone'],
@@ -38,13 +38,13 @@ class ProfileController extends Controller
 
     public function selectTariff(Request $request)
     {
-        $customer_id      = Auth::guard('customer')->user()->id;
-        $data['customer'] = Customer::where('id', $customer_id)->first();
-        $tariff = CustomerTariffs::where('months', $request->tariff_months)->first();
+        $executor_id      = Auth::guard('executor')->user()->id;
+        $data['executor'] = Executor::where('id', $executor_id)->first();
+        $tariff = ExecutorTariffs::where('months', $request->tariff_months)->first();
 
         if ($request->method() == 'POST') {
-            CustomerTariffConnectionRequest::create([
-                'customer_id' => $customer_id,
+            ExecutorTariffConnectionRequest::create([
+                'executor_id' => $executor_id,
                 'tariff_months' => $request->tariff_months,
                 'price' => $tariff->price,
                 'title' => $request->title,
@@ -56,8 +56,8 @@ class ProfileController extends Controller
             return redirect()->back();
 
         } else {
-            $data['tariffs']  = CustomerTariffs::get();
-            return view('customer.tariff', $data);
+            $data['tariffs']  = ExecutorTariffs::get();
+            return view('executor.tariff', $data);
         }
     }
 

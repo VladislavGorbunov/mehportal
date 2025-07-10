@@ -30,4 +30,8 @@ Route::middleware(['customer'])->group(function () {
     Route::get('/customer/my-orders', [OrderController::class, 'myOrders'])->name('my-orders');
     Route::get('/customer/order/close/{id}', [OrderController::class, 'orderClose']);
     Route::get('customer/logout', [AuthController::class, 'logout'])->name('customer-logout');
+
+    Route::get('/customer/select-tariff', [ProfileController::class, 'selectTariff'])->name('customer-select-tariff');
+    Route::post('/customer/select-tariff', [ProfileController::class, 'selectTariff']);
+
 });

@@ -20,7 +20,8 @@
         <li><a href="/customer/profile">Архивные заказы</a></li>
         <hr>
         <p class="mt-2 mb-2"><b>Платные услуги</b></p>
-        <li><a href="/customer/profile">Заявки на Premium</a></li>
+        <li><a href="{{ Route('premium-customers-requests') }}">Заявки на Premium от заказчиков</a></li>
+        <li><a href="{{ Route('premium-executors-requests') }}">Заявки на Premium от исполнителей</a></li>
         <li><a href="/customer/profile">Информация о Premium заказчиках</a></li>
         <li><a href="/customer/profile">Информация о Premium исполнителях</a></li>
     </ul>

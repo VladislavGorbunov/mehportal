@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\IndexController;
 use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\Admin\ExecutorController;
+use App\Http\Controllers\Admin\TariffsController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/login/admin', [AuthController::class, 'loginAdminPage'])->name('login-admin');
@@ -37,4 +38,10 @@ Route::middleware(['admin'])->group(function () {
     Route::post('/admin/executor/update', [ExecutorController::class, 'update']);
     Route::get('/admin/executor/premium-set/{id}', [ExecutorController::class, 'premiumSet'])->name('admin-executor-premium-set');
     Route::post('/admin/executor/premium-activation', [executorController::class, 'premiumActivation']);
+
+    Route::get('/admin/premium-customers-requests', [TariffsController::class, 'customersPremiumRequests'])->name('premium-customers-requests');
+    Route::get('/admin/premium-customers-requests/delete/{id}', [TariffsController::class, 'deleteCustomerRequest'])->name('premium-customer-request-delete');
+
+    Route::get('/admin/premium-executors-requests', [TariffsController::class, 'executorsPremiumRequests'])->name('premium-executors-requests');
+    Route::get('/admin/premium-executor-requests/delete/{id}', [TariffsController::class, 'deleteExecutorRequest'])->name('premium-executor-request-delete');
 });

@@ -13,10 +13,9 @@
         <hr>
         <p class="mt-2 mb-2"><b>Профиль</b></p>
         <li><a href="/customer/profile">Мой профиль</a></li>
-        <li><a href="">Сменить пароль</a></li>
         <hr>
         <p class="mt-2 mb-2"><b>Платные услуги</b></p>
-        <li><a href="/customer/profile">Подключить Premium</a></li>
+        <li><a href="{{ Route('customer-select-tariff') }}">Подключить Premium</a></li>
     </ul>
 </div>
 
