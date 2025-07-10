@@ -2,9 +2,9 @@
     <div><p class="m-0 fs-5">Нужно найти исполнителя для вашего заказа? </p>
     <small>Разместите заказ абсолютно бесплатно в нашем каталоге!</small></div>
     @if (Auth::guard('customer')->user())
-        <a href="/customer/add-order" class="btn btn-add-order-site">Разместить заказ бесплатно</a>
+        <a href="/customer/add-order" class="btn btn-add-order-site"><i class="bi bi-folder-plus mx-2"></i> Разместить заказ бесплатно</a>
     @else
-        <a href="/login/customer" class="btn btn-add-order-site">Разместить заказ бесплатно</a>
+        <a href="/login/customer" class="btn btn-add-order-site"><i class="bi bi-folder-plus mx-2"></i> Разместить заказ бесплатно</a>
     @endif
     
 </div>
