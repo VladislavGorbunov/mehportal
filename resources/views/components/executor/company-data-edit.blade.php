@@ -67,6 +67,11 @@
   					<label class="form-label">Email контактного лица:</label>
   					<input type="email" class="form-control" name="email" value="{{ $company->email }}" placeholder="Например: petrov-dmk@mail.ru">
 				</div>
+
+                <div class="mb-3">
+  					<label class="form-label">Сайт компании:</label>
+  					<input type="text" class="form-control" name="site" value="{{ $company->site }}" placeholder="Например: https://my-company.ru">
+				</div>
             </div>
         </div>
 

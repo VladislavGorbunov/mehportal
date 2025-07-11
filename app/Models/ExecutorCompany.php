@@ -28,6 +28,7 @@ class ExecutorCompany extends Model
         'address',
         'contact_person',
         'phone',
+        'site',
         'extension_number',
         'email',
         'description',
@@ -87,7 +88,7 @@ class ExecutorCompany extends Model
             ->select('executor_companies.*', 'executors.premium as executor_premium', 'executors.phone as executor_phone', 'executors.email as executor_email', 'regions.name as region_name')
             ->where('categories_services.id', '=', $category_id)
             ->where('regions.id', $region_id)
-            // ->groupBy('executor_companies.id', 'regions.name')
+            ->groupBy('executor_companies.id', 'regions.name')
             ->orderBy('executors.premium', 'desc')
             ->paginate(20);
     }
