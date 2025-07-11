@@ -48,7 +48,7 @@
 
     <div class="cookie-modal ">
 	<div class="container cookie-modal-container d-flex align-items-center justify-content-around">
-      <div><img src="/images/cookie-icon.svg" class="cookie-icon"></div>
+      <div><img src="/images/cookie-icon.svg" class="cookie-icon" alt="Мы используем файлы cookie"></div>
       <div>Мы используем файлы cookie, они помогают нам делать этот сайт удобнее для пользователя.</div>
       <div class="mx-2"><button class="btn btn-cookie-ok">Хорошо</button></div></div>
     </div>
