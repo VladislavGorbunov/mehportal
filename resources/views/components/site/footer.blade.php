@@ -32,7 +32,7 @@
       		<div class="col-12 col-md-3 text-center  mt-3 mt-md-0">
         		<h5>Информация</h5>
         		<ul class="list-unstyled text-small">
-          			<li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Наши контакты</a></li>
+          			<li class="mb-1"><a class="link-secondary text-decoration-none" href="{{ Route('contacts') }}">Наши контакты</a></li>
           			<li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Реквизиты</a></li>
           			<li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Оплата</a></li>
           			<li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Договор-оферта</a></li>
@@ -40,7 +40,7 @@
         		</ul>
       		</div>
 
-      		<div class="col-12 text-center text-light mt-5">
+      		<div class="col-12 text-center text-light mt-3">
 				МЕХПОРТАЛ © <?php echo date('Y') ?> г. - сервис поиска заказов на металлообработку и не только.
 			</div>
     	</div>

@@ -97,7 +97,12 @@ class PagesController extends Controller
     // Страница о компании
     public function about() 
     {
-        echo 'about';
+        $data['title'] = '«МЕХПОРТАЛ» - информация о проекте';
+        $data['description'] = '«МЕХПОРТАЛ» - информация о проекте';
+        $data['header_title'] = '«МЕХПОРТАЛ» - информация о проекте';
+        $data['region_name'] = null;
+        $data['region_slug'] = null;
+        return view('site.about', $data);
     }
 
 
