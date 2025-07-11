@@ -53,6 +53,7 @@
       <div class="mx-2"><button class="btn btn-cookie-ok">Хорошо</button></div></div>
     </div>
 
+	
     <x-modal-regions />
     <x-services-orders :region-slug="$regionSlug" />
     <x-companies :region-slug="$regionSlug" />
