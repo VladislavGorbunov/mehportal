@@ -18,13 +18,5 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
-
-    # Для изображений  
-<filesMatch ".(jpg|jpeg|png|gif|ico)$">  
-Header set Cache-Control "max-age=31536000, public"  
-</filesMatch>  
-# Для CSS и JavaScript  
-<filesMatch ".(css|js)$">  
-Header set Cache-Control "max-age=31536000, public"  
-</filesMatch>  
+    
 </IfModule>
