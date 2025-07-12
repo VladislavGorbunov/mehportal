@@ -695,8 +695,8 @@ footer .footer-light {
     max-height: 350px;
 }
 
-.order-block b, strong {
-    font-weight: 500;
+b, strong {
+    font-weight: 600;
 }
 
 .order-block img {

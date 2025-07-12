@@ -60,6 +60,7 @@ class PagesController extends Controller
         $data['description'] = 'Все заказы на металлообработку в открытом доступе '. $region->name_in .' от заказчиков на портале - МЕХПОРТАЛ. Размещайте заказы бесплатно! Только проверенные заказчики и исполнители.';
         $data['header_title'] = 'Заказы на металлообработку в открытом доступе ' . $region->name_in;
         $data['region_name'] = $region->name;
+        $data['region_name_in'] = $region->name_in;
         $data['region_slug'] = $region->slug;
 
         $orders_array = Order::getAllOrdersRegion($region->id);
