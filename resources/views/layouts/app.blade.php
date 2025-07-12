@@ -11,7 +11,7 @@
         <meta property="og:locale" content="ru_RU" />
         <meta property="og:site_name" content="МехПортал" />
         
-        <link rel="preload" href="{{ asset('bootstrap/bootstrap-5.3.3-dist/css/bootstrap.min.css') }}" as="style">
+        <link rel="stylesheet" href="{{ asset('bootstrap/bootstrap-5.3.3-dist/css/bootstrap.min.css') }}" >
         <link rel="preload" href="{{ asset('bootstrap/bootstrap-icons-1.13.1/bootstrap-icons.min.css') }}" as="style">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
