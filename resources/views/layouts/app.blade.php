@@ -11,6 +11,7 @@
         <meta property="og:locale" content="ru_RU" />
         <meta property="og:site_name" content="МехПортал" />
         
+        <link rel="preload" href="{{ asset('bootstrap/bootstrap-5.3.3-dist/css/bootstrap.min.css') }}" as="style">
         <link href="{{ asset('bootstrap/bootstrap-5.3.3-dist/css/bootstrap.min.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('bootstrap/bootstrap-icons-1.13.1/bootstrap-icons.min.css') }}">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
