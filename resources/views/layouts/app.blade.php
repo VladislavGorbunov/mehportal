@@ -13,9 +13,9 @@
         
         <link rel="preload" href="{{ asset('bootstrap/bootstrap-5.3.3-dist/css/bootstrap.min.css') }}" as="style">
         <link href="{{ asset('bootstrap/bootstrap-5.3.3-dist/css/bootstrap.min.css') }}" rel="stylesheet">
-
         <link rel="preload" href="{{ asset('bootstrap/bootstrap-icons-1.13.1/bootstrap-icons.min.css') }}" as="style">
         <link rel="stylesheet" href="{{ asset('bootstrap/bootstrap-icons-1.13.1/bootstrap-icons.min.css') }}">
+        <link rel="preload" href="{{ asset('css/style.css') }}" as="style">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
