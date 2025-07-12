@@ -127,4 +127,16 @@ class PagesController extends Controller
         $data['region_slug'] = '';
         return view('site.tariffs', $data);
     }
+
+
+    // Главная страница блога
+    public function blog()
+    {
+        $data['title'] = 'МехПортал блог';
+        $data['description'] = 'МехПортал блог';
+        $data['header_title'] = 'МехПортал блог';
+        $data['region_name'] = '';
+        $data['region_slug'] = '';
+        return view('site.blog', $data);
+    }
 }

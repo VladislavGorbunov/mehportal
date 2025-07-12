@@ -32,15 +32,15 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="/contacts">Контакты</a>
+          <a class="nav-link" href="{{ Route('contacts') }}">Контакты</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="/tariffs">Тарифы</a>
+          <a class="nav-link" href="{{ Route('tariffs') }}">Тарифы</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="/blog">Блог</a>
+          <a class="nav-link" href="{{ Route('blog') }}">Блог</a>
         </li>
         
         

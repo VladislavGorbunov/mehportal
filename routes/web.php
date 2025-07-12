@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\CompaniesController;
+use App\Http\Controllers\BlogController;
 
 require __DIR__.'/customer.php';
 require __DIR__.'/executor.php';
@@ -13,6 +14,7 @@ Route::get('/', [PagesController::class, 'index'])->name('index');
 Route::get('/about', [PagesController::class, 'about'])->name('about');
 Route::get('/contacts', [PagesController::class, 'contacts'])->name('contacts');
 Route::get('/tariffs', [PagesController::class, 'tariffs'])->name('tariffs');
+Route::get('/blog', [BlogController::class, 'blog'])->name('blog');
 
 Route::get('/{region_slug}', [PagesController::class, 'cityIndexPage'])->name('city-index');
 Route::get('/{region_slug}/orders/service/{service_slug}', [OrdersController::class, 'getOrdersForServicesRegion']);
