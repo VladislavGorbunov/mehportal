@@ -14,50 +14,47 @@
         @if ($regionName) 
           {{ $regionName }}
         @else
-          Выбрать город
+          Выбрать регион
         @endif
     </button>
 
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-center">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-center">
         <li class="nav-item">
-          <a href="#orders" class="nav-link link-blue" data-bs-toggle="modal" data-bs-target="#categories-services-modal">
-            Заказы
-          </a>
+            <a href="#orders" class="nav-link link-blue" data-bs-toggle="modal" data-bs-target="#categories-services-modal">Заказы</a>
         </li>
         <li class="nav-item">
-          <a href="#companies" class="nav-link link-blue" data-bs-toggle="modal" data-bs-target="#companies">Предприятия</a>
+            <a href="#companies" class="nav-link link-blue" data-bs-toggle="modal" data-bs-target="#companies">Предприятия</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link link-blue" href="#companies">Поставщики</a>
+            <a class="nav-link link-blue" href="#companies">Поставщики</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="{{ Route('contacts') }}">Контакты</a>
+            <a class="nav-link" href="{{ Route('contacts') }}">Контакты</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="{{ Route('tariffs') }}">Тарифы</a>
+            <a class="nav-link" href="{{ Route('tariffs') }}">Тарифы</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="{{ Route('blog') }}">Блог</a>
+            <a class="nav-link" href="{{ Route('blog') }}">Блог</a>
         </li>
-        
-        
-      </ul>
-        <div class="d-flex justify-content-around align-items-center">
-          @if (Auth::guard('customer')->check())
+    </ul>
+
+    <div class="d-flex justify-content-around align-items-center">
+        @if (Auth::guard('customer')->check())
             <a href="{{ Route('login-customer') }}" class="btn btn-none-bg mx-2" target="_blank">Заказчик</a>
-          @else
+        @else
             <a href="{{ Route('login-customer') }}" class="btn btn-none-bg mx-2" target="_blank">Заказчикам</a>
-          @endif
+        @endif
           
-          @if (Auth::guard('executor')->check())
+        @if (Auth::guard('executor')->check())
             <a href="{{ Route('login-executor') }}" class="btn btn-dark" target="_blank">Исполнитель</a>
-          @else
+        @else
             <a href="{{ Route('login-executor') }}" class="btn btn-dark" target="_blank">Исполнителям</a>
-          @endif
-        </div>
+        @endif
+    </div>
     </div>
   </div>
 </nav>

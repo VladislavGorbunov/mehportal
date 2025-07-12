@@ -51,6 +51,8 @@ html {
 .alert {
   border-left: none;
   border-right: none;
+  border-top-width: 2px;
+  border-bottom-width: 2px;
   border-radius: 0px;
 }
 

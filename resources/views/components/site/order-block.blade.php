@@ -32,7 +32,7 @@
                             <p class="mb-3">Статус заказчика: Стандартный</p>
                         @endif
                         
-                        <p class="mb-3">Город заказчика:<strong> {{ $order['region_name'] }}</strong></p>
+                        <p class="mb-3">Регион заказчика:<strong> {{ $order['region_name'] }}</strong></p>
                     </div>
                     
                     <div class="col-12 col-md-6 mt-2">
