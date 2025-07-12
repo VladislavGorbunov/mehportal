@@ -275,7 +275,7 @@ h2, h3, h4, h5, h6 {
     position: relative;
     width: 100%;
     min-height: 510px;
-    background: rgba(20, 27, 33, 1) url("/images/banner-bg.jpg") center ;
+    background: rgba(20, 27, 33, 1) url("/images/banner-bg.jpg") top;
     background-size: cover;
     border-radius: 25px;
     overflow: hidden;
