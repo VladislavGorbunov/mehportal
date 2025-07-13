@@ -302,7 +302,7 @@ h2, h3, h4, h5, h6 {
 .header-banner {
     position: relative;
     width: 100%;
-    min-height: 510px;
+    min-height: 520px;
     background: rgba(20, 27, 33, 1) url("/images/banner-bg.webp") top;
     background-size: cover;
     border-radius: 25px;
