@@ -77,6 +77,13 @@ class CategoriesServicesSeeder extends Seeder
         ]);
 
         DB::table('categories_services')->insert([
+            'title' => '3D печать',
+            'title_case' => '3D печать',
+            'slug' => '3d-pechat',
+            'active' => true,
+        ]);
+
+        DB::table('categories_services')->insert([
             'title' => 'Покраска и очистка металлов',
             'title_case' => 'Покраску и очистку металлов',
             'slug' => 'pokraska-i-ochistka-metallov',
@@ -94,6 +101,13 @@ class CategoriesServicesSeeder extends Seeder
             'title' => 'Изготовление деталей',
             'title_case' => 'Изготовление деталей',
             'slug' => 'izgotovlenie-detaley',
+            'active' => true,
+        ]);
+
+        DB::table('categories_services')->insert([
+            'title' => 'Прочие услуги по металлообработке',
+            'title_case' => 'Прочие услуги по металлообработке',
+            'slug' => 'prochie-uslugi-po-metalloobrabotke',
             'active' => true,
         ]);
 
