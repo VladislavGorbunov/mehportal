@@ -256,7 +256,7 @@ h2, h3, h4, h5, h6 {
 }
 
 .modal-dialog-categories {
-    max-width: 1100px;
+    max-width: 1200px;
 }
 
 .modal-content {
@@ -266,15 +266,15 @@ h2, h3, h4, h5, h6 {
 .category-link {
     display: block;
     color: var(--btn-dark-color) !important;
-    font-weight: 500;
-    font-size: 17px;
+    font-weight: 600;
+    font-size: 16px;
 }
 
 .service-link {
     display: block;
     margin-top: 7px;
     color: #333;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 .header-banner-order {

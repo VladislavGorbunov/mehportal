@@ -23,7 +23,7 @@
                             @endif
                         @endforeach
                         <div class="mt-2">
-                            <a href="">Все категории</a>
+                            <a href="">Показать все</a>
                         </div>
                     </div>
 
