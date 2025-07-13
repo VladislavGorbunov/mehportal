@@ -259,6 +259,10 @@ h2, h3, h4, h5, h6 {
     max-width: 1200px;
 }
 
+.modal-dialog-regions {
+    max-width: 1200px;
+}
+
 .modal-content {
     padding: 20px;
 }
@@ -274,6 +278,12 @@ h2, h3, h4, h5, h6 {
     display: block;
     margin-top: 7px;
     color: #333;
+    font-size: 14px;
+}
+
+.region-link {
+    display: block;
+    color: #111;
     font-size: 14px;
 }
 
