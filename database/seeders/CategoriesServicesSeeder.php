@@ -15,21 +15,21 @@ class CategoriesServicesSeeder extends Seeder
     {
         DB::table('categories_services')->insert([
             'title' => 'Механическая обработка',
-            'title_case' => 'Механическую обработку',
+            'title_case' => 'Механическую обработку металла',
             'slug' => 'mehanicheskaya-obrabotka',
             'active' => true,
         ]);
 
         DB::table('categories_services')->insert([
             'title' => 'Термическая обработка',
-            'title_case' => 'Термическую обработку',
+            'title_case' => 'Термическую обработку металла',
             'slug' => 'termicheskaya-obrabotka',
             'active' => true,
         ]);
 
         DB::table('categories_services')->insert([
             'title' => 'Химико-термическая обработка',
-            'title_case' => 'Химико-термическую обработку',
+            'title_case' => 'Химико-термическую обработку металла',
             'slug' => 'himiko-termicheskaya-obrabotka',
             'active' => true,
         ]);
