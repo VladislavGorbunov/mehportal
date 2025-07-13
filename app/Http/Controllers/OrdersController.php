@@ -125,8 +125,7 @@ class OrdersController extends Controller
 
         $data['title'] = 'Заказы на ' . mb_strtolower($service->title_case) . ' в открытом доступе в России';
         $data['description'] = 'Каталог заказов на ' . mb_strtolower($service->title_case) . ' в открытом доступе по всей России. Заказы напрямую от заказчиков. Удобный поиск и ежедневное обновление. Заходите!';
-
-        $data['header_title'] = 'Заказы на ' . mb_strtolower($service->title) . ' в открытом доступе по всей России';
+        $data['header_title'] = 'Заказы на ' . mb_strtolower($service->title_case) . ' в открытом доступе по всей России';
 
         $orders_array = Order::getOrdersForServices($slug);
         $data['region_name'] = '';
