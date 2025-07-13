@@ -24,6 +24,7 @@
         <meta name="theme-color" content="#111111" />
         <meta name="msapplication-navbutton-color" content="#111" />
         <link rel="canonical" href="{{ url()->current() }}"/>
+        <script src="//code.jivo.ru/widget/kbEBuZUbWS" async></script>
     </head>
 
     <body>
@@ -37,7 +38,7 @@
         <link rel="preload" href="{{ asset('bootstrap/bootstrap-icons-1.13.1/bootstrap-icons.min.css') }}" as="style">
         <link rel="stylesheet" href="{{ asset('bootstrap/bootstrap-icons-1.13.1/bootstrap-icons.min.css') }}">
         <script src="{{ asset('bootstrap/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js') }}" async></script>
-
+        
         <x-site.metrika />
     </body>
 </html>
