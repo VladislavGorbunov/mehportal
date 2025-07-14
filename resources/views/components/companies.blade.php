@@ -1,8 +1,8 @@
-<div class="modal fade" id="companies" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="companies" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
     <div class="modal-dialog modal-dialog-categories">
         <div class="modal-content">
             <div class="modal-header">
-                <span class="fs-5"><b>Компании по металлообработке</b></span>
+                <span class="fs-5" id="exampleModalLabel2"><b>Компании по металлообработке</b></span>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
