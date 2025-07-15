@@ -20,13 +20,13 @@
 
     <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-center">
         <li class="nav-item">
-            <a href="#orders" class="nav-link link-blue" data-bs-toggle="modal" data-bs-target="#categories-services-modal">Заказы</a>
+            <a href="#orders" class="nav-link link-blue" data-bs-toggle="modal" data-bs-target="#categories-services-modal">ЗАКАЗЫ</a>
         </li>
         <li class="nav-item">
-            <a href="#companies" class="nav-link link-blue" data-bs-toggle="modal" data-bs-target="#companies">Предприятия</a>
+            <a href="#companies" class="nav-link link-blue" data-bs-toggle="modal" data-bs-target="#companies">ПРЕДПРИЯТИЯ</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link link-blue" href="#companies">Поставщики</a>
+            <a class="nav-link link-blue" href="#companies">ПОСТАВЩИКИ</a>
         </li>
 
         <li class="nav-item">
