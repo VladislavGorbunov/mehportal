@@ -8,7 +8,7 @@
             <div class="modal-body">
                 <div class="row">
                     @foreach ($categories as $category)
-                    <div class="col-12 col-md-4 mb-4">
+                    <div class="col-12 col-sm-4 col-md-3 mb-4">
                         @if ($regionSlug !== '')
                             <a href="/{{ $regionSlug }}/companies/category/{{ $category->slug }}" class="category-link">{{$category->title}}</a>
                         @else
