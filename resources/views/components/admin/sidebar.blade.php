@@ -24,12 +24,18 @@
         <li><a href="{{ Route('premium-executors-requests') }}">Заявки на Premium от исполнителей</a></li>
         <li><a href="/customer/profile">Информация о Premium заказчиках</a></li>
         <li><a href="/customer/profile">Информация о Premium исполнителях</a></li>
+        <hr>
+        <p class="mt-2 mb-2"><b>Прочее</b></p>
+        <li><a href="">Категории</a></li>
+        <li><a href="">Услуги</a></li>
+        <li><a href="/customer/profile">Сгенерировать Sitemap</a></li>
+        <li><a href="/customer/profile">Информация о Premium исполнителях</a></li>
     </ul>
 </div>
 
 <style>
     .menu {
         top: 20px;
-        height: 750px;
+        height: 950px;
     }
 </style>
