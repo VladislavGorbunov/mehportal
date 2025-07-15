@@ -16,7 +16,7 @@ class CategoryService extends Model
 
     public function servicesLimit(): HasMany
     {
-        return $this->hasMany(Service::class, 'category_id')->limit(5);
+        return $this->hasMany(Service::class, 'category_id')->where('active', true)->limit(5);
     }
 
     public function servicesAll(): HasMany

@@ -55,12 +55,6 @@ class CategoriesServicesSeeder extends Seeder
             'active' => true,
         ]);
         
-        DB::table('categories_services')->insert([
-            'title' => 'Гравировка на металле',
-            'title_case' => 'Гравировку на металле',
-            'slug' => 'gravirovka-na-metalle',
-            'active' => true,
-        ]);
 
         DB::table('categories_services')->insert([
             'title' => 'Литьё металлов',
