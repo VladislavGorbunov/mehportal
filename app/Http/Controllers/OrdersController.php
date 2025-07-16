@@ -22,7 +22,7 @@ class OrdersController extends Controller
         $data['header_title'] = 'Заказы на ' . mb_strtolower($category->title_case) . ' в открытом доступе по всей России';
         $data['region_name'] = '';
         $data['region_slug'] = '';
-
+    
         $data['breadcrumb'] = [
             'region' => null,
             'region_slug' => null,
@@ -54,6 +54,7 @@ class OrdersController extends Controller
             ];
         }
 
+        $data['category'] = $category;
         $data['count_orders'] = Order::countActiveOrdersForCategories($category_id);
         $data['archive_count_orders'] = Order::countArchiveOrdersForCategories($category_id);
         $data['orders'] = $orders;
@@ -107,7 +108,7 @@ class OrdersController extends Controller
                 'customer_premium' => $order->customer_premium,
             ];
         }
-
+        $data['category'] = $category;
         $data['count_orders'] = Order::countActiveOrdersForCategoriesRegion($category_id, $region->id);
         $data['archive_count_orders'] = Order::countArchiveOrdersForCategoriesRegion($category_id, $region->id);
 

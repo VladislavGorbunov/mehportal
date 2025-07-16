@@ -236,7 +236,7 @@ class Order extends Model
             ->where('categories_services.id', '=', $category_id)
             ->where('customer_companies.region_id', $region_id)
             ->groupBy('orders.id', 'customer_companies.title', 'customer_companies.legal_form', 'regions.name')
-            ->having('orders.archive', true)
+            ->where('orders.active', true)
             ->where('customers.active', true)
             ->count();     
     }

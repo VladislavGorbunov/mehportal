@@ -4,7 +4,7 @@
 @section('description', $description)
 
 @section('content')
-    <div class="mt-5">
+    <div class="mt-4">
         <div class="d-md-flex align-items-center">
         
             <div class="flex-grow-1">
@@ -45,6 +45,19 @@
   </ol>
 </nav>
 </div>
+
+    @if (! empty($category))
+    <div class="mb-3 mt-2 d-flex justify-content-center flex-wrap">
+        @foreach ($category->servicesAll as $service)
+            @if ($region_slug !== '')
+                <div class="services-list me-2 mb-2 d-flex align-items-center"><i class="bi bi-folder-check"></i> <a href="/{{ $region_slug }}/orders/service/{{ $service->slug }}">{{ $service->title }}</a></div>
+            @else
+                <div class="services-list me-2 mb-2 d-flex align-items-center"><i class="bi bi-folder-check"></i> <a href="{{ $region_slug }}/orders/service/{{ $service->slug }}">{{ $service->title }}</a></div>
+            @endif
+        @endforeach
+    </div>
+    @endif
+
 
     @if (!empty($orders))
         @foreach ($orders as $order)

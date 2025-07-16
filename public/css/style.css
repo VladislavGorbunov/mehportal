@@ -867,6 +867,19 @@ b, strong {
     font-size: 16px;
 }
 
+.services-list-big {
+    background: rgb(241, 245, 248);
+    padding: 8px 14px;
+    font-size: 14px;
+    border-radius: 8px;
+    color: #111;
+}
+
+.services-list-big .bi {
+    margin-right: 5px;
+    font-size: 14px;
+}
+
 hr {
     color: rgb(226, 235, 238);
     opacity: 1;
