@@ -1,7 +1,8 @@
 User-agent: *
-Disallow: /
-Disallow: /customer
-Disallow: /executor
-Disallow: /admin
+Disallow: /customer/
+Disallow: /executor/
+Disallow: /admin/
+Disallow: /*?page=
+Host: mehportal.ru
 
 
