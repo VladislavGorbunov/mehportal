@@ -26,6 +26,7 @@
         <meta name="msapplication-navbutton-color" content="#111">
         <link rel="canonical" href="{{ url()->current() }}">
         <script src="//code.jivo.ru/widget/kbEBuZUbWS" async></script>
+        <meta name="yandex-verification" content="91c064f98c26cb43" />
     </head>
 
     <body>
