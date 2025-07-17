@@ -15,7 +15,7 @@
           			<li class="mb-1"><a class="link-secondary text-decoration-none" href="{{ Route('customer-index') }}">Личный кабинет</a></li>
           			<li class="mb-1"><a class="link-secondary text-decoration-none" href="{{ Route('add-order') }}">Разместить заказ</a></li>
           			<li class="mb-1"><a class="link-secondary text-decoration-none" href="{{ Route('tariffs') }}">Тарифные планы</a></li>
-          			<li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Вопросы-ответы</a></li>
+          			<!-- <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Вопросы-ответы</a></li> -->
         		</ul>
       		</div>
       		
@@ -25,7 +25,7 @@
           			<li class="mb-1"><a class="link-secondary text-decoration-none" href="{{ Route('executor-index') }}">Личный кабинет</a></li>
           			<li class="mb-1"><a class="link-secondary text-decoration-none" href="#" data-bs-toggle="modal" data-bs-target="#categories-services-modal">Найти заказ</a></li>
           			<li class="mb-1"><a class="link-secondary text-decoration-none" href="{{ Route('tariffs') }}">Тарифные планы</a></li>
-          			<li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Реклама на сайте</a></li>
+          			<!-- <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Реклама на сайте</a></li> -->
         		</ul>
       		</div>
 
@@ -33,8 +33,6 @@
         		<h5>Информация</h5>
         		<ul class="list-unstyled text-small">
           			<li class="mb-1"><a class="link-secondary text-decoration-none" href="{{ Route('contacts') }}">Наши контакты</a></li>
-          			<li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Реквизиты</a></li>
-          			<li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Оплата</a></li>
           			<li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Договор-оферта</a></li>
           			<li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Политика конфиденциальности</a></li>
         		</ul>

@@ -128,11 +128,11 @@ h2, h3, h4, h5, h6 {
 }
 
 .top-menu-block {
-        min-height: 52px;
+        min-height: 55px;
         padding: 12px 0px;
 }
 
-.top-menu a {
+.top-menu a, span {
     position: relative;
     color:rgba(227, 232, 237, 0.8);
     font-size: 13px;

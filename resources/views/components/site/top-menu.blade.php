@@ -3,10 +3,10 @@
         <div class="top-menu-block py-3 py-md-2 text-center d-flex  align-items-center justify-content-between gap-3">
             <div class="d-flex gap-3 align-items-center">
                 <a href="/about" class="d-none d-md-block">О проекте «МехПортал»</a>
-                <a href="/advertisement" class="d-none d-md-block">Реклама на сайте</a>
-                <a href="/faq" class="d-none d-md-block">FAQ</a>
-                <a href="/legal-documents" class="d-none d-md-block">Правовые документы</a>
-                <a href="/calculators" class="d-none d-md-block">Полезные калькуляторы</a>
+                <span class="d-none d-md-block">Реклама на сайте</span>
+                <span class="d-none d-md-block">FAQ</span>
+                <span class="d-none d-md-block">Правовые документы</span>
+                <span class="d-none d-md-block">Полезные калькуляторы</span>
                 <a href="/tariffs" class="badge-us ms-2">Подключить Premium за 0 руб.</a>
             </div>
 
