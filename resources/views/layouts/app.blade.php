@@ -5,11 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>@yield('title')</title>
         <meta name="description" content="@yield('description')">
-        <meta property="og:title" content="@yield('title')" >
-        <meta property="og:description" content="@yield('description')" >
-        <meta property="og:type" content="website" >
-        <meta property="og:locale" content="ru_RU" >
-        <meta property="og:site_name" content="МехПортал" >
+        <meta property="og:title" content="@yield('title')">
+        <meta property="og:description" content="@yield('description')">
+        <meta property="og:type" content="website">
+        <meta property="og:locale" content="ru_RU">
+        <meta property="og:site_name" content="МехПортал">
+        <meta property="og:url" content="{{ URL::current() }}">
         
         <link rel="preload" href="{{ asset('bootstrap/bootstrap-5.3.3-dist/css/bootstrap.min.css') }}" as="style">
         <link href="{{ asset('bootstrap/bootstrap-5.3.3-dist/css/bootstrap.min.css') }}" rel="stylesheet">

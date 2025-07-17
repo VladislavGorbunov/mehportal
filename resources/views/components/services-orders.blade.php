@@ -23,7 +23,11 @@
                             @endif
                         @endforeach
                         <div class="mt-2">
-                            <a href="">Показать все</a>
+                            @if ($regionSlug !== '')
+                                <a href="/{{ $regionSlug }}/orders/category/{{ $category->slug }}" >Показать все</a>
+                            @else
+                                <a href="{{ $regionSlug }}/orders/category/{{ $category->slug }}" >Показать все</a>
+                            @endif 
                         </div>
                     </div>
 

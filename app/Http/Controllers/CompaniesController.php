@@ -52,7 +52,7 @@ class CompaniesController extends BaseController
             ];
         }
         
-        
+        $data['category'] = CategoryService::where('id', $service->category_id)->first();
         $data['companies'] = $companies_array;
         $data['pagination'] = $companies;
 
@@ -75,6 +75,7 @@ class CompaniesController extends BaseController
             'category' => $category->title,
         ];
 
+        $data['category'] = $category;
         $companies = ExecutorCompany::getCompaniesForCategory($category->id);
         $data['region_name'] = '';
         $data['region_slug'] = '';
@@ -123,7 +124,7 @@ class CompaniesController extends BaseController
             'region_slug' => $region->slug,
             'category' => $category->title,
         ];
-
+        $data['category'] = $category;
         $companies = ExecutorCompany::getCompaniesForCategoryRegion($region->id, $category->id);
         $data['region_name'] = $region->name;
         $data['region_slug'] = $region->slug;
@@ -171,6 +172,7 @@ class CompaniesController extends BaseController
             'category' => $service->title,
         ];
 
+        $data['category'] = CategoryService::where('id', $service->category_id)->first();
         $companies = ExecutorCompany::getCompaniesForServicesRegion($service_slug, $region->id);
         
         $data['region_name'] = $region->name;
