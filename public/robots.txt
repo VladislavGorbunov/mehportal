@@ -2,6 +2,7 @@ User-agent: *
 Disallow: /customer/
 Disallow: /executor/
 Disallow: /admin/
+Disallow: /blog/
 Disallow: /*?page=
 Host: mehportal.ru
 
