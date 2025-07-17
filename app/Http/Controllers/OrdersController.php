@@ -130,7 +130,6 @@ class OrdersController extends Controller
         
         $data['category'] = CategoryService::where('id', $service->category_id)->first();
          
-       
         $orders_array = Order::getOrdersForServices($slug);
         $data['region_name'] = '';
         $data['region_slug'] = '';

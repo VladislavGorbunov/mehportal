@@ -23,6 +23,18 @@
 </nav>
 </div>
 
+@if (! empty($category))
+    <div class="mb-3 mt-2 d-flex justify-content-center flex-wrap">
+        @foreach ($category->servicesAll as $service)
+            @if ($region_slug !== '')
+                <div class="services-list me-2 mb-2 d-flex align-items-center"><i class="bi bi-folder-check"></i> <a href="/{{ $region_slug }}/companies/service/{{ $service->slug }}">{{ $service->title }}</a></div>
+            @else
+                <div class="services-list me-2 mb-2 d-flex align-items-center"><i class="bi bi-folder-check"></i> <a href="{{ $region_slug }}/companies/service/{{ $service->slug }}">{{ $service->title }}</a></div>
+            @endif
+        @endforeach
+    </div>
+    @endif
+
 @if (! empty($companies))
     @foreach ($companies as $company)
         <x-site.companies.company-block :company="$company" />
