@@ -123,11 +123,14 @@ class OrdersController extends Controller
     public function getOrdersForServices($slug)
     {
         $service = Service::where('slug', $slug)->first();
-
+        
         $data['title'] = 'Заказы на ' . mb_strtolower($service->title_case) . ' в открытом доступе в России';
         $data['description'] = 'Каталог заказов на ' . mb_strtolower($service->title_case) . ' в открытом доступе по всей России. Заказы напрямую от заказчиков. Удобный поиск и ежедневное обновление. Заходите!';
         $data['header_title'] = 'Заказы на ' . mb_strtolower($service->title_case) . ' в открытом доступе по всей России';
-
+        
+        $data['category'] = CategoryService::where('id', $service->category_id)->first();
+         
+       
         $orders_array = Order::getOrdersForServices($slug);
         $data['region_name'] = '';
         $data['region_slug'] = '';
