@@ -220,7 +220,7 @@ class OrdersController extends Controller
 
         $data['count_orders'] = Order::countActiveOrdersForServicesRegion($service_slug, $region->id);
         $data['archive_count_orders'] = Order::countArchiveOrdersForservicesRegion($service_slug, $region->id);
-
+        $data['category'] = CategoryService::where('id', $service->category_id)->first();
         $data['orders'] = $orders;
         $data['paginate'] =  $orders_array;
 
