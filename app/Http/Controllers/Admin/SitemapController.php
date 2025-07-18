@@ -96,6 +96,62 @@ class SitemapController extends Controller
         }
 
 
+        // Страницы категорий заказов по регионам
+        $categories = CategoryService::get();
+        
+        foreach ($regions as $region) {
+            foreach ($categories as $category) {
+                $sitemap .= '
+	                <url>
+		                <loc>https://mehportal.ru/'.$region->slug.'/orders/category/'.$category->slug.'</loc>
+                        <priority>0.8</priority>
+	                </url>
+                ';
+            }
+        }
+
+        // Страницы категорий исполнителей по регионам
+        $categories = CategoryService::get();
+        
+        foreach ($regions as $region) {
+            foreach ($categories as $category) {
+                $sitemap .= '
+	                <url>
+		                <loc>https://mehportal.ru/'.$region->slug.'/companies/category/'.$category->slug.'</loc>
+                        <priority>0.8</priority>
+	                </url>
+                ';
+            }
+        }
+
+        // Страницы услуг заказов по регионам
+        $services = Service::get();
+        
+        foreach ($regions as $region) {
+            foreach ($services as $service) {
+                $sitemap .= '
+	                <url>
+		                <loc>https://mehportal.ru/'.$region->slug.'/orders/service/'.$service->slug.'</loc>
+                        <priority>0.8</priority>
+	                </url>
+                ';
+            }
+        }
+
+        // Страницы услуг исполнителей по регионам
+        $services = Service::get();
+        
+        foreach ($regions as $region) {
+            foreach ($services as $service) {
+                $sitemap .= '
+	                <url>
+		                <loc>https://mehportal.ru/'.$region->slug.'/companies/service/'.$service->slug.'</loc>
+                        <priority>0.8</priority>
+	                </url>
+                ';
+            }
+        }
+
         
         $sitemap .= '</urlset>';
 
