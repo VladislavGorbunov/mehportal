@@ -14,6 +14,10 @@ class SitemapController extends Controller
 {
     public function generate() 
     {
+        $categories = CategoryService::get();
+        $services = Service::get();
+        $regions = Region::get();
+
         $sitemap = '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
         
         // Статические страницы
@@ -37,8 +41,6 @@ class SitemapController extends Controller
         ';
 
         // Страницы категорий заказов
-        $categories = CategoryService::get();
-
         foreach ($categories as $category) {
             $sitemap .= '
 	        <url>
@@ -49,8 +51,6 @@ class SitemapController extends Controller
         }
 
         // Страницы услуг заказов
-        $services = Service::get();
-
         foreach ($services as $service) {
             $sitemap .= '
 	        <url>
@@ -61,8 +61,6 @@ class SitemapController extends Controller
         }
 
         // Страницы категорий исполнителей
-        $categories = CategoryService::get();
-
         foreach ($categories as $category) {
             $sitemap .= '
 	        <url>
@@ -73,8 +71,6 @@ class SitemapController extends Controller
         }
 
         // Страницы услуг исполнителей
-        $services = Service::get();
-
         foreach ($services as $service) {
             $sitemap .= '
 	        <url>
@@ -85,8 +81,6 @@ class SitemapController extends Controller
         }
 
         // Страницы регионов
-        $regions = Region::get();
-
         foreach ($regions as $region) {
             $sitemap .= '
 	        <url>
@@ -95,13 +89,16 @@ class SitemapController extends Controller
             </url>';
         }
 
+        $sitemap .= '</urlset>';
 
-        // Страницы категорий заказов по регионам
-        $categories = CategoryService::get();
+        Storage::disk('public')->put('sitemap.xml', $sitemap);
+
         
+        $sitemap2 = '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
+        // Страницы категорий заказов по регионам
         foreach ($regions as $region) {
             foreach ($categories as $category) {
-                $sitemap .= '
+                $sitemap2 .= '
 	                <url>
 		                <loc>https://mehportal.ru/'.$region->slug.'/orders/category/'.$category->slug.'</loc>
                         <priority>0.8</priority>
@@ -115,7 +112,7 @@ class SitemapController extends Controller
         
         foreach ($regions as $region) {
             foreach ($categories as $category) {
-                $sitemap .= '
+                $sitemap2 .= '
 	                <url>
 		                <loc>https://mehportal.ru/'.$region->slug.'/companies/category/'.$category->slug.'</loc>
                         <priority>0.8</priority>
@@ -129,7 +126,7 @@ class SitemapController extends Controller
         
         foreach ($regions as $region) {
             foreach ($services as $service) {
-                $sitemap .= '
+                $sitemap2 .= '
 	                <url>
 		                <loc>https://mehportal.ru/'.$region->slug.'/orders/service/'.$service->slug.'</loc>
                         <priority>0.8</priority>
@@ -143,7 +140,7 @@ class SitemapController extends Controller
         
         foreach ($regions as $region) {
             foreach ($services as $service) {
-                $sitemap .= '
+                $sitemap2 .= '
 	                <url>
 		                <loc>https://mehportal.ru/'.$region->slug.'/companies/service/'.$service->slug.'</loc>
                         <priority>0.8</priority>
@@ -152,12 +149,12 @@ class SitemapController extends Controller
             }
         }
 
-        
-        $sitemap .= '</urlset>';
 
-        Storage::disk('public')->put('sitemap.xml', $sitemap);
+        $sitemap2 .= '</urlset>';
 
-        
+        Storage::disk('public')->put('sitemap2.xml', $sitemap2);
+
+
         //http://metall/storage/sitemap.xml
     }    
 }
