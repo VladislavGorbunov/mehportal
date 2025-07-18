@@ -26,7 +26,7 @@
         <li><a href="/customer/profile">Информация о Premium исполнителях</a></li>
         <hr>
         <p class="mt-2 mb-2"><b>Прочее</b></p>
-        <li><a href="">Категории</a></li>
+        <li><a href="{{ Route('admin-categories-all') }}">Категории</a></li>
         <li><a href="">Услуги</a></li>
         <li><a href="{{ Route('sitemap-generate') }}">Сгенерировать Sitemap</a></li>
         <li><a href="/customer/profile">Информация о Premium исполнителях</a></li>
