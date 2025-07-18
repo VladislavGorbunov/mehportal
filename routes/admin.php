@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\IndexController;
 use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\Admin\ExecutorController;
 use App\Http\Controllers\Admin\TariffsController;
+use App\Http\Controllers\Admin\SitemapController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/login/admin', [AuthController::class, 'loginAdminPage'])->name('login-admin');
@@ -44,4 +45,6 @@ Route::middleware(['admin'])->group(function () {
 
     Route::get('/admin/premium-executors-requests', [TariffsController::class, 'executorsPremiumRequests'])->name('premium-executors-requests');
     Route::get('/admin/premium-executor-requests/delete/{id}', [TariffsController::class, 'deleteExecutorRequest'])->name('premium-executor-request-delete');
+
+    Route::get('/admin/sitemap-generate', [SitemapController::class, 'generate'])->name('sitemap-generate');
 });
