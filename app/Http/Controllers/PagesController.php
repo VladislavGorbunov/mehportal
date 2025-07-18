@@ -93,6 +93,17 @@ class PagesController extends Controller
         $data['archive_count_orders'] = Order::countArchiveOrders($region->id);
         return view('site.index', $data);
     }
+    
+    
+    public function addOrderPage()
+    {
+        $data['title'] = 'Разместить заказ на металлообработку бесплатно - «МЕХПОРТАЛ»';
+        $data['description'] = 'Разместите заказ на металлообработку на портале «МЕХПОРТАЛ» и получайте выгодные предложения от проверенных исполнителей и выбираёте лучшее предложение.';
+        $data['header_title'] = 'Разместить заказ на металлообработку бесплатно';
+        $data['region_name'] = '';
+        $data['region_slug'] = '';
+        return view('site.add-order', $data);
+    }
 
 
     // Страница о компании
@@ -101,8 +112,8 @@ class PagesController extends Controller
         $data['title'] = '«МЕХПОРТАЛ» - информация о проекте';
         $data['description'] = '«МЕХПОРТАЛ» - информация о проекте';
         $data['header_title'] = '«МЕХПОРТАЛ» - информация о проекте';
-        $data['region_name'] = null;
-        $data['region_slug'] = null;
+        $data['region_name'] = '';
+        $data['region_slug'] = '';
         return view('site.about', $data);
     }
 
@@ -113,8 +124,8 @@ class PagesController extends Controller
         $data['title'] = 'МЕХПОРТАЛ - контакты';
         $data['description'] = 'МЕХПОРТАЛ - наши контакты, адреса и реквизиты';
         $data['header_title'] = 'МехПортал - наши контакты, адрес и реквизиты';
-        $data['region_name'] = null;
-        $data['region_slug'] = null;
+        $data['region_name'] = '';
+        $data['region_slug'] = '';
         return view('site.contacts', $data);
     }
 

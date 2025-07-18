@@ -331,7 +331,7 @@ h2, h3, h4, h5, h6 {
     z-index: 2;
 }
 
-.header-banner .btn-blue {
+.btn-blue {
     position: relative;
     color: #fff;
     z-index: 2;
@@ -343,6 +343,17 @@ h2, h3, h4, h5, h6 {
     font-size: 15px;
 }
 
+.btn-blue:hover {
+    position: relative;
+    color: #fff;
+    z-index: 2;
+    background: var(--btn-blue-color);
+    padding: 13px 8px;
+    border: none;
+    border-radius: 8px;
+    width: 210px;
+    font-size: 15px;
+}
 
 .font-14 {
     font-size: 14px !important;

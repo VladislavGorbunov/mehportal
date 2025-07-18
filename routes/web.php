@@ -15,6 +15,7 @@ Route::get('/about', [PagesController::class, 'about'])->name('about');
 Route::get('/contacts', [PagesController::class, 'contacts'])->name('contacts');
 Route::get('/tariffs', [PagesController::class, 'tariffs'])->name('tariffs');
 Route::get('/blog', [BlogController::class, 'blog'])->name('blog');
+Route::get('/add-order', [PagesController::class, 'addOrderPage'])->name('add-order-page');
 
 Route::get('/{region_slug}', [PagesController::class, 'cityIndexPage'])->name('city-index');
 Route::get('/{region_slug}/orders/service/{service_slug}', [OrdersController::class, 'getOrdersForServicesRegion']);
