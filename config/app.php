@@ -55,7 +55,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://mehportal'),
+    'url' => env('APP_URL', 'https://mehportal.ru'),
 
     'asset_url' => env('ASSET_URL'),
 

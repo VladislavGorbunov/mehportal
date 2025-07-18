@@ -46,6 +46,6 @@ class Customer extends Authenticatable
      */
     public function customerCheckData(): HasOne
     {
-        return $this->hasOne(CustomerCheckdata::class, 'customer_id');
+        return $this->hasOne(CustomerCheckData::class, 'customer_id');
     }
 }

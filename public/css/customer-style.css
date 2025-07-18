@@ -39,7 +39,7 @@
 .btn-blue {
     background: var(--btn-blue-color);
     color: #fff;
-    padding: 10px 20px;
+    
 }
 
 .btn-blue:hover {

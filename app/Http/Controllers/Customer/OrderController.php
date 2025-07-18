@@ -3,7 +3,7 @@ namespace App\Http\Controllers\Customer;
 
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Customer\CustomerCheckController;
-use App\Http\Requests\Customer\addOrderRequest;
+use App\Http\Requests\Customer\AddOrderRequest;
 use App\Models\CategoryService;
 use App\Models\Order;
 use App\Models\OrderService;
@@ -118,8 +118,8 @@ class OrderController extends Controller
         // Загрузка файла в папку storage/app/public/plans_images
         $upload_file = $plan->store('', 'orders_images');
 
-        $storagePath = storage_path() . '\\app\\public\\' . 'orders_images\\';
-        $filePath    = storage_path() . '\\app\\public\\' . 'orders_images\\' . $upload_file;
+        $storagePath = storage_path() . '/app/public/' . 'orders_images/';
+        $filePath    = storage_path() . '/app/public/' . 'orders_images/' . $upload_file;
 
         // Уменьшение и обрезка изображения
         $image = new \Imagick($filePath);
