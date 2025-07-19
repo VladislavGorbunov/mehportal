@@ -184,7 +184,7 @@ h2, h3, h4, h5, h6 {
 .navbar {
     font-size: 15px;
     border-bottom: 0px solid #ebf1f4;
-    background: #fff !important;
+    background: #ffffff !important;
 }
 
 .navbar .navbar-brand {
@@ -309,7 +309,7 @@ h2, h3, h4, h5, h6 {
 .header-banner {
     position: relative;
     width: 100%;
-    min-height: 500px;
+    min-height: 550px;
     background: rgba(20, 27, 33, 1) url("/images/banner-bg.webp") top;
     background-size: cover;
     border-radius: 25px;
@@ -402,7 +402,7 @@ h2, h3, h4, h5, h6 {
     background: rgb(65, 89, 211);
     border-radius: 10px;
     z-index: -2;
-    opacity: 0.2;
+    opacity: 0.3;
     transform: rotate(35deg);
 
     animation: circle-anim;
@@ -420,7 +420,7 @@ h2, h3, h4, h5, h6 {
     background: rgb(65, 196, 211);
     border-radius: 10px;
     z-index: -1;
-    opacity: 0.3;
+    opacity: 0.5;
     transform: rotate(75deg); 
     filter: blur(0px);
     animation: circle-anim2;
@@ -440,7 +440,7 @@ h2, h3, h4, h5, h6 {
     background: rgb(65, 89, 211);
     border-radius: 10px;
     z-index: -2;
-    opacity: 0.2;
+    opacity: 0.3;
     transform: rotate(35deg);
 
     animation: circle-anim;
@@ -458,7 +458,7 @@ h2, h3, h4, h5, h6 {
     background: rgb(65, 196, 211);
     border-radius: 10px;
     z-index: -1;
-    opacity: 0.3;
+    opacity: 0.5;
     transform: rotate(75deg); 
     filter: blur(0px);
 
