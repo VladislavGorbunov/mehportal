@@ -55,12 +55,13 @@ class PagesController extends Controller
         $region = Region::where('slug', $region_slug)->first();
 
         if (! $region) abort(404);
-
-        $data['title'] = 'Заказы на металлообработку от заказчиков в открытом доступе ' . $region->name_in;
-        $data['description'] = 'Все заказы на металлообработку в открытом доступе '. $region->name_in .' от заказчиков на портале - МЕХПОРТАЛ. Размещайте заказы бесплатно! Только проверенные заказчики и исполнители.';
-        $data['header_title'] = 'Заказы на металлообработку в открытом доступе ' . $region->name_in;
+    
+        $data['title'] = 'Заказы на металлообработку от заказчиков в открытом доступе ' . $region->city_in;
+        
+        $data['description'] = 'Все заказы на металлообработку в открытом доступе '. $region->city_in .' от заказчиков на портале - МЕХПОРТАЛ. Размещайте заказы бесплатно! Только проверенные заказчики и исполнители.';
+        $data['header_title'] = 'Заказы на металлообработку в открытом доступе ' . $region->city_in;
         $data['region_name'] = $region->name;
-        $data['region_name_in'] = $region->name_in;
+        $data['region_city_in'] = $region->city_in;
         $data['region_slug'] = $region->slug;
 
         $orders_array = Order::getAllOrdersRegion($region->id);

@@ -41,8 +41,8 @@
         <x-site.no-order />
     @endif
     <div class="p-2">
-        @if (! empty($region_name_in))
-            <h3 class="text-center mt-4">Найдите открытые заказы на металлообработку от заказчиков {{ $region_name_in }}</h3>
+        @if (! empty($region_city_in))
+            <h3 class="text-center mt-4 col-md-8 mx-auto">Найдите открытые заказы на металлообработку от заказчиков {{ $region_city_in }}</h3>
         @else
             <h3 class="text-center mt-4">Найдите открытые заказы на металлообработку от заказчиков</h3>
         @endif

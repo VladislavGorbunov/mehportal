@@ -21,7 +21,7 @@ class OrdersController extends Controller
         $data['description'] = 'Каталог заказов на ' . mb_strtolower($category->title_case) . ' в открытом доступе по всей России. Заказы напрямую от заказчиков. Удобный поиск и ежедневное обновление. Заходите!';
         $data['header_title'] = 'Заказы на ' . mb_strtolower($category->title_case) . ' в открытом доступе по всей России';
         $data['region_name'] = '';
-        $data['region_name_in'] = 'в России';
+        $data['region_city_in'] = 'в России';
         $data['region_slug'] = '';
         $data['seo_category_name'] = $category->title_case;
         $data['breadcrumb'] = [
@@ -71,15 +71,17 @@ class OrdersController extends Controller
 
         if (! $region) abort(404);
         $category = CategoryService::where('slug', $category_slug)->first();
-        $data['title'] = 'Заказы на ' . mb_strtolower($category->title_case) . ' в открытом доступе ' . $region->name_in;
-        $data['description'] = 'Каталог заказов на ' . mb_strtolower($category->title_case) . ' в открытом доступе '.$region->name_in.'. Заказы напрямую от заказчиков. Удобный поиск и ежедневное обновление. Заходите!';
-        $data['header_title'] = 'Заказы на ' . mb_strtolower($category->title_case) . ' в открытом доступе ' . $region->name_in;
+        
+        $data['title'] = 'Заказы на ' . mb_strtolower($category->title_case) . ' в открытом доступе ' . $region->city_in;
+        
+        $data['description'] = 'Каталог заказов на ' . mb_strtolower($category->title_case) . ' в открытом доступе '.$region->city_in.'. Заказы напрямую от заказчиков. Удобный поиск и ежедневное обновление. Заходите!';
+        $data['header_title'] = 'Заказы на ' . mb_strtolower($category->title_case) . ' в открытом доступе ' . $region->city_in;
         $data['seo_category_name'] = $category->title_case;
         $category_id = $category->id;
 
         $orders_array = Order::getOrdersForCategoriesRegion($category_id, $region->id);
         $data['region_name'] = $region->name;
-        $data['region_name_in'] = $region->name_in;
+        $data['region_city_in'] = $region->city_in;
         $data['region_slug'] = $region->slug;
 
         $data['breadcrumb'] = [
@@ -134,7 +136,7 @@ class OrdersController extends Controller
         $data['seo_category_name'] = $service->title_case;
         $orders_array = Order::getOrdersForServices($slug);
         $data['region_name'] = '';
-        $data['region_name_in'] = 'в России';
+        $data['region_city_in'] = 'в России';
         $data['region_slug'] = '';
 
         $data['breadcrumb'] = [
@@ -184,13 +186,13 @@ class OrdersController extends Controller
 
         $service = Service::where('slug', $service_slug)->first();
 
-        $data['title'] = 'Заказы на ' . mb_strtolower($service->title_case) . ' в открытом доступе ' . $region->name_in;
-        $data['description'] = 'Каталог заказов на ' . mb_strtolower($service->title_case) . ' в открытом доступе '.$region->name_in.'. Заказы напрямую от заказчиков. Удобный поиск и ежедневное обновление. Заходите!';
-        $data['header_title'] = 'Заказы на ' . mb_strtolower($service->title_case) . ' в открытом доступе ' . $region->name_in;
+        $data['title'] = 'Заказы на ' . mb_strtolower($service->title_case) . ' в открытом доступе ' . $region->city_in;
+        $data['description'] = 'Каталог заказов на ' . mb_strtolower($service->title_case) . ' в открытом доступе '.$region->city_in.'. Заказы напрямую от заказчиков. Удобный поиск и ежедневное обновление. Заходите!';
+        $data['header_title'] = 'Заказы на ' . mb_strtolower($service->title_case) . ' в открытом доступе ' . $region->city_in;
         $data['seo_category_name'] = $service->title_case;
         $orders_array = Order::getOrdersForServicesRegion($service_slug, $region->id);
         $data['region_name'] = $region->name;
-        $data['region_name_in'] = $region->name_in;
+        $data['region_city_in'] = $region->city_in;
         $data['region_slug'] = $region->slug;
 
         $data['breadcrumb'] = [

@@ -14,7 +14,6 @@
             <p><b>Наш адрес:</b> Россия, г. Санкт-Петербург</p>
             <p><b>Email:</b> <a href="mailto::info@mehportal.ru">info@mehportal.ru</a></p>
             <p><b>Тех. поддержка:</b> <a href="mailto::tech@mehportal.ru">tech@mehportal.ru</a></p>
-            <p><b>Телефон:</b> +7 (812) 920-49-52</p>
         </div>
 
         <div class="col-12 col-md-5 mb-6">

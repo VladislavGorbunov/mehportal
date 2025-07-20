@@ -114,10 +114,10 @@ class CompaniesController extends BaseController
         $category = CategoryService::where('slug', $category_slug)->first();
         $region = Region::where('slug', $region_slug)->first();
         
-        $data['title'] = $category->title .' - каталог предприятий ' . $region->name_in;
-        $data['description'] = $category->title .' - каталог предприятий ' . $region->name_in . '. У нас Вы найдёте ответственного исполнителя услуг!';
+        $data['title'] = $category->title .' - каталог предприятий ' . $region->city_in;
+        $data['description'] = $category->title .' - каталог предприятий ' . $region->city_in . '. У нас Вы найдёте ответственного исполнителя услуг!';
         
-        $data['header_title'] = $category->title .' - каталог предприятий ' . $region->name_in;
+        $data['header_title'] = $category->title .' - каталог предприятий ' . $region->city_in;
     
         $data['breadcrumb'] = [
             'region' => $region->name_in,
@@ -162,9 +162,9 @@ class CompaniesController extends BaseController
     {
         $service = Service::where('slug', $service_slug)->first();
         $region = Region::where('slug', $region_slug)->first();
-        $data['title'] = $service->title .' - каталог предприятий ' . $region->name_in;
-        $data['description'] = $service->title .' - каталог предприятий ' . $region->name_in . '. У нас Вы найдёте ответственного исполнителя услуг!';
-        $data['header_title'] = $service->title .' - каталог предприятий ' . $region->name_in;
+        $data['title'] = $service->title .' - каталог предприятий ' . $region->city_in;
+        $data['description'] = $service->title .' - каталог предприятий ' . $region->city_in . '. У нас Вы найдёте ответственного исполнителя услуг!';
+        $data['header_title'] = $service->title .' - каталог предприятий ' . $region->city_in;
         
         $data['breadcrumb'] = [
             'region' => $region->name_in,
