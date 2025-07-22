@@ -48,5 +48,6 @@ Route::middleware(['admin'])->group(function () {
     Route::get('/admin/premium-executor-requests/delete/{id}', [TariffsController::class, 'deleteExecutorRequest'])->name('premium-executor-request-delete');
 
     Route::get('/admin/categories/all', [CategoryController::class, 'index'])->name('admin-categories-all');
+    Route::get('/admin/category/edit/{id}', [CategoryController::class, 'edit'])->name('admin-category-edit');
     Route::get('/admin/sitemap-generate', [SitemapController::class, 'generate'])->name('sitemap-generate');
 });

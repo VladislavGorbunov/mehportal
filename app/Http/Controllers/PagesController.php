@@ -134,7 +134,7 @@ class PagesController extends Controller
     public function tariffs() 
     {
         $data['title'] = 'Тарифные планы - МехПортал';
-        $data['description'] = 'Тарифные планы на доступ к контакной информации.';
+        $data['description'] = 'Тарифные планы на доступ к контактной информации заказчиков и исполнителей на портале - МехПортал.';
         $data['header_title'] = 'Тарифные планы';
         $data['region_name'] = '';
         $data['region_slug'] = '';

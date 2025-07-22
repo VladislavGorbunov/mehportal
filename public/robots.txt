@@ -5,6 +5,6 @@ Disallow: /executor/
 Disallow: /admin/
 Disallow: /blog/
 Disallow: /*?page=
-Host: mehportal.ru
+Host: https://mehportal.ru
 
 

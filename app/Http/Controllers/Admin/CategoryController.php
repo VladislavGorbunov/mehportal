@@ -17,4 +17,11 @@ class CategoryController extends Controller
         return view('admin.categories', $data);
     }
 
+
+    public function edit(int $id)
+    {
+        $data['category'] = CategoryService::where('id', $id)->first();
+        return view('admin.category-edit', $data);
+    }
+
 }
