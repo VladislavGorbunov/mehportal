@@ -337,6 +337,19 @@ h2, h3, h4, h5, h6 {
     text-transform: uppercase;
 }
 
+
+@media (max-width: 720px) {
+  .header-banner h1, .header-banner-order h1 {
+    position: relative;
+    color: #fff;
+    z-index: 2;
+    font-weight: 400;
+    font-size: 28px;
+    text-transform: uppercase;
+}
+}
+
+
 .header-banner p, .header-banner-order p {
     position: relative;
     color: #fff;
