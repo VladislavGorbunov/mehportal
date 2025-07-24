@@ -389,7 +389,7 @@ h2, h3, h4, h5, h6 {
     height: 100%;
     top: 0;
     left: 0;
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.9), rgba(20, 27, 33, 0.7));
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.96), rgba(20, 27, 33, 0.7));
     backdrop-filter: blur(0px);
     z-index: 1;
 }
