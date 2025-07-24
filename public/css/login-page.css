@@ -115,3 +115,17 @@ dl, ol, ul {
     transform: rotate(45deg); 
     filter: blur(0px);
 }
+
+
+.btn-blue {
+    background: var(--btn-blue-color) !important;
+    color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    
+}   
+
+.btn-blue:hover {
+    background: var(--btn-blue-color);
+    color: #fff;
+}

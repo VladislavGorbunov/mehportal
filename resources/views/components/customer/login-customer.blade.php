@@ -25,7 +25,7 @@
             <div class="mt-4 text-center ">
                 <button type="submit" class="btn btn-login"><i class="bi bi-unlock2"></i> Войти</button>
                 <p class="mt-3 mb-2"><i class="bi bi-arrow-down-up"></i></p>
-                <a href="{{ Route('registration-customer') }}" class="d-block mt-0">Зарегистрироваться</a>
+                <a href="{{ Route('registration-customer') }}" class="btn btn-blue d-block mt-0">Зарегистрироваться</a>
             </div>
         </form>
 
