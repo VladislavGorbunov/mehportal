@@ -1,6 +1,5 @@
 <?php 
 
-
 use App\Http\Controllers\Executor\AuthController;
 use App\Http\Controllers\Executor\RegistrationController;
 use App\Http\Controllers\Executor\IndexController;

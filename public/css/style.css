@@ -171,7 +171,7 @@ h2, h3, h4, h5, h6 {
 
 .badge-us {
     position: relative;
-    background: rgb(36, 107, 222);
+    background: linear-gradient(90deg, rgb(36, 107, 222), rgb(91, 145, 231));
     color: #fff !important;
     font-size: 13px !important;
     padding: 5px 20px;
@@ -319,7 +319,7 @@ h2, h3, h4, h5, h6 {
 .header-banner {
     position: relative;
     width: 100%;
-    min-height: 540px;
+    min-height: 560px;
     background: rgba(20, 27, 33, 1) url("/images/banner-bg1.jpg") top;
     background-size: cover;
     border-radius: 0px;
@@ -332,9 +332,9 @@ h2, h3, h4, h5, h6 {
     position: relative;
     color: #fff;
     z-index: 2;
-    font-weight: 600;
-    font-size: 36px;
-    /* text-transform: uppercase; */
+    font-weight: 400;
+    font-size: 34px;
+    text-transform: uppercase;
 }
 
 .header-banner p, .header-banner-order p {

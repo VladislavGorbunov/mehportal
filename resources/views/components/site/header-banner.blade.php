@@ -15,10 +15,4 @@
         <div class="header-banner-layout"></div>
     </div>
 
-    <div class="circle-layout"></div>
-    <div class="circle-layout-2"></div>
-  
-    <div class="circle-layout-3"></div>
-    <div class="circle-layout-4"></div>
-
 </div>
