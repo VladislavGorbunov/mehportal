@@ -178,16 +178,16 @@ h2, h3, h4, h5, h6 {
     border-radius: 8px 22px;
 }
 
-/* @media (max-width: 720px) {
+@media (max-width: 720px) {
   .badge-us {
     position: relative;
     background: linear-gradient(90deg, rgb(36, 107, 222), rgb(91, 145, 231));
     color: #fff !important;
     font-size: 13px !important;
     padding: 5px 20px;
-    border-radius: 8px;
+    border-radius: 22px;
   }
-} */
+}
 
 
 .navbar {
