@@ -326,7 +326,7 @@ h2, h3, h4, h5, h6 {
 .header-banner {
     position: relative;
     width: 100%;
-    min-height: 540px;
+    min-height: 550px;
     background: rgba(20, 27, 33, 1) url("/images/banner-bg1.jpg") top;
     background-size: cover;
     border-radius: 0px;
