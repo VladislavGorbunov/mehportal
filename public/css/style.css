@@ -119,11 +119,11 @@ h2, h3, h4, h5, h6 {
     font-size: 18px;
 }
 
-
 .top-menu {
     position: relative;
     width: 100%;
     background: #f5f5fc;
+    border-bottom: 1px solid #e9e9f1;
     z-index: 0;
 }
 
@@ -319,7 +319,7 @@ h2, h3, h4, h5, h6 {
 .header-banner {
     position: relative;
     width: 100%;
-    min-height: 560px;
+    min-height: 540px;
     background: rgba(20, 27, 33, 1) url("/images/banner-bg1.jpg") top;
     background-size: cover;
     border-radius: 0px;
