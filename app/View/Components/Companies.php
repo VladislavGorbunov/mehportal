@@ -18,7 +18,7 @@ class Companies extends Component
      */
     public function __construct(public $regionSlug)
     {
-        $this->categories = CategoryService::get();
+        $this->categories = CategoryService::where('active', true)->get();
     }
 
     /**
