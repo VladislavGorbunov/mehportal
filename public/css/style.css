@@ -123,40 +123,49 @@ h2, h3, h4, h5, h6 {
 .top-menu {
     position: relative;
     width: 100%;
-    background: #111;
+    background: #f5f5fc;
     z-index: 0;
 }
 
 .top-menu-block {
-        min-height: 54px;
+        min-height: 52px;
         padding: 12px 0px;
 }
 
 .top-menu a {
     position: relative;
-    color:rgba(227, 232, 237, 0.8);
+    color:rgba(37, 37, 37, 0.8);
     font-size: 13px;
     z-index: 2
 }
 
 .top-menu span {
     position: relative;
-    color:rgba(227, 232, 237, 0.8);
+    color:rgba(37, 37, 37, 0.8);
     font-size: 13px;
     z-index: 2
 }
+
+.vk-logo {
+    width: 16px;
+}
+
+.tg-logo {
+    width: 16px;
+}
+
 
 
 .container .top-menu-light {
     position: absolute;
     right: 0px;
-    top: 0px;
-    width: 180px;
-    height: 100%;
-    border-radius: 30px;
-    background: linear-gradient(0deg, rgb(203, 41, 92), var(--btn-blue-color));
-    filter: blur(33px);
-    opacity: 0.9;
+    top: 12px;
+    width: 220px;
+    height: 30px;
+    border-radius: 10px;
+    background: rgb(34, 121, 221);
+    filter: blur(40px);
+    opacity: 0.6;
     z-index: 1;
 }
 
@@ -185,6 +194,7 @@ h2, h3, h4, h5, h6 {
     font-size: 15px;
     border-bottom: 0px solid #ebf1f4;
     background: #ffffff !important;
+    padding: 20px 0;
 }
 
 .navbar .navbar-brand {
@@ -309,10 +319,10 @@ h2, h3, h4, h5, h6 {
 .header-banner {
     position: relative;
     width: 100%;
-    min-height: 520px;
-    background: rgba(20, 27, 33, 1) url("/images/banner-bg.webp") top;
+    min-height: 540px;
+    background: rgba(20, 27, 33, 1) url("/images/banner-bg1.jpg") top;
     background-size: cover;
-    border-radius: 30px;
+    border-radius: 0px;
     overflow: hidden;
     padding: 50px 20px;
 }
@@ -322,9 +332,9 @@ h2, h3, h4, h5, h6 {
     position: relative;
     color: #fff;
     z-index: 2;
-    font-weight: 400;
-    font-size: 32px;
-    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 36px;
+    /* text-transform: uppercase; */
 }
 
 .header-banner p, .header-banner-order p {
