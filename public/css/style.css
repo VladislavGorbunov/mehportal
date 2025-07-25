@@ -31,7 +31,7 @@ body {
     font-weight: 400;
     font-style: normal;
     overflow-x: hidden;
-    background: #f2f3f7;
+
 }
 
 html {
@@ -916,6 +916,7 @@ b, strong {
     font-size: 13px;
     border-radius: 8px;
     color: var(--btn-blue-color);
+    border: 1px solid rgb(238, 244, 246);
 }
 
 .services-list .bi {
