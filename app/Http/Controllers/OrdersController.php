@@ -127,7 +127,7 @@ class OrdersController extends Controller
     public function getOrdersForServices($slug)
     {
         $service = Service::where('slug', $slug)->first();
-        
+        $data['service_description'] = $service->description;
         $data['title'] = 'Заказы на ' . mb_strtolower($service->title_case) . ' в открытом доступе в России';
         $data['description'] = 'Каталог заказов на ' . mb_strtolower($service->title_case) . ' в открытом доступе по всей России. Заказы напрямую от заказчиков. Удобный поиск и ежедневное обновление. Заходите!';
         $data['header_title'] = 'Заказы на ' . mb_strtolower($service->title_case) . ' в открытом доступе по всей России';
@@ -185,7 +185,7 @@ class OrdersController extends Controller
         if (! $region) abort(404);
 
         $service = Service::where('slug', $service_slug)->first();
-
+        $data['service_description'] = '';
         $data['title'] = 'Заказы на ' . mb_strtolower($service->title_case) . ' в открытом доступе ' . $region->city_in;
         $data['description'] = 'Каталог заказов на ' . mb_strtolower($service->title_case) . ' в открытом доступе '.$region->city_in.'. Заказы напрямую от заказчиков. Удобный поиск и ежедневное обновление. Заходите!';
         $data['header_title'] = 'Заказы на ' . mb_strtolower($service->title_case) . ' в открытом доступе ' . $region->city_in;

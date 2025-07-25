@@ -31,6 +31,7 @@ body {
     font-weight: 400;
     font-style: normal;
     overflow-x: hidden;
+    background: #f2f3f7;
 }
 
 html {
@@ -38,7 +39,7 @@ html {
 }
 
 .breadcrumb {
-    background: none;
+    background: #fff;
     padding: 9px 15px;
     border: 1px solid #eeeff2;
     border-radius: 8px;
@@ -340,8 +341,8 @@ h2, h3, h4, h5, h6 {
     position: relative;
     color: #fff;
     z-index: 2;
-    font-weight: 400;
-    font-size: 34px;
+    font-weight: 500;
+    font-size: 36px;
     text-transform: uppercase;
 }
 
@@ -410,7 +411,7 @@ h2, h3, h4, h5, h6 {
     height: 100%;
     top: 0;
     left: 0;
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.96), rgba(20, 27, 33, 0.7));
+    background: linear-gradient(90deg, rgba(27, 30, 38, 1), rgba(27, 30, 38, 0.7));
     backdrop-filter: blur(0px);
     z-index: 1;
 }
@@ -528,9 +529,10 @@ h2, h3, h4, h5, h6 {
 
 
 .block-company {
-    border-radius: 10px;
-    border: 1px solid rgb(224, 229, 234);
+    border-radius: 15px;
+    border: 1px solid rgba(224, 229, 234, 0.8);
     padding: 20px 30px;
+    background: #fff;
 }
 
 .for-created-bg {
@@ -543,6 +545,7 @@ h2, h3, h4, h5, h6 {
 .for-created-col {
     position: relative;
     background: #fff;
+    border: 1px solid rgba(224, 229, 234, 0.8) !important;
 }
 
 .btn-tariff {
@@ -626,6 +629,7 @@ h2, h3, h4, h5, h6 {
     border-radius: 10px 25px;
     font-size: 14px;
     border: 1px solid var(--blue-color-opacity);
+    background: #fff;
 }
 
 .count-orders-block b {
@@ -637,6 +641,7 @@ h2, h3, h4, h5, h6 {
     border-radius: 10px 25px;
     font-size: 14px;
     border: 1px solid var(--blue-color-opacity);
+    background: #fff;
 }
 
 .count-archive-orders-block b {
@@ -906,7 +911,7 @@ b, strong {
 }
 
 .services-list {
-    background: rgb(241, 245, 248);
+    background: #fff;
     padding: 6px 14px;
     font-size: 13px;
     border-radius: 8px;

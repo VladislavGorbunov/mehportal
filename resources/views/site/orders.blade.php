@@ -72,6 +72,9 @@
     {{ $paginate->links() }}
     
     <div class="mt-4 mb-3">
+        @if ($service_description)
+            {!! $service_description !!}
+        @else
         <h3 class="text-center col-12 col-md-7 mx-auto">Надежный партнер на {{ mb_strtolower($seo_category_name) }} {{ $region_city_in }}</h3>
         
         <p>
@@ -98,6 +101,7 @@
         <p class="text-center">
             Независимо от того, ищете ли вы надежного партнера для реализации своих идей или стремитесь расширить горизонты своего производства, наш сайт – это именно то, что вам нужно. Мы создали пространство, где качество встречается с выгодой, а возможности – с реальными результатами.
         </p>
+        @endif
 
     </div>
 @endsection
