@@ -3,10 +3,13 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\UpdateCustomerProfileRequest;
+use App\Http\Requests\Admin\UpdateExecutorCompanyRequest;
 use App\Models\Executor;
 use App\Models\ExecutorTariffs;
 use App\Models\ExecutorCompany;
 use App\Models\PremiumExecutorsInfo;
+use App\Models\LegalForm;
+use App\Models\Region;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -65,6 +68,17 @@ class ExecutorController extends Controller
 
         return redirect()->back();
     }
+    
+    
+    public function executorDelete($id)
+    {
+        Executor::where('id', $id)->delete();
+
+        session()->flash('message', 'Исполнитель удалён');
+
+        return redirect()->back();
+    }
+    
 
     public function premiumSet($executor_id)
     {
@@ -130,8 +144,36 @@ class ExecutorController extends Controller
         return redirect()->back();
     }
 
-    public function editCustomerCompany()
+    public function editExecutorCompany($id)
     {
+        $data['company'] = ExecutorCompany::where('id', $id)->first();
+        $data['legal_forms'] = LegalForm::get();
+        $data['regions'] = Region::get();
+        return view('admin.executor-company-edit', $data);
+    }
+    
+    
+    public function updateExecutorCompany(UpdateExecutorCompanyRequest $request)
+    {
+        $validated = $request->validated();
+        
+        ExecutorCompany::where('id', $request->id)->update([
+            'legal_form' => $validated['legal_form'],
+            'title' => $validated['title'],
+            'inn' => $validated['inn'],
+            'region_id' => $validated['region_id'],
+            'contact_person' => $validated['contact_person'],
+            'phone' => $validated['phone'],
+            'email' => $validated['email'],
+            'site' => $validated['site'],
+            'active' => $validated['active'],
+            'extension_number' => $validated['extension_number'],
+            'address' => $validated['address'],
+            'description' => $validated['description']
+        ]);
 
+        session()->flash('message', 'Изменения сохранены');
+
+        return redirect()->back();
     }
 }

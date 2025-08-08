@@ -9,11 +9,15 @@ use App\Http\Controllers\BlogController;
 require __DIR__.'/customer.php';
 require __DIR__.'/executor.php';
 require __DIR__.'/admin.php';
+require __DIR__.'/seller.php';
 
 Route::get('/', [PagesController::class, 'index'])->name('index');
 Route::get('/about', [PagesController::class, 'about'])->name('about');
 Route::get('/contacts', [PagesController::class, 'contacts'])->name('contacts');
 Route::get('/tariffs', [PagesController::class, 'tariffs'])->name('tariffs');
+Route::get('/privacy-policy', [PagesController::class, 'privacyPolicy'])->name('privacy-policy');
+Route::get('/dogovor-oferta', [PagesController::class, 'dogovor'])->name('dogovor');
+Route::get('/documents', [PagesController::class, 'documentsPage'])->name('documents');
 Route::get('/blog', [BlogController::class, 'blog'])->name('blog');
 Route::get('/add-order', [PagesController::class, 'addOrderPage'])->name('add-order-page');
 
@@ -29,5 +33,7 @@ Route::get('/{region_slug}/companies/service/{service_slug}', [CompaniesControll
 
 Route::get('/companies/category/{category_slug}', [CompaniesController::class, 'getCompaniesForCategory']);
 Route::get('/{region_slug}/companies/category/{category_slug}', [CompaniesController::class, 'getCompaniesForCategoryRegion']);
+
+Route::get('/company/{inn}', [CompaniesController::class, 'companyPage']);
 
 Route::get('/order/{order_id}', [OrdersController::class, 'getOrder']);

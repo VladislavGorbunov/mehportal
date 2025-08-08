@@ -1,6 +1,6 @@
 
-<h2 class="fs-3 text-center mt-4 mb-4">Для заказчиков</h2>
-
+<h2 class="fs-3 text-center mt-4 mb-2">Тарифы для заказчиков</h2>
+<p class="text-center">Стоимость оказания услуг для заказчиков.</p>
     <div class="row mt-4">
         <div class="col-12 col-md-3 mb-3">
             <div class="col-12 border rounded p-3">
@@ -9,7 +9,7 @@
                 <h4 class="text-center mb-1 fs-5">0 рублей</h4>
                 <p class="text-center">Бесплатно</p><hr>
                 <p class="text-center">Бесплатное размещение ваших заказов в разделе «Заказы».</p><hr>
-                <p class="text-center">Ваши контакты доступны всем исполнителям с тарифом «Профессионал»</p><hr>
+                <p class="text-center">Ваши контакты доступны всем исполнителям с тарифом «Premium»</p><hr>
                 <p class="text-center"><b>Тариф по умолчанию</b></p>
             </div>
         </div>

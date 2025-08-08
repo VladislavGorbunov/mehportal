@@ -68,6 +68,15 @@ class CustomerController extends Controller
 
         return redirect()->back();
     }
+    
+    public function customerDelete($id)
+    {
+        Customer::where('id', $id)->delete();
+
+        session()->flash('message', 'Заказчик удалён');
+
+        return redirect()->back();
+    }
 
     public function premiumSet($customer_id)
     {

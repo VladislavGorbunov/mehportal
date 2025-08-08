@@ -39,6 +39,22 @@ class SitemapController extends Controller
 		        <loc>https://mehportal.ru/tariffs</loc>
                 <priority>0.8</priority>
 	        </url>
+	        <url>
+		        <loc>https://mehportal.ru/privacy-policy</loc>
+                <priority>0.8</priority>
+	        </url>
+	        <url>
+		        <loc>https://mehportal.ru/dogovor-oferta</loc>
+                <priority>0.8</priority>
+	        </url>
+	        <url>
+		        <loc>https://mehportal.ru/login/executor</loc>
+                <priority>0.8</priority>
+	        </url>
+	        <url>
+		        <loc>https://mehportal.ru/login/customer</loc>
+                <priority>0.8</priority>
+	        </url>
         ';
 
         // Страницы категорий заказов

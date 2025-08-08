@@ -22,7 +22,7 @@
         <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
         <link rel="manifest" href="/images/site.webmanifest">
         <meta name="application-name" content="МЕХПОРТАЛ - открытые заказы на металлообработку по всей России.">
-        <meta name="theme-color" content="#111111">
+        <meta name="theme-color" content="#f9f9f9">
         <meta name="msapplication-navbutton-color" content="#111">
         <link rel="canonical" href="{{ url()->current() }}">
         <script src="//code.jivo.ru/widget/kbEBuZUbWS" async></script>
@@ -34,7 +34,6 @@
         <x-site.header-banner :headerTitle="$header_title"/>
         <div class="container">
             @yield('content')
-            
         </div>
         <x-site.footer :regionSlug="$region_slug" />
         <link rel="preload" href="{{ asset('bootstrap/bootstrap-icons-1.13.1/bootstrap-icons.min.css') }}" as="style">
@@ -42,5 +41,6 @@
         <script src="{{ asset('bootstrap/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js') }}" async></script>
         
         <x-site.metrika />
+        
     </body>
 </html>

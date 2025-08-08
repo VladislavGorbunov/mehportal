@@ -11,14 +11,14 @@
 <div class="d-none d-md-block">
 <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9' height='9'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="/">Главная</a></li>
+    <li class="breadcrumb-item"><a href="/"><small>Главная</small></a></li>
     @if ($breadcrumb['region'])
-    <li class="breadcrumb-item">Каталог компаний {{ $breadcrumb['region'] }}</li>
+    <li class="breadcrumb-item"><small>Каталог компаний {{ $breadcrumb['region'] }}</small></li>
     @else
-    <li class="breadcrumb-item">Каталог компаний</li>
+    <li class="breadcrumb-item"><small>Каталог компаний</small></li>
     @endif
     
-    <li class="breadcrumb-item active" aria-current="page">{{ $breadcrumb['category'] }}</li>
+    <li class="breadcrumb-item active" aria-current="page"><small>{{ $breadcrumb['category'] }}</small></li>
   </ol>
 </nav>
 </div>

@@ -95,6 +95,7 @@
                             <input class="form-check-input" type="checkbox" id="services_checkbox" data-parent-id="{{ $category->id }}" value="{{ $service->id }}" name="categories[]">
                                 {{$service->title}}
                         </label>
+                        <br>
                     @endforeach
                 </div>
             </div>

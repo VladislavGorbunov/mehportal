@@ -1,6 +1,6 @@
 
-<h2 class="fs-3 text-center mb-4">Для исполнителей</h2>
- 
+<h2 class="fs-3 text-center mb-2">Тарифы для исполнителей</h2>
+<p class="text-center">Стоимость оказания услуг для исполнителей заказов.</p>
     <div class="row mt-4">
         <div class="col-12 col-md-3 mb-3">
             <div class="col-12 border rounded p-3">
@@ -9,7 +9,7 @@
                 <h4 class="text-center mb-1 fs-5">0 рублей</h4>
                 <p class="text-center">Бесплатно</p><hr>
                 <p class="text-center">Бесплатное размещение вашей компании в разделе «Предприятия».</p><hr>
-                <p class="text-center">Контакты заказчиков скрыты.</p><hr>
+                <p class="text-center">Контакты заказчиков скрыты и доступны по цене 300 руб. за один контакт заказа</p><hr>
                 <p class="text-center"><b>Тариф по умолчанию</b></p>
             </div>
         </div>
@@ -23,8 +23,8 @@
                 <p class="text-center">Бесплатное размещение вашей компании в разделе «Предприятия».</p><hr>
                 <p class="text-center">Приоритетное ранжирование вашей компании в разделе «Предприятия».</p><hr>
                 <p class="text-center">Бейдж для карточки предприятия «Premium исполнитель»</p><hr>
-                <p class="text-center">Доступ к контактам активных заказов.</p><hr>
-                <p class="text-center">Доступ к контактам архивных заказов.</p><hr>
+                <p class="text-center">Доступ к контактам всех активных заказов.</p><hr>
+                <p class="text-center">Доступ к контактам всех архивных заказов.</p><hr>
                 <a href="{{ Route('executor-select-tariff') }}" class="btn btn-tariff d-block mx-auto mt-4" target="_blank">Подключить на 1 месяц</a>
             </div>
         </div>
@@ -38,8 +38,8 @@
                 <p class="text-center">Бесплатное размещение вашей компании в разделе «Предприятия».</p><hr>
                 <p class="text-center">Приоритетное ранжирование вашей компании в разделе «Предприятия».</p><hr>
                 <p class="text-center">Бейдж для карточки предприятия «Premium исполнитель»</p><hr>
-                <p class="text-center">Доступ к контактам активных заказов.</p><hr>
-                <p class="text-center">Доступ к контактам архивных заказов.</p><hr>
+                <p class="text-center">Доступ к контактам всех активных заказов.</p><hr>
+                <p class="text-center">Доступ к контактам всех архивных заказов.</p><hr>
                 <a href="{{ Route('executor-select-tariff') }}" class="btn btn-tariff d-block mx-auto mt-4" target="_blank">Подключить на 6 месяцев</a>
             </div>
         </div>
@@ -53,8 +53,8 @@
                 <p class="text-center">Бесплатное размещение вашей компании в разделе «Предприятия».</p><hr>
                 <p class="text-center">Приоритетное ранжирование вашей компании в разделе «Предприятия».</p><hr>
                 <p class="text-center">Бейдж для карточки предприятия «Premium исполнитель»</p><hr>
-                <p class="text-center">Доступ к контактам активных заказов.</p><hr>
-                <p class="text-center">Доступ к контактам архивных заказов.</p><hr>
+                <p class="text-center">Доступ к контактам всех активных заказов.</p><hr>
+                <p class="text-center">Доступ к контактам всех архивных заказов.</p><hr>
                 <a href="{{ Route('executor-select-tariff') }}" class="btn btn-tariff d-block mx-auto mt-4" target="_blank">Подключить на год</a>
             </div>
         </div>

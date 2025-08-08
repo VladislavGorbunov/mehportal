@@ -27,7 +27,7 @@
                         </div>
                     </div>
                     <hr>
-                    <a href="{{ Route('admin-customer-company-edit', ['id' => $company->id]) }}" class="btn btn-blue py-2 mt-2">Изменить</a>
+                    <a href="{{ Route('admin-executor-company-edit', ['id' => $company->id]) }}" class="btn btn-blue py-2 mt-2">Изменить</a>
                 </div>
             @endforeach
 

@@ -32,7 +32,8 @@
                         </div>
                     </div>
                     <hr>
-                    <a href="{{ Route('admin-customer-edit', ['id' => $customer->id]) }}" class="btn btn-blue py-2 mt-2">Изменить</a>
+                    <a href="{{ Route('admin-customer-edit', ['id' => $customer->id]) }}" class="btn btn-primary py-2 mt-2">Изменить</a>
+                    <a href="{{ Route('admin-customer-delete', ['id' => $customer->id]) }}" class="btn btn-danger py-2 mt-2">Удалить</a>
                 </div>
             @endforeach
 

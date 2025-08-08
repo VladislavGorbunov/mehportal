@@ -102,12 +102,12 @@
                                 <label class="form-check-label mt-2">
                                 <input class="form-check-input" type="checkbox" id="services_checkbox" data-parent-id="{{ $category->id }}" value="{{ $service->id }}" name="categories[]" checked>
                                     {{$service->title}} 
-                                </label>
+                                </label><br>
                             @else
                                 <label class="form-check-label mt-2">
                                 <input class="form-check-input" type="checkbox" id="services_checkbox" data-parent-id="{{ $category->id }}" value="{{ $service->id }}" name="categories[]">
                                     {{$service->title}}
-                                </label>
+                                </label><br>
                             @endif
                     @endforeach
                 </div>

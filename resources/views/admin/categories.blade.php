@@ -4,7 +4,9 @@
 @section('description', 'Панель администратора - категории')
 
 @section('content')
-    <h2 class="fs-4">Редактирование категорий</h2>
+<div class="d-flex align-items-center justify-content-between">
+    <h2 class="fs-4">Редактирование категорий</h2> <a href="{{ Route('admin-category-add') }}" class="btn btn-blue">Добавить категорию</a>
+</div>
         <x-site.message />
         <div class="row mt-2">
             @foreach ($categories as $category)

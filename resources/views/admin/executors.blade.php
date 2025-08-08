@@ -25,14 +25,15 @@
                             @endif
                             <p>Дата регистрации: {{ date('d.m.Y', strtotime($executor->created_at)) }}</p>
                             @if (!empty($executor->executorCompanies))
-                                <p>Связанная организация: <a href="">{{ $executor->executorCompanies->legal_form }} {{ $executor->executorCompanies->title }}</a></p>
+                                <p>Связанная организация: <a href="{{ Route('admin-executor-company-edit', ['id' => $executor->executorCompanies->id]) }}">{{ $executor->executorCompanies->legal_form }} {{ $executor->executorCompanies->title }}</a></p>
                             @else
                                 <p>Связанная организация: -</p>
                             @endif
                         </div>
                     </div>
                     <hr>
-                    <a href="{{ Route('admin-executor-edit', ['id' => $executor->id]) }}" class="btn btn-blue py-2 mt-2">Изменить</a>
+                    <a href="{{ Route('admin-executor-edit', ['id' => $executor->id]) }}" class="btn btn-primary py-2 mt-2">Изменить</a>
+                    <a href="{{ Route('admin-executor-delete', ['id' => $executor->id]) }}" class="btn btn-danger py-2 mt-2">Удалить</a>
                 </div>
             @endforeach
 

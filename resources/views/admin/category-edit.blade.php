@@ -5,9 +5,12 @@
 
 @section('content')
     <h2 class="fs-4">Редактирование категории</h2>
+        <x-site.errors />
         <x-site.message />
         <div class="mt-3">
-            <form action="" method="POST">
+            <form action="/admin/category/update" method="POST">
+                @csrf
+                <input type="text" name="id" value="{{ $category->id }}" hidden>
                 <div class="mb-3">
                     <label class="form-label">Название категории:</label>
                     <input type="text" class="form-control" placeholder="" name="title" value="{{ $category->title }}">
@@ -40,8 +43,10 @@
                         @endif
                     </select>
                 </div>
-
-                <button type="submit" class="btn btn-blue">Сохранить</button>
+                <div class="d-flex justify-content-between">
+                    <button type="submit" class="btn btn-blue">Сохранить</button>
+                    <a href="{{ Route('admin-category-delete', ['id' => $category->id]) }}" class="btn btn-delete">Удалить</a>
+                </div>
             </form>
         </div>
 @endsection

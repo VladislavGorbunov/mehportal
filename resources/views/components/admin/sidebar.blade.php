@@ -26,8 +26,11 @@
         <li><a href="/customer/profile">Информация о Premium исполнителях</a></li>
         <hr>
         <p class="mt-2 mb-2"><b>Прочее</b></p>
-        <li><a href="{{ Route('admin-categories-all') }}">Категории</a></li>
-        <li><a href="">Услуги</a></li>
+        <li><a href="{{ Route('admin-categories-all') }}">Категории металлообработки</a></li>
+        <li><a href="{{ Route('admin-services-all') }}">Услуги металлообработки</a></li>
+        <hr>
+        <li><a href="{{ Route('admin-categories-all') }}">Категории объявлений</a></li>
+        <li><a href="{{ Route('admin-services-all') }}">Подкатегории объявлений</a></li>
         <li><a href="{{ Route('sitemap-generate') }}">Сгенерировать Sitemap</a></li>
         <li><a href="/customer/profile">Информация о Premium исполнителях</a></li>
     </ul>
@@ -36,6 +39,6 @@
 <style>
     .menu {
         top: 20px;
-        height: 950px;
+        height: 1100px;
     }
 </style>

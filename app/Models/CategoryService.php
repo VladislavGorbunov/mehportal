@@ -13,6 +13,14 @@ class CategoryService extends Model
 
     protected $table = 'categories_services';
 
+    protected $fillable = [
+        'title',
+        'title_case',
+        'slug',
+        'description',
+        'active'
+    ];
+
 
     public function servicesLimit(): HasMany
     {

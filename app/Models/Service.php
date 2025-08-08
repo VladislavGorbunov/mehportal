@@ -9,4 +9,13 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Service extends Model
 {
     use HasFactory;
+    
+    protected $fillable = [
+        'title',
+        'title_case',
+        'slug',
+        'category_id',
+        'description',
+        'active'
+    ];
 }

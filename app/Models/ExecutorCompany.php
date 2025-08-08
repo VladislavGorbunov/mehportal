@@ -44,6 +44,7 @@ class ExecutorCompany extends Model
             ->join('regions', 'regions.id', '=', 'executor_companies.region_id')
             ->select('executor_companies.*', 'executors.premium as executor_premium', 'executors.phone as executor_phone', 'executors.email as executor_email', 'regions.name as region_name')
             ->where('services.slug', $service_slug)
+            ->where('executor_companies.active', true)
             ->orderBy('executors.premium', 'desc')
             ->paginate(20);
     }
@@ -58,6 +59,7 @@ class ExecutorCompany extends Model
             ->join('regions', 'regions.id', '=', 'executor_companies.region_id')
             ->select('executor_companies.*', 'executors.premium as executor_premium', 'executors.phone as executor_phone', 'executors.email as executor_email', 'regions.name as region_name')
             ->where('categories_services.id', '=', $category_id)
+            ->where('executor_companies.active', true)
             ->groupBy('executor_companies.id', 'regions.name')
             ->orderBy('executors.premium', 'desc')
             ->paginate(20);
@@ -72,6 +74,7 @@ class ExecutorCompany extends Model
             ->join('regions', 'regions.id', '=', 'executor_companies.region_id')
             ->select('executor_companies.*', 'executors.premium as executor_premium', 'executors.phone as executor_phone', 'executors.email as executor_email', 'regions.name as region_name')
             ->where('services.slug', $service_slug)
+            ->where('executor_companies.active', true)
             ->where('regions.id', $region_id)
             ->orderBy('executors.premium', 'desc')
             ->paginate(20);
@@ -88,6 +91,7 @@ class ExecutorCompany extends Model
             ->select('executor_companies.*', 'executors.premium as executor_premium', 'executors.phone as executor_phone', 'executors.email as executor_email', 'regions.name as region_name')
             ->where('categories_services.id', '=', $category_id)
             ->where('regions.id', $region_id)
+            ->where('executor_companies.active', true)
             ->groupBy('executor_companies.id', 'regions.name')
             ->orderBy('executors.premium', 'desc')
             ->paginate(20);
@@ -97,6 +101,11 @@ class ExecutorCompany extends Model
     public function services(): BelongsToMany
     {
         return $this->belongsToMany(Service::class, 'executor_services', 'company_id', 'service_id');
+    }
+    
+    public function servicesLimit(): BelongsToMany
+    {
+        return $this->belongsToMany(Service::class, 'executor_services', 'company_id', 'service_id')->limit(8);
     }
 
     public function executor(): BelongsTo

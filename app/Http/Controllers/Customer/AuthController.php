@@ -26,7 +26,7 @@ class AuthController extends Controller
         
         $email = $validated['email'];
         $password = $validated['password'];
-
+        
         if (Auth::guard('customer')->attempt(['email' => $email, 'password' => $password, 'active' => 1], true)) {
             $request->session()->regenerate();
             $user = Auth::guard('customer')->user();

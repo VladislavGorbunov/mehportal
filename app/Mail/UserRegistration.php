@@ -10,17 +10,16 @@ use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Mail\Mailables\Address;
 
-class NewOrder extends Mailable
+
+class UserRegistration extends Mailable
 {
     use Queueable, SerializesModels;
 
-    /**
-     * Create a new message instance.
-     */
-    public function __construct()
-    {
-        //
-    }
+    public function __construct(
+        public $role,
+        public $id,
+        public $email
+    ) {}
 
     /**
      * Get the message envelope.
@@ -28,8 +27,8 @@ class NewOrder extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            from: new Address('ffff@example.com', 'Jeffrey Way'),
-            subject: 'Новый заказ на сервисе',
+            from: new Address('info@mehportal.ru', 'МехПортал'),
+            subject: 'Регистрация на сайте МехПортал',
         );
     }
 
@@ -39,7 +38,7 @@ class NewOrder extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'mail.neworder',
+            view: 'mail.admin.registration',
         );
     }
 

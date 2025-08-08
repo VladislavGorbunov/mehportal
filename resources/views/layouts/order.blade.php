@@ -19,7 +19,7 @@
         <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
         <link rel="manifest" href="/images/site.webmanifest">
         <meta name="application-name" content="МЕХПОРТАЛ - открытые заказы на металлообработку по всей России.">
-        <meta name="theme-color" content="#1c1c1c" />
+        <meta name="theme-color" content="#f9f9f9" />
         <meta name="msapplication-navbutton-color" content="#1c1c1c" />
         <script src="//code.jivo.ru/widget/kbEBuZUbWS" async></script>
         <link rel="canonical" href="{{ url()->current() }}"/>

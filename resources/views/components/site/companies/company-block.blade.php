@@ -2,6 +2,7 @@
     <div class="row">
         <div class="col-12 col-md-3">
             <img src="{{ Storage::disk('executors_logo')->url($company['logo']) }}" class="img-fluid order-image d-block mx-auto">
+            
         </div>
 
         <div class="col-12 col-md-9">

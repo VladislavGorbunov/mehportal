@@ -10,15 +10,20 @@ use App\Models\Customer;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 
+use App\Mail\CustomerRegistration;
+use App\Mail\UserRegistration;
+use Illuminate\Support\Facades\Mail;
+
 class RegistrationController extends Controller
 {
-    //
+    // Страница формы регистрации
     public function registrationCustomerPage()
-    {
+    {   
         $data['regions'] = Region::get();
         return view('customer.registration-customer', $data);
     }
 
+    // Добавление пользователя в БД и авторизация
     public function store(RegistrationCustomerRequest $request)
     {
         $validated = $request->validated();
@@ -37,6 +42,10 @@ class RegistrationController extends Controller
             $request->session()->regenerate();
             $user = Auth::guard('customer')->user();
             Auth::guard('customer')->login($user);
+            
+            Mail::mailer('smtp')->to($validated['email'])->send(new CustomerRegistration($validated['email'], $validated['password']));
+            Mail::mailer('smtp')->to('info@mehportal.ru')->send(new UserRegistration('Заказчик', $customer->id, $validated['email']));
+            
             return redirect('/customer');
         } else {
             session()->flash('error', 'Произошла ошибка при попытке авторизации.');

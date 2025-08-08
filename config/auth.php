@@ -50,6 +50,11 @@ return [
             'driver' => 'session',
             'provider' => 'executors',
         ],
+        
+        'seller' => [
+            'driver' => 'session',
+            'provider' => 'sellers',
+        ],
 
         'admin' => [
             'driver' => 'session',
@@ -88,6 +93,11 @@ return [
         'executors' => [
             'driver' => 'eloquent',
             'model' => App\Models\Executor::class,
+        ],
+        
+        'sellers' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Seller::class,
         ],
 
         'admins' => [

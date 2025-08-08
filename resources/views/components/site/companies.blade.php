@@ -47,7 +47,7 @@
 
         <div class="col-6 col-md-2">
             <div class="col-12 block-company">
-                <img src="/images/company-logo/ural.webp" class="img-fluid" alt="Заказы на металлообработку от компании URAL">
+                <img src="/images/company-logo/novatek.png" class="img-fluid" alt="Заказы на металлообработку от компании НОВАТЭК">
             </div>
         </div>
 
@@ -59,7 +59,7 @@
 
         <div class="col-6 col-md-2">
             <div class="col-12 block-company">
-                <img src="/images/company-logo/eurocement.webp" class="img-fluid" alt="Заказы на металлообработку от компании Евроцемент">
+                <img src="/images/company-logo/rostelecom.png" class="img-fluid" alt="Заказы на металлообработку от компании Ростелеком">
             </div>
         </div>
 

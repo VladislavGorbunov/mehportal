@@ -50,7 +50,7 @@
                     <div class="form-check d-block">
                     <input class="form-check-input" type="checkbox" id="flexCheckChecked" name="checked" checked>
                         <label class="form-check-label" for="flexCheckChecked">
-                            <small>Нажимая кнопку «Стать исполнителем», вы подтверждаете согласие с условиями <a href="">Договора-оферты</a> и <a href="">Политикой обработки персональных данных</a>.</small>
+                            <small>Нажимая кнопку «Стать заказчиком», вы подтверждаете согласие с условиями <a href="{{ Route('dogovor') }}" target="_blank">Договора-оферты</a> и <a href="{{ Route('privacy-policy') }}" target="_blank">Политикой обработки персональных данных</a>.</small>
                         </label>
                     </div>
                 </div>

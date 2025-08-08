@@ -48,7 +48,7 @@ class CompaniesController extends BaseController
                 'executor_phone' => $company->executor_phone,
                 'executor_email' => $company->executor_email,
                 'executor_premium' => $company->executor_premium,
-                'services' =>ExecutorCompany::find($company->id)->services,
+                'services' =>ExecutorCompany::find($company->id)->servicesLimit,
             ];
         }
         
@@ -97,7 +97,7 @@ class CompaniesController extends BaseController
                 'executor_phone' => $company->executor_phone,
                 'executor_email' => $company->executor_email,
                 'executor_premium' => $company->executor_premium,
-                'services' =>ExecutorCompany::find($company->id)->services,
+                'services' =>ExecutorCompany::find($company->id)->servicesLimit,
             ];
         }
         
@@ -146,7 +146,7 @@ class CompaniesController extends BaseController
                 'executor_phone' => $company->executor_phone,
                 'executor_email' => $company->executor_email,
                 'executor_premium' => $company->executor_premium,
-                'services' =>ExecutorCompany::find($company->id)->services,
+                'services' =>ExecutorCompany::find($company->id)->servicesLimit,
             ];
         }
         
@@ -195,7 +195,7 @@ class CompaniesController extends BaseController
                 'executor_phone' => $company->executor_phone,
                 'executor_email' => $company->executor_email,
                 'executor_premium' => $company->executor_premium,
-                'services' =>ExecutorCompany::find($company->id)->services,
+                'services' =>ExecutorCompany::find($company->id)->servicesLimit,
             ];
         }
         
@@ -204,6 +204,21 @@ class CompaniesController extends BaseController
         $data['pagination'] = $companies;
 
         return view('site.companies', $data);
+    }
+    
+    
+    public function companyPage(int $inn) 
+    {
+        $company = ExecutorCompany::where('inn', $inn)->first();
+        $data['region'] = Region::where('id', $company['region_id'])->first();
+        $data['title'] = $company['legal_form'] .' «'. $company['title'].'» - ' . $data['region']['name'] . ', ИНН: ' . $company['inn'];
+        $data['description'] = 'Компания оказывающая услуги по металлообработке ' . $company['legal_form'] .' «'. $company['title'].'» - регион: ' . $data['region']['name'] . ', ИНН: ' . $company['inn'];;
+        $data['header_title'] = 'Компания по металлообработке ' . $company['legal_form'] .' «' . $company['title'].'»';
+        $data['region_name'] = '';
+        $data['region_slug'] = '';
+        $data['company'] = $company;
+        $data['services'] = ExecutorCompany::find($company->id)->services;
+        return view('site.company', $data);
     }
 
     

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Region;
 use App\Models\Order;
+use App\Mail\CustomerRegistration;
+use Illuminate\Support\Facades\Mail;
 
 class PagesController extends Controller
 {
@@ -12,15 +14,15 @@ class PagesController extends Controller
     // Главная страница сайта
     public function index() 
     {
-        $data['title'] = 'Заказы на металлообработку в открытом доступе по всей России - МЕХПОРТАЛ';
-        $data['description'] = 'Все заказы на металлообработку в открытом доступе от заказчиков на портале - МЕХПОРТАЛ. Размещайте заказы бесплатно! Только проверенные заказчики и исполнители.';
-        $data['header_title'] = 'Заказы на металлообработку в открытом доступе по всей России';
+        $data['title'] = 'Заказы на металлообработку от заказчиков в открытом доступе - «МЕХПОРТАЛ»';
+        $data['description'] = 'Все открытые заказы на металлообработку от заказчиков на портале - «МЕХПОРТАЛ». Размещайте заказы быстро и бесплатно! Только проверенные заказчики и исполнители.';
+        $data['header_title'] = 'Заказы на металлообработку в открытом доступе от заказчиков по всей России';
         $data['region_name'] = '';
         $data['region_slug'] = '';
         $data['description_text'] = '
-        <h2 class="text-center mt-4">Сервис поиска открытых заказов на металлообработку</h2>
-        <p class="mt-2"><strong>MehPortal.ru</strong> — это современная онлайн-платформа, созданная специально для владельцев производств и заказчиков металлоконструкций, деталей и комплектующих. 
-        Она объединяет представителей отрасли в единую сеть, обеспечивая быстрый и удобный доступ к свежим заказам и готовым предложениям.</p>
+        <h2 class="text-center mt-4 mb-3">Сервис для поиска открытых заказов на металлообработку по всей России</h2>
+        <p class="mt-2"><strong>МЕХПОРТАЛ.РУ</strong> — это современная онлайн-платформа, созданная специально для владельцев производств и заказчиков на работы по металлообработке, производству деталей и комплектующих. 
+        Мы объединяем представителей отрасли в единую сеть, обеспечивая быстрый и удобный доступ к свежим заказам и готовым предложениям.</p>
         
         <p class="mt-3 mb-1"><strong>Ключевые особенности сервиса:</strong></p>
         <ul>
@@ -82,6 +84,9 @@ class PagesController extends Controller
 
         $data['count_orders'] = Order::countActiveOrdersNoRegion();
         $data['archive_count_orders'] = Order::countArchiveOrdersNoRegion();
+        
+       
+        
         return view('site.index', $data);
     }
 
@@ -150,6 +155,7 @@ class PagesController extends Controller
         $data['header_title'] = '«МЕХПОРТАЛ» - информация о проекте';
         $data['region_name'] = '';
         $data['region_slug'] = '';
+        
         return view('site.about', $data);
     }
 
@@ -176,6 +182,37 @@ class PagesController extends Controller
         return view('site.tariffs', $data);
     }
 
+
+    public function privacyPolicy()
+    {
+        $data['title'] = 'Политика конфиденциальности - МехПортал';
+        $data['description'] = 'Политика конфиденциальности - МехПортал';
+        $data['header_title'] = 'Политика конфиденциальности - МехПортал';
+        $data['region_name'] = '';
+        $data['region_slug'] = '';
+        return view('site.privacy-policy', $data);
+    }
+    
+    
+    public function dogovor()
+    {
+        $data['title'] = 'Договор-оферта на оказание информационных услуг - МехПортал';
+        $data['description'] = 'Договор-оферта на оказание информационных услуг - МехПортал';
+        $data['header_title'] = 'Договор-оферта на оказание информационных услуг - МехПортал';
+        $data['region_name'] = '';
+        $data['region_slug'] = '';
+        return view('site.dogovor', $data);
+    }
+    
+    public function documentsPage()
+    {
+        $data['title'] = 'Правовые документы - МехПортал';
+        $data['description'] = 'Правовые документы - МехПортал';
+        $data['header_title'] = 'Правовые документы - МехПортал';
+        $data['region_name'] = '';
+        $data['region_slug'] = '';
+        return view('site.documents', $data);
+    }
 
     // Главная страница блога
     public function blog()

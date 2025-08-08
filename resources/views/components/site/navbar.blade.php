@@ -8,7 +8,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-    <button type="button" class="btn btn-modal-city my-3 my-md-0 mx-md-2 d-block mx-auto" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <button type="button" class="btn btn-modal-city my-3 my-md-0 mx-md-3 d-block mx-auto" data-bs-toggle="modal" data-bs-target="#exampleModal">
         
     <i class="bi bi-cursor-fill"></i>
         @if ($regionName) 
@@ -43,17 +43,19 @@
     </ul>
 
     <div class="d-flex justify-content-around align-items-center">
-        @if (Auth::guard('customer')->check())
-            <a href="{{ Route('login-customer') }}" class="btn btn-none-bg mx-2" target="_blank">Заказчик</a>
-        @else
-            <a href="{{ Route('login-customer') }}" class="btn btn-none-bg mx-2" target="_blank">Заказчикам</a>
-        @endif
-          
-        @if (Auth::guard('executor')->check())
-            <a href="{{ Route('login-executor') }}" class="btn btn-dark" target="_blank">Исполнитель</a>
-        @else
-            <a href="{{ Route('login-executor') }}" class="btn btn-dark" target="_blank">Исполнителям</a>
-        @endif
+        <div class="btn-group">
+            <button type="button" class="btn btn-none-bg dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-person-check-fill"></i> Личный кабинет
+            </button>
+            
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{{ Route('login-customer') }}" target="_blank">Я заказчик</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="{{ Route('login-executor') }}" target="_blank">Я исполнитель</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="{{ Route('login-seller') }}" target="_blank">Я поставщик</a></li>
+            </ul>
+        </div>
     </div>
     </div>
   </div>

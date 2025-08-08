@@ -5,31 +5,41 @@
 
 @section('content')
 
-    <div class="row mt-4">
+<div class="d-none d-md-block">
+    <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9' height='9'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/"><small>Главная</small></a></li>
+            <li class="breadcrumb-item active" aria-current="page"><small>Наши контакты</small></li>
+        </ol>
+    </nav>
+</div>
 
-        <p class="text-center mb-4">Если у Вас есть какие-либо вопросы или предложения, напишите нам в онлайн чат или на электронную почту, обязательно ответим в рабочее время с 9:00 до 21:00 по МСК</p>
-
-        <div class="col-12 col-md-6">
-            <h3 class="fs-4 mb-3">Контакты и реквизиты</h3>
+    <div class="row mt-4 mb-5">
+        <div class="col-12 col-md-6 mb-4">
+            <h3 class="fs-4 mb-3">Контакты и реквизиты:</h3>
             <p><b>Наш адрес:</b> Россия, г. Санкт-Петербург</p>
+            <p><b>Телефон:</b> <a href="tel::+78129204952">+7 (812) 920-49-52</a></p>
             <p><b>Email:</b> <a href="mailto::info@mehportal.ru">info@mehportal.ru</a></p>
             <p><b>Тех. поддержка:</b> <a href="mailto::tech@mehportal.ru">tech@mehportal.ru</a></p>
-        </div>
+            <p>Есть вопросы или предложения для сотрудничества?<br> Мы всегда на связи в ВК, Телеграм а так же в онлайн чате сайта!</p>
 
-        <div class="col-12 col-md-5 mb-6">
-            <h3 class="fs-4 mb-3">Мы в социальных сетях</h3>
+            <h3 class="fs-4 mt-5 mb-3">Мы в социальных сетях:</h3>
             <p><b>Мы ВКонтакте:</b> <a href="https://vk.com/mehportalru" rel="nofollow" target="_blank">https://vk.com/mehportalru</a></p>
             <p><b>Мы в Telegram:</b> <a href="https://t.me/mehport" rel="nofollow" target="_blank">https://t.me/mehport</a></p>
 
-            <div class="row">
-                <div class="col-4">
+            <div class="row mt-4">
+                <div class="col-6 col-md-3">
                     <img src="/images/vk-qr.png" class="img-fluid" alt="МехПортал - QR код на канал в Телеграм">
                 </div>
 
-                <div class="col-4">
+                <div class="col-6 col-md-3">
                     <img src="/images/tg-qr.jpg" class="img-fluid" alt="МехПортал - QR код на канал в Телеграм">
                 </div>
             </div>
+        </div>
+
+        <div class="col-12 col-md-6 mb-6">
+            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aa144b1d685110b90bf4dbb0ec0d410b32698ba3b4e5d5a51f74335425b2c00fe&amp;width=auto&amp;height=550&amp;lang=ru_RU&amp;scroll=false"></script>
         </div>
 
        

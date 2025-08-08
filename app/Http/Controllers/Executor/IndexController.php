@@ -14,7 +14,7 @@ class IndexController extends Controller
     {
         $executor_id = Auth::guard('executor')->user()->id;
         $data['company'] = Executor::find($executor_id)->executorCompanies;
-
+        $data['executor'] = Executor::where('id', $executor_id)->first();
         return view('executor.index', $data);
     }
 

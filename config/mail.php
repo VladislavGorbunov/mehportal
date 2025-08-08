@@ -14,7 +14,9 @@ return [
     */
 
     'default' => env('MAIL_MAILER', 'smtp'),
-
+    
+    'admin_email' => 'info@mehportal.ru',
+    
     /*
     |--------------------------------------------------------------------------
     | Mailer Configurations
@@ -45,15 +47,16 @@ return [
         //     'timeout' => null,
         //     'local_domain' => env('MAIL_EHLO_DOMAIN'),
         // ],
-
+        
+        
         'smtp' => [
             'transport' => 'smtp',
-            'url' => env('limitorg2016@yandex.ru'),
-            'host' => env('MAIL_HOST', 'smtp.yandex.ru'),
-            'port' => env('MAIL_PORT', 465),
-            'encryption' => env('MAIL_ENCRYPTION', 'tls'),
-            'username' => env('Vadya2011!'),
-            'password' => env('zkmrnqxcokqvnruz'),
+            'url' => env('MAIL_URL'),
+            'host' => env('MAIL_HOST'),
+            'port' => env('MAIL_PORT'),
+            'encryption' => env('MAIL_ENCRYPTION'),
+            'username' => env('MAIL_USERNAME'),
+            'password' => env('MAIL_PASSWORD'),
             'timeout' => null,
             'local_domain' => env('MAIL_EHLO_DOMAIN'),
         ],
@@ -120,9 +123,12 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
+        'address' => env('MAIL_FROM_ADDRESS', 'limitorg2016@yandex.ru'),
         'name' => env('MAIL_FROM_NAME', 'Example'),
     ],
+    
+    
+    
 
     /*
     |--------------------------------------------------------------------------
