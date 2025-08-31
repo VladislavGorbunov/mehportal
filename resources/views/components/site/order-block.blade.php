@@ -63,7 +63,11 @@
                 </div>
                 <hr>
                 <div class="mb-0 mt-4 d-flex flex-column flex-md-row align-items-start">
-                    <button class="btn btn-cp mb-2 me-3 d-flex align-items-center justify-content-center" @disabled($order['active'] == false)><i class="bi bi-file-earmark-text"></i> Отправить КП</button>
+                    @if (! Auth::guard('executor')->user())
+                        <button type="button" class="btn btn-cp mb-2 me-3 d-flex align-items-center justify-content-center" data-bs-toggle="modal" data-bs-target="#modal-reg-cp"><i class="bi bi-file-earmark-text"></i> Отправить КП</button>
+                    @else
+                        <button type="button" class="btn btn-cp mb-2 me-3 d-flex align-items-center justify-content-center" data-order-id=""><i class="bi bi-file-earmark-text"></i> Отправить КП</button>
+                    @endif
                     <a href="/order/{{ $order['order_id'] }}" class="btn btn-more mb-2 me-3 d-flex align-items-center justify-content-center" target="_blank">Подробнее о заказе</a>
                     @if (!empty($order['order_archive']))
                         <a href="{{ Storage::disk('orders_files')->url($order['order_archive']) }}" class="btn btn-file-download mb-2"><i class="bi bi-cloud-arrow-down"></i> Скачать файлы</a>

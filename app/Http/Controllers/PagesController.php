@@ -54,6 +54,7 @@ class PagesController extends Controller
         foreach ($companies as $company) {
             
             $region = Region::where('id', $company->region_id)->first();
+
             $executor = $company->executor;
             
             $company_array[] = [
