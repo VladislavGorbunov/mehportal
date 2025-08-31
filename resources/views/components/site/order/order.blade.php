@@ -1,10 +1,3 @@
-<style>
-    .sticky {
-            position: sticky;
-            top: 20px;
-    }
-</style>
-
 <div class="mt-4 mb-5">
 <div class="row">
 

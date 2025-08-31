@@ -12,6 +12,7 @@ require __DIR__.'/admin.php';
 require __DIR__.'/seller.php';
 
 Route::get('/', [PagesController::class, 'index'])->name('index');
+Route::get('/metal-calculator', [PagesController::class, 'calculator'])->name('calculator');
 Route::get('/about', [PagesController::class, 'about'])->name('about');
 Route::get('/contacts', [PagesController::class, 'contacts'])->name('contacts');
 Route::get('/tariffs', [PagesController::class, 'tariffs'])->name('tariffs');
@@ -19,6 +20,7 @@ Route::get('/privacy-policy', [PagesController::class, 'privacyPolicy'])->name('
 Route::get('/dogovor-oferta', [PagesController::class, 'dogovor'])->name('dogovor');
 Route::get('/documents', [PagesController::class, 'documentsPage'])->name('documents');
 Route::get('/blog', [BlogController::class, 'blog'])->name('blog');
+Route::get('/article/{slug}', [BlogController::class, 'article'])->name('article');
 Route::get('/add-order', [PagesController::class, 'addOrderPage'])->name('add-order-page');
 
 Route::get('/{region_slug}', [PagesController::class, 'cityIndexPage'])->name('city-index');

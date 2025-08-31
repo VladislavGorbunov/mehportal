@@ -19,8 +19,8 @@ class CompaniesController extends BaseController
 
         $data['title'] = $service->title .' - каталог предприятий России';
         $data['description'] = $service->title .' - каталог предприятий России. У нас Вы найдёте ответственного исполнителя услуг!';
-        $data['header_title'] = $service->title .' - каталог предприятий России';
-    
+        $data['header_title'] = $service->title .' - каталог предприятий оказывающих услуги в России';
+        
         $data['breadcrumb'] = [
             'region' => null,
             'region_slug' => null,
@@ -67,7 +67,7 @@ class CompaniesController extends BaseController
         $data['title'] = $category->title .' - каталог предприятий России';
         $data['description'] = $category->title .' - каталог предприятий России. У нас Вы найдёте ответственного исполнителя услуг!';
         
-        $data['header_title'] = $category->title .' - каталог предприятий России';
+        $data['header_title'] = $category->title .' - каталог предприятий оказывающих услуги в России';
 
         $data['breadcrumb'] = [
             'region' => null,
@@ -117,7 +117,7 @@ class CompaniesController extends BaseController
         $data['title'] = $category->title .' - каталог предприятий ' . $region->city_in;
         $data['description'] = $category->title .' - каталог предприятий ' . $region->city_in . '. У нас Вы найдёте ответственного исполнителя услуг!';
         
-        $data['header_title'] = $category->title .' - каталог предприятий ' . $region->city_in;
+        $data['header_title'] = $category->title .' - каталог предприятий оказывающих услуги ' . $region->city_in;
     
         $data['breadcrumb'] = [
             'region' => $region->name_in,
@@ -164,7 +164,7 @@ class CompaniesController extends BaseController
         $region = Region::where('slug', $region_slug)->first();
         $data['title'] = $service->title .' - каталог предприятий ' . $region->city_in;
         $data['description'] = $service->title .' - каталог предприятий ' . $region->city_in . '. У нас Вы найдёте ответственного исполнителя услуг!';
-        $data['header_title'] = $service->title .' - каталог предприятий ' . $region->city_in;
+        $data['header_title'] = $service->title .' - каталог предприятий оказывающих услуги ' . $region->city_in;
         
         $data['breadcrumb'] = [
             'region' => $region->name_in,
@@ -210,9 +210,12 @@ class CompaniesController extends BaseController
     public function companyPage(int $inn) 
     {
         $company = ExecutorCompany::where('inn', $inn)->first();
+        
+        if (! $company) abort(404);
+        
         $data['region'] = Region::where('id', $company['region_id'])->first();
-        $data['title'] = $company['legal_form'] .' «'. $company['title'].'» - ' . $data['region']['name'] . ', ИНН: ' . $company['inn'];
-        $data['description'] = 'Компания оказывающая услуги по металлообработке ' . $company['legal_form'] .' «'. $company['title'].'» - регион: ' . $data['region']['name'] . ', ИНН: ' . $company['inn'];;
+        $data['title'] = $company['legal_form'] .' «'. $company['title'].'» ИНН: ' . $company['inn'] . ' - ' . $data['region']['name'];
+        $data['description'] = 'Компания оказывающая услуги по металлообработке ' . $company['legal_form'] .' «'. $company['title'].'» - регион: ' . $data['region']['name'] . ', Адрес: ' . $company['address'] . ', ИНН: ' . $company['inn'];
         $data['header_title'] = 'Компания по металлообработке ' . $company['legal_form'] .' «' . $company['title'].'»';
         $data['region_name'] = '';
         $data['region_slug'] = '';

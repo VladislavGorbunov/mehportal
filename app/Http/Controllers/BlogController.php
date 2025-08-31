@@ -10,9 +10,9 @@ class BlogController extends Controller
     // Главная страница блога
     public function blog()
     {
-        $data['title'] = 'МехПортал блог';
-        $data['description'] = 'МехПортал блог';
-        $data['header_title'] = 'МехПортал блог';
+        $data['title'] = 'Статьи по металлообработке - МЕХПОРТАЛ';
+        $data['description'] = 'Статьи по металлообработке - МЕХПОРТАЛ';
+        $data['header_title'] = 'Статьи по металлообработке';
         $data['region_name'] = '';
         $data['region_slug'] = '';
 
@@ -21,8 +21,17 @@ class BlogController extends Controller
     }
 
     // Страница статьи
-    public function article()
+    public function article($slug)
     {
-
+        $article = Article::where('slug', $slug)->first();
+        
+        $data['title'] = $article->title_meta;
+        $data['description'] = $article->title_meta;
+        $data['header_title'] = $article->title_article;
+        $data['region_name'] = '';
+        $data['region_slug'] = '';
+        $data['article'] = $article;
+        
+        return view('site.article-page', $data);
     }
 }

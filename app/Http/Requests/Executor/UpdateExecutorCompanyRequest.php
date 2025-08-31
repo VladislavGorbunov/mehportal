@@ -30,7 +30,7 @@ class UpdateExecutorCompanyRequest extends FormRequest
             'contact_person' => 'required',
             'phone' => 'required',
             'site' => 'min:0',
-            'extension_number' => 'required',
+            'extension_number' => 'min:0',
             'email' => 'required|email',
             'description' => 'required|min:50',
             'categories' => 'required',

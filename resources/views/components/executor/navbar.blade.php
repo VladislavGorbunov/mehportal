@@ -16,7 +16,7 @@
           <a class="nav-link" href="/" target="_blank">Перейти на портал</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Помощь</a>
+          <a class="nav-link" href="javascript:jivo_api.open()">Помощь</a>
         </li>
         
       </ul>

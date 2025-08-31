@@ -103,15 +103,15 @@ class CompanyController extends Controller
         // Загрузка файла в папку storage/app/public/executors_logo
         $upload_file = $logo->store('', 'executors_logo');
 
-        $storagePath = storage_path() . '\\app\\public\\' . 'executors_logo\\';
-        $filePath    = storage_path() . '\\app\\public\\' . 'executors_logo\\' . $upload_file;
+        $storagePath = storage_path() . '/app/public/' . 'executors_logo/';
+        $filePath    = storage_path() . '/app/public/' . 'executors_logo/' . $upload_file;
 
         // Уменьшение и обрезка изображения
         $image = new \Imagick($filePath);
 
         $geometry = $image->getImageGeometry();
         if ($geometry['width'] > 500) {
-            $image->resizeImage(500, 0, 0, 0);
+            $image->resizeImage(500, 500, \Imagick::FILTER_LANCZOS, 0.9, true);
         }
 
         // Перезапись изображения

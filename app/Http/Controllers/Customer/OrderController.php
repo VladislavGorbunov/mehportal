@@ -10,8 +10,10 @@ use App\Models\OrderService;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Models\CustomerCompany;
+
+
+use App\Mail\AddOrder;
 use Illuminate\Support\Facades\Mail;
-use App\Mail\NewOrder;
 
 
 class OrderController extends Controller
@@ -90,7 +92,7 @@ class OrderController extends Controller
             ]);
         }
 
-        // Mail::to('dfgdfg@yan.ru')->send(new NewOrder());
+        Mail::mailer('smtp')->to('info@mehportal.ru')->send(new AddOrder(Auth::guard('customer')->id(), $order->id, $validated['title']));
 
         $archive_date = $validated['closing_date'] . ' 23:59:59';
         // Добавление события для архивации заказа
@@ -126,11 +128,11 @@ class OrderController extends Controller
 
         $geometry = $image->getImageGeometry();
         if ($geometry['width'] > 1200) {
-            $image->resizeImage(1200, 0, 0, 0);
+            $image->resizeImage(1200, 1200, \Imagick::FILTER_LANCZOS, 1, true);
         }
 
         if ($geometry['height'] > 1000) {
-            $image->resizeImage(0, 1000, 0, 0);
+            $image->resizeImage(1200, 1200, \Imagick::FILTER_LANCZOS, 1, true);
         }
 
         // Перезапись изображения

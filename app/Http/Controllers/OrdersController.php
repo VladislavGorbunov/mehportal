@@ -44,10 +44,12 @@ class OrdersController extends Controller
                 'order_image' => $order->order_image,
                 'order_archive' => $order->order_archive_file,
                 'region_name' => $order->region_name,
+                'region_slug' => $order->region_slug,
                 'quantity' => $order->quantity,
                 'price' => $order->price,
                 'closing_date' => $closing_date,
                 'description' => $order->description,
+                'views' => $order->views,
                 'services' => Order::find($order->id)->services,
                 'active' => $order->active,
                 'archive' => $order->archive,
@@ -102,10 +104,12 @@ class OrdersController extends Controller
                 'order_image' => $order->order_image,
                 'order_archive' => $order->order_archive_file,
                 'region_name' => $order->region_name,
+                'region_slug' => $order->region_slug,
                 'quantity' => $order->quantity,
                 'price' => $order->price,
                 'closing_date' => $closing_date,
                 'description' => $order->description,
+                'views' => $order->views,
                 'services' => Order::find($order->id)->services,
                 'active' => $order->active,
                 'archive' => $order->archive,
@@ -157,8 +161,10 @@ class OrdersController extends Controller
                 'order_image' => $order->order_image,
                 'order_archive' => $order->order_archive_file,
                 'region_name' => $order->region_name,
+                'region_slug' => $order->region_slug,
                 'quantity' => $order->quantity,
                 'price' => $order->price,
+                'views' => $order->views,
                 'closing_date' => $closing_date,
                 'description' => $order->description,
                 'services' => Order::find($order->id)->services,
@@ -213,10 +219,12 @@ class OrdersController extends Controller
                 'order_image' => $order->order_image,
                 'order_archive' => $order->order_archive_file,
                 'region_name' => $order->region_name,
+                'region_slug' => $order->region_slug,
                 'quantity' => $order->quantity,
                 'price' => $order->price,
                 'closing_date' => $closing_date,
                 'description' => $order->description,
+                'views' => $order->views,
                 'services' => Order::find($order->id)->services,
                 'active' => $order->active,
                 'archive' => $order->archive,
@@ -237,14 +245,16 @@ class OrdersController extends Controller
     public function getOrder($order_id)
     {
         $order = Order::getOrder($order_id);
-
+        if (! $order) abort(404);
+        $ord = Order::find($order_id);
+        $ord->views = $ord->views + 1;
+        $ord->save();
+        
         if (! $order) abort('404');
 
         $date = date("d.m.Y", strtotime($order->created_at));
         $closing_date = date("d.m.Y", strtotime($order->closing_date));
-
-        // dd($order);
-
+        
         $order_data = [
             'id' => $order->id,
             'title' => $order->title,
@@ -252,6 +262,7 @@ class OrdersController extends Controller
             'order_archive' => $order->order_archive_file,
             'region_name' => $order->region_name,
             'description' => $order->description,
+            'views' => $order->views,
             'date' => $date,
             'closing_date' => $closing_date,
             'quantity' => $order->quantity,
@@ -271,8 +282,8 @@ class OrdersController extends Controller
             'customer_id' => $order->customer_id,
         ];
 
-        $data['title'] = 'Заказ на металлообработку №' . $order_id . ' от ' . $date . '. ' . $order->title;
-        $data['description'] = 'Заказы';
+        $data['title'] = $order->title . ' - заказ #'.$order_id  .' от ' . $order->company_legal_form . ' ' . $order->company_title . ' - ' . $date;
+        $data['description'] = 'Заказ на металлообработку от ' . $date . ' №' .$order_id . ' - ' . $order->title . '. Заказчик: ' . $order->company_legal_form . ' ' . $order->company_title . ' - ' . $order->region_name;
         $data['header_title'] = $order->title;
         $data['region_name'] = '';
         $data['region_slug'] = '';

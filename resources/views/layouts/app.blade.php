@@ -11,7 +11,8 @@
         <meta property="og:locale" content="ru_RU">
         <meta property="og:site_name" content="МехПортал">
         <meta property="og:url" content="{{ URL::current() }}">
-        
+        <meta property="og:image" content="https://mehportal.ru/images/og-img.png">
+        <meta name="telderi" content="dab60460a19136644d7b0c5b6b21af9c" />
         <link rel="preload" href="{{ asset('bootstrap/bootstrap-5.3.3-dist/css/bootstrap.min.css') }}" as="style">
         <link href="{{ asset('bootstrap/bootstrap-5.3.3-dist/css/bootstrap.min.css') }}" rel="stylesheet">
         
@@ -42,5 +43,29 @@
         
         <x-site.metrika />
         
+        
+        <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "MEHPORTAL.RU",
+  "url": "https://mehportal.ru",
+  "description": "Онлайн-платформа для поиска заказов и исполнителей по металлообработке в России. Размещайте заказы бесплатно, находите подрядчиков по всей стране.",
+  "keywords": "металлообработка, заказы на металл, токарные работы, найти исполнителя, изготовление деталей по чертежам, сварка металлоконструкций, фрезерные работы ЧПУ",
+  "publisher": {
+    "@type": "Organization",
+    "name": "MEHPORTAL",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mehportal.ru/images/logo-name.png"
+    },
+    "sameAs": [
+      "https://vk.com/mehportalru",
+      "https://t.me/mehport"
+    ]
+  }
+  
+}
+</script>
     </body>
 </html>

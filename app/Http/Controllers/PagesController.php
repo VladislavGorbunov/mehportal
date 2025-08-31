@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Region;
 use App\Models\Order;
+use App\Models\ExecutorCompany;
 use App\Mail\CustomerRegistration;
 use Illuminate\Support\Facades\Mail;
 
@@ -14,46 +15,13 @@ class PagesController extends Controller
     // Главная страница сайта
     public function index() 
     {
-        $data['title'] = 'Заказы на металлообработку от заказчиков в открытом доступе - «МЕХПОРТАЛ»';
-        $data['description'] = 'Все открытые заказы на металлообработку от заказчиков на портале - «МЕХПОРТАЛ». Размещайте заказы быстро и бесплатно! Только проверенные заказчики и исполнители.';
-        $data['header_title'] = 'Заказы на металлообработку в открытом доступе от заказчиков по всей России';
+        $data['title'] = 'Заказы на металлообработку от заказчиков | Найти исполнителя';
+        $data['description'] = 'Платформа для поиска заказов и исполнителей по металлообработке. Размещайте заказы бесплатно, находите подрядчиков по всей России. Для производств и поставщиков.';
+        $data['header_title'] = 'Найдите актуальные заказы на металлообработку или проверенного исполнителя ';
         $data['region_name'] = '';
         $data['region_slug'] = '';
-        $data['description_text'] = '
-        <h2 class="text-center mt-4 mb-3">Сервис для поиска открытых заказов на металлообработку по всей России</h2>
-        <p class="mt-2"><strong>МЕХПОРТАЛ.РУ</strong> — это современная онлайн-платформа, созданная специально для владельцев производств и заказчиков на работы по металлообработке, производству деталей и комплектующих. 
-        Мы объединяем представителей отрасли в единую сеть, обеспечивая быстрый и удобный доступ к свежим заказам и готовым предложениям.</p>
+       
         
-        <p class="mt-3 mb-1"><strong>Ключевые особенности сервиса:</strong></p>
-        <ul>
-            <li>Простота использования: Легкий и интуитивно понятный интерфейс позволяет мгновенно искать и размещать заказы.</li>
-            <li>Широкий охват: Открытая база включает запросы от различных регионов России, облегчая поиск новых контрактов.</li>
-            <li>Фильтрация запросов: Гибкая система фильтров помогает быстро найти подходящий заказ, ориентируясь на тип обработки, объем, материалы и технические характеристики.</li>
-            <li>Прямой контакт с клиентами: Заказчики и производители взаимодействуют напрямую, минуя посредников.</li>
-            <li>Проверенные партнеры: Все участники проходят проверку надежности, снижая риски мошенничества и недобросовестных действий.</li>
-        </ul>
-        
-        <p class="mt-3 mb-1"><strong>Преимущества для пользователей:</strong></p>
-        <ul>
-            <li>Простота регистрации и мгновенный доступ к актуальной базе заказов.</li>
-            <li>Постоянное пополнение новых заданий с описанием требований и возможных объемов производства.</li>
-            <li>Подробная фильтрация заказов по необходимым критериям (тип обработки, регион, объемы и др.).</li>
-            <li>Возможность установить прямой контакт с потенциальными партнерами и обсудить важные аспекты заказа.</li>
-            <li>Гарантия безопасности благодаря верифицированным участникам площадки.</li>
-        </ul>
-        
-        <p class="mt-3 mb-1"><strong>Как начать работу на портале?</strong></p>
-        
-        <ol>
-            <li>Зарегистрироваться: Заполнить простую форму и подтвердить учетную запись.</li>
-            <li>Настроить профиль: Добавить информацию о своем предприятии, оборудовании и предлагаемых услугах.</li>
-            <li>Искать заказы: Воспользоваться системой фильтров для поиска идеального задания.</li>
-            <li>Связываться с заказчиками: Отправлять предложения и обсуждать условия.</li>
-            <li>Получать выгоды: Повышать доходы и загрузку производственных мощностей.</li>
-        </ol>
-        
-        <p class="mt-3">Благодаря простоте интерфейса и прозрачности процедур, пользователи получают быстрые и качественные коммерческие предложения. Важно отметить, что весь процесс проходит без комиссий и скрытых платежей, делая сотрудничество выгодным для обеих сторон.</p>
-        ';
         $orders_array = Order::getAllOrders();
 
         $orders = [];
@@ -68,8 +36,10 @@ class PagesController extends Controller
                 'order_image' => $order->order_image,
                 'order_archive' => $order->order_archive_file,
                 'region_name' => $order->region_name,
+                'region_slug' => $order->region_slug,
                 'quantity' => $order->quantity,
                 'price' => $order->price,
+                'views' => $order->views,
                 'closing_date' => $closing_date,
                 'description' => $order->description,
                 'services' => Order::find($order->id)->services,
@@ -79,7 +49,27 @@ class PagesController extends Controller
             ];
         }
         
-
+        $companies = ExecutorCompany::where('active', true)->orderBy('id', 'desc')->limit(5)->get();
+        
+        foreach ($companies as $company) {
+            
+            $region = Region::where('id', $company->region_id)->first();
+            $executor = $company->executor;
+            
+            $company_array[] = [
+                'title' => $company->title,
+                'legal_form' => $company->legal_form,
+                'region_name' => $region->name,
+                'inn' => $company->inn,
+                'email' => $company->email,
+                'phone' => $company->phone,
+                'premium' => $executor->premium,
+                'created_at' => $company->created_at
+            ];
+        }
+        
+        $data['executor_companies'] = $company_array;
+        
         $data['orders'] = $orders;
 
         $data['count_orders'] = Order::countActiveOrdersNoRegion();
@@ -98,7 +88,7 @@ class PagesController extends Controller
     
         $data['title'] = 'Заказы на металлообработку от заказчиков в открытом доступе ' . $region->city_in;
         
-        $data['description'] = 'Все заказы на металлообработку в открытом доступе '. $region->city_in .' от заказчиков на портале - МЕХПОРТАЛ. Размещайте заказы бесплатно! Только проверенные заказчики и исполнители.';
+        $data['description'] = 'Все заказы на металлообработку в открытом доступе '. $region->city_in .' от заказчиков на портале - МЕХПОРТАЛ. Размещайте частные заказы на обработку металла бесплатно! Только проверенные заказчики и исполнители.';
         $data['header_title'] = 'Заказы на металлообработку в открытом доступе ' . $region->city_in;
         $data['region_name'] = $region->name;
         $data['region_city_in'] = $region->city_in;
@@ -118,8 +108,10 @@ class PagesController extends Controller
                 'order_image' => $order->order_image,
                 'order_archive' => $order->order_archive_file,
                 'region_name' => $order->region_name,
+                'region_slug' => $order->region_slug,
                 'quantity' => $order->quantity,
                 'price' => $order->price,
+                'views' => $order->views,
                 'closing_date' => $closing_date,
                 'description' => $order->description,
                 'services' => Order::find($order->id)->services,
@@ -129,21 +121,52 @@ class PagesController extends Controller
             ];
         }
         
+        $companies = ExecutorCompany::where('active', true)->orderBy('id', 'desc')->limit(5)->get();
+        
+        foreach ($companies as $company) {
+            $region = Region::where('id', $company->region_id)->first();
+            $executor = $company->executor;
+            
+            $company_array[] = [
+                'title' => $company->title,
+                'legal_form' => $company->legal_form,
+                'region_name' => $region->name,
+                'inn' => $company->inn,
+                'email' => $company->email,
+                'phone' => $company->phone,
+                'premium' => $executor->premium,
+                'created_at' => $company->created_at
+            ];
+        }
+        
+        $data['executor_companies'] = $company_array;
+        
         $data['orders'] = $orders;
         $data['count_orders'] = Order::countActiveOrders($region->id);
         $data['archive_count_orders'] = Order::countArchiveOrders($region->id);
-        return view('site.index', $data);
+        return view('site.index-region', $data);
     }
     
     
     public function addOrderPage()
     {
         $data['title'] = 'Разместить заказ на металлообработку бесплатно - «МЕХПОРТАЛ»';
-        $data['description'] = 'Разместите заказ на металлообработку на портале «МЕХПОРТАЛ» и получайте выгодные предложения от проверенных исполнителей и выбираёте лучшее предложение.';
+        $data['description'] = 'Ищите исполнителя для выполнения заказа? Разместите заказ на металлообработку на портале «МЕХПОРТАЛ» и получайте выгодные коммерческие предложения от проверенных исполнителей и выбирайте лучшее предложение. 
+        Добавление заказа на нашем сайте абсолютно бесплатное!';
         $data['header_title'] = 'Разместить заказ на металлообработку бесплатно';
         $data['region_name'] = '';
         $data['region_slug'] = '';
         return view('site.add-order', $data);
+    }
+    
+    public function calculator()
+    {
+        $data['title'] = 'Калькулятор металла – онлайн расчет веса';
+        $data['description'] = 'Очень удобный и главное бесплатный калькулятор для расчета веса металла с возможностью для расчета круга/прутка, квадрата, шестигранника, уголка, ленты, двутавра, трубы, листа, швеллера и трубы профильной. Заходите и рассчитывайте!';
+        $data['header_title'] = 'Калькулятор металла';
+        $data['region_name'] = '';
+        $data['region_slug'] = '';
+        return view('site.calculator', $data);
     }
 
 
@@ -163,7 +186,7 @@ class PagesController extends Controller
     // Страница контактов
     public function contacts() 
     {
-        $data['title'] = 'МЕХПОРТАЛ - контакты';
+        $data['title'] = 'МЕХПОРТАЛ - наши контакты и реквизиты';
         $data['description'] = 'МЕХПОРТАЛ - наши контакты, адреса и реквизиты';
         $data['header_title'] = 'МехПортал - наши контакты, адрес и реквизиты';
         $data['region_name'] = '';

@@ -22,6 +22,7 @@ return new class extends Migration
             $table->text('description');
             $table->integer('active')->default(0);
             $table->integer('archive')->default(0);
+            $table->integer('views')->default(0);
             $table->timestamps();
         });
 

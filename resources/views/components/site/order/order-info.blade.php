@@ -1,7 +1,7 @@
 <div class="col-12 col-md-6 mt-2">
     @if ($order['customer_premium']) 
-        <p class="mb-3">Статус заказчика: <span class="mb-1 premium-customer2"><i class="bi bi-fire"></i> Premium</span></p>
-    @endif
+        <p class="mb-3">Статус заказчика: <span class="mb-1 premium-customer2"><i class="bi bi-fire"></i> Premium заказчик</span></p>
+    @endif 
     <p class="mb-3">Номер заказа в системе: <b>#{{ $order['id'] }}</b></p>
     <p class="mb-3">Регион заказчика:<strong> {{ $order['region_name'] }}</strong></p>
     <p class="mb-3">Дата размещения: <b>{{ $order['date'] }}</b></p>

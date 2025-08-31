@@ -1,17 +1,21 @@
 <div class="position-relative">
     <div class="header-banner mt-0 mb-4 d-flex justify-content-center align-items-center flex-column">
         <div class="d-flex justify-content-center align-items-center container">
-        <div class="col-12 col-md-8">
+        <div class="col-12 col-md-9">
             <h1 class="text-center">{{ $headerTitle }}</h1>
-            <noindex><p class="text-center mt-3">
-                Устали от простоя оборудования? Хотите быстро найти новые проекты и увеличить свою прибыль? Наш инновационный сервис – это ваш ключ к успеху в мире металлообработки! 
-                Мы объединяем заказчиков и исполнителей, предлагая удобную платформу для поиска и размещения заказов.
-            </p></noindex>
+            <p class="text-center mt-3">
+                МЕХПОРТАЛ.РУ — это современная онлайн-биржа заказов на металлообработку по всей России. Найдите исполнителей на токарные, фрезерные, шлифовальные работы или разместите заказ на производство деталей по чертежам бесплатно.
+            </p>
         </div></div>
+        
+        <p class="mt-1 mb-1 text-center" style="font-size: 13px; color:oklch(76.5% 0.177 163.223); background: rgba(0,0,0,0.1); padding: 8px 20px; border-radius: 25px; backdrop-filter: blur(4px)">
+        Более 500 компаний по всей России ежемесячно ищут заказы на нашем сайте!</p>
         <div class="d-flex flex-md-row flex-column">
-        <div class="mx-2"><a href="{{ Route('add-order') }}" class="btn btn-blue mt-3" target="_blank"><i class="bi bi-folder-plus mx-1"></i> Добавить заказ</a></div>
-        <div class="mx-2"><a href="#" class="btn btn-white mt-3" data-bs-toggle="modal" data-bs-target="#categories-services-modal"><i class="bi bi-search mx-1"></i> Найти заказчика</a></div>
+        <div class="mx-2"><a href="{{ Route('add-order') }}" class="btn btn-blue mt-3" target="_blank"><i class="bi bi-folder-plus mx-1"></i> Разместить заказ</a></div>
+        <div class="mx-2"><a href="#" class="btn btn-white mt-3" data-bs-toggle="modal" data-bs-target="#companies"><i class="bi bi-search mx-1"></i> Найти исполнителя</a></div>
         </div>
+        
+        
         
         <div class="header-banner-layout"></div>
     </div>

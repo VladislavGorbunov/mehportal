@@ -1,9 +1,9 @@
 <x-site.errors />
 <x-site.message />
-<div class="alert alert-warning text-center mt-3">Все поля обязательны для заполнения.</div>
+
     <form method="post" enctype="multipart/form-data">
     @csrf
-        <div class="row mt-3">
+        <div class="row mt-4">
             <div class="col-12 col-md-6">
                 <div class="mb-3">
                     <label class="form-label">Организационно-правовая форма:</label>
@@ -69,14 +69,16 @@
 				</div>
 
                 <div class="mb-3">
-  					<label class="form-label">Сайт компании:</label>
+  					<label class="form-label">Сайт компании при наличии:</label>
   					<input type="text" class="form-control" name="site" value="{{ old('site') }}" placeholder="Например: https://my-company.ru">
 				</div>
             </div>
         </div>
 
         <div class="mb-3">
-            <label class="form-label">Описание компании:</label>
+            <label class="form-label mb-0">Описание компании: (минимум 50 символов)</label>
+            <p сдфыы=><small>Постарайтесь написать уникальное описание о вашей компании, не копируйте информацию со своего сайта или других сайтов. 
+            Опишите своими словами компанию и её преимущества, возможно у вас был уникальный опыт в изготовении каких-либо сложных деталей для крупных компаний, всё это будет вашим преимуществом.</small></p>
             <textarea class="form-control" name="description" rows="6">{{ old('description') }}</textarea>
         </div>
 

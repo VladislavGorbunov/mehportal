@@ -46,7 +46,8 @@ class ExecutorCompany extends Model
             ->where('services.slug', $service_slug)
             ->where('executor_companies.active', true)
             ->orderBy('executors.premium', 'desc')
-            ->paginate(20);
+            ->orderBy('executor_companies.id', 'desc')
+            ->paginate(15);
     }
 
 
@@ -62,7 +63,8 @@ class ExecutorCompany extends Model
             ->where('executor_companies.active', true)
             ->groupBy('executor_companies.id', 'regions.name')
             ->orderBy('executors.premium', 'desc')
-            ->paginate(20);
+            ->orderBy('executor_companies.id', 'desc')
+            ->paginate(15);
     }
 
 
@@ -77,7 +79,7 @@ class ExecutorCompany extends Model
             ->where('executor_companies.active', true)
             ->where('regions.id', $region_id)
             ->orderBy('executors.premium', 'desc')
-            ->paginate(20);
+            ->paginate(15);
     }
 
 
@@ -94,7 +96,7 @@ class ExecutorCompany extends Model
             ->where('executor_companies.active', true)
             ->groupBy('executor_companies.id', 'regions.name')
             ->orderBy('executors.premium', 'desc')
-            ->paginate(20);
+            ->paginate(15);
     }
 
 

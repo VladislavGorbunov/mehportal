@@ -20,13 +20,10 @@
 
     <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-center">
         <li class="nav-item">
-            <a href="#orders" class="nav-link link-blue" data-bs-toggle="modal" data-bs-target="#categories-services-modal">ЗАКАЗЫ</a>
+            <a href="#orders" class="nav-link link-blue" data-bs-toggle="modal" data-bs-target="#categories-services-modal">КАТАЛОГ ЗАКАЗОВ</a>
         </li>
         <li class="nav-item">
             <a href="#companies" class="nav-link link-blue" data-bs-toggle="modal" data-bs-target="#companies">ПРЕДПРИЯТИЯ</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link link-blue" href="#companies">ПОСТАВЩИКИ</a>
         </li>
 
         <li class="nav-item">
@@ -49,11 +46,10 @@
             </button>
             
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="{{ Route('login-customer') }}" target="_blank">Я заказчик</a></li>
+                <li><a class="dropdown-item" href="{{ Route('login-customer') }}" target="_blank">Я заказчик</a><p style="font-size: 12px;" class="text-secondary">Хочу размещать заказы</p></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="{{ Route('login-executor') }}" target="_blank">Я исполнитель</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="{{ Route('login-seller') }}" target="_blank">Я поставщик</a></li>
+                <li><a class="dropdown-item" href="{{ Route('login-executor') }}" target="_blank">Я исполнитель</a><p style="font-size: 12px;" class="text-secondary">Хочу выполнять заказы</p></li>
+                
             </ul>
         </div>
     </div>

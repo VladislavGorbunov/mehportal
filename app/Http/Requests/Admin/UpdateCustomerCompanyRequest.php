@@ -32,7 +32,7 @@ class UpdateCustomerCompanyRequest extends FormRequest
             'email' => 'required',
             'extension_number' => 'min:0|max:5',
             'address' => 'required',
-            'description' => 'min:0|max:500'
+            'description' => 'min:0|max:1000'
         ];  
     }
 

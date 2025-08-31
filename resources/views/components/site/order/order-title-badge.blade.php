@@ -1,5 +1,5 @@
-<div class="d-flex flex-column flex-md-row">
-    <p class="mb-3 me-2">Название заказа: {{ $order['title'] }}</p>
+<div class="d-flex flex-column flex-md-row align-items-center mb-2">
+    <p class="mb-0 me-2 fs-5">{{ $order['title'] }}</p>
         
     @if ($order['active'] == true)
         <div class="active-order-badge text-center me-2">Заказ открыт</div>

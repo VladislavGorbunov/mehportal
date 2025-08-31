@@ -1,6 +1,6 @@
 <div class="col-12 col-md-12 mt-2">
-    <p><b>Регион:</b> {{ $company['region_name'] }}</p>
-
+    
+    <p><b>Регион:</b> {{ $company['region_name'] }}</p
     <hr>
     @if (Auth::guard('customer')->user())
         @if (Auth::guard('customer')->user()->premium || $company['executor_premium'])
@@ -34,5 +34,6 @@
     </div>
 
     <a href="/company/{{ $company['inn'] }}" class="btn btn-more mt-4 mb-2 me-2 d-flex align-items-center justify-content-center">Подробнее</a>
+    <div class="order-block-square"></div>
 </div>
 

@@ -28,8 +28,8 @@
         </div>
         
         @if (empty($company)) 
-            <div class="alert alert-warning text-center mt-3">Добавьте информацию о вашей компании в наш каталог.
-                    <a href="{{ Route('executor-add-company') }}" class="btn btn-blue mx-2">Добавить компанию</a>
+            <div class="alert alert-warning text-center mt-3">Добавьте информацию о вашей компании в наш каталог.<br> Профили без добавленных данных о компании могут быть удалены модератором.
+                   <br> <a href="{{ Route('executor-add-company') }}" class="btn btn-blue mx-2 mt-3">Добавить компанию</a>
             </div>
         @endif
 @endsection

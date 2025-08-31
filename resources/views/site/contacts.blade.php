@@ -15,12 +15,20 @@
 </div>
 
     <div class="row mt-4 mb-5">
-        <div class="col-12 col-md-6 mb-4">
+        <div class="col-12 col-md-6 mb-4" itemscope itemtype="http://schema.org/Organization">
             <h3 class="fs-4 mb-3">Контакты и реквизиты:</h3>
-            <p><b>Наш адрес:</b> Россия, г. Санкт-Петербург</p>
-            <p><b>Телефон:</b> <a href="tel::+78129204952">+7 (812) 920-49-52</a></p>
-            <p><b>Email:</b> <a href="mailto::info@mehportal.ru">info@mehportal.ru</a></p>
-            <p><b>Тех. поддержка:</b> <a href="mailto::tech@mehportal.ru">tech@mehportal.ru</a></p>
+            <p itemprop="name">МехПортал</p>
+            <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+            <p><b>Наш адрес:</b> Россия, г. <span itemprop="addressLocality">Санкт-Петербург</span></p>
+            </div>
+            <p><b>Телефон:</b> <a href="tel::+78129204952"><span itemprop="telephone">+7 (812) 920-49-52</span></a></p>
+            <p><b>Режим работы:</b> Ежедневно с 9:00 до 18:00</p>
+            <p><b>Email:</b> <a href="mailto::info@mehportal.ru"><span itemprop="email">info@mehportal.ru</span></a> <small>(по любым вопросам)</small></p>
+            <p><b>Тех. поддержка:</b> <a href="mailto::tech@mehportal.ru">tech@mehportal.ru</a> <small>(по вопросам работы сайта)</small></p>
+            <p><b>ИНН:</b> 781712777173</p>
+            <p>ИП Горбунов Владислав Владимирович</p>
+            
+           
             <p>Есть вопросы или предложения для сотрудничества?<br> Мы всегда на связи в ВК, Телеграм а так же в онлайн чате сайта!</p>
 
             <h3 class="fs-4 mt-5 mb-3">Мы в социальных сетях:</h3>

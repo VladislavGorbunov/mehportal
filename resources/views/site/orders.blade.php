@@ -62,7 +62,7 @@
         @foreach ($orders as $order)
             <x-site.order-block :order="$order" :regionSlug="$region_slug"/>
         @endforeach   
-        <x-site.add-order-banner />
+            <x-site.add-order-banner />
     @else
         <x-site.no-order />
     @endif

@@ -6,6 +6,8 @@
         <title>@yield('title')</title>
         <meta name="description" content="@yield('description')">
         <meta property="og:title" content="@yield('title')" />
+        <meta property="og:image" content="https://mehportal.ru/images/logo-name.png"/>
+        <meta property="og:url" content="{{ url()->current() }}/" />
         <meta property="og:description" content="@yield('description')" />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="ru_RU" />
@@ -22,7 +24,7 @@
         <meta name="theme-color" content="#f9f9f9" />
         <meta name="msapplication-navbutton-color" content="#1c1c1c" />
         <script src="//code.jivo.ru/widget/kbEBuZUbWS" async></script>
-        <link rel="canonical" href="{{ url()->current() }}"/>
+        <link rel="canonical" href="{{ url()->current() }}/">
     </head>
 
     <body>

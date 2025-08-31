@@ -97,7 +97,8 @@
                 <label class="form-label">Адрес:</label>
   				<input type="text" class="form-control" name="address" value="{{ $company->address }}" >
             </div>
-
+            
+            
 
             <div class="mb-3">
                 <label class="form-label">Описание:</label>

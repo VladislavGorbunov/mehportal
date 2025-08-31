@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\CategoryService;
+use App\Models\ExecutorCompany;
 use App\Models\Service;
 use App\Models\Region;
 use App\Models\Order;
@@ -17,6 +18,7 @@ class SitemapController extends Controller
         $categories = CategoryService::get();
         $services = Service::get();
         $regions = Region::get();
+        $executor_companies = ExecutorCompany::get();
 
         $sitemap = '<?xml version="1.0" encoding="UTF-8"?>
         <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
@@ -172,6 +174,22 @@ class SitemapController extends Controller
         Storage::disk('public')->put('sitemap2.xml', $sitemap2);
 
 
+        $sitemap3 = '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
+        // Страницы компаний
+        foreach ($executor_companies as $company) {
+           
+                $sitemap3 .= '
+	                <url>
+		                <loc>https://mehportal.ru/company/'.$company->inn.'</loc>
+                        <priority>0.8</priority>
+	                </url>
+                ';
+           
+        }
+        
+        $sitemap3 .= '</urlset>';
+        
+        Storage::disk('public')->put('sitemap3.xml', $sitemap3);
         //http://metall/storage/sitemap.xml
     }    
 }
