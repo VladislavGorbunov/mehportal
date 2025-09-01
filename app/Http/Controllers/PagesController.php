@@ -50,7 +50,7 @@ class PagesController extends Controller
         }
         
         $companies = ExecutorCompany::where('active', true)->orderBy('id', 'desc')->limit(5)->get();
-        
+        $company_array = [];
         foreach ($companies as $company) {
             
             $region = Region::where('id', $company->region_id)->first();
