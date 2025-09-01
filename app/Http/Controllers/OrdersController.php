@@ -308,6 +308,9 @@ class OrdersController extends Controller
         if (! $order->active) return redirect()->back();
 
         $executor_company = $executor->executorCompanies;
+
+        if (! $executor_company) return redirect()->back();
+
         $region = Region::where('id', $executor_company->region_id)->first();
 
         $executor_data = [
