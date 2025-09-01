@@ -967,11 +967,17 @@ b, strong {
 .btn-more, .btn-more:hover {
     background: var(--btn-blue-color);
     color: #fff;
-    padding: 12px 22px;
+    padding: 11px 22px;
 
     font-size: 14px;
     min-width: 180px;
     border-radius: 8px;
+}
+
+.btn-more .bi {
+    margin-right: 4px;
+    font-size: 15px;
+
 }
 
 .btn-cp, .btn-cp:hover {

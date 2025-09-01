@@ -64,7 +64,7 @@
                 <hr>
                 <div class="mb-0 mt-4 d-flex flex-column flex-md-row align-items-start">
 
-                    <a href="/order/{{ $order['order_id'] }}" class="btn btn-more col-12 col-md-3 mb-2 me-3 d-flex align-items-center justify-content-center" target="_blank">Подробнее о заказе</a>
+                    <a href="/order/{{ $order['order_id'] }}" class="btn btn-more col-12 col-md-3 mb-2 me-3 d-flex align-items-center justify-content-center" target="_blank"><i class="bi bi-caret-right-fill"></i> Подробнее о заказе</a>
                     <x-site.order.cp-buttons :order="$order"/>
                     @if (!empty($order['order_archive']))
                         <a href="{{ Storage::disk('orders_files')->url($order['order_archive']) }}" class="btn btn-file-download col-12 col-md-3 mb-2"><i class="bi bi-cloud-arrow-down"></i> Скачать файлы</a>
