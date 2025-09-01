@@ -977,7 +977,7 @@ b, strong {
 .btn-cp, .btn-cp:hover {
     background: var(--btn-dark-color);
     color: #fff;
-    padding: 10px 22px;
+    padding: 11px 22px;
     font-size: 14px;
     min-width: 180px;
     border-radius: 8px;
@@ -985,7 +985,7 @@ b, strong {
 
 .btn-cp .bi {
     margin-right: 4px;
-    font-size: 16px;
+    font-size: 15px;
 
 }
 
