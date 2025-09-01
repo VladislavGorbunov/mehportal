@@ -66,11 +66,11 @@
 
                     <x-site.order.cp-buttons :order="$order"/>
 
-                    <a href="/order/{{ $order['order_id'] }}" class="btn btn-more mb-2 me-3 d-flex align-items-center justify-content-center" target="_blank">Подробнее о заказе</a>
+                    <a href="/order/{{ $order['order_id'] }}" class="btn btn-more col-12 col-md-3 mb-2 me-3 d-flex align-items-center justify-content-center" target="_blank">Подробнее о заказе</a>
                     @if (!empty($order['order_archive']))
-                        <a href="{{ Storage::disk('orders_files')->url($order['order_archive']) }}" class="btn btn-file-download mb-2"><i class="bi bi-cloud-arrow-down"></i> Скачать файлы</a>
+                        <a href="{{ Storage::disk('orders_files')->url($order['order_archive']) }}" class="btn btn-file-download col-12 col-md-3 mb-2"><i class="bi bi-cloud-arrow-down"></i> Скачать файлы</a>
                     @else
-                        <a class="btn btn-file-download-noactive mb-2 d-flex align-items-center justify-content-center"><i class="bi bi-cloud-arrow-down"></i> Файлы отсутствуют</a>
+                        <a class="btn btn-file-download-noactive mb-2 col-12 col-md-3 d-flex align-items-center justify-content-center"><i class="bi bi-cloud-arrow-down"></i> Файлы отсутствуют</a>
                     @endif
                 </div>
             </div>
