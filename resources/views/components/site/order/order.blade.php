@@ -1,6 +1,6 @@
+<x-site.message />
 <div class="mt-4 mb-5">
 <div class="row">
-
     <x-site.order.left-order-block :order="$order"/>
 
     <div class="col-12 col-md-8">

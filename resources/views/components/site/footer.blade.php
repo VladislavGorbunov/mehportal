@@ -56,6 +56,7 @@
     <x-services-orders :region-slug="$regionSlug" />
     <x-companies :region-slug="$regionSlug" />
 	<x-site.modal-reg-cp />
+	<x-site.modal-reg-cp-no-premium />
 
     <div class="scroll-top text-center"><i class="bi bi-arrow-up-square-fill"></i><p>НАВЕРХ</p></div>
     
