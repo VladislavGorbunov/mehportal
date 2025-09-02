@@ -237,7 +237,7 @@ class Order extends Model
             ->where('categories_services.id', '=', $category_id)
             ->where('customer_companies.region_id', $region_id)
             ->groupBy('orders.id', 'customer_companies.title', 'customer_companies.legal_form', 'regions.name')
-            ->where('orders.active', true)
+            ->having('orders.active', true)
             ->where('customers.active', true)
             ->count();     
     }

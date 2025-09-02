@@ -29,7 +29,9 @@
 
         @if (empty($company)) 
             <div class="alert alert-warning text-center mt-3">Добавьте информацию о вашей компании, чтобы получить доступ к размещению заказов.
-                    <a href="{{ Route('customer-add-company') }}" class="btn btn-blue mx-2">Добавить компанию</a>
+                    <a href="{{ Route('customer-add-company') }}" class="btn btn-dark mx-2">Добавить компанию</a>
             </div>
         @endif
+
+        <a href="{{ Route('add-order') }}" class="btn btn-blue mt-2">Разместить заказ</a>
 @endsection
