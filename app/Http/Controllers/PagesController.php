@@ -84,11 +84,11 @@ class PagesController extends Controller
     public function cityIndexPage($region_slug) 
     {
         $region = Region::where('slug', $region_slug)->first();
-
+        
         if (! $region) abort(404);
     
-        $data['title'] = 'Заказы на металлообработку от заказчиков в открытом доступе ' . $region->city_in;
-        
+        $data['title'] = 'Заказы на металлообработку ' . $region->city_in . ' — заявки ' . date('Y');
+        $data['seo_text'] = $region->seo_text;
         $data['description'] = 'Все заказы на металлообработку в открытом доступе '. $region->city_in .' от заказчиков на портале - МЕХПОРТАЛ. Размещайте частные заказы на обработку металла бесплатно! Только проверенные заказчики и исполнители.';
         $data['header_title'] = 'Заказы на металлообработку в открытом доступе ' . $region->city_in;
         $data['region_name'] = $region->name;
@@ -125,13 +125,13 @@ class PagesController extends Controller
         $companies = ExecutorCompany::where('active', true)->orderBy('id', 'desc')->limit(5)->get();
         
         foreach ($companies as $company) {
-            $region = Region::where('id', $company->region_id)->first();
+            $region_company = Region::where('id', $company->region_id)->first();
             $executor = $company->executor;
             
             $company_array[] = [
                 'title' => $company->title,
                 'legal_form' => $company->legal_form,
-                'region_name' => $region->name,
+                'region_name' => $region_company->name,
                 'inn' => $company->inn,
                 'email' => $company->email,
                 'phone' => $company->phone,

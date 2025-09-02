@@ -4,6 +4,17 @@
 @section('description', $description)
 
 @section('content')
+
+
+    <div class="d-none d-md-block">
+    <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9' height='9'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/"><small>Главная</small></a></li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="/{{ $region_slug }}"><small>Заказы {{ $region_city_in }}</small></a></li>
+        </ol>
+    </nav>
+</div>
+
     <x-site.companies />
     <x-site.for-created />
    
@@ -44,6 +55,9 @@
     <x-site.latest-companies :companies="$executor_companies"/>
     
     <div class="p-2">
+    @if ($seo_text)
+        {!! $seo_text !!}
+    @else
     <h3 class="text-center mt-4 col-md-8 mx-auto">Найдите открытые заказы на металлообработку от заказчиков {{ $region_city_in }}</h3>
         
     <p class="mt-3">
@@ -80,6 +94,6 @@
     Мы предлагаем прозрачные условия, выгодные тарифы и качественную поддержку на каждом этапе сотрудничества. 
     Добро пожаловать в мир успешной металлообработки!
     </p>
-
+    @endif
     </div>
 @endsection
