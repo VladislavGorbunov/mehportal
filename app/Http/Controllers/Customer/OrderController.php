@@ -102,13 +102,9 @@ class OrderController extends Controller
             UPDATE orders SET active = 0, archive = 1 WHERE orders.id = $order->id;"
         );
 
-
-
         return redirect()->route('my-orders');
 
     }
-
-
 
 
     public static function uploadPlan($plan)
@@ -150,5 +146,11 @@ class OrderController extends Controller
             return '';
         }
 
+    }
+
+
+    public function commercialOffers()
+    {
+        
     }
 }

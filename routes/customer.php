@@ -6,6 +6,8 @@ use App\Http\Controllers\Customer\RegistrationController;
 use App\Http\Controllers\Customer\OrderController;
 use App\Http\Controllers\Customer\CompanyController;
 use App\Http\Controllers\Customer\ProfileController;
+use App\Http\Controllers\Customer\CommercialOffersController;
+use App\Models\CommercialOffer;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/registration/customer', [RegistrationController::class, 'registrationCustomerPage'])->name('registration-customer');
@@ -30,6 +32,8 @@ Route::middleware(['customer'])->group(function () {
     Route::get('/customer/my-orders', [OrderController::class, 'myOrders'])->name('my-orders');
     Route::get('/customer/order/close/{id}', [OrderController::class, 'orderClose']);
     Route::get('customer/logout', [AuthController::class, 'logout'])->name('customer-logout');
+
+    Route::get('/customer/commercial-offers', [CommercialOffersController::class, 'index'])->name('commercial-offers');
 
     Route::get('/customer/select-tariff', [ProfileController::class, 'selectTariff'])->name('customer-select-tariff');
     Route::post('/customer/select-tariff', [ProfileController::class, 'selectTariff']);

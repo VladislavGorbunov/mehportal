@@ -32,8 +32,8 @@
             <p class="mb-1">Дата сбора КП: до <strong>{{ $closing_date }}</strong> <small>- включительно</small></p>
             <hr>
             <p class="mb-1"><strong>Описание:</strong> {{ $order->description }}</p>
-            
-            
+            <p class="mb-1"><strong>Коммерческих предложений:</strong> {{ $order->commercialOffers->count()}} <a href="">Смотреть предложения</a>
+            <hr>
             @if ($order['active'] == true)
                 <button class="btn btn-close-order mt-2" data-id="{{ $order['id'] }}">Закрыть заказ</button>
             @endif

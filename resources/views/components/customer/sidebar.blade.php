@@ -10,6 +10,7 @@
         <p class="mt-2 mb-2"><b>Заказы</b></p>
         <li><a href="{{ Route('add-order') }}">Разместить заказ</a></li>
         <li><a href="{{ Route('my-orders') }}">Мои заказы</a></li>
+        <li><a href="{{ Route('commercial-offers') }}">Коммерческие предложения</a></li>
         <hr>
         <p class="mt-2 mb-2"><b>Профиль</b></p>
         <li><a href="/customer/profile">Мой профиль</a></li>
