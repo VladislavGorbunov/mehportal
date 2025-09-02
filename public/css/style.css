@@ -26,6 +26,14 @@
     font-display: swap;
 }
 
+.highlight {
+   background-color: #e8f4fc;
+   padding: 15px;
+   border-left: 4px solid #1a5fb1;
+   font-weight: 500;
+   margin: 20px 0;
+}
+
 ul {
     
     margin-left: 15px; /* Отступ слева в браузере IE и Opera */

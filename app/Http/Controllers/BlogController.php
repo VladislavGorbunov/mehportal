@@ -24,7 +24,7 @@ class BlogController extends Controller
     public function article($slug)
     {
         $article = Article::where('slug', $slug)->first();
-        
+        if (! $article) abort(404);
         $data['title'] = $article->title_meta;
         $data['description'] = $article->title_meta;
         $data['header_title'] = $article->title_article;

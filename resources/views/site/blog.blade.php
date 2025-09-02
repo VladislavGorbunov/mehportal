@@ -23,8 +23,8 @@
     @foreach($articles as $article) 
         <div class="col-12 col-md-3">
             <div class="col-12 px-3 py-4 border rounded">
-                <img src="https://akpp-one.ru/wp-content/uploads/2020/01/shlifovka-konusa.jpg" class="img-fluid rounded">
-                <p class="mt-3 mb-2 text-center">{{ $article->title_meta }}</p>
+                <img src="/images/article-poster.png" class="img-fluid rounded">
+                <p class="mt-3 mb-2 text-center">{{ $article->description }}</p>
                 <p class="text-center text-secondary mt-1 mb-3"><small>{{ date("d.m.Y", strtotime($article->created_at)) }}</small></p>
                 <a href="/article/{{ $article->slug }}" class="d-block mx-auto text-center">Читать статью</a>
             </div>
