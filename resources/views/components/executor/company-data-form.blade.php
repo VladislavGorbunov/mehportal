@@ -19,8 +19,8 @@
                 </div>
 
 				<div class="mb-3">
-  					<label class="form-label">Название организации:</label>
-  					<input type="text" class="form-control" name="title" value="{{ old('title') }}" placeholder="Например: «ТехноСистемы»">
+  					<label class="form-label">Название организации: <small>(Без ООО, ИП и кавычек)</small></label>
+  					<input type="text" class="form-control" name="title" value="{{ old('title') }}" placeholder="Например: ТехноСистемы или Иванов В.А. ">
 				</div>
 
 				<div class="mb-3">

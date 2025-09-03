@@ -15,7 +15,7 @@
       		<div class="col-6 col-md-3 text-center mt-3 mt-md-0">
         		<h5>Заказчикам</h5>
           			<p class="mb-1"><a class="link-secondary text-decoration-none" href="{{ Route('customer-index') }}">Личный кабинет</a></p>
-          			<p class="mb-1"><a class="link-secondary text-decoration-none" href="/add-order">Разместить заказ</a></p>
+          			<p class="mb-1"><a class="link-secondary text-decoration-none" href="/add-order">Разместить заказ на металлообработку</a></p>
           			<p class="mb-1"><a class="link-secondary text-decoration-none" href="{{ Route('tariffs') }}">Тарифные планы</a></p>
       		</div>
       		

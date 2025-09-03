@@ -34,7 +34,7 @@ class UpdateExecutorCompanyRequest extends FormRequest
             'active' => 'required',
             'extension_number' => 'min:0|max:5',
             'address' => 'required',
-            'description' => 'min:0|max:1000'
+            'description' => 'min:0|max:1500'
         ];  
     }
 
