@@ -63,8 +63,9 @@
                 <div class="services-list me-2 mb-2 d-flex align-items-center"><i class="bi bi-folder-check"></i> Механическая обработка</div>
                 </div>
                 <div class="mb-1 d-flex flex-column flex-md-row align-items-start">
-                    <a class="btn btn-more mb-2 me-2 d-flex align-items-center justify-content-center" target="_blank">Подробнее о заказе</a>
-                    <a class="btn btn-file-download mb-2 d-flex align-items-center justify-content-center"><i class="bi bi-cloud-arrow-down"></i> Скачать файлы</a>
+                    <a class="btn btn-more mb-2 me-2 col-12 col-md-3 d-flex align-items-center justify-content-center" target="_blank">Подробнее о заказе</a>
+                    <button type="button" class="btn btn-cp col-12 col-md-3 mb-2 me-3 d-flex align-items-center justify-content-center"><i class="bi bi-lock"></i> Отправить КП</button>
+                    <a class="btn btn-file-download mb-2 col-12 col-md-3 d-flex align-items-center justify-content-center"><i class="bi bi-cloud-arrow-down"></i> Скачать файлы</a>
                 </div>
             </div>
 

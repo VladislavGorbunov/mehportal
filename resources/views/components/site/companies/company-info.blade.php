@@ -33,7 +33,7 @@
         @endforeach
     </div>
 
-    <a href="/company/{{ $company['inn'] }}" class="btn btn-more mt-4 mb-2 me-2 d-flex align-items-center justify-content-center">Подробнее</a>
+    <a href="/company/{{ $company['inn'] }}" class="btn btn-more col-12 col-md-3 mt-4 mb-2 me-2 d-flex align-items-center justify-content-center">Подробнее</a>
     <div class="order-block-square"></div>
 </div>
 

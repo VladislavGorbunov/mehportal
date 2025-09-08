@@ -24,7 +24,7 @@ class AddExecutorCompanyRequest extends FormRequest
         return [
             'legal_form' => 'required',
             'title' => 'required',
-            'inn' => 'required|min:10',
+            'inn' => 'required|min:10|max:12',
             'region_id' => 'required|min:1|max:3',
             'address' => 'required|min:10',
             'contact_person' => 'required',

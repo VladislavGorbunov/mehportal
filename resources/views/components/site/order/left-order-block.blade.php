@@ -15,4 +15,6 @@
                 @endif
             </div>
         </div>
+        
+        <x-site.order.cp-buttons-order-page :order="$order"/>
 </div>

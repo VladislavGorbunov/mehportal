@@ -1,5 +1,5 @@
 <x-site.message />
-<div class="mt-4 mb-5">
+<div class="mt-4 mb-3">
 <div class="row">
     <x-site.order.left-order-block :order="$order"/>
 

@@ -9,6 +9,11 @@
 <div class="mt-4">
 <x-site.errors />
 <x-site.message />
+
+@if (! $orders) 
+  <p>На данный момент вы ещё не разместили ни одного заказа.</p>
+@endif
+
 @foreach ($orders as $order)
     <div class="row mt-3 mb-4 p-3 border rounded">
         <div class="col-4">
@@ -59,7 +64,8 @@
     })
 </script>
 
-
-{{ $orders->links() }}
+@if ($orders) 
+    {{ $orders->links() }}
+@endif
 @endsection
 

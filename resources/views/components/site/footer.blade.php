@@ -58,6 +58,7 @@
 	<x-site.modal-reg-cp />
 	<x-site.modal-reg-cp-no-premium />
 	<x-site.modal-add-company-cp />
+	<x-site.modal-cp-deactive />
 
     <div class="scroll-top text-center"><i class="bi bi-arrow-up-square-fill"></i><p>НАВЕРХ</p></div>
     

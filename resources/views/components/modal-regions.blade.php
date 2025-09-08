@@ -9,7 +9,11 @@
           <div class="row"> 
             @foreach ($cities as $city) 
             <div class="col-6 col-md-4 mb-2">
-                <a href="/{{$city->slug}}" class="region-link">{{$city->name}}</a>
+                @if ($city->bold)
+                    <a href="/{{$city->slug}}" class="region-link"><strong>{{$city->name}}</strong></a>
+                @else
+                    <a href="/{{$city->slug}}" class="region-link">{{$city->name}}</a>
+                @endif
             </div>
             @endforeach
           </div>

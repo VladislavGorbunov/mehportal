@@ -16,5 +16,16 @@
 </div>
     
     <x-site.order.order :order="$order" :regionSlug="$region_slug" :customerCheck="$customerCheck"/>
-
+    
+    <div class="col-12 p-5 mt-0 bg-light rounded d-flex flex-column flex-md-row justify-content-around">
+        <div>
+            <h3 class="mt-0 fs-4 text-center">Нужно найти исполнителя на заказ по металлообработке?</h3>
+            <p class="mb-0 text-center">Разместите свой заказ на сайте «МехПортал» и получайте лучшие, выгодные коммерческие предложения от исполнителей!</p>
+            <p class="mt-0 text-center">Всем новым заказчикам мы дарим 6 месяцев Premium статуса, который поможет максимально быстро найти исполнителя!</p>
+        </div>
+        
+        <div>
+            <a href="/customer/add-order" class="btn btn-blue d-block mx-auto mt-4"><i class="bi bi-folder-plus mx-1"></i> Разместить заказ</a>
+        </div>
+    </div>
 @endsection

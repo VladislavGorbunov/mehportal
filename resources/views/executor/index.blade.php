@@ -28,8 +28,9 @@
         </div>
         
         @if (empty($company)) 
-            <div class="alert alert-warning text-center mt-3">Добавьте информацию о вашей компании в наш каталог.<br> Профили без добавленных данных о компании могут быть удалены модератором.
-                   <br> <a href="{{ Route('executor-add-company') }}" class="btn btn-blue mx-2 mt-3">Добавить компанию</a>
+            <div class="alert alert-warning text-center mt-3 p-4"><b class="fs-5">Добавьте информацию о вашей компании.</b><br> 
+            <p class="mb-3 mt-2">После этого вы сможете отправлять коммерческие предложения заказчикам, <br>а так же ваша компания будет отображаться в нашем каталоге предприятий и её увидят заказчики.</p>
+            <a href="{{ Route('executor-add-company') }}" class="btn btn-blue mx-2">Добавить компанию</a>
             </div>
         @endif
 @endsection

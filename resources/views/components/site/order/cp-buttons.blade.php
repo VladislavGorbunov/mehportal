@@ -12,4 +12,6 @@
             @endif
         @endif
     @endif
+@else
+    <button type="button" class="btn btn-cp col-12 col-md-3 mb-2 me-3 d-flex align-items-center justify-content-center" data-bs-toggle="modal" data-bs-target="#modal-cp-deactive"><i class="bi bi-lock"></i> Отправить КП</button>
 @endif

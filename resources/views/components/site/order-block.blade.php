@@ -18,7 +18,7 @@
                     @endif
 
                     @if ($order['archive'] == true)
-                        <div class="archive-order-badge text-center me-2 mb-2">В архиве</div>
+                        <div class="archive-order-badge text-center me-2 mb-2">Заказ закрыт</div>
                     @endif
                 </div>
                 <div class="row">

@@ -34,7 +34,14 @@ class OrderController extends Controller
 
     public function myOrders()
     {
-        $data['orders'] = Order::where('customer_id', Auth::guard('customer')->id())->orderBy('orders.active', 'desc')->paginate(10);
+        $customer_id = Auth::guard('customer')->id();
+
+        if (Order::where('customer_id', $customer_id)->orderBy('orders.active', 'desc')->exists()) {
+            $data['orders'] = Order::where('customer_id', $customer_id)->orderBy('orders.active', 'desc')->paginate(10);
+        } else {
+            $data['orders'] = [];
+        }
+    
         return view('customer.my-orders', $data);
     }
 
