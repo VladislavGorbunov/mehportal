@@ -16,4 +16,16 @@ class CommercialOffersController extends Controller
         return view('customer.commercial-offers', $data);
     }
 
+    public function getOffer($offer_id)
+    {   
+        $customer_id = Auth::guard('customer')->user()->id;
+        $offer = CommercialOffer::where('id', $offer_id)->where('customer_id', $customer_id)->first();
+
+        if (! $offer) abort(404);
+
+        $data['offer'] = $offer;
+
+        return view('customer.commercial-offer', $data);
+    }
+
 }

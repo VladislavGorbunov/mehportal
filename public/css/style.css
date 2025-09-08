@@ -1146,7 +1146,7 @@ b, strong {
 }
 
 .archive-order-badge {
-    
+    width: 100px;
     height: 25px;
     padding: 4px 8px;
     background: rgb(233, 65, 65);

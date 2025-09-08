@@ -34,6 +34,7 @@ Route::middleware(['customer'])->group(function () {
     Route::get('customer/logout', [AuthController::class, 'logout'])->name('customer-logout');
 
     Route::get('/customer/commercial-offers', [CommercialOffersController::class, 'index'])->name('commercial-offers');
+    Route::get('/customer/commercial-offer/{id}', [CommercialOffersController::class, 'getOffer'])->name('commercial-offer');
 
     Route::get('/customer/select-tariff', [ProfileController::class, 'selectTariff'])->name('customer-select-tariff');
     Route::post('/customer/select-tariff', [ProfileController::class, 'selectTariff']);
