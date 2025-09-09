@@ -101,4 +101,16 @@
     </div>
 </div>
 
+<div class="col-12 p-5 mt-3 bg-light rounded d-flex flex-column flex-md-row justify-content-around">
+        <div>
+            <h3 class="mt-0 fs-4 text-center">Вы производитель работ по металлообработке?</h3>
+            <p class="mb-0 text-center">Разместите свою компанию на сайте «МехПортал» и получайте больше заявок на металлообработку от заказчиков!</p>
+            <p class="mt-0 text-center">Всем новым предприятиям мы дарим 6 месяцев Premium статуса, который поможет максимально быстро найти заказы!</p>
+        </div>
+        
+        <div>
+            <a href="/executor/add-company" class="btn btn-blue d-block mx-auto mt-4"><i class="bi bi-folder-plus mx-1"></i> Добавить компанию</a>
+        </div>
+    </div>
+
 @endsection
