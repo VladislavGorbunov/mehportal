@@ -10,6 +10,31 @@
 <x-site.errors />
 <x-site.message />
 
+<style>
+    .btn-view-order, .btn-view-order:hover {
+        position: relative;
+        color: #fff;
+        z-index: 2;
+        background: var(--btn-blue-color);
+        padding: 8px 18px;
+        border: none;
+        border-radius: 8px;
+        font-size: 15px;
+    }
+
+    .btn-archive-order, .btn-archive-order:hover {
+        position: relative;
+        color: #fff;
+        z-index: 2;
+        background: #ee4040;
+        padding: 8px 18px;
+        border: none;
+        border-radius: 8px;
+        font-size: 15px;
+    }
+</style>
+
+
 @if (! $orders) 
   <p>На данный момент вы ещё не разместили ни одного заказа.</p>
 @endif
@@ -37,10 +62,11 @@
             <p class="mb-1">Дата сбора КП: до <strong>{{ $closing_date }}</strong> <small>- включительно</small></p>
             <hr>
             <p class="mb-1"><strong>Описание:</strong> {{ $order->description }}</p>
-            <p class="mb-1"><strong>Коммерческих предложений:</strong> {{ $order->commercialOffers->count()}} <a href="">Смотреть предложения</a>
+
             <hr>
+                <a href="/order/{{ $order->id }}" class="btn btn-view-order mt-2 me-3" target="_blank">На страницу заказа</a>
             @if ($order['active'] == true)
-                <button class="btn btn-close-order mt-2" data-id="{{ $order['id'] }}">Закрыть заказ</button>
+                <button class="btn btn-archive-order mt-2" data-id="{{ $order['id'] }}">Закрыть заказ</button>
             @endif
         </div>
     </div>
@@ -50,7 +76,7 @@
 
 
 <script>
-    const btnClose = document.querySelectorAll('.btn-close-order')
+    const btnClose = document.querySelectorAll('.btn-archive-order')
 
     btnClose.forEach((btn) => {
         btn.addEventListener('click', (e) => {
