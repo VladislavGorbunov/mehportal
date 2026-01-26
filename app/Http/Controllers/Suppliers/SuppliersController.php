@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Seller;
+namespace App\Http\Controllers\Suppliers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 
-class SellerController extends Controller
+class SuppliersController extends Controller
 {
     // Главная страница кабинета поставщика
     public function index()

@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Controllers\Seller;
+namespace App\Http\Controllers\Suppliers;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Seller\RegistrationSellerRequest;
+use App\Http\Requests\Suppliers\RegistrationSuppliersRequest;
 use Illuminate\Http\Request;
 use App\Models\Region;
-use App\Models\Seller\Seller;
+use App\Models\Suppliers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 
-use App\Mail\SellerRegistration;
-use App\Mail\UserRegistration;
+// use App\Mail\SellerRegistration;
+// use App\Mail\UserRegistration;
 use Illuminate\Support\Facades\Mail;
 
 class RegistrationController extends Controller
@@ -20,15 +20,15 @@ class RegistrationController extends Controller
     public function registrationPage()
     {   
         $data['regions'] = Region::get();
-        return view('seller.registration', $data);
+        return view('suppliers.registration', $data);
     }
 
     // Добавление пользователя в БД и авторизация
-    public function store(RegistrationSellerRequest $request)
+    public function store(RegistrationSuppliersRequest $request)
     {
         $validated = $request->validated();
 
-        $seller = Seller::create([
+        $seller = Suppliers::create([
             "name"      => $validated['name'],
             "lastname"  => $validated['lastname'],
             "email"     => $validated['email'],
@@ -37,15 +37,16 @@ class RegistrationController extends Controller
             "active"    => true,
         ]);
 
-        if (Auth::guard('seller')->attempt(['email' => $validated['email'], 'password' => $validated['password'], 'active' => 1], true)) {
+        die;
+
+        if (Auth::guard('suppliers')->attempt(['email' => $validated['email'], 'password' => $validated['password'], 'active' => 1], true)) {
             $request->session()->regenerate();
-            $user = Auth::guard('seller')->user();
-            Auth::guard('seller')->login($user);
+            $user = Auth::guard('suppliers')->user();
+            Auth::guard('suppliers')->login($user);
             
-            Mail::mailer('smtp')->to($validated['email'])->send(new SellerRegistration($validated['email'], $validated['password']));
-            Mail::mailer('smtp')->to('info@mehportal.ru')->send(new UserRegistration('Поставщик', $seller->id, $validated['email']));
-            
-            return redirect('/seller');
+            // Mail::mailer('smtp')->to($validated['email'])->send(new SellerRegistration($validated['email'], $validated['password']));
+            // Mail::mailer('smtp')->to('info@mehportal.ru')->send(new UserRegistration('Поставщик', $seller->id, $validated['email']));
+            return redirect('/suppliers');
         } else {
             session()->flash('error', 'Произошла ошибка при попытке авторизации.');
             return redirect()->back();

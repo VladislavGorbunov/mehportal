@@ -51,9 +51,9 @@ return [
             'provider' => 'executors',
         ],
         
-        'seller' => [
+        'suppliers' => [
             'driver' => 'session',
-            'provider' => 'sellers',
+            'provider' => 'suppliers',
         ],
 
         'admin' => [
@@ -95,9 +95,9 @@ return [
             'model' => App\Models\Executor::class,
         ],
         
-        'sellers' => [
+        'suppliers' => [
             'driver' => 'eloquent',
-            'model' => App\Models\Seller::class,
+            'model' => App\Models\Suppliers::class,
         ],
 
         'admins' => [

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Seller;
+namespace App\Http\Requests\Suppliers;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class LoginSellerRequest extends FormRequest
+class LoginSuppliersRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.

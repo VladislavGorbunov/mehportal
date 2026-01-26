@@ -59,7 +59,7 @@ class Kernel extends HttpKernel
         'customer' => \App\Http\Middleware\Customer::class,
         'executor' => \App\Http\Middleware\Executor::class,
         'admin' => \App\Http\Middleware\Admin::class,
-        'seller' => \App\Http\Middleware\Seller::class,
+        'suppliers' => \App\Http\Middleware\Suppliers::class,
         'cache.headers' => \Illuminate\Http\Middleware\SetCacheHeaders::class,
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,

@@ -5,6 +5,6 @@
 
 @section('content')
 
-<x-seller.login />
+<x-suppliers.login />
 
 @endsection

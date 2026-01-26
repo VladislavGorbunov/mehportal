@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\Auth;
 
-class Seller
+class Suppliers
 {
     /**
      * Handle an incoming request.
@@ -16,8 +16,8 @@ class Seller
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (! Auth::guard('seller')->user()) {
-            return redirect('login/seller');
+        if (! Auth::guard('suppliers')->user()) {
+            return redirect('login/suppliers');
         }
         return $next($request);
     }

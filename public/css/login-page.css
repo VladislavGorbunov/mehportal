@@ -59,6 +59,10 @@ dl, ol, ul {
     text-align: center;
 }
 
+.navbar-brand:hover {
+    color: #111;
+}
+
 .navbar-brand-text {
   text-transform: uppercase;
   color: #111;

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Seller;
+namespace App\Http\Controllers\Suppliers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Requests\Seller\LoginSellerRequest;
+use App\Http\Requests\Suppliers\LoginSuppliersRequest;
 use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
@@ -12,26 +12,26 @@ class AuthController extends Controller
     //
     public function loginPage()
     {
-        if (Auth::guard('seller')->user()) {
-            return redirect('/seller');
+        if (Auth::guard('suppliers')->user()) {
+            return redirect('/suppliers');
         }
 
-        return view('seller.login');
+        return view('suppliers.login');
     }
     
 
-    public function loginSeller(LoginSellerRequest $request)
+    public function loginSeller(LoginSuppliersRequest $request)
     {
         $validated = $request->validated();
         
         $email = $validated['email'];
         $password = $validated['password'];
 
-        if (Auth::guard('seller')->attempt(['email' => $email, 'password' => $password], true)) {
+        if (Auth::guard('suppliers')->attempt(['email' => $email, 'password' => $password], true)) {
             $request->session()->regenerate();
-            $user = Auth::guard('seller')->user();
-            Auth::guard('seller')->login($user);
-            return redirect('/seller');
+            $user = Auth::guard('suppliers')->user();
+            Auth::guard('suppliers')->login($user);
+            return redirect('/suppliers');
         } else {
             session()->flash('error', 'Ошибка входа.');
             return redirect()->back();
@@ -41,7 +41,7 @@ class AuthController extends Controller
     public function logout(Request $request) 
     {
         Auth::logout();
-        Auth::guard('seller')->logout();
+        Auth::guard('suppliers')->logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
         return redirect('/');

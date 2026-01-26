@@ -359,9 +359,9 @@ h2, h3, h4, h5, h6 {
 }
 
 .navbar .nav-link {
-    color: #333;
-    font-size: 14px;
-    text-transform: uppercase;
+    color: #000;
+    font-size: 16px;
+    /* text-transform: uppercase; */
     
 }
 
@@ -1251,6 +1251,7 @@ b, strong {
 .zoom-link {
     font-size: 14px;
 }
+
 
 .active-order-badge {
     width: 120px;

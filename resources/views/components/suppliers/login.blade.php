@@ -4,7 +4,7 @@
             @csrf
             <div class="d-flex justify-content-center align-items-center mb-1 flex-column">
                 <x-site.logo />
-                <p class="m-0 p-0"><small>Вход для поставщиков и продавцов</small></p>
+                <p class="m-0 p-0"><small>Вход для поставщиков</small></p>
             </div>
 
             <div class="mb-3">
@@ -25,7 +25,7 @@
             <div class="mt-4 text-center ">
                 <button type="submit" class="btn btn-login"><i class="bi bi-unlock2"></i> Войти</button>
                 <p class="mt-3 mb-2"><i class="bi bi-arrow-down-up"></i></p>
-                <a href="{{ Route('registration-seller') }}" class="btn btn-blue d-block mt-0">Зарегистрироваться</a>
+                <a href="{{ Route('registration-suppliers') }}" class="btn btn-blue d-block mt-0">Зарегистрироваться</a>
             </div>
         </form>
 

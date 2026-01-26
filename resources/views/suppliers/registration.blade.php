@@ -5,6 +5,6 @@
 
 @section('content')
 
-<x-seller.registration :regions="$regions"/>
+<x-suppliers.registration :regions="$regions"/>
 
 @endsection

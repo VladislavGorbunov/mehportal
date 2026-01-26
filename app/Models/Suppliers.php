@@ -8,11 +8,11 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
 
-class Seller extends Authenticatable
+class Suppliers extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-    protected $table = 'sellers';
+    protected $table = 'suppliers';
 
     /**
      * The attributes that are mass assignable.
