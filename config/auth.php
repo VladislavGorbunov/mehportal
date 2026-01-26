@@ -97,7 +97,7 @@ return [
         
         'suppliers' => [
             'driver' => 'eloquent',
-            'model' => App\Models\Suppliers::class,
+            'model' => App\Models\Supplier::class,
         ],
 
         'admins' => [
