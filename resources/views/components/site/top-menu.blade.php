@@ -17,7 +17,21 @@
             </div> 
             
         </div>
-    </div>
 
-    
+        <div class="light-top-menu"></div>
+    </div>
 </div>
+
+<style>
+    .light-top-menu {
+        width: 230px;
+        height: 30px;
+        position: absolute;
+        top: 12px;
+        right: 0px;
+        background: #5019c5;
+        z-index: 0;
+        border-radius: 50%;
+        filter: blur(26px);
+    }
+</style>
