@@ -16,7 +16,7 @@ class BlogController extends Controller
         $data['region_name'] = '';
         $data['region_slug'] = '';
 
-        $data['articles'] = Article::get();
+        $data['articles'] = Article::orderBy('id', 'desc')->get();
         return view('site.blog', $data);
     }
 

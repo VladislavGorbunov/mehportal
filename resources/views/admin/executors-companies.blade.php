@@ -30,6 +30,7 @@
                     <a href="{{ Route('admin-executor-company-edit', ['id' => $company->id]) }}" class="btn btn-blue py-2 mt-2">Изменить</a>
                 </div>
             @endforeach
-
-        {{ $executors_companies->links() }}
+      
+            {{ $executors_companies->links() }} 
+      
 @endsection

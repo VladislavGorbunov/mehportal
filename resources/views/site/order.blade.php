@@ -10,7 +10,7 @@
         <ol class="breadcrumb">
             
             <li class="breadcrumb-item"><a href="/"><small>Главная</small></a></li>
-            <li class="breadcrumb-item active" aria-current="page"><small>Заказ от {{ $order['date'] }} - {{ $order['title'] }}</small></li>
+            <li class="breadcrumb-item active" aria-current="page"><small>{{ $order['title'] }} - Заказ от {{ $order['date'] }} </small></li>
         </ol>
     </nav>
 </div>

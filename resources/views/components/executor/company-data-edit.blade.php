@@ -74,14 +74,44 @@
 				</div>
             </div>
         </div>
+        
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <!-- include summernote css/js-->
+        <link href="/js/summernote/summernote-bs5.css" rel="stylesheet">
+        <script src="/js/summernote/summernote-bs5.js"></script>
+    
+        <script>
+        $(document).ready(function() {
+            $('#summernote').summernote({
+                height: 200,
+                toolbar: [
+                    ['para', ['ul', 'ol']],
+                ]
+            });
+            
+            
+            $('#summernote2').summernote({
+                height: 200,
+                toolbar: [
+                    ['para', ['ul', 'ol']],
+                ]
+            });
+        });
+    </script> 
+        
 
         <div class="mb-3">
             <label class="form-label">Описание компании:</label>
-            <textarea class="form-control" name="description" rows="6">{{ $company->description }}</textarea>
+            <textarea class="form-control" id="summernote" name="description" rows="6">{{ $company->description }}</textarea>
         </div>
-
-
         <hr>
+        
+        <div class="mb-3">
+            <label class="form-label mb-1"><b>Перечислите станки и оборудование которое у Вас есть на производстве:</b></label>
+            <textarea class="form-control" id="summernote2" name="machines" rows="6">{{ $company->machines }}</textarea>
+        </div>
+        <hr>
+        
         <div class="row mt-4 mb-3">
         <label class="form-label mb-3">Категории оказываемых услуг:</label>
 

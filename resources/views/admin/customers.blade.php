@@ -25,7 +25,7 @@
                             @endif
                             <p>Дата регистрации: {{ date('d.m.Y', strtotime($customer->created_at)) }}</p>
                             @if (!empty($customer->customerCompanies))
-                                <p>Связанная организация: <a href="">{{ $customer->customerCompanies->legal_form }} {{ $customer->customerCompanies->title }}</a></p>
+                                <p>Связанная организация: <a href="{{ Route('admin-customer-company-edit', ['id' => $customer->customerCompanies->id]) }}">{{ $customer->customerCompanies->legal_form }} {{ $customer->customerCompanies->title }}</a></p>
                             @else
                                 <p>Связанная организация: -</p>
                             @endif
@@ -33,10 +33,12 @@
                     </div>
                     <hr>
                     <a href="{{ Route('admin-customer-edit', ['id' => $customer->id]) }}" class="btn btn-primary py-2 mt-2">Изменить</a>
+                    <a href="{{ Route('admin-add-order', ['id' => $customer->id]) }}" class="btn btn-primary py-2 mt-2">Добавить заказ</a>
                     <a href="{{ Route('admin-customer-delete', ['id' => $customer->id]) }}" class="btn btn-danger py-2 mt-2">Удалить</a>
                 </div>
             @endforeach
 
-            
-        {{ $customers->links() }}
+        <div class="mb-4">
+            {{ $customers->links() }}
+        </div>
 @endsection

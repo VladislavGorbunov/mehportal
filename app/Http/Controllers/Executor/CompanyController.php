@@ -80,6 +80,7 @@ class CompanyController extends Controller
             "extension_number" => $validated['extension_number'],
             "email"            => $validated['email'],
             "description"      => $validated['description'],
+            "machines"         => $validated['machines'],
             "executor_id"      => Auth::guard('executor')->user()->id,
             "active"           => true,
         ]);
@@ -139,6 +140,7 @@ class CompanyController extends Controller
             "extension_number" => $validated['extension_number'],
             "email"            => $validated['email'],
             "description"      => $validated['description'],
+            "machines"         => $validated['machines'],
         ]);
 
         ExecutorService::where('company_id', $company->id)->delete();

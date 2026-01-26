@@ -28,6 +28,9 @@
     </head>
 
     <body>
+        <div class="body-bg-short">
+            <div class="body-bg-pattern-short"></div>
+        </div>
         <x-site.navbar :regionName="$region_name"/>
         <x-site.header-banner-order :headerTitle="$header_title"/>
         <div class="container">

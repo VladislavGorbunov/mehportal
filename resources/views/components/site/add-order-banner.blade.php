@@ -1,21 +1,56 @@
 <hr class="mt-4">
-<div class="d-flex flex-column flex-md-row align-items-center mb-0 py-4">
-
-    <div class="col-12 col-md-6">
-        <img src="/images/cnc-machine.png" style="width:280px" class="d-block mx-auto" alt="Поиск заказов на металлообработку в открытом доступе" loading="lazy">
-    </div>
+<div class="promo position-relative">
+        <h2 class="text-center mx-auto mb-1 mt-3 fs-4">Размещайте <span class="orange-text">заказы на мехобработку</span> или изготовление деталей бесплатно!</h2>
+        <div class="col-12 col-md-10 mx-auto">
+            <p class="text-center mb-2 mt-3">
+                Нужно найти проверенного исполнителя для выполнения заказа? Разместите заявку на изготовление на нашем сайте, и получайте коммерческие предложения от
+                проверенных исполнителей быстро, просто и без посредников. </p>
+            
+            <p class="text-center">Всем новым заказчикам дарим <span class="orange-text"><strong>Premium статус</strong></span> на 6 месяцев 😎</p>
+        
+        
+            <div class="mt-4">
+                @if (Auth::guard('customer')->user())
+                    <a href="/customer/add-order" class="btn btn-add-order-site col-12 col-md-4 d-block mx-auto mb-3"><i class="bi bi-folder-plus mx-2"></i> Разместить заказ бесплатно</a>
+                @else
+                    <a href="/login/customer" class="btn btn-add-order-site col-12 col-md-4 d-block mx-auto mb-3"><i class="bi bi-folder-plus mx-2"></i> Разместить заказ бесплатно</a>
+                @endif
+            </div>
+        </div>
+        
     
-    <div class="col-12 col-md-6 px-4 py-1" style="border: 2px solid rgba(19, 88, 200, 0.1); border-radius: 15px;">
-    <p class="text-center col-12 col-md-10 mx-auto mb-1 mt-3 fs-5"><b>Разместите свой заказ на обработку металла или изготовление деталей на нашем сайте бесплатно!</b></p>
-    <p class="text-center mb-1" style="color:rgb(19, 88, 200);font-size: 15px">Дарим Premium статус на 6 месяцев всем новым пользователям! 😎</p>
-    <p class="text-center"></p>
-    @if (Auth::guard('customer')->user())
-        <a href="/customer/add-order" class="btn btn-add-order-site col-12 col-md-6 d-block mx-auto mb-4"><i class="bi bi-folder-plus mx-2"></i> Разместить заказ бесплатно</a>
-    @else
-        <a href="/login/customer" class="btn btn-add-order-site col-12 col-md-6 d-block mx-auto mb-4"><i class="bi bi-folder-plus mx-2"></i> Разместить заказ бесплатно</a>
-    @endif
-    <p class="text-center mt-1"><small>Вы владелец металлобрабатывающего предприятия? <br>Добавьте вашу организацию в наш каталог и заказчики сами найдут вас! <br><a href="/executor">Зарегистрироваться как исполнитель</a></small></p>
-    </div>
-
+        <div class="bi-logo"><i class="bi bi-fire"></i></div>
+      
 </div>
+
+<style>
+    .promo {
+        background: rgb(21, 22, 23);
+        border-radius: 15px;
+        color: #fff !important; 
+        padding: 35px 20px;
+        overflow: hidden;
+        border: none;
+        margin: 25px 0;
+    }
+    
+    .promo .bi-logo {
+        position: absolute;
+        right: -20px;
+        bottom: -30px;
+    }
+    
+    .promo .bi-logo .bi-fire {
+        font-size: 80px;
+        color: rgb(255, 95, 40);
+        opacity: 0.9;
+    }
+    
+    .orange-text {
+        color: rgb(255, 95, 40);
+    }
+    
+   
+</style>
+
 <hr class="mb-4">

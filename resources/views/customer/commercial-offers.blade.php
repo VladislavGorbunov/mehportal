@@ -6,6 +6,10 @@
 @section('content')
     <h2 class="fs-4">Коммерческие предложения</h2>
         <x-site.message />
+        <div class="mt-4">
+        @if (! $com_offers) 
+            <p>Коммерческих предложений нет.</p>
+        @endif
         
         <div class="mt-4">
             @foreach($com_offers as $offer)
@@ -22,7 +26,10 @@
         </div>
 
         <div class="mt-3 mb-3">
-            {{ $com_offers->links() }}
+            @if ($com_offers) 
+                {{ $com_offers->links() }}
+            @endif
+        </div>
         </div>
     
 @endsection

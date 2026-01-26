@@ -32,6 +32,7 @@ class ExecutorCompany extends Model
         'extension_number',
         'email',
         'description',
+        'machines',
         'executor_id',
     ];
 

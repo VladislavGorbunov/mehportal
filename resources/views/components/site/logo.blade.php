@@ -1,3 +1,4 @@
-<a class="navbar-brand" href="/">
-    <img src="/images/logo-name.png" alt="МЕХПОРТАЛ - заказы на металлообработку в открытом доступе" title="МЕХПОРТАЛ - заказы на металлообработку в открытом доступе">
-</a>
+<div><a class="" href="/">
+    <span class="navbar-brand">МЕХ<img src="/images/logo.png" class="logo-icon" alt="МЕХПОРТАЛ - сайт заказов на металлообработку">ПОРТАЛ</span>
+    <p class="navbar-brand-text">агрегатор по металлообработке</p>
+</a></div>

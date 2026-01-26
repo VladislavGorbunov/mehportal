@@ -36,4 +36,9 @@ class CustomerCompany extends Model
     {
         return $this->belongsTo(Customer::class);
     }
+    
+    public function orders(): BelongsTo
+    {
+        return $this->belongsTo(Order::class);
+    }
 }

@@ -1,4 +1,5 @@
-<div class="col-12 col-md-4">
+<div class="col-12 col-md-4 block">
+    <div class="sticky">
     <img src="{{ Storage::disk('orders_images')->url($order['order_image']) }}" class="img-fluid order-image d-block mx-auto" alt="Чертёж к заказу - {{ $order['title'] }}">
         <div class="mt-3 mb-3">
             <div>
@@ -17,4 +18,16 @@
         </div>
         
         <x-site.order.cp-buttons-order-page :order="$order"/>
+        </div>
 </div>
+
+<style>
+
+
+.sticky {
+  position: sticky;
+  top: 20px;            
+  z-index: 10;
+}
+        
+</style>

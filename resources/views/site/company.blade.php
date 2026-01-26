@@ -20,9 +20,11 @@
 <div class="mt-4">
     <div class="row">
         <div class="col-12 col-md-3">
-            <img src="{{ Storage::disk('executors_logo')->url($company['logo']) }}" class="img-fluid order-image d-block mx-auto" alt="{{ $company['legal_form'] }} «{{ $company['title'] }}»" title="{{ $company['legal_form'] }} «{{ $company['title'] }}»">
-            <a href="tel:{{ $company['phone'] }}" class="btn btn-blue w-100 mt-4"><i class="bi bi-telephone"></i> Позвонить</a>
-            <a href="mailto:{{ $company['email'] }}" class="btn btn-none-bg-order p-2 w-100 mt-3 mb-5"><i class="bi bi-envelope"></i> Написать на Email</a>
+            <img src="{{ Storage::disk('executors_logo')->url($company['logo']) }}" class="img-fluid order-image rounded d-block mx-auto" alt="{{ $company['legal_form'] }} «{{ $company['title'] }}»" title="{{ $company['legal_form'] }} «{{ $company['title'] }}»">
+            @if ($company->executor->premium || Auth::guard('customer')->user() && Auth::guard('customer')->user()->premium)
+                <a href="tel:{{ $company['phone'] }}" class="btn btn-blue w-100 mt-4"><i class="bi bi-telephone"></i> Позвонить</a>
+                <a href="mailto:{{ $company['email'] }}" class="btn btn-none-bg-order p-2 w-100 mt-3 mb-5"><i class="bi bi-envelope"></i> Написать на Email</a>
+            @endif
         </div>
         
         <div class="col-12 col-md-9">
@@ -31,7 +33,10 @@
                 <span class="mx-0 premium-executor py-2"><i class="bi bi-fire"></i> Premium исполнитель</span>
             @endif
             
+            
             <div class="row mt-4">
+            
+            @if ($company->executor->premium || Auth::guard('customer')->user() && Auth::guard('customer')->user()->premium)
             <div class="col-12 col-md-6">
                 <p><b>ИНН:</b> {{ $company['inn'] }}</p>
                 <hr>
@@ -44,17 +49,55 @@
             </div>
             
             <div class="col-12 col-md-6">
-           
-            <p><b>Телефон:</b> {{ $company['phone'] }}</p>
-            <hr>
-            <p><b>Сайт:</b> {{ $company['site'] ? $company['site'] : '-' }}</p>
-            <hr>
-            <p><b>Email:</b> {{ $company['email'] }}</p>
-            <hr>
-            </div></div>
+                <p><b>Телефон:</b> <a href="tel:{{ $company['phone'] }}">{{ $company['phone'] }}</a></p>
+                <hr>
+                <p><b>Email:</b> <a href="mailto:{{ $company['email'] }}">{{ $company['email'] }}</a></p>
+                <hr>
+                <p><b>Сайт:</b> {{ $company['site'] ? $company['site'] : '-' }}</p>
+                
+                <hr>
+            </div>
+            @else
+            <div class="px-2">
+            <div class="alert alert-warning d-flex flex-column flex-md-row align-items-center justify-content-evenly mb-4">
+                <p class="m-0 text-center">Контакты этого исполнителя доступны только заказчикам с тарифом «Premium» </p>
+                <div class="mt-3 mt-md-0"><a href="{{ Route('customer-select-tariff') }}" class="btn alert-btn px-3" target="_blank">Подключить</a></div>
+            </div>
+            </div>
             
+            
+            <div class="col-12 col-md-6">
+                <p><b>ИНН:</b> -</p>
+                <hr>
+                <p><b>Регион:</b> {{ $region['name'] }}</p>
+                <hr>
+                <p><b>Адрес:</b> -</p>
+                <hr>
+                <p><b>Контактное лицо:</b> -</p>
+                <hr>
+            </div>
+            
+            <div class="col-12 col-md-6">
+                <p><b>Телефон:</b> -</p>
+                <hr>
+                <p><b>Сайт:</b> -</p>
+                <hr>
+                <p><b>Email:</b> -</p>
+                <hr>
+            </div>
+            
+            @endif
+            </div>
             <p class="mb-2"><b>Описание компании:</b></p>
-            <p>{{ $company['description'] }}</p>
+            <p>{!! $company['description'] !!}</p>
+            <hr>
+            
+            <p class="mb-2"><b>Парк станков и оборудования для обработки металла:</b></p>
+            @if ($company['machines'])
+                <p>{!! $company['machines'] !!}</p>
+            @else
+                <p>Перечень оборудования не указан.</p>
+            @endif
             <hr>
             <p><b>Категории оказываемых услуг:</b></p>
             
@@ -81,7 +124,7 @@
             <div class="categories mb-2">
             <div class="mb-2 mt-2 d-flex flex-wrap">
                 @foreach ($services as $service)
-                    <div class="services-list me-2 mb-2 d-flex align-items-center">{{ $service['title'] }}</div>
+                    <div class="services-list me-2 mb-2 d-flex align-items-center"><a href="/companies/service/{{ $service['slug'] }}">{{ $service['title'] }}</a></div>
                 @endforeach
             </div>
             </div>

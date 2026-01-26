@@ -28,8 +28,8 @@ class AddOrderRequest extends FormRequest
             'quantity' => 'required',
             'description' => 'required',
             'categories' => 'required',
-            'order_image_file' => 'extensions:jpg,png|mimes:jpg,png|max:10240',
-            'order_archive_file' => 'extensions:zip,rar|mimes:zip,rar|max:20480'
+            'order_image_file' => 'extensions:jpg,png|mimes:jpg,png|max:20240',
+            'order_archive_file' => 'extensions:zip,rar|mimes:zip,rar|max:50480'
         ];
     }
 

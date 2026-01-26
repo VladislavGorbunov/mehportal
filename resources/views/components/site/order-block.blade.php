@@ -11,10 +11,10 @@
             </div>
       
             <div class="col-12 col-md-8">
-                <div class="d-flex flex-column flex-md-row">
-                    <h2 class="order-title mb-3 me-2">{{ $order['title'] }}</h2>
+                <div class="d-flex flex-column ">
+                    <h2 class="order-title mb-3 me-2"><a href="/order/{{ $order['order_id'] }}" class="text-dark" target="_blank">{{ $order['title'] }}</a></h2>
                     @if ($order['active'] == true)
-                        <div class="active-order-badge text-center me-2 mb-2">Заказ открыт</div>
+                        <div class="active-order-badge text-center me-2 mb-2"><i class="bi bi-check-lg"></i> Заказ открыт</div>
                     @endif
 
                     @if ($order['archive'] == true)
@@ -23,11 +23,11 @@
                 </div>
                 <div class="row">
                     <div class="col-12 col-md-6 mt-2">
-                        <p class="mb-3">Номер заказа в системе: <strong>#{{ $order['order_id'] }}</strong></p>
+                        <p class="mb-3">Заказ №{{ $order['order_id'] }}</p>
                         
                         @if ($order['customer_premium']) 
                             <p class="mb-3">Статус заказчика: <span class="mb-1 premium-customer2"><i class="bi bi-fire"></i> Premium заказчик</span></p>
-                            <p class="mb-3">Контакты: <a href="/order/{{ $order['order_id'] }}" target="_blank"><small>Доступны всем исполнителям</small></a></p>
+                            <p class="mb-3">Контакты: <a href="/order/{{ $order['order_id'] }}" target="_blank"><small>Доступны всем исполнителям</small></a> <i class="bi bi-check-all" style="top: 2px"></i></p>
                         @else
                             <p class="mb-3">Статус заказчика: Стандартный</p>
                         @endif

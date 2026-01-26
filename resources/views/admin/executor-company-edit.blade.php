@@ -98,16 +98,52 @@
   				<input type="text" class="form-control" name="address" value="{{ $company->address }}" >
             </div>
             
-            
+
 
             <div class="mb-3">
                 <label class="form-label">Описание:</label>
-                <textarea class="form-control" rows="3" name="description">{{ $company->description }}</textarea>
+                <textarea class="form-control" rows="3" id="summernote" name="description">{{ $company->description }}</textarea>
+            </div>
+            
+            <div class="mb-3">
+                <label class="form-label mb-1"><b>Перечислите станки и оборудование которое у Вас есть на производстве:</b></label>
+                <textarea class="form-control" id="summernote2" name="machines" rows="6">{{ $company->machines }}</textarea>
             </div>
         </div>
         
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <!-- include summernote css/js-->
+        <link href="/js/summernote/summernote-bs5.css" rel="stylesheet">
+        <script src="/js/summernote/summernote-bs5.js"></script>
+    
+        <script>
+        $(document).ready(function() {
+            $('#summernote').summernote({
+                height: 200,
+                toolbar: [
+                    ['para', ['ul', 'ol']],
+                    ['font', ['bold', 'underline', 'clear']],
+                    ['view', ['fullscreen', 'codeview', 'help']]
+                ]
+            });
+            
+            
+            $('#summernote2').summernote({
+                height: 200,
+                toolbar: [
+                    ['para', ['ul', 'ol']],
+                    ['font', ['bold', 'underline', 'clear']],
+                    ['view', ['fullscreen', 'codeview', 'help']]
+                ]
+            });
+        });
+    </script> 
+        
+        
         <hr>
         <button type="submit" class="btn btn-blue py-2 mt-2">Сохранить изменения</button>
+        <hr>
+        <a href="{{ Route('admin-executor-company-delete', ['id' => $company->id]) }}" class="text-danger mt-2">Удалить компанию</a>
         </form>   
 </div>      
 @endsection

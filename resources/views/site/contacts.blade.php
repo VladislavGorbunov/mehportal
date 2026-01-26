@@ -17,7 +17,7 @@
     <div class="row mt-4 mb-5">
         <div class="col-12 col-md-6 mb-4" itemscope itemtype="http://schema.org/Organization">
             <h3 class="fs-4 mb-3">Контакты и реквизиты:</h3>
-            <p itemprop="name">МехПортал</p>
+            <p itemprop="name"><b>МехПортал</b> - поиск и размещение заказов на металлообработку</p>
             <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
             <p><b>Наш адрес:</b> Россия, г. <span itemprop="addressLocality">Санкт-Петербург</span></p>
             </div>
@@ -26,7 +26,7 @@
             <p><b>Email:</b> <a href="mailto::info@mehportal.ru"><span itemprop="email">info@mehportal.ru</span></a> <small>(по любым вопросам)</small></p>
             <p><b>Тех. поддержка:</b> <a href="mailto::tech@mehportal.ru">tech@mehportal.ru</a> <small>(по вопросам работы сайта)</small></p>
             <p><b>ИНН:</b> 781712777173</p>
-            <p>ИП Горбунов Владислав Владимирович</p>
+         
             
            
             <p>Есть вопросы или предложения для сотрудничества?<br> Мы всегда на связи в ВК, Телеграм а так же в онлайн чате сайта!</p>

@@ -13,6 +13,9 @@ use App\Models\Region;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
+use App\Mail\ExecutorPremiumActivated;
+use Illuminate\Support\Facades\Mail;
+
 class ExecutorController extends Controller
 {
     //
@@ -91,6 +94,7 @@ class ExecutorController extends Controller
     {
         $executor_id   = $request->id;
         $tariff_months = $request->tariff_months;
+        $executorInfo   = Executor::where('id', $executor_id)->first();
 
         $premium_start_date = date('Y-m-d');
 
@@ -131,6 +135,8 @@ class ExecutorController extends Controller
             "note"               => $request->note
         ]);
 
+        // Отправка уведомления на почту            
+        Mail::mailer('smtp')->to($executorInfo->email)->send(new ExecutorPremiumActivated($premium_end_date_format));
        
         // Добавление события на удаление Premium статуса
         DB::statement("CREATE EVENT premium_status_executor_$request->id
@@ -153,6 +159,13 @@ class ExecutorController extends Controller
     }
     
     
+    public function deleteExecutorCompany($id) 
+    {
+        ExecutorCompany::where('id', $id)->delete();
+        return redirect('/admin/executors/active');
+        
+    }
+    
     public function updateExecutorCompany(UpdateExecutorCompanyRequest $request)
     {
         $validated = $request->validated();
@@ -169,7 +182,8 @@ class ExecutorController extends Controller
             'active' => $validated['active'],
             'extension_number' => $validated['extension_number'],
             'address' => $validated['address'],
-            'description' => $validated['description']
+            'description' => $validated['description'],
+            'machines' => $validated['machines'],
         ]);
 
         session()->flash('message', 'Изменения сохранены');

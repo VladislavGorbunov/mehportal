@@ -18,7 +18,7 @@
 <div class="mt-4">
 <script src="https://calcus.ru/dist/widget.js"></script> 
 
-<div id="calcus-container" class="border"></div>
+<div id="calcus-container"></div>
 <script>
     CalcusWidget.show('Metal')
 </script> 

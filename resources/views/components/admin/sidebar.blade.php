@@ -8,6 +8,8 @@
         <li><a href="{{ Route('admin-get-noactive-customers') }}">Не активные заказчики</a></li>
         <li><a href="{{ Route('admin-get-premium-customers') }}">Premium заказчики</a></li>
         <li><a href="{{ Route('admin-customers-companies') }}">Организации заказчиков</a></li>
+        <li><a href="{{ Route('admin-add-customer') }}">Добавить заказчика</a></li>
+        <li><a href="{{ Route('admin-add-customer-company') }}">Добавить компанию</a></li>
         <hr>
         <p class="mt-2 mb-2"><b>Исполнители</b></p>
         <li><a href="{{ Route('admin-get-active-executors') }}">Активные исполнители</a></li>
@@ -16,8 +18,8 @@
         <li><a href="{{ Route('admin-executors-companies') }}">Организации исполнителей</a></li>
         <hr>
         <p class="mt-2 mb-2"><b>Заказы</b></p>
-        <li><a href="/customer/profile">Открытые заказы</a></li>
-        <li><a href="/customer/profile">Архивные заказы</a></li>
+        <li><a href="{{ Route('active-orders') }}">Открытые заказы</a></li>
+        <li><a href="{{ Route('archive-orders') }}">Архивные заказы</a></li>
         <hr>
         <p class="mt-2 mb-2"><b>Платные услуги</b></p>
         <li><a href="{{ Route('premium-customers-requests') }}">Заявки на Premium от заказчиков</a></li>

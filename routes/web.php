@@ -10,6 +10,8 @@ require __DIR__.'/customer.php';
 require __DIR__.'/executor.php';
 require __DIR__.'/admin.php';
 require __DIR__.'/seller.php';
+require __DIR__.'/cron.php';
+
 
 Route::get('/', [PagesController::class, 'index'])->name('index');
 Route::get('/metal-calculator', [PagesController::class, 'calculator'])->name('calculator');

@@ -216,7 +216,7 @@ class CompaniesController extends BaseController
         $data['region'] = Region::where('id', $company['region_id'])->first();
         $data['title'] = $company['legal_form'] .' «'. $company['title'].'» ИНН: ' . $company['inn'] . ' - ' . $data['region']['name'];
         $data['description'] = 'Компания оказывающая услуги по металлообработке ' . $company['legal_form'] .' «'. $company['title'].'» - регион: ' . $data['region']['name'] . ', Адрес: ' . $company['address'] . ', ИНН: ' . $company['inn'];
-        $data['header_title'] = 'Компания по металлообработке ' . $company['legal_form'] .' «' . $company['title'].'»';
+        $data['header_title'] = $company['legal_form'] .' «' . $company['title'].'»';
         $data['region_name'] = '';
         $data['region_slug'] = '';
         $data['company'] = $company;
