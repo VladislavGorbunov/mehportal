@@ -23,6 +23,7 @@
         <div class="d-md-flex align-items-center">
             <div class="flex-grow-1">
                 <h2 class="text-center text-md-start mt-0 mb-0 fs-4">Открытые заказы на сегодня</h2> 
+                
             </div>
 
             <div class="d-flex flex-row justify-content-end">

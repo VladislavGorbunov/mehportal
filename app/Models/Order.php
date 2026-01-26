@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Order extends Model
@@ -357,5 +358,10 @@ class Order extends Model
     public function commercialOffers(): HasMany
     {
         return $this->hasMany(CommercialOffer::class);
+    }
+    
+    public function customerCompany(): BelongsTo
+    {
+        return $this->belongsTo(CustomerCompany::class, 'customer_id', 'customer_id');
     }
 }

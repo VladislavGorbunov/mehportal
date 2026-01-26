@@ -37,6 +37,7 @@
                 </div>
             @endforeach
 
-            
-        {{ $executors->links() }}
+        <div class="mb-4">
+            {{ $executors->links() }}
+        </div>
 @endsection

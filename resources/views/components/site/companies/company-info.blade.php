@@ -25,7 +25,7 @@
         @endif
     @endif
     <hr>
-    <p>{{ (! empty($company['description'])) ? $company['description'] : 'Описание отсутствует..' }}</p>
+    <p>{!! (! empty($company['description'])) ? $company['description'] : 'Описание отсутствует..' !!}</p>
     <p><b>Категории услуг:</b></p>
     <div class="mb-3 mt-2 d-flex flex-wrap">
         @foreach ($company['services'] as $service)

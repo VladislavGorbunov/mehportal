@@ -1,11 +1,12 @@
 <x-site.top-menu />
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg">
   <div class="container">
     <x-site.logo />
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
     <button type="button" class="btn btn-modal-city my-3 my-md-0 mx-md-3 d-block mx-auto" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -14,7 +15,7 @@
         @if ($regionName) 
           {{ $regionName }}
         @else
-          Выбрать регион
+          По всей России
         @endif
     </button>
 
@@ -25,6 +26,8 @@
         <li class="nav-item">
             <a href="#companies" class="nav-link link-blue" data-bs-toggle="modal" data-bs-target="#companies">ПРЕДПРИЯТИЯ</a>
         </li>
+        
+    
 
         <li class="nav-item">
             <a class="nav-link" href="{{ Route('contacts') }}">Контакты</a>
@@ -49,10 +52,10 @@
                 <li><a class="dropdown-item" href="{{ Route('login-customer') }}" target="_blank">Я заказчик</a><p style="font-size: 12px;" class="text-secondary">Хочу размещать заказы</p></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="{{ Route('login-executor') }}" target="_blank">Я исполнитель</a><p style="font-size: 12px;" class="text-secondary">Хочу выполнять заказы</p></li>
-                
             </ul>
         </div>
     </div>
     </div>
   </div>
 </nav>
+

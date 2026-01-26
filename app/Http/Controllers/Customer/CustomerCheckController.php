@@ -25,7 +25,14 @@ class CustomerCheckController extends Controller
 
     public static function addData($customer_id, $data)
     {
+  
         $count = CustomerCheckData::where('customer_id', $customer_id)->count();
+
+        if (array_key_exists('Сумма', $data['data']['УстКап'])) {
+            $summa = $data['data']['УстКап']['Cумма'];
+        } else {
+            $summa = '-';
+        }
 
         if ($count == 0) {
             CustomerCheckData::create([
@@ -37,7 +44,7 @@ class CustomerCheckController extends Controller
                 "status_sulst"  => $data['data']['Статус']['Код'],
                 "okved_code"    => $data['data']['ОКВЭД']['Код'],
                 "okved_name"    => $data['data']['ОКВЭД']['Наим'],
-                "capital"       => $data['data']['УстКап']['Сумма'],
+                "capital"       => $summa,
                 "director_fio"  => $data['data']['Руковод'][0]['ФИО'],
                 "director_post" => $data['data']['Руковод'][0]['НаимДолжн'],
                 "site"          => $data['data']['Контакты']['ВебСайт'],
@@ -55,7 +62,7 @@ class CustomerCheckController extends Controller
                 "status_sulst"  => $data['data']['Статус']['Код'],
                 "okved_code"    => $data['data']['ОКВЭД']['Код'],
                 "okved_name"    => $data['data']['ОКВЭД']['Наим'],
-                "capital"       => $data['data']['УстКап']['Сумма'],
+                "capital"       => $summa,
                 "director_fio"  => $data['data']['Руковод'][0]['ФИО'],
                 "director_post" => $data['data']['Руковод'][0]['НаимДолжн'],
                 "site"          => $data['data']['Контакты']['ВебСайт'],

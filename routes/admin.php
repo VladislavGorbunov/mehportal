@@ -3,11 +3,13 @@
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\IndexController;
 use App\Http\Controllers\Admin\CustomerController;
+use App\Http\Controllers\Admin\CompanyController;
 use App\Http\Controllers\Admin\ExecutorController;
 use App\Http\Controllers\Admin\TariffsController;
 use App\Http\Controllers\Admin\SitemapController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Admin\OrderController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/login/admin', [AuthController::class, 'loginAdminPage'])->name('login-admin');
@@ -23,6 +25,14 @@ Route::middleware(['admin'])->group(function () {
     Route::get('/admin/customers/companies', [CustomerController::class, 'getCustomersCompanies'])->name('admin-customers-companies');
     Route::get('/admin/customer/company/edit/{id}', [CustomerController::class, 'editCustomerCompany'])->name('admin-customer-company-edit');
     Route::post('/admin/customer/company/update', [CustomerController::class, 'updateCustomerCompany']);
+    Route::get('/admin/add-customer', [CustomerController::class, 'addCustomerPage'])->name('admin-add-customer');
+    Route::post('/admin/add-customer', [CustomerController::class, 'addCustomer']);
+    Route::get('/admin/add-order/{id}', [OrderController::class, 'addOrderPage'])->name('admin-add-order');
+    Route::post('/admin/add-order/{id}', [OrderController::class, 'store']);
+    
+    Route::get('/admin/customer/add-company', [CompanyController::class, 'addCompanyPage'])->name('admin-add-customer-company');
+    Route::post('/admin/customer/add-company', [CompanyController::class, 'addCompany']);
+    
 
     Route::get('/admin/customer/edit/{id}', [CustomerController::class, 'customerEdit'])->name('admin-customer-edit');
     Route::get('/admin/customer/delete/{id}', [CustomerController::class, 'customerDelete'])->name('admin-customer-delete');
@@ -36,6 +46,7 @@ Route::middleware(['admin'])->group(function () {
     Route::get('/admin/executors/premium', [ExecutorController::class, 'getPremiumExecutors'])->name('admin-get-premium-executors');
     Route::get('/admin/executors/companies', [ExecutorController::class, 'getExecutorsCompanies'])->name('admin-executors-companies');
     Route::get('/admin/executor/company/edit/{id}', [ExecutorController::class, 'editExecutorCompany'])->name('admin-executor-company-edit');
+    Route::get('/admin/executor/company/delete/{id}', [ExecutorController::class, 'deleteExecutorCompany'])->name('admin-executor-company-delete');
     Route::post('/admin/executor/company/update', [ExecutorController::class, 'updateExecutorCompany']);
 
     Route::get('/admin/executor/edit/{id}', [ExecutorController::class, 'executorEdit'])->name('admin-executor-edit');
@@ -63,6 +74,10 @@ Route::middleware(['admin'])->group(function () {
     Route::get('/admin/service/add', [ServiceController::class, 'add'])->name('admin-service-add');
     Route::post('/admin/service/add', [ServiceController::class, 'store']);
     Route::get('/admin/service/delete/{id}', [ServiceController::class, 'delete'])->name('admin-service-delete');
+    
+    Route::get('/admin/active-orders', [OrderController::class, 'activeOrders'])->name('active-orders');
+    Route::get('/admin/archive-orders', [OrderController::class, 'archiveOrders'])->name('archive-orders');
+    Route::get('/admin-order-edit/{id}', [OrderController::class, 'orderEdit'])->name('admin-order-edit');
     
     Route::get('/admin/sitemap-generate', [SitemapController::class, 'generate'])->name('sitemap-generate');
 });

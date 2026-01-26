@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Region;
 use App\Models\Order;
 use App\Models\ExecutorCompany;
+use App\Models\Article;
 use App\Mail\CustomerRegistration;
 use Illuminate\Support\Facades\Mail;
 
@@ -15,12 +16,13 @@ class PagesController extends Controller
     // Главная страница сайта
     public function index() 
     {                     
-        $data['title'] = 'Заказы на металлообработку от заказчиков — открытый доступ | МЕХПОРТАЛ.РУ';
+        $data['title'] = 'Заказы на металлообработку от заказчиков по всей России — открытый доступ | МЕХПОРТАЛ.РУ';
         $data['description'] = 'Платформа для поиска заказов и исполнителей по металлообработке. Размещайте заказы бесплатно, находите подрядчиков по всей России. Для производств и поставщиков.';
-        $data['header_title'] = 'Актуальные заказы на металлообработку от заказчиков — в открытом доступе';
+        $data['header_title'] = 'Заказы на металлообработку от заказчиков по всей России в открытом доступе';
         $data['region_name'] = '';
         $data['region_slug'] = '';
-       
+        
+        $data['last_articles'] = Article::getLastArticles();
         
         $orders_array = Order::getAllOrders();
 

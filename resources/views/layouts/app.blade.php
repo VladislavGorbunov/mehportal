@@ -31,11 +31,17 @@
     </head>
 
     <body>
+        <div class="body-bg">
+            <div class="body-bg-pattern"></div>
+        </div>
         <x-site.navbar :regionName="$region_name"/>
         <x-site.header-banner :headerTitle="$header_title"/>
         <div class="container">
             @yield('content')
         </div>
+        
+        
+        
         <x-site.footer :regionSlug="$region_slug" />
         <link rel="preload" href="{{ asset('bootstrap/bootstrap-icons-1.13.1/bootstrap-icons.min.css') }}" as="style">
         <link rel="stylesheet" href="{{ asset('bootstrap/bootstrap-icons-1.13.1/bootstrap-icons.min.css') }}">

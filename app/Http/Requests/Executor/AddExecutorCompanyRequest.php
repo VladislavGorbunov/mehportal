@@ -22,19 +22,20 @@ class AddExecutorCompanyRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'legal_form' => 'required',
-            'title' => 'required',
-            'inn' => 'required|min:10|max:12',
-            'region_id' => 'required|min:1|max:3',
-            'address' => 'required|min:10',
-            'contact_person' => 'required',
-            'phone' => 'required',
-            'site' => 'min:0',
+            'legal_form'       => 'required',
+            'title'            => 'required',
+            'inn'              => 'required|min:10|max:12',
+            'region_id'        => 'required|max:3',
+            'address'          => 'required|min:10',
+            'contact_person'   => 'required',
+            'phone'            => 'required',
+            'site'             => 'min:0',
             'extension_number' => 'min:0|max:5',
-            'email' => 'required|email',
-            'description' => 'required|min:50',
-            'categories' => 'required',
-            'logo' => 'extensions:jpg,png|mimes:jpg,png|max:10240',
+            'email'            => 'required|email',
+            'description'      => 'required|min:50|max:2000',
+            'machines'         => '',
+            'categories'       => 'required',
+            'logo'             => 'extensions:jpg,png|mimes:jpg,png|max:10240',
         ];
     }
 

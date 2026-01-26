@@ -65,8 +65,8 @@ class OrderController extends Controller
     {
         $validated = $request->validated();
 
-        CustomerCheckController::addCustomerCheckData(Auth::guard('customer')->id());
-
+        //CustomerCheckController::addCustomerCheckData(Auth::guard('customer')->id());
+        
         if (array_key_exists('order_image_file', $validated)) {
             $order_image_file = $validated['order_image_file'];
         } else {

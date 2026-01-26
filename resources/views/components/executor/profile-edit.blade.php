@@ -26,5 +26,21 @@
         </div>
 
 		<button type="submit" class="btn btn-blue mt-3 mb-3">Сохранить</button>
+        <p><small><a class="text-danger delete-profile" data-id="{{ $executor->id }}">Удалить профиль и компанию</a></small></p>
 
+        
+        <script>
+            const btnDel = document.querySelector('.delete-profile')
+            
+            btnDel.addEventListener('click', (e) => {
+                
+                let id = e.target.getAttribute('data-id')
+                
+                let confirmation = confirm('Вы действительно хотите удалить профиль и все данные?')
+
+                if (confirmation) {
+                    window.location.href = `/executor/delete/${id}`;
+                }
+            })
+        </script>
     </form>

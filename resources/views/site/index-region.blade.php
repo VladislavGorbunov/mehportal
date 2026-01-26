@@ -46,11 +46,16 @@
     @if (!empty($orders))
         @foreach ($orders as $order)
             <x-site.order-block :order="$order" :regionSlug="$region_slug"/>
+            <div class="mt-4 mb-4">
+                <a href="/" class="text-center text-decoration-underline d-block mx-auto">Смотреть заказы по всей России</a>
+            </div>
         @endforeach
-        <x-site.add-order-banner />
+        
     @else
         <x-site.no-order />
     @endif
+    
+    <x-site.add-order-banner />
     
     <x-site.latest-companies :companies="$executor_companies"/>
     

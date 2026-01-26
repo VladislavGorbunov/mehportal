@@ -25,6 +25,7 @@ Route::middleware(['customer'])->group(function () {
 
     Route::get('/customer/profile', [ProfileController::class, 'index'])->name('customer-profile');
     Route::put('/customer/profile/update', [ProfileController::class, 'update']);
+    Route::get('/customer/delete/{id}', [ProfileController::class, 'delete']);
 
     Route::put('/customer/company/update', [CompanyController::class, 'update'])->name('company-update');
     Route::get('/customer/add-order', [OrderController::class, 'addOrder'])->name('add-order');

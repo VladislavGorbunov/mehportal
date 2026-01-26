@@ -34,6 +34,21 @@ class ProfileController extends Controller
 
         return redirect()->back();
     }
+    
+    
+    public function delete(Request $request, $id) 
+    {
+        if (Auth::guard('customer')->user()->id == $id) {
+            Customer::where('id', $id)->delete();
+
+            Auth::guard('customer')->logout();
+            $request->session()->invalidate();
+            $request->session()->regenerateToken();
+            return redirect('/');
+        } else {
+            return redirect('/customer/profile');
+        }
+    }
 
 
     public function selectTariff(Request $request)

@@ -11,10 +11,11 @@
             </div>
 
             <div class="d-flex flex-row gap-3">
-                <a href="mailto:info@mehportal.ru" class="d-none d-md-block">info@mehportal.ru</a>
-                <a href="https://vk.com/mehportalru" target="_blank"><img src="/images/vk.svg" class="vk-logo" alt="Группа МехПортал ВКонтакте" title="Группа МехПортал ВКонтакте"></a>
-                <a href="https://t.me/mehport" target="_blank"><img src="/images/telegram.svg" class="tg-logo" alt="Канал МехПортал в Телеграм" title="Канал МехПортал в Телеграм"></a>
+                <a href="mailto:info@mehportal.ru" class="d-none d-md-block email">info@mehportal.ru</a>
+                <a href="https://vk.com/mehportalru" target="_blank"><img src="/images/icons8-vk-64.png" class="vk-logo" alt="Группа МехПортал ВКонтакте" title="Группа МехПортал ВКонтакте"></a>
+                <a href="https://t.me/mehport" target="_blank"><img src="/images/icons8-телеграм-50.png" class="tg-logo" alt="Канал МехПортал в Телеграм" title="Канал МехПортал в Телеграм"></a>
             </div> 
+            
         </div>
     </div>
 

@@ -16,6 +16,7 @@ Route::middleware(['executor'])->group(function () {
 
     Route::get('/executor/profile', [ProfileController::class, 'index'])->name('executor-profile');
     Route::put('/executor/profile/update', [ProfileController::class, 'update']);
+    Route::get('/executor/delete/{id}', [ProfileController::class, 'delete']);
 
     Route::get('/executor', [IndexController::class, 'index'])->name('executor-index');
     Route::get('/executor/add-company', [CompanyController::class, 'addCompanyPage'])->name('executor-add-company');

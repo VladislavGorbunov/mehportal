@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\UpdateCustomerProfileRequest;
 use App\Http\Requests\Admin\UpdateCustomerCompanyRequest;
+use App\Http\Requests\Admin\AddCustomerRequest;
 use App\Models\Customer;
 use App\Models\CustomerTariffs;
 use App\Models\CustomerCompany;
@@ -12,6 +13,10 @@ use App\Models\Region;
 use App\Models\PremiumCustomersInfo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use App\Mail\CustomerPremiumActivated;
+use Illuminate\Support\Facades\Mail;
+use App\Models\CategoryService;
 
 class CustomerController extends Controller
 {
@@ -89,6 +94,7 @@ class CustomerController extends Controller
     {
         $customer_id   = $request->id;
         $tariff_months = $request->tariff_months;
+        $customerInfo   = Customer::where('id', $customer_id)->first();
 
         $premium_start_date = date('Y-m-d');
 
@@ -128,6 +134,9 @@ class CustomerController extends Controller
             "payment_invoice"    => $request->payment_invoice,
             "note"               => $request->note
         ]);
+        
+        // Отправка уведомления на почту            
+        Mail::mailer('smtp')->to($customerInfo->email)->send(new CustomerPremiumActivated($premium_end_date_format));
 
        
         // Добавление события на удаление Premium статуса
@@ -172,5 +181,31 @@ class CustomerController extends Controller
 
         return redirect()->back();
     }
+    
+    
+    public function addCustomerPage() 
+    {
+        return view('admin.add-customer');
+    }
+    
+    public function addCustomer(addCustomerRequest $request)
+    {
+        $validated = $request->validated();
+
+        $customer = Customer::create([
+            "name"      => $validated['name'],
+            "lastname"  => $validated['lastname'],
+            "email"     => $validated['email'],
+            "password"  => Hash::make($validated['password']),
+            "phone"     => $validated['phone'],
+            "active"    => true,
+        ]);
+        
+        session()->flash('message', 'Заказчик добавлен');
+
+        return redirect()->back();
+    }
+    
+   
 
 }

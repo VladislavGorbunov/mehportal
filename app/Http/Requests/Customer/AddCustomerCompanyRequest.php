@@ -31,7 +31,8 @@ class AddCustomerCompanyRequest extends FormRequest
             'phone' => 'required',
             'extension_number' => 'min:0|max:5',
             'email' => 'required|email',
-            'description' => 'required|min:50',
+            'description' => '',
+            'customer_id' => '',
         ];
     }
 

@@ -6,9 +6,9 @@
     	            <div class="footer-logo-light"></div>
         		    <h5 class="navbar-brand">МЕХПОРТАЛ</h5>
         		</div>
-        		<p class="text-light small-text">Современный онлайн-сервис для поиска исполнителей и заказов на услуги по обработке металла по всей России.</p>
-        	    <span class="text-white"><small>
-                ИНН 781712777173</small></span>
+        		<p class="text-light small-text mb-0">Современный онлайн-сервис для поиска исполнителей и заказов на услуги по обработке металла по всей России.</p>
+        		<p class="text-light small-text">Вся металлообработка страны - на одном сайте!</p>
+        	
       		</div>
     	    
     	    
@@ -33,13 +33,16 @@
           			<p class="mb-1"><a class="link-secondary text-decoration-none" href="{{ Route('contacts') }}">Наши контакты</a></p>
           			<p class="mb-1"><a class="link-secondary text-decoration-none" href="{{ Route('dogovor') }}">Договор-оферта</a></p>
           			<p class="mb-1"><a class="link-secondary text-decoration-none" href="{{ Route('privacy-policy') }}">Политика конфиденциальности</a></p>
+          			
+          			<p class="text-white link-secondary mt-2 mb-1">ИНН 781712777173</p>
+                    <p class="text-white link-secondary m-0">info@mehportal.ru</p>
       		</div>
 
       		<div class="col-12 text-center text-light mt-5">
-				МЕХПОРТАЛ © <?php echo date('Y') ?> г. - сервис поиска заказов на металлообработку и не только.<br>
+				МЕХПОРТАЛ.РУ © 2025 - <?php echo date('Y') ?> - современный сервис для поиска и размещения заказов на металлообработку.<br>
 				
-				<a href="https://icons8.com" class="text-secondary mb-3" rel="nofollow">icons8.com</a>
-				<a href="https://www.flaticon.com/free-icons/cnc-machine" class="text-secondary mb-3" title="cnc machine icons" rel="nofollow">Cnc machine icons created by Design Circle - Flaticon</a>
+				Наши партнёры: <a href="https://icons8.com" class="text-light mb-3" rel="nofollow" target="_blank">icons8.com</a> & 
+				<a href="https://www.flaticon.com" class="text-light mb-3" rel="nofollow" target="_blank">Flaticon</a>
 				<div class="mt-2"><x-site.liveinternet /></div>
 			</div>
     	</div>
@@ -51,6 +54,36 @@
       <div>Мы используем файлы cookie, они помогают нам делать этот сайт удобнее для пользователя.</div>
     </div>
     </div>
+    
+   <!--  <div class="add-zakaz d-none d-md-flex flex-column align-items-center justify-content-center">
+       <h5 class="fs-5 text-center mx-2 my-0 text-black">Ищите исполнителя для заказа? Разместите его бесплатно!</h5>
+       <div class="text-center mt-1">
+           Разместите свой заказ на металлообработку и его увидят тысячи предприятий по всей России! <a href="/customer/add-order" class="mx-2">Разместить заказ</a>
+       </div>
+   </div> -->
+        
+        <style>
+            .add-zakaz {
+                width: 100%;
+                min-height: 75px;
+                padding: 8px 70px;
+                position: fixed;
+                bottom: 0px;
+                backdrop-filter: blur(10px);
+                background: rgba(245,245,250, 0.9);
+                border-top: 1px solid rgba(190,190,190,0.1);
+                z-index: 2;
+                color: #444;
+            }
+            
+            .zakaz-email {
+                padding: 3px 10px;
+                background: rgb(57, 174, 96);
+                border-radius: 6px;
+                color: #fff;
+            }
+        </style>
+    
     
     <x-modal-regions />
     <x-services-orders :region-slug="$regionSlug" />

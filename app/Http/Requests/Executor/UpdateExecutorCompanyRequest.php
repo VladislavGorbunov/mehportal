@@ -33,6 +33,7 @@ class UpdateExecutorCompanyRequest extends FormRequest
             'extension_number' => 'min:0',
             'email' => 'required|email',
             'description' => 'required|min:50',
+            'machines'         => '',
             'categories' => 'required',
         ];
     }

@@ -12,7 +12,14 @@ class CommercialOffersController extends Controller
     public function index()
     {   
         $customer_id = Auth::guard('customer')->user()->id;
-        $data['com_offers'] = CommercialOffer::where('customer_id', $customer_id)->paginate(6);
+        
+        
+        if (CommercialOffer::where('customer_id', $customer_id)->exists()) {
+            $data['com_offers'] = CommercialOffer::where('customer_id', $customer_id)->paginate(10);
+        } else {
+            $data['com_offers'] = [];
+        }
+        
         return view('customer.commercial-offers', $data);
     }
 
