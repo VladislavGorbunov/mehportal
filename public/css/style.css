@@ -276,23 +276,22 @@ h2, h3, h4, h5, h6 {
 .badge-us {
     position: relative;
     background: #246BDE;
-    background: linear-gradient(31deg, rgba(36, 107, 222, 1) 0%, rgb(44, 166, 151) 100%);
+    background: rgba(36, 107, 222, 1);
     color: #fff !important;
     font-size: 13px !important;
     padding: 7px 23px;
-    border-radius: 8px;
+    border-radius: 14px 34px;
 }
 
 @media (max-width: 720px) {
   .badge-us {
-    position: relative;
+     position: relative;
     background: #246BDE;
-    background: linear-gradient(31deg, rgba(36, 107, 222, 1) 0%, rgba(57, 163, 212, 1) 100%);
+    background: rgba(36, 107, 222, 1);
     color: #fff !important;
     font-size: 13px !important;
-    padding: 10px 27px;
-    border-radius: 10px 30px;
-    line-height: 1.2;
+    padding: 7px 23px;
+    border-radius: 14px 34px;
   }
 }
 
