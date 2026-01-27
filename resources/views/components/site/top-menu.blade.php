@@ -39,13 +39,13 @@
 
     @keyframes light-anim {
         0% { 
-            transform: rotateX(0deg);
+            transform: rotate(0deg);
         }
         50% {
-            transform: rotateX(50deg);
+            transform: rotate(180deg);
         }
         100% {
-            transform: rotateX(0deg);
+            transform: rotate(360deg);
         }
     }
 </style>
