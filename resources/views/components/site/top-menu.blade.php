@@ -18,34 +18,6 @@
             
         </div>
 
-        <div class="light-top-menu"></div>
+        <div class="light-top-menu d-md-block d-none"></div>
     </div>
 </div>
-
-<style>
-    .light-top-menu {
-        width: 250px;
-        height: 30px;
-        position: absolute;
-        top: 12px;
-        right: -10px;
-        background: #991cd8;
-        z-index: 0;
-        border-radius: 50%;
-        filter: blur(24px);
-        animation: light-anim 2s linear;
-        animation-iteration-count: infinite;
-    }
-
-    @keyframes light-anim {
-        0% { 
-            transform: rotateX(0deg);
-        }
-        50% {
-            transform: rotateX(80deg);
-        }
-        100% {
-            transform: rotateX(0deg);
-        }
-    }
-</style>

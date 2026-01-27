@@ -258,19 +258,30 @@ h2, h3, h4, h5, h6 {
     height: 22px;
 }
 
-
-
-.container .top-menu-light {
+.light-top-menu {
+    width: 250px;
+    height: 30px;
     position: absolute;
-    right: 0px;
-    top: 14px;
-    width: 70px;
-    height: 20px;
-    border-radius: 10px;
-    background:linear-gradient(90deg, rgba(43, 85, 213, 1) 0%, rgba(238, 17, 216, 1) 56%);
-    filter: blur(12px);
-    opacity: 0.4;
-    z-index: 1;
+    top: 12px;
+    right: -10px;
+    background: #991cd8;
+    z-index: 0;
+    border-radius: 50%;
+    filter: blur(24px);
+    animation: light-anim 2s linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes light-anim {
+    0% { 
+        transform: rotateX(0deg);
+    }
+    50% {
+        transform: rotateX(80deg);
+    }
+    100% {
+        transform: rotateX(0deg);
+    }
 }
 
 .badge-us {

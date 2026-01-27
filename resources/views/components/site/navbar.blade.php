@@ -26,12 +26,10 @@
         <li class="nav-item">
             <a href="#companies" class="nav-link link-blue" data-bs-toggle="modal" data-bs-target="#companies">Предприятия</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item position-relative">
             <a href="" class="nav-link link-blue" data-bs-toggle="modal" data-bs-target="">Поставщики</a>
         </li>
         
-    
-
         <li class="nav-item">
             <a class="nav-link" href="{{ Route('contacts') }}">Контакты</a>
         </li>
