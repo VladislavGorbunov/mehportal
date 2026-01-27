@@ -18,7 +18,7 @@
             
         </div>
 
-        <div class="light-top-menu d-md-block d-none"></div>
+        <div class="light-top-menu"></div>
     </div>
 </div>
 
@@ -39,13 +39,13 @@
 
     @keyframes light-anim {
         0% { 
-            transform: rotate(0deg);
+            transform: rotateX(0deg);
         }
         50% {
-            transform: rotate(180deg);
+            transform: rotateX(80deg);
         }
         100% {
-            transform: rotate(360deg);
+            transform: rotateX(0deg);
         }
     }
 </style>
