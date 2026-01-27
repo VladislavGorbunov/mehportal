@@ -45,7 +45,7 @@ class RegistrationController extends Controller
             
             // Mail::mailer('smtp')->to($validated['email'])->send(new SellerRegistration($validated['email'], $validated['password']));
             // Mail::mailer('smtp')->to('info@mehportal.ru')->send(new UserRegistration('Поставщик', $seller->id, $validated['email']));
-            return redirect('/suppliers');
+            return redirect('/supplier');
         } else {
             session()->flash('error', 'Произошла ошибка при попытке авторизации.');
             return redirect()->back();
