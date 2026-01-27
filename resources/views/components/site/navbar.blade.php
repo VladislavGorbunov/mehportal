@@ -27,7 +27,7 @@
             <a href="#companies" class="nav-link link-blue" data-bs-toggle="modal" data-bs-target="#companies">Предприятия</a>
         </li>
         <li class="nav-item">
-            <a href="#companies" class="nav-link link-blue" data-bs-toggle="modal" data-bs-target="#companies">Поставщики</a>
+            <a href="" class="nav-link link-blue" data-bs-toggle="modal" data-bs-target="">Поставщики</a>
         </li>
         
     
@@ -56,7 +56,7 @@
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="{{ Route('login-executor') }}" target="_blank">Я исполнитель</a><p style="font-size: 12px;" class="text-secondary">Хочу выполнять заказы</p></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="{{ Route('login-suppliers') }}" target="_blank">Я поставщик</a><p style="font-size: 12px;" class="text-secondary">Хочу продавать</p></li>
+                <li><a class="dropdown-item" href="{{ Route('login-supplier') }}" target="_blank">Я поставщик</a><p style="font-size: 12px;" class="text-secondary">Хочу продавать</p></li>
 
             </ul>
         </div>

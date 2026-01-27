@@ -17,7 +17,7 @@ class Suppliers
     public function handle(Request $request, Closure $next): Response
     {
         if (! Auth::guard('suppliers')->user()) {
-            return redirect('login/suppliers');
+            return redirect('login/supplier');
         }
         return $next($request);
     }

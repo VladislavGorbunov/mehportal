@@ -13,7 +13,7 @@ class AuthController extends Controller
     public function loginPage()
     {
         if (Auth::guard('suppliers')->user()) {
-            return redirect('/suppliers');
+            return redirect('/supplier');
         }
 
         return view('suppliers.login');
@@ -31,7 +31,7 @@ class AuthController extends Controller
             $request->session()->regenerate();
             $user = Auth::guard('suppliers')->user();
             Auth::guard('suppliers')->login($user);
-            return redirect('/suppliers');
+            return redirect('/supplier');
         } else {
             session()->flash('error', 'Ошибка входа.');
             return redirect()->back();

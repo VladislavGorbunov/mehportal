@@ -24,7 +24,7 @@ class RegistrationSuppliersRequest extends FormRequest
             'name'             => 'required|min:3|max:15',
             'lastname'         => 'required|min:3|max:15',
             'phone'            => 'required|min:12|max:18',
-            'email'            => 'required|email|unique:sellers,email',
+            'email'            => 'required|email|unique:suppliers,email',
             'password'         => 'required|min:8',
             'checked'          => 'required',
         ];

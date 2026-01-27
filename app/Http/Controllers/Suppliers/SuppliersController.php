@@ -4,16 +4,17 @@ namespace App\Http\Controllers\Suppliers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
+use App\Models\Supplier;
 
 class SuppliersController extends Controller
 {
-    // Главная страница кабинета поставщика
     public function index()
     {
-        echo '<h1 style="text-align:center;margin-top: 100px;">Пишем код. Скоро всё заработает =)</h1>
-        <a href="/" style="display:block;margin: 20px auto; text-align:center; color: black;font-size: 18px">Вернуться на главную страницу</a>';
-    } 
-    
+        $supplier_id = Auth::guard('suppliers')->user()->id;
+        // $data['company'] = Executor::find($executor_id)->executorCompanies;
+        $data['supplier'] = Supplier::where('id', $supplier_id)->first();
+        return view('suppliers.index', $data);
+    }
 
 }
