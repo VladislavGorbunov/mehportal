@@ -30,7 +30,7 @@
         @if (empty($company)) 
             <div class="alert alert-warning text-center mt-3 p-4"><b class="fs-5">Добавьте информацию о вашей компании.</b><br> 
             <p class="mb-3 mt-2">После этого иформация о Вашей компании будет размещена в каталоге поставщиков и видна всем посетителям сайта.</p>
-            <a href="{{ Route('executor-add-company') }}" class="btn btn-blue mx-2">Добавить компанию</a>
+            <a href="{{ Route('supplier-add-company') }}" class="btn btn-blue mx-2">Добавить компанию</a>
             </div>
         @endif
 @endsection

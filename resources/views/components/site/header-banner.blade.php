@@ -11,8 +11,11 @@
         
         <p class="mt-1 mb-1 text-center" style="font-size: 13px; color:oklch(76.5% 0.177 163.223); background: rgba(0,0,0,0.1); padding: 8px 20px; border-radius: 25px; backdrop-filter: blur(4px)">
         Более 800 компаний по всей России ежемесячно ищут заказы на нашем сайте!</p>
-        <div class="d-flex flex-md-row flex-column">
+        <div class="d-flex flex-md-row flex-column align-items-center">
             <div class="mx-2"><a href="{{ Route('add-order') }}" class="btn btn-blue mt-3 position-relative" target="_blank"><i class="bi bi-folder-plus mx-1"></i> Разместить заказ</a></div>
+            <div class="free-text-block d-flex flex-column align-items-center">
+            <i class="bi bi-arrow-repeat"></i> 
+            </div>
             <div class="mx-2"><a href="#orders" class="btn btn-white mt-3"><i class="bi bi-search mx-1"></i> Найти заказ</a></div>
         </div>
         
@@ -20,8 +23,29 @@
         
     </div>
     
- <!-- <div class="circle-layout-3"></div>
- <div class="circle-layout"></div> -->
+    <style>
+        .free-text-block {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+            top: 7px;
+        }
+
+        .free-text-block .bi {
+            animation: arrow-anim 1.6s linear infinite;
+        }
+
+        @keyframes arrow-anim {
+            0% {
+                tansform: rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: rotate(180deg);
+                opacity: 0;
+            }
+        }
+    </style>
    
 </div>
 
