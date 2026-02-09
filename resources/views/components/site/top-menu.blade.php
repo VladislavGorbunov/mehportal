@@ -7,7 +7,7 @@
                 <a href="javascript:jivo_api.open()" class="d-none d-md-block">Помощь</a>
                 <a href="{{ Route('documents') }}" class="d-none d-xxl-block">Правовые документы</a>
                 <a href="{{ Route('calculator') }}" class="d-none d-md-block">Калькулятор металла</a>
-                <a href="/tariffs" class="badge-us ms-2"><i class="bi bi-gem"></i> Подключить Premium бесплатно</a>
+                <a href="/tariffs" class="badge-us ms-2"><i class="bi bi-gem"></i> Подключить Premium тариф</a>
             </div>
 
             <div class="d-flex flex-row gap-3">
