@@ -83,6 +83,25 @@ class ProfileController extends Controller
         
     $curl = curl_init();
 
+    $string = 'Подключение тарифа Premium' . 00001 . 'Ho!n*TPF^OTygako' . '1770482068219DEMO';
+    $token = hash('sha256', $string);
+   
+    $data = [
+        'TerminalKey' => '1770482068219DEMO',
+        'Amount' => 140000,
+        'OrderId' => '00021',
+        'Token' => $token,
+        'Description' => 'Подключение Premium тарифа',
+        'Items' => [
+            'Email' => 'limitorg2016@yandex.ru',
+            'Taxation' => 'usn_income',
+
+        ]
+    ];
+
+    $postfilds = json_encode($data);
+     
+
     curl_setopt_array($curl, array(
         CURLOPT_URL => 'https://rest-api-test.tinkoff.ru/v2/Init',
         CURLOPT_RETURNTRANSFER => true,
@@ -92,7 +111,7 @@ class ProfileController extends Controller
         CURLOPT_FOLLOWLOCATION => true,
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => 'POST',
-        CURLOPT_POSTFIELDS =>'{"TerminalKey":"1770482068219DEMO","Amount":140000,"OrderId":"21050534534534","Token":"7241ac8307f349afb7bb9dda760717721bbb45950b97c67289f23d8c69cc7b96","Description":"Подарочная карта на 1400.00 рублей","CustomerKey":"string","Recurrent":"Y","PayType":"O","Language":"ru","NotificationURL":"string","SuccessURL":"string","FailURL":"string","DATA":{"additionalProperties":"string","OperationInitiatorType":"0"},"Receipt":{"Items":[{"Name":"Наименование товара 1","Price":10000,"Quantity":1,"Amount":10000,"PaymentMethod":"full_payment","PaymentObject":"commodity","Tax":"vat10","Ean13":"0123456789","ShopCode":"12345","AgentData":{"AgentSign":"paying_agent","OperationName":"Позиция чека","Phones":["+790912312398"],"ReceiverPhones":["+79221210697","+79098561231"],"TransferPhones":["+79221210697"],"OperatorName":"TBank","OperatorAddress":"г. Тольятти","OperatorInn":"7710140679"},"SupplierInfo":{"Phones":["+79221210697","+79098561231"],"Name":"ООО Вендор товара","Inn":"7710140679"}}],"FfdVersion":"1.05","Email":"a@test.ru","Phone":"+79031234567","Taxation":"osn","Payments":{"Cash":90000,"Electronic":50000,"AdvancePayment":0,"Credit":0,"Provision":0}},"Shops":[{"ShopCode":"700456","Amount":10000,"Name":"Товар","Fee":"500"}]}',
+        CURLOPT_POSTFIELDS => $postfilds,
         CURLOPT_HTTPHEADER => array(
             'Content-Type: application/json',
             'Accept: application/json'
