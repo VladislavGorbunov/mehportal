@@ -38,7 +38,7 @@
             
         </div>
         <x-site.footer :regionSlug="$region_slug" />
-
+       
         <script src="{{ asset('bootstrap/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js') }}"></script>
         <x-site.metrika />
     </body>

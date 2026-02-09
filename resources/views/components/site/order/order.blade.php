@@ -39,8 +39,15 @@
         @else
             @if (!$order['customer_premium'])
             <div class="alert alert-primary mt-4 text-center">
-                <small>Контакты заказчика доступны зарегистрированным исполнителям с премиум тарифом.</small><br>
-                <p class="mt-3 mb-1">Тариф <b>«Premium»</b> - от 3500 руб/месяц <a href="{{ Route('login-executor') }}" class="btn alert-btn px- ms-2" target="_blank">Подключиться</a></p>
+                <p class="m-0">Контакты заказчика доступны зарегистрированным исполнителям с премиум тарифом.</p><br>
+                <div class="d-flex justify-content-center">
+                    <div class="px-3">
+                        <p class="mt-0 mb-1">Тариф <b>«Premium»</b> - от 3500 руб/месяц <br><a href="{{ Route('login-executor') }}" class="btn alert-btn px- ms-2 mt-2" target="_blank">Подключиться</a></p>
+                    </div>
+                    <div class="px-3">
+                        <p class="mt-0 mb-1">Получить доступ к этим контактам за 590 руб. <br><a href="{{ Route('buy-contacts', ['order_id' => $order['id']]) }}" class="btn alert-btn ms-2 mt-2" target="_blank">Получить контакты</a></p>
+                    </div>
+                </div>
             </div>
             @else 
             

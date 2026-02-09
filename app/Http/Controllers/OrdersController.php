@@ -362,4 +362,10 @@ class OrdersController extends Controller
         session()->flash('message', 'Благодарим вас за отклик! Ваше коммерческое предложение отправлено заказчику.');
         return redirect("/order/".$validated['order_id']);
     }
+    
+    public function buyContactsOrder()
+    {
+        
+    }
+    
 }

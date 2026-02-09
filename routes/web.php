@@ -43,3 +43,5 @@ Route::get('/company/{inn}', [CompaniesController::class, 'companyPage']);
 Route::get('/order/{order_id}', [OrdersController::class, 'getOrder']);
 Route::get('/order/{order_id}/send-cp', [OrdersController::class, 'sendCP']);
 Route::post('/order/{order_id}/send-cp', [OrdersController::class, 'storeCP']);
+
+Route::get('/order/{order_id}/buy-contacts', [OrdersController::class, 'buyContactsOrder'])->name('buy-contacts');
