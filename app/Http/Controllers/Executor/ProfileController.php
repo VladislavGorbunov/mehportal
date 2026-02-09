@@ -83,7 +83,7 @@ class ProfileController extends Controller
         
     $curl = curl_init();
 
-    $string = 'Подключение тарифа Premium' . 00001 . 'Ho!n*TPF^OTygako' . '1770482068219DEMO';
+    $string = "140000" . "Подарочная карта на 1400.00 рублей" . "21050" . 'Ho!n*TPF^OTygako' . '1770482068219DEMO';
     $token = hash('sha256', $string);
    
     $data = [
@@ -102,19 +102,19 @@ class ProfileController extends Controller
                     'Amount' => 140000,
                 ]
             ],
-        'FfdVersion' => '1.05',
-        'Email' => 'a@test.ru',
-        'Phone' => '+79031234567',
-        'Taxation' => 'usn_income',
-        'Payments' => [
-            'Cash' => 90000,
-            'Electronic' => 50000,
-            'AdvancePayment' => 0,
-            'Credit' => 0,
-            'Provision' => 0
-        ]
-    ],
-    
+            
+            'FfdVersion' => '1.05',
+            'Email' => 'a@test.ru',
+            'Phone' => '+79031234567',
+            'Taxation' => 'usn_income',
+            'Payments' => [
+                'Cash' => 90000,
+                'Electronic' => 50000,
+                'AdvancePayment' => 0,
+                'Credit' => 0,
+                'Provision' => 0
+            ]
+        ],
     ];
 
 
