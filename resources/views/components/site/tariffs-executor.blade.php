@@ -1,6 +1,6 @@
 
 <h2 class="fs-3 text-center mb-2">Тарифы для исполнителей</h2>
-<p class="text-center"><p class="text-center">Стоимость оказания информационных услуг для исполнителей после окончания бесплатного Premium статуса</p></p>
+<p class="text-center"><p class="text-center">Стоимость оказания информационных услуг для исполнителей.</p></p>
     <div class="row mt-4">
         <div class="col-12 col-md-3 mb-3">
             <div class="col-12 border rounded p-3">
