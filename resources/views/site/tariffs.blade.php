@@ -10,11 +10,12 @@
         }
 
         .low-price {
-            background: rgb(48, 183, 84);
+            background: rgb(67, 193, 100);
             font-weight: 400;
             padding: 6px 22px;
-            border-radius: 5px;
+            border-radius: 2px;
             color: #fff;
+            font-size: 14px;
         }
         
         .sale-icon {
@@ -44,7 +45,7 @@
     </nav>
     </div>
     
-    <div class="alert alert-primary px-5 py-5 mb-4">
+    <!-- <div class="alert alert-primary px-5 py-5 mb-4">
         <h2 class="fs-4 text-center mb-1 mt-0">Бесплатный «Premium» для всех новых пользователей на 6 месяцев!</h2>
         <p class="text-center mt-3">Количество участников акции ограниченно!</p>
         <p class="text-center mt-3 mb-0">Для того чтобы получить <b>Premium-статус</b> вам нужно всего лишь зарегистрироваться у нас на сайте.
@@ -59,7 +60,7 @@
         <p class="text-center mt-4 mb-0">Есть вопросы по тарифам и оплате? Напишите нам на почту: <a href="mailto::info@mehportal.ru">info@mehportal.ru</a> - ответим быстро!</p>
         
         <img src="/images/sale.svg" class="sale-icon">
-    </div>
+    </div> -->
     <x-site.tariffs-executor />
     <hr>
     <x-site.tariffs-customer />

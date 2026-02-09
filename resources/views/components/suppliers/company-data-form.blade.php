@@ -112,14 +112,6 @@
         <hr>
         
 
-        
-        <div class="row mt-4 mb-3">
-        <label class="form-label mb-3"><b>В каких категориях вы оказываете услуги:</b></label>
-      
-        
-        </div>
-
-        <hr>
         <label class="form-label"><b>Логотип компании:</b> (не обязательно)</label>
             <div class="col-12 col-md-12 mt-2">
                 <input type="file" class="logo-executor-company" name="logo" accept=".jpg,.png" hidden>
