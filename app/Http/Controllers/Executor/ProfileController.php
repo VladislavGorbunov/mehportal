@@ -89,18 +89,37 @@ class ProfileController extends Controller
     $data = [
         'TerminalKey' => '1770482068219DEMO',
         'Amount' => 140000,
-        'OrderId' => '00021',
+        'OrderId' => '21050',
         'Token' => $token,
-        'Description' => 'Подключение Premium тарифа',
-        'Items' => [
-            'Email' => 'limitorg2016@yandex.ru',
-            'Taxation' => 'usn_income',
-
+        'Description' => 'Подарочная карта на 1400.00 рублей',
+    
+        'Receipt' => [
+            'Items' => [
+                [
+                    'Name' => 'Наименование товара 1',
+                    'Price' => 140000,
+                    'Quantity' => 1,
+                    'Amount' => 140000,
+                ]
+            ],
+        'FfdVersion' => '1.05',
+        'Email' => 'a@test.ru',
+        'Phone' => '+79031234567',
+        'Taxation' => 'usn_income',
+        'Payments' => [
+            'Cash' => 90000,
+            'Electronic' => 50000,
+            'AdvancePayment' => 0,
+            'Credit' => 0,
+            'Provision' => 0
         ]
+    ],
+    
     ];
 
+
     $postfilds = json_encode($data);
-     
+    
 
     curl_setopt_array($curl, array(
         CURLOPT_URL => 'https://rest-api-test.tinkoff.ru/v2/Init',
