@@ -79,24 +79,25 @@ class ProfileController extends Controller
 
 
     public function payment() 
-    {
-        
+    {   
+    
     $curl = curl_init();
 
-    $string = "140000" . "Подарочная карта на 1400.00 рублей" . "21050" . 'Ho!n*TPF^OTygako' . '1770482068219DEMO';
+    $string = 140000 . "Подключение Premium тарифа" . 21050 . 'Ho!n*TPF^OTygako' . '1770482068219DEMO';
+    
     $token = hash('sha256', $string);
    
     $data = [
         'TerminalKey' => '1770482068219DEMO',
         'Amount' => 140000,
-        'OrderId' => '21050',
+        'OrderId' => 21050,
         'Token' => $token,
-        'Description' => 'Подарочная карта на 1400.00 рублей',
+        'Description' => 'Подключение Premium тарифа',
     
         'Receipt' => [
             'Items' => [
                 [
-                    'Name' => 'Наименование товара 1',
+                    'Name' => 'Подключение Premium тарифа',
                     'Price' => 140000,
                     'Quantity' => 1,
                     'Amount' => 140000,
@@ -118,7 +119,7 @@ class ProfileController extends Controller
     ];
 
 
-    $postfilds = json_encode($data);
+    $postfilds = json_encode($data, JSON_UNESCAPED_UNICODE);
     
 
     curl_setopt_array($curl, array(
