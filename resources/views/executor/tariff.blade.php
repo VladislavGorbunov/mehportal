@@ -31,10 +31,12 @@
                             <option value="{{ $tariff->months }}">Тариф: {{ $tariff->title }} | Сроком на: {{ $tariff->months }} мес. | Стоимость: {{ $tariff->price }} руб.</option>
                         @endforeach
                     </select>
-            </div>
+            </div> 
+            <h5 class="fs-5 mt-4">Оплатить картой любого банка:</h5>
+            <img src="/images/tbank.png" width="120" class="mt-2">
+            <button class="btn btn-blue mt-2">Перейти к оплате</button>
 
-            <h5 class="fs-5 mt-4">Реквизиты на которые будет выставлен счёт:</h5>
-
+            <h5 class="fs-5 mt-4">Запросить счёт на оплату:</h5>
             @if (! empty($executor->executorCompanies))
             <div class="mb-3 mt-3">
                 <label class="form-label">Организация:</label>
@@ -48,7 +50,7 @@
 
             <div class="mb-3">
                 <label class="form-label">Email на который отправим счёт:</label>
-                <input class="form-control" type="email" name="email" required>
+                <input class="form-control" type="email" name="email" >
             </div>
             <button class="btn btn-blue">Запросить счёт</button>
             @else
