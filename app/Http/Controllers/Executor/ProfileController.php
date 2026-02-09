@@ -101,6 +101,7 @@ class ProfileController extends Controller
                     'Price' => 140000,
                     'Quantity' => 1,
                     'Amount' => 140000,
+                    'Tax' => 'none',
                 ]
             ],
             
@@ -108,13 +109,6 @@ class ProfileController extends Controller
             'Email' => 'a@test.ru',
             'Phone' => '+79031234567',
             'Taxation' => 'usn_income',
-            'Payments' => [
-                'Cash' => 90000,
-                'Electronic' => 50000,
-                'AdvancePayment' => 0,
-                'Credit' => 0,
-                'Provision' => 0
-            ]
         ],
     ];
 
