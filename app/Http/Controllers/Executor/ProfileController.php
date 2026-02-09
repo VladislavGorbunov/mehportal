@@ -84,7 +84,7 @@ class ProfileController extends Controller
     $curl = curl_init();
 
     curl_setopt_array($curl, array(
-        CURLOPT_URL => 'hhttps://rest-api-test.tinkoff.ru/v2/Init',
+        CURLOPT_URL => 'https://rest-api-test.tinkoff.ru/v2/Init',
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => '',
         CURLOPT_MAXREDIRS => 10,
