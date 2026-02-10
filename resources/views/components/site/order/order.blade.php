@@ -32,7 +32,7 @@
             @if (!Auth::guard('executor')->user()->premium && !$order['customer_premium'])
                 <div class="alert alert-primary mt-4 text-center">
                     <small>Контакты заказчика доступны зарегистрированным исполнителям с премиум тарифом.</small><br>
-                    <p class="mt-3 mb-1">Тариф <b>«Premium»</b> - от 2000 руб/месяц <a href="{{ Route('executor-select-tariff') }}" class="btn alert-btn ms-2" target="_blank">Подключить</a></p>
+                    <p class="mt-3 mb-1">Тариф <b>«Premium»</b> - от 1500 руб/месяц <a href="{{ Route('executor-select-tariff') }}" class="btn alert-btn ms-2" target="_blank">Подключить</a></p>
                 </div>
            
             @endif
@@ -42,7 +42,7 @@
                 <p class="m-0">Контакты заказчика доступны зарегистрированным исполнителям с премиум тарифом.</p><br>
                 <div class="d-flex justify-content-center">
                     <div class="px-3">
-                        <p class="mt-0 mb-1">Тариф <b>«Premium»</b> - от 2000 руб/месяц <br><a href="{{ Route('login-executor') }}" class="btn alert-btn px- ms-2 mt-2" target="_blank">Подключиться</a></p>
+                        <p class="mt-0 mb-1">Тариф <b>«Premium»</b> - от 1500 руб/месяц <br><a href="{{ Route('login-executor') }}" class="btn alert-btn px- ms-2 mt-2" target="_blank">Подключиться</a></p>
                     </div>
                 </div>
             </div>
