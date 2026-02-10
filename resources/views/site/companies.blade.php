@@ -13,9 +13,9 @@
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="/"><small>Главная</small></a></li>
     @if ($breadcrumb['region'])
-    <li class="breadcrumb-item"><small>Каталог компаний {{ $breadcrumb['region'] }}</small></li>
+    <li class="breadcrumb-item"><small>Каталог предприятий {{ $breadcrumb['region'] }}</small></li>
     @else
-    <li class="breadcrumb-item"><small>Каталог компаний</small></li>
+    <li class="breadcrumb-item"><small>Каталог предприятий</small></li>
     @endif
     
     <li class="breadcrumb-item active" aria-current="page"><small>{{ $breadcrumb['category'] }}</small></li>
