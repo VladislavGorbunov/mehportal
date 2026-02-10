@@ -23,6 +23,7 @@
             </div>
             <p><b>Телефон:</b> <a href="tel::+78129204952"><span itemprop="telephone">+7 (812) 920-49-52</span></a></p>
             <p><b>Режим работы:</b> Ежедневно с 9:00 до 18:00</p>
+            <p><b>Для размещения заявок:</b> zakaz@mehportal.ru</p>
             <p><b>Email:</b> <a href="mailto::info@mehportal.ru"><span itemprop="email">info@mehportal.ru</span></a> <small>(по любым вопросам)</small></p>
             <p><b>Тех. поддержка:</b> <a href="mailto::tech@mehportal.ru">tech@mehportal.ru</a> <small>(по вопросам работы сайта)</small></p>
             <hr>
