@@ -83,12 +83,12 @@ class ProfileController extends Controller
     
     $curl = curl_init();
 
-    $string = 140000 . "Подключение Premium тарифа" . 21050 . 'Ho!n*TPF^OTygako' . '1770482068219DEMO';
+    $string = 140000 . "Подключение Premium тарифа" . 21050 . 'Ho!n*TPF^OTygako' . '1770482068219';
     
     $token = hash('sha256', $string);
    
     $data = [
-        'TerminalKey' => '1770482068219DEMO',
+        'TerminalKey' => '1770482068219',
         'Amount' => 140000,
         'OrderId' => 21050,
         'Token' => $token,
