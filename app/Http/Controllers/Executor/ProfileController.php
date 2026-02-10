@@ -57,8 +57,8 @@ class ProfileController extends Controller
         $tariff = ExecutorTariffs::where('months', $request->tariff_months)->first();
 
         if ($request->method() == 'POST') {
-            $this->payment();
-            die;
+            // $this->payment();
+            // die;
             ExecutorTariffConnectionRequest::create([
                 'executor_id' => $executor_id,
                 'tariff_months' => $request->tariff_months,
