@@ -75,7 +75,7 @@ class OrderController extends Controller
             UPDATE orders SET active = 0, archive = 1 WHERE orders.id = $order->id;"
         );
 
-        return redirect()->route('admin/active-orders');
+        return redirect('admin');
 
     }
     

@@ -44,7 +44,7 @@ class CompanyController extends Controller
         ]);
         
         session()->flash('message', 'Компания добавлена');
-        return redirect()->back();
+        return redirect('admin');
     }
     
     public function update(UpdateCategoryRequest $request) 
