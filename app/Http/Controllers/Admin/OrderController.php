@@ -34,7 +34,6 @@ class OrderController extends Controller
     {
         $validated = $request->validated();
         
-        
         if (array_key_exists('order_image_file', $validated)) {
             $order_image_file = $validated['order_image_file'];
         } else {
