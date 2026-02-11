@@ -57,8 +57,8 @@ class ProfileController extends Controller
         $tariff = ExecutorTariffs::where('months', $request->tariff_months)->first();
 
         if ($request->method() == 'POST') {
-            // $this->payment();
-            // die;
+            $this->payment();
+            die;
             ExecutorTariffConnectionRequest::create([
                 'executor_id' => $executor_id,
                 'tariff_months' => $request->tariff_months,
@@ -80,62 +80,64 @@ class ProfileController extends Controller
 
     public function payment() 
     {   
+        $curl = curl_init();
+        $password = 'Ho!n*TPF^OTygako';
+        $TerminalKey = '1770482068219';
+        $order_id = 21050;
+        $price = 200000;
+        $string = $price . "Подключение Premium тарифа" . $order_id . $password . $TerminalKey;
     
-    $curl = curl_init();
-
-    $string = 140000 . "Подключение Premium тарифа" . 21050 . 'Ho!n*TPF^OTygako' . '1770482068219';
-    
-    $token = hash('sha256', $string);
+        $token = hash('sha256', $string);
    
-    $data = [
-        'TerminalKey' => '1770482068219',
-        'Amount' => 140000,
-        'OrderId' => 21050,
-        'Token' => $token,
-        'Description' => 'Подключение Premium тарифа',
+        $data = [
+            'TerminalKey' => $TerminalKey,
+            'Amount' => $price,
+            'OrderId' => $order_id,
+            'Description' => 'Подключение Premium тарифа',
     
-        'Receipt' => [
-            'Items' => [
-                [
-                    'Name' => 'Подключение Premium тарифа',
-                    'Price' => 140000,
-                    'Quantity' => 1,
-                    'Amount' => 140000,
-                    'Tax' => 'none',
-                ]
-            ],
+            'Receipt' => [
+                'Items' => [
+                    [
+                        'Name' => 'Подключение Premium тарифа',
+                        'Price' => $price,
+                        'Quantity' => 1,
+                        'Amount' => $price,
+                        'Tax' => 'none',
+                    ]
+                ],
             
             'FfdVersion' => '1.05',
             'Email' => 'a@test.ru',
             'Phone' => '+79031234567',
             'Taxation' => 'usn_income',
-        ],
-    ];
+            ],
+            
+            'Token' => $token,
+        ];
 
 
-    $postfilds = json_encode($data, JSON_UNESCAPED_UNICODE);
+        $postfilds = json_encode($data, JSON_UNESCAPED_UNICODE);
     
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => 'https://rest-api-test.tinkoff.ru/v2/Init',
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'POST',
+            CURLOPT_POSTFIELDS => $postfilds,
+            CURLOPT_HTTPHEADER => array(
+                'Content-Type: application/json',
+                'Accept: application/json'
+            ),
+        ));
 
-    curl_setopt_array($curl, array(
-        CURLOPT_URL => 'https://rest-api-test.tinkoff.ru/v2/Init',
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_ENCODING => '',
-        CURLOPT_MAXREDIRS => 10,
-        CURLOPT_TIMEOUT => 0,
-        CURLOPT_FOLLOWLOCATION => true,
-        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-        CURLOPT_CUSTOMREQUEST => 'POST',
-        CURLOPT_POSTFIELDS => $postfilds,
-        CURLOPT_HTTPHEADER => array(
-            'Content-Type: application/json',
-            'Accept: application/json'
-        ),
-    ));
+        $response = curl_exec($curl);
 
-    $response = curl_exec($curl);
-
-    curl_close($curl);
-    var_dump($response);
+        curl_close($curl);
+        var_dump($response);
 
     }
 }
