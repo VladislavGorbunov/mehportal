@@ -52,13 +52,13 @@ class ProfileController extends Controller
 
     public function selectTariff(Request $request)
     {
+        header("Access-Control-Allow-Origin: *");
         $executor_id      = Auth::guard('executor')->user()->id;
         $data['executor'] = Executor::where('id', $executor_id)->first();
         $tariff = ExecutorTariffs::where('months', $request->tariff_months)->first();
 
         if ($request->method() == 'POST') {
-            $this->payment();
-            die;
+            
             ExecutorTariffConnectionRequest::create([
                 'executor_id' => $executor_id,
                 'tariff_months' => $request->tariff_months,
@@ -80,10 +80,11 @@ class ProfileController extends Controller
 
     public function payment() 
     {   
+        header("Access-Control-Allow-Origin: *");
         $curl = curl_init();
-        $password = 'Ho!n*TPF^OTygako';
-        $TerminalKey = '1770482068219';
-        $order_id = 21050;
+        $password = '&0OBqOiY$&j3PTMh';
+        $TerminalKey = '1770482068262';
+        $order_id = 210502;
         $price = 200000;
         $string = $price . "Подключение Premium тарифа" . $order_id . $password . $TerminalKey;
     
@@ -94,7 +95,9 @@ class ProfileController extends Controller
             'Amount' => $price,
             'OrderId' => $order_id,
             'Description' => 'Подключение Premium тарифа',
-    
+            'DATA' => [
+                'OperationInitiatorType' => 0,
+            ],
             'Receipt' => [
                 'Items' => [
                     [
@@ -103,6 +106,7 @@ class ProfileController extends Controller
                         'Quantity' => 1,
                         'Amount' => $price,
                         'Tax' => 'none',
+                        'PaymentObject' => 'service',
                     ]
                 ],
             
@@ -130,14 +134,17 @@ class ProfileController extends Controller
             CURLOPT_POSTFIELDS => $postfilds,
             CURLOPT_HTTPHEADER => array(
                 'Content-Type: application/json',
-                'Accept: application/json'
+                'Accept: application/json',
             ),
         ));
 
         $response = curl_exec($curl);
 
         curl_close($curl);
-        var_dump($response);
-
+        
+        $resp = json_decode($response);
+        
+        return $resp->PaymentURL;
+        
     }
 }

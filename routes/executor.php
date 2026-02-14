@@ -27,4 +27,5 @@ Route::middleware(['executor'])->group(function () {
 
     Route::get('/executor/select-tariff', [ProfileController::class, 'selectTariff'])->name('executor-select-tariff');
     Route::post('/executor/select-tariff', [ProfileController::class, 'selectTariff']);
+    Route::post('/executor/payment', [ProfileController::class, 'payment']);
 });

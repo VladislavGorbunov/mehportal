@@ -10,7 +10,11 @@
                     <label class="form-label">Заказчик:</label>
                         <select class="form-select" name="customer_id">
                             @foreach ($customers as $customer)
-                                <option value="{{ $customer->id }}">ID: {{ $customer->id }} - {{ $customer->name }} {{ $customer->lastname }}</option>
+                                @if ($customer->customerCompanies)
+                                    <option value="{{ $customer->id }}">ID: {{ $customer->id }} - {{ $customer->name }} {{ $customer->lastname }} | {{ $customer->customerCompanies->legal_form }} «{{ $customer->customerCompanies->title }}»</option>
+                                @else
+                                    <option value="{{ $customer->id }}">ID: {{ $customer->id }} - {{ $customer->name }} {{ $customer->lastname }} | ------------------------</option>
+                                @endif
                             @endforeach
                         </select>
                         

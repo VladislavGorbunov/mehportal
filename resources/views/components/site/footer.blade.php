@@ -55,33 +55,49 @@
     </div>
     </div>
     
-   <!--  <div class="add-zakaz d-none d-md-flex flex-column align-items-center justify-content-center">
-       <h5 class="fs-5 text-center mx-2 my-0 text-black">Ищите исполнителя для заказа? Разместите его бесплатно!</h5>
-       <div class="text-center mt-1">
-           Разместите свой заказ на металлообработку и его увидят тысячи предприятий по всей России! <a href="/customer/add-order" class="mx-2">Разместить заказ</a>
+   <button type="button" class="add-zakaz d-md-flex flex-column align-items-center justify-content-center">
+       <div class="text-center mt-1" data-bs-toggle="modal" data-bs-target="#kakrazmestitzakaz">
+           <i class="bi bi-question-circle"></i> Как разместить заказ?
        </div>
-   </div> -->
+   </button>
+   
+   <!-- Modal -->
+<div class="modal fade" id="kakrazmestitzakaz" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Как разместить заявку</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <p>Есть несколько вариантов как добавить заказ на наш сайт.</p>
+        <p>Вариант 1. Пришлите на почту <b>zakaz@mehportal.ru</b> данные вашей организации, чертежи, текст заявки и дату сбора заявок.</p>
+        <p>Вариант 2. Зарегистрируйтесь на нашем сайте как заказчик, добавьте заказ самостоятельно в личном кабинете.</p>
+      </div>
+    </div>
+  </div>
+</div>
         
         <style>
-            .add-zakaz {
-                width: 100%;
-                min-height: 75px;
-                padding: 8px 70px;
-                position: fixed;
-                bottom: 0px;
-                backdrop-filter: blur(10px);
-                background: rgba(245,245,250, 0.9);
-                border-top: 1px solid rgba(190,190,190,0.1);
-                z-index: 2;
-                color: #444;
-            }
-            
-            .zakaz-email {
-                padding: 3px 10px;
-                background: rgb(57, 174, 96);
-                border-radius: 6px;
-                color: #fff;
-            }
+        .bi-question-circle {
+            font-size: 15px;
+        }
+        
+        .add-zakaz {
+            width: auto;
+            padding: 8px 20px;
+            position: fixed;
+            bottom: 15px;
+            left: 10px;
+            backdrop-filter: blur(10px);
+            background: rgba(0,0,0, 1);
+            border: none;
+            border-radius: 10px;
+            z-index: 4;
+            color: #fff;
+            overflow: hidden;
+        }
+    
         </style>
     
     

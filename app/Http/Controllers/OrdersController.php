@@ -287,8 +287,8 @@ class OrdersController extends Controller
             'customer_id'        => $order->customer_id,
         ];
 
-        $data['title'] = $order->title . ' - заказ #'.$order_id  .' от ' . $order->company_legal_form . ' ' . $order->company_title . ' - ' . $date;
-        $data['description'] = 'Заказ на металлообработку от ' . $date . ' №' .$order_id . ' - ' . $order->title . '. Заказчик: ' . $order->company_legal_form . ' ' . $order->company_title . ' - ' . $order->region_name;
+        $data['title'] = $order->title . ' - заказ #'.$order_id  .' от ' . $date;
+        $data['description'] = 'Заказ на металлообработку от ' . $date . ' №' .$order_id . ' - ' . $order->title . ' - ' . $order->region_name;
         $data['header_title'] = $order->title;
         $data['region_name'] = '';
         $data['region_slug'] = '';

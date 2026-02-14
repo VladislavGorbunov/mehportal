@@ -21,7 +21,9 @@
                         <p class="mt-1 mb-1">Ваш тариф: «<b>Premium</b>»</p>
                         <p class="mt-1 mb-1">Тариф активирован до: {{ date('d.m.Y', strtotime($executor->premium_end_date)) }} г.</p>
                     @else
-                        <p class="mt-1 mb-1">Ваш тариф: «<b>Базовый</b>» <a href="{{ Route('executor-select-tariff') }}" class="ms-2 font-14">Подключить премиум</a></p>
+                        <p class="mt-1 mb-1">Ваш тариф: «<b>Базовый</b>»</p>
+                        <small>Чтобы контакты вашей организации видели все пользователи, подключите тариф «Premium»</small>
+                        <a href="{{ Route('executor-select-tariff') }}" class="ms-2 font-14">Подключить премиум тариф</a>
                     @endif
                 </div>
             </div>

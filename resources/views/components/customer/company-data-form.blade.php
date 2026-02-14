@@ -22,12 +22,7 @@
   					<label class="form-label">Название организации:</label>
   					<input type="text" class="form-control" name="title" value="{{ old('title') }}" placeholder="Например: «ТехноСистемы»">
 				</div>
-
-				<div class="mb-3">
-  					<label class="form-label">ИНН организации:</label>
-  					<input type="text" class="form-control" name="inn" value="{{ old('inn') }}" placeholder="Например: 178081376893">
-				</div>
-
+				
 				<div class="mb-3">
                     <label class="form-label">Регион:</label>
                         <select class="form-select" name="region_id">
@@ -40,6 +35,11 @@
                             @endforeach
                         </select>
                 </div>
+
+				<div class="mb-3">
+  					<label class="form-label">ИНН организации:</label>
+  					<input type="text" class="form-control" name="inn" value="{{ old('inn') }}" placeholder="Например: 178081376893">
+				</div>
 
 				<div class="mb-3">
   					<label class="form-label">Адрес:</label>

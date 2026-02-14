@@ -4,6 +4,7 @@
 @section('description', 'Панель исполнителя - подключение тарифа')
 
 @section('content')
+
     <h2 class="fs-4">Подключение тарифа</h2>
         <x-site.message />
 
@@ -32,10 +33,7 @@
                         @endforeach
                     </select>
             </div> 
-            <h5 class="fs-5 mt-4">Оплатить картой любого банка:</h5>
-            <img src="/images/tbank.png" width="120" class="mt-2">
-            <button class="btn btn-blue mt-2">Перейти к оплате</button>
-
+                    
             <h5 class="fs-5 mt-4">Запросить счёт на оплату:</h5>
             @if (! empty($executor->executorCompanies))
             <div class="mb-3 mt-3">
@@ -62,5 +60,5 @@
             @endif
         </form>
         @endif
-
+        
 @endsection
